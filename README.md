@@ -1,1 +1,1 @@
-# COMPILATION_IDC_FOR_STUDENTS
+This repository contains all files/lectures/exercises for the compilation course in IDC
