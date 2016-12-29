@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage{hyperref}
+\begin{document}
+\title{Exercise 1}
+\maketitle
+
+\section{Introduction}
+This exercise implements an automatic checker for Linear Algebra assignments.
+Currently, first year students are given a linear system $Ax=b$,
+they apply the Gauss Jordan elimination algorithm, and then find the solution set.
+The purpose of our exercise is to make sure those first year students
+are doing their job right. For that, we will implement a tool called Lini.
+
+\section{Lini :: Example}
+Lini receives a linear system from the Professor,
+and a sequence of row operations $+$ solution set from the student.
+Lini outputs a detailed summary of the check results in a pdf file.
+
+\subsection*{Linear System (Given by the Professor) :: Example}
+\[
+\left[
+\begin{array}{ccc}
+4	&	5	&	6\\
+7	&	8	&	9\\
+7	&	6	&	7\\
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\\
+\end{array}
+\right]
+\begin{array}{c}
+ \\
+=\\
+ \\
+\end{array}
+\left[
+\begin{array}{c}
+4\\
+7\\
+7\\
+\end{array}
+\right]
+\]
+\subsection*{Row Operations (Computed by the student) :: Example}
+\begin{table}[h]
+\centering
+\begin{tabular}{ l }
+  $R_{1} \leftarrow \frac{2}{5}R_{1}$ \\
+  $R_{2} \leftarrow R_{2} - 3R_{1}$ \\
+  $R_{1} \leftarrow \frac{2}{5}R_{1}$
+\end{tabular}
+\end{table}
+
+\subsection*{Solution Set (Computed by the student) :: Example}
+\begin{table}[h]
+\centering
+\begin{tabular}{ l }
+  $\{(3,2,3)\} + SP(\{(1,0,1)\})$ \\
+\end{tabular}
+\end{table}
+
+\section{Lini :: Details}
+
+\subsection*{Input Format :: Linear System}
+The Matrix $A$ and the vector $b$ are accommodated in a single
+$m \times (n+1)$ matrix, whose rightmost column is $b$.
+A matrix entry is either an integer, or a fraction.
+The linear system resides in a text file,
+starting with a left bracket, and ending with a right bracket.
+Entries are separated with either blanks or tabs, and rows are separated with
+a single semicolon. Fractions are written with either slash or backslash.
+The entire system must be written as a single line in the text file:\\
+\[
+[ 3 ~ 4 ~ -6; 7 ~ -2/9 ~ -100; 7 ~ 0 ~ 0; -6 ~ 4/3 ~ 10]
+\]
+
+\subsection*{Input Format :: Row Operations}
+The row operations sequence reside in a text file.
+Each line contains a single row operation.
+Table \ref{Table_CFG_Of_Row_Operations}
+describes the context free grammar of row operations.
+\begin{table}[h]
+\centering
+\begin{tabular}{ l c l }
+  $S$              & $::=$ & rowOperationList                            \\
+  rowOperationList & $::=$ & rowOperation ~ rowOperationList             \\
+                   & $::=$ & rowOperation                                \\
+  rowOperation     & $::=$ & swapRows                                    \\
+                   & $::=$ & mulRow                                      \\
+                   & $::=$ & mulAndAddRow                                \\
+  swapRows         & $::=$ & R index leftRightArrow R index              \\
+  mulRow           & $::=$ & R index leftArrow [$-$] [num] R index       \\
+  mulAndAddRow     & $::=$ & R index leftArrow R index op [num] R index  \\
+  index            & $::=$ & 1 ~ $|$ ~ 2 ~ $|$ ~ 3 ~ $|$ ~ 4             \\
+  leftArrow        & $::=$ & $<-$                                        \\
+  leftRightArrow   & $::=$ & $<->$                                       \\
+  num              & $::=$ & int                                         \\
+                   & $::=$ & int div int                                 \\
+  int              & $::=$ & 0                                           \\
+                   & $::=$ & $[1-9][0-9]^{*}$                            \\
+  div              & $::=$ & $/$                                         \\
+                   & $::=$ & \textbackslash                              \\
+  op               & $::=$ & $+$                                         \\
+                   & $::=$ & $-$                                         \\ \\ \\
+\end{tabular}
+\caption{
+Context free grammar for the language of row operations.
+\label{Table_CFG_Of_Row_Operations}}
+\end{table}
+In addition, the following limitations are imposed on row operations:
+$(1)$ Rows can not be multiplied by zero.
+$(2)$ Fractions are always with a non zero denominator.
+$(3)$ The indices in rule mulRow have to be the same.
+$(4)$ The first two indices in mulAndAddRow have to be the same.
+
+\subsection*{Input Format :: Solution Set}
+The solution set resides in a text file.
+Whenever the system has no solutions, this text file contains a single word:
+EMPTYSET. When the system has a single solution, it is written as a set 
+with a single row vector $\{(3,-\frac{2}{9},200)\}$. If the system has an infinite
+solution set, it should be written as a sum of two vector sets:
+$\{(2,-6,100)\} ~ +$ SP$(\{(1,0,1), (6,6,0)\})$.
+
+\section{Programming Assignment}
+Write a lexer and parser for the solution set.
+The exact context free grammar is missing intentionally.
+You should support row vectors with sizes = $2,3,4$.
+The span set size is not limited, as vectors inside it can be dependant.
+
+\subsection*{Bonus}
+Compare the given solution set to one deduced by the row operations
+and see if they agree. Whenever the sets are different,
+add a concrete vector that belongs to one set and not the other.
+
+\section{Submission Guidelines}
+Open an account on \href{https://github.com/}{GitHub}.
+Then, visit the
+\href{https://education.github.com/discount_requests/new}{academic discount page}
+to enable the free creation of private repositories.
+One team member should create a new private repository called COMPILATION,
+and then invite other team members and me as collaborators.
+My username is OrenGitHub.
+Please make sure the uppermost folder (COMPILATION) contains a text file ``IDS.text" with the IDs of all team members (one ID per line).
+Throughout the semester, you will create sub-folders EX1, EX2, etc. inside COMPILATION.
+EX1 Should include a makefile building your source to a runnable
+program called LINI.
+Please support a clean target in makefile that removes LINI.
+Also, to avoid the pollution of EX1,
+please remove all *.o files once the target is built.
+The next paragraph describes the execution of LINI.
+
+\paragraph{Execution parameters}
+LINI recevies $4$ (or $5$) input file names:
+\begin{table}[h]
+\centering
+\begin{tabular}{ l }
+  InputMatrix.txt       \\
+  RowOperations.txt  \\
+  SolutionSet.txt    \\
+  OutputRankedMatrix.txt   \\
+  $[$  CheckSummary.pdf $]$ (optional) \\
+\end{tabular}
+\end{table}
+
+
+\end{document}
