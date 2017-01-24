@@ -99,98 +99,98 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\main.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_01_util.c">
+      <Filter>Source Files\00 Infrastructure</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\FOLDER_5_COMPILER_SOURCE_FILES\StarKistLexer.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_02_symbol.c">
+      <Filter>Source Files\00 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_03_StarKist_ErrorMsg.c">
       <Filter>Source Files\01 StarKist LEXER</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\FOLDER_2_LEXER_PARSER_StarKist\PARSER_StarKist\StarKistParser.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_04_StarKist_Lexer.c">
+      <Filter>Source Files\01 StarKist LEXER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_05_StarKist_Parser.c">
       <Filter>Source Files\02 StarKist PARSER</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\util.c">
-      <Filter>Source Files\00 Infrastructure</Filter>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_06_StarKist_AST.c">
+      <Filter>Source Files\03 AST</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\symbol.c">
-      <Filter>Source Files\00 Infrastructure</Filter>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_07_StarKist_AST_print.c">
+      <Filter>Source Files\03 AST</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\table.c">
-      <Filter>Source Files\00 Infrastructure</Filter>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_09_GenericTable.c">
+      <Filter>Source Files\04 Symbol Table</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\types.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_10_SymbolTable.c">
+      <Filter>Source Files\04 Symbol Table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_10_SymbolTableEntry.c">
+      <Filter>Source Files\04 Symbol Table</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_11_Types.c">
       <Filter>Source Files\05 Types</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\semant.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_08_semant.c">
       <Filter>Source Files\06 Semantic Analysis</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\IR.c">
-      <Filter>Source Files\08 IR</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\IR_Print.c">
-      <Filter>Source Files\08 IR</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\MIPS_asm.c">
-      <Filter>Source Files\09 Code Generation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\MIPS_frame.c">
-      <Filter>Source Files\09 Code Generation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\FOLDER_5_COMPILER_SOURCE_FILES\CodeGenLexer.c">
-      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\FOLDER_3_LEXER_PARSER_CodeGen\PARSER_CodeGen\CodeGenParser.c">
-      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Pseduo_Assembley_To_Simulation.c">
-      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Liveness_Analysis.c">
-      <Filter>Source Files\11 Livesness Analysis</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Register_Allocation.c">
-      <Filter>Source Files\12 Register Allocation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\FOLDER_5_COMPILER_SOURCE_FILES\RegAllocLexer.c">
-      <Filter>Source Files\12 Register Allocation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\FOLDER_4_LEXER_PARSER_RegAlloc\PARSER_RegAlloc\RegAllocParser.c">
-      <Filter>Source Files\12 Register Allocation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Write_Assembley_Output_File.c">
-      <Filter>Source Files\13 ASM output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\PSEUDO_MIPS_ASM_AST.c">
-      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\temp.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_15_Temporaries_and_Labels.c">
       <Filter>Source Files\07 Temporaries &amp; Labels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\TEMPS_TO_REGS_errormsg.c">
-      <Filter>Source Files\12 Register Allocation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\PSEUDO_MIPS_ASM_AST_errormsg.c">
-      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\errormsg.c">
-      <Filter>Source Files\02 StarKist PARSER</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\parse.c">
-      <Filter>Source Files\02 StarKist PARSER</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\SymbolTable.c">
-      <Filter>Source Files\04 Symbol Table</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\AST.c">
-      <Filter>Source Files\03 AST</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\AST_Print.c">
-      <Filter>Source Files\03 AST</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\IR_Tree.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_12_IR.c">
       <Filter>Source Files\08 IR</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\env.c">
-      <Filter>Source Files\04 Symbol Table</Filter>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_13_IR_tree.c">
+      <Filter>Source Files\08 IR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_14_IR_print.c">
+      <Filter>Source Files\08 IR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_16_CodeGen.c">
+      <Filter>Source Files\09 Code Generation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_16_PseudoAsm_To_Simulation_ErrorMsg.c">
+      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_17_PseudoAsm_To_Simulation_Lexer.c">
+      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_18_PseudoAsm_To_Simulation_Parser.c">
+      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_19_PseudoAsm_To_Simulation_AST.c">
+      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_20_PseudoAsm_To_Simulation.c">
+      <Filter>Source Files\10 Pseudo ASM to Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_21_Liveness_Analysis.c">
+      <Filter>Source Files\11 Livesness Analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_22_RegAlloc_ErrorMsg.c">
+      <Filter>Source Files\12 Register Allocation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_23_RegAlloc_Lexer.c">
+      <Filter>Source Files\12 Register Allocation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_24_RegAlloc_Parser.c">
+      <Filter>Source Files\12 Register Allocation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\FILE_25_RegAlloc.c">
+      <Filter>Source Files\12 Register Allocation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\Write_Assembley_Output_File.c">
+      <Filter>Source Files\13 ASM output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\MIPS_frame.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_05_COMPILER_SOURCE_FILES\parse.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,37 +271,37 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\Input.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\Input.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_01_Print_Primes_In_Range_2_to_100.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_01_Print_Primes_In_Range_2_to_100.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_02_Record_With_An_Array_Inside.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_02_Record_With_An_Array_Inside.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_03_GoodMerge_Lists.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_03_GoodMerge_Lists.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_04_GoodBubbleSort.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_04_GoodBubbleSort.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_05_Mat3.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_05_Mat3.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_06_Access_Checks.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_06_Access_Checks.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_07_Array_Boundaries_Checks.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_07_Array_Boundaries_Checks.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_08_Another_Array_Boundaries_Checks.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_08_Another_Array_Boundaries_Checks.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_09_BadMerge_Lists.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_09_BadMerge_Lists.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_10_BubbleSort.txt">
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_10_BubbleSort.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

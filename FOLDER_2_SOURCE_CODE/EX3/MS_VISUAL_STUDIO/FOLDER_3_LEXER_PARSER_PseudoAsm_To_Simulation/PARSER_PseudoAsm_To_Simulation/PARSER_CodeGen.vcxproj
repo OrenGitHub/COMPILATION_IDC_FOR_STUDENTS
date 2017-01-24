@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9DFDCAAE-52EA-45C1-AC7E-6A780F7D4F0A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>PARSER_CodeGen</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>PARSER_PseudoAsm_To_Simulation</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_1_Bison/HEADER_FILES</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_01_Bison/HEADER_FILES</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;STDC_HEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\files.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\getopt.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\gram.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\lex.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\machine.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\MyNew.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\state.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\symtab.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\system.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\LINUX_GCC_MAKE\FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation\CodeGen.y" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\alloca.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\allocate.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\closure.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\conflicts.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\derives.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\files.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\getargs.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\getopt.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\getopt1.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\gram.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\lalr.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\lex.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\LR0.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\main.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\nullable.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\output.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\print.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\reader.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\reduce.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\symtab.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\version.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\warshall.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

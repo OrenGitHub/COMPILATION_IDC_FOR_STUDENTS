@@ -1,2 +1,4 @@
 *.exe
+**/Debug/*
+*.tlog
 

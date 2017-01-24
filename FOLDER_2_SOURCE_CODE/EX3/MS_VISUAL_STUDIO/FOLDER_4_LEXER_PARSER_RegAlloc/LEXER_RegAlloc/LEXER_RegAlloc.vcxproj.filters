@@ -15,71 +15,71 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\ccl.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\ccl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\dfa.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\dfa.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\ecs.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\ecs.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\gen.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\gen.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\initscan.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\initscan.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\main.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\misc.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\misc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\nfa.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\nfa.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\parse.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\parse.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\skel.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\skel.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\sym.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\sym.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\tblcmp.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\tblcmp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\yylex.c">
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\yylex.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\config.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\errormsg.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\errormsg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\flexdef.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\flexdef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\FlexLexer.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\FlexLexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\parse.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\parse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\tokens.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\tokens.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\version.h">
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\LINUX_GCC_MAKE\FOLDER_4_LEXER_PARSER_RegisterAllocation\RegAlloc.lex">
+    <None Include="..\..\..\LINUX_GCC_MAKE\FOLDER_04_LEXER_PARSER_RegAlloc\RegAlloc.lex">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

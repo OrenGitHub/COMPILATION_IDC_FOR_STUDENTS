@@ -391,15 +391,22 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 1 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 #define INITIAL 0
-#line 2 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 2 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
 #include "util.h"
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
 #include "TEMPS_TO_REGS_errormsg.h"
-#include "RegAllocParser.h"
+#include "FILE_24_RegAlloc_Parser.h"
 
 int TEMPS_TO_REGS_charPos=1;
 
@@ -415,7 +422,7 @@ void TEMPS_TO_REGS_adjust(void)
 	TEMPS_TO_REGS_charPos+=ggleng;
 }
 
-#line 419 "../../FOLDER_5_COMPILER_SOURCE_FILES/RegAllocLexer.c"
+#line 426 "../../FOLDER_5_COMPILER_SOURCE_FILES/RegAllocLexer.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -566,10 +573,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 27 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 34 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 
 
-#line 573 "../../FOLDER_5_COMPILER_SOURCE_FILES/RegAllocLexer.c"
+#line 580 "../../FOLDER_5_COMPILER_SOURCE_FILES/RegAllocLexer.c"
 
 	if ( yy_init )
 		{
@@ -654,37 +661,37 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 29 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 36 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {TEMPS_TO_REGS_adjust(); return SPACE;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 30 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 37 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {TEMPS_TO_REGS_adjust(); return TAB;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 31 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 38 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {TEMPS_TO_REGS_adjust(); return COMMA;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 32 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 39 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {TEMPS_TO_REGS_adjust(); return LPAREN;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 33 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 40 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {TEMPS_TO_REGS_adjust(); return RPAREN;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 34 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 41 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {TEMPS_TO_REGS_adjust(); TEMPS_TO_REGS_EM_newline(); return NEWLINE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 35 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 42 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {
 										TEMPS_TO_REGS_adjust();
 										gglval.gval.temp_serial_number=atoi(ggtext+strlen("Temp_"));
@@ -694,7 +701,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 41 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 48 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {
 										TEMPS_TO_REGS_adjust();
 
@@ -709,7 +716,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 52 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 59 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 {
 										TEMPS_TO_REGS_adjust();
 
@@ -724,10 +731,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 64 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 71 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
 ECHO;
 	YY_BREAK
-#line 731 "../../FOLDER_5_COMPILER_SOURCE_FILES/RegAllocLexer.c"
+#line 738 "../../FOLDER_5_COMPILER_SOURCE_FILES/RegAllocLexer.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1603,4 +1610,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 64 "../../../LINUX_GCC_MAKE/FOLDER_4_LEXER_PARSER_RegAlloc/RegAlloc.lex"
+#line 71 "../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex"
