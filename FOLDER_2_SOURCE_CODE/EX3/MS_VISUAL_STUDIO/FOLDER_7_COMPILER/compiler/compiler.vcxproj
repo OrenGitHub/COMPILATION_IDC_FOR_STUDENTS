@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{532C1338-B65F-4FE3-B455-73662FFDCEA4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>compiler</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_6_COMPILER_HEADER_FILES</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\AST.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\AST_Print.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\env.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\errormsg.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\IR.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\IR_Print.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Liveness_Analysis.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\main.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\MIPS_asm.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\MIPS_frame.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\parse.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Pseduo_Assembley_To_Simulation.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\PSEUDO_MIPS_ASM_AST.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\PSEUDO_MIPS_ASM_AST_errormsg.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Register_Allocation.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\semant.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\symbol.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\SymbolTable.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\table.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\temp.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\TEMPS_TO_REGS_errormsg.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\IR_Tree.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\types.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\util.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_5_COMPILER_SOURCE_FILES\Write_Assembley_Output_File.c" />
+    <ClCompile Include="..\..\FOLDER_2_LEXER_PARSER_StarKist\PARSER_StarKist\StarKistParser.c" />
+    <ClCompile Include="..\..\FOLDER_3_LEXER_PARSER_CodeGen\PARSER_CodeGen\CodeGenParser.c" />
+    <ClCompile Include="..\..\FOLDER_4_LEXER_PARSER_RegAlloc\PARSER_RegAlloc\RegAllocParser.c" />
+    <ClCompile Include="..\..\FOLDER_5_COMPILER_SOURCE_FILES\CodeGenLexer.c" />
+    <ClCompile Include="..\..\FOLDER_5_COMPILER_SOURCE_FILES\RegAllocLexer.c" />
+    <ClCompile Include="..\..\FOLDER_5_COMPILER_SOURCE_FILES\StarKistLexer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\absyn.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\asm.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\env.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\errormsg.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\frame.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\IR.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\Liveness_Analysis.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\parse.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\Pseudo_Assembley_To_Simulation.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\PSEUDO_MIPS_ASM_AST.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\PSEUDO_MIPS_ASM_AST_errormsg.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\Register_Allocation.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\semant.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\symbol.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\SymbolTable.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\table.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\temp.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\TEMPS_TO_REGS_errormsg.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\tree.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\types.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\util.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_6_COMPILER_HEADER_FILES\Write_Assembley_Output_Filename.h" />
+    <ClInclude Include="..\..\FOLDER_2_LEXER_PARSER_StarKist\PARSER_StarKist\StarKistParser.h" />
+    <ClInclude Include="..\..\FOLDER_3_LEXER_PARSER_CodeGen\PARSER_CodeGen\CodeGenParser.h" />
+    <ClInclude Include="..\..\FOLDER_4_LEXER_PARSER_RegAlloc\PARSER_RegAlloc\RegAllocParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\Input.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_01_Print_Primes_In_Range_2_to_100.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_02_Record_With_An_Array_Inside.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_03_GoodMerge_Lists.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_04_GoodBubbleSort.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_05_Mat3.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_06_Access_Checks.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_07_Array_Boundaries_Checks.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_08_Another_Array_Boundaries_Checks.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_09_BadMerge_Lists.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_8_INPUT_PROGRAMS\TEST_10_BubbleSort.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

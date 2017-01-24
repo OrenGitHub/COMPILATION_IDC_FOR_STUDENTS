@@ -1,0 +1,439 @@
+main:
+
+jal Label_0_main
+
+Label_0_main:
+
+	addi $fp,$sp,40
+
+	j Label_7_Skip_This_Function_For_Now
+
+Label_8_PrintPrimesInRange:
+
+	li Temp_3,0
+
+	li Temp_4,0
+
+	j Label_9_Skip_This_Function_For_Now
+
+Label_10_IsPrime:
+
+	li Temp_5,0
+
+	li Temp_6,0
+
+	li Temp_8,-4
+
+	add Temp_7,$fp,Temp_8
+
+	li Temp_9,1
+
+	sw Temp_9,0(Temp_7)
+
+	li Temp_11,-8
+
+	add Temp_10,$fp,Temp_11
+
+	li Temp_12,2
+
+	sw Temp_12,0(Temp_10)
+
+	li Temp_13,2
+
+	li Temp_17,8
+
+	add Temp_16,$fp,Temp_17
+
+	lw Temp_15,0(Temp_16)
+
+	li Temp_18,1
+
+	sub Temp_14,Temp_15,Temp_18
+
+	ble Temp_13, Temp_14, Label_11_for_loop
+
+	bgt Temp_13, Temp_14, Label_12_exit_loop
+
+Label_11_for_loop:
+
+	li Temp_20,-12
+
+	add Temp_19,$fp,Temp_20
+
+	li Temp_21,2
+
+	sw Temp_21,0(Temp_19)
+
+	li Temp_22,2
+
+	li Temp_26,8
+
+	add Temp_25,$fp,Temp_26
+
+	lw Temp_24,0(Temp_25)
+
+	li Temp_27,1
+
+	sub Temp_23,Temp_24,Temp_27
+
+	ble Temp_22, Temp_23, Label_23_for_loop
+
+	bgt Temp_22, Temp_23, Label_24_exit_loop
+
+Label_23_for_loop:
+
+	li Temp_31,-8
+
+	add Temp_30,$fp,Temp_31
+
+	lw Temp_29,0(Temp_30)
+
+	li Temp_34,-12
+
+	add Temp_33,$fp,Temp_34
+
+	lw Temp_32,0(Temp_33)
+
+	mul Temp_28,Temp_29,Temp_32
+
+	li Temp_37,8
+
+	add Temp_36,$fp,Temp_37
+
+	lw Temp_35,0(Temp_36)
+
+	beq Temp_28, Temp_35, Label_52_T
+
+	bne Temp_28, Temp_35, Label_53_F
+
+Label_52_T:
+
+	li Temp_38,1
+
+	addi Temp_2,Temp_38,0
+
+	j Label_54_END
+
+Label_53_F:
+
+	li Temp_39,0
+
+	addi Temp_2,Temp_39,0
+
+	j Label_54_END
+
+Label_54_END:
+
+	li Temp_40,0
+
+	bne Temp_2, Temp_40, Label_35_if_taken
+
+	beq Temp_2, Temp_40, Label_36_if_not_taken
+
+Label_35_if_taken:
+
+	li Temp_42,-4
+
+	add Temp_41,$fp,Temp_42
+
+	li Temp_43,0
+
+	sw Temp_43,0(Temp_41)
+
+Label_36_if_not_taken:
+
+	li Temp_45,-12
+
+	add Temp_44,$fp,Temp_45
+
+	li Temp_49,-12
+
+	add Temp_48,$fp,Temp_49
+
+	lw Temp_47,0(Temp_48)
+
+	li Temp_50,1
+
+	add Temp_46,Temp_47,Temp_50
+
+	sw Temp_46,0(Temp_44)
+
+	li Temp_53,-12
+
+	add Temp_52,$fp,Temp_53
+
+	lw Temp_51,0(Temp_52)
+
+	li Temp_57,8
+
+	add Temp_56,$fp,Temp_57
+
+	lw Temp_55,0(Temp_56)
+
+	li Temp_58,1
+
+	sub Temp_54,Temp_55,Temp_58
+
+	ble Temp_51, Temp_54, Label_23_for_loop
+
+	bgt Temp_51, Temp_54, Label_24_exit_loop
+
+Label_24_exit_loop:
+
+	li Temp_60,-8
+
+	add Temp_59,$fp,Temp_60
+
+	li Temp_64,-8
+
+	add Temp_63,$fp,Temp_64
+
+	lw Temp_62,0(Temp_63)
+
+	li Temp_65,1
+
+	add Temp_61,Temp_62,Temp_65
+
+	sw Temp_61,0(Temp_59)
+
+	li Temp_68,-8
+
+	add Temp_67,$fp,Temp_68
+
+	lw Temp_66,0(Temp_67)
+
+	li Temp_72,8
+
+	add Temp_71,$fp,Temp_72
+
+	lw Temp_70,0(Temp_71)
+
+	li Temp_73,1
+
+	sub Temp_69,Temp_70,Temp_73
+
+	ble Temp_66, Temp_69, Label_11_for_loop
+
+	bgt Temp_66, Temp_69, Label_12_exit_loop
+
+Label_12_exit_loop:
+
+	li Temp_76,-4
+
+	add Temp_75,$fp,Temp_76
+
+	lw Temp_74,0(Temp_75)
+
+	addi $v0,Temp_74,0
+
+	li Temp_78,0
+
+	li Temp_79,0
+
+Label_9_Skip_This_Function_For_Now:
+
+	li Temp_81,-4
+
+	add Temp_80,$fp,Temp_81
+
+	li Temp_84,8
+
+	add Temp_83,$fp,Temp_84
+
+	lw Temp_82,0(Temp_83)
+
+	sw Temp_82,0(Temp_80)
+
+	li Temp_87,8
+
+	add Temp_86,$fp,Temp_87
+
+	lw Temp_85,0(Temp_86)
+
+	li Temp_90,12
+
+	add Temp_89,$fp,Temp_90
+
+	lw Temp_88,0(Temp_89)
+
+	ble Temp_85, Temp_88, Label_65_for_loop
+
+	bgt Temp_85, Temp_88, Label_66_exit_loop
+
+Label_65_for_loop:
+
+	li Temp_91,0
+
+	bne $v0, Temp_91, Label_87_if_taken
+
+	beq $v0, Temp_91, Label_88_if_not_taken
+
+Label_87_if_taken:
+
+Label_88_if_not_taken:
+
+	li Temp_93,-4
+
+	add Temp_92,$fp,Temp_93
+
+	li Temp_97,-4
+
+	add Temp_96,$fp,Temp_97
+
+	lw Temp_95,0(Temp_96)
+
+	li Temp_98,1
+
+	add Temp_94,Temp_95,Temp_98
+
+	sw Temp_94,0(Temp_92)
+
+	li Temp_101,-4
+
+	add Temp_100,$fp,Temp_101
+
+	lw Temp_99,0(Temp_100)
+
+	li Temp_104,12
+
+	add Temp_103,$fp,Temp_104
+
+	lw Temp_102,0(Temp_103)
+
+	ble Temp_99, Temp_102, Label_65_for_loop
+
+	bgt Temp_99, Temp_102, Label_66_exit_loop
+
+Label_66_exit_loop:
+
+	li Temp_105,0
+
+	li Temp_106,0
+
+Label_7_Skip_This_Function_For_Now:
+
+	li $v0,10
+
+	syscall
+Label_1_AllocateRecord:
+
+Label_2_AllocateArray:
+
+Label_3_PrintInt:
+
+	lw $a0,0($sp)
+
+	li $v0,1
+
+	syscall
+
+	li $a0,32
+
+	li $v0,11
+
+	syscall
+
+	jr $ra
+
+Label_4_Access_Violation:
+
+	li $a0,65
+
+	li $v0,11
+
+	syscall
+
+	li $a0,99
+
+	li $v0,11
+
+	syscall
+
+	li $a0,99
+
+	li $v0,11
+
+	syscall
+
+	li $a0,101
+
+	li $v0,11
+
+	syscall
+
+	li $a0,115
+
+	li $v0,11
+
+	syscall
+
+	li $a0,115
+
+	li $v0,11
+
+	syscall
+
+	li $a0,32
+
+	li $v0,11
+
+	syscall
+
+	li $a0,86
+
+	li $v0,11
+
+	syscall
+
+	li $a0,105
+
+	li $v0,11
+
+	syscall
+
+	li $a0,111
+
+	li $v0,11
+
+	syscall
+
+	li $a0,108
+
+	li $v0,11
+
+	syscall
+
+	li $a0,97
+
+	li $v0,11
+
+	syscall
+
+	li $a0,116
+
+	li $v0,11
+
+	syscall
+
+	li $a0,105
+
+	li $v0,11
+
+	syscall
+
+	li $a0,111
+
+	li $v0,11
+
+	syscall
+
+	li $a0,110
+
+	li $v0,11
+
+	syscall
+
+	li $v0,10
+
+	syscall
+

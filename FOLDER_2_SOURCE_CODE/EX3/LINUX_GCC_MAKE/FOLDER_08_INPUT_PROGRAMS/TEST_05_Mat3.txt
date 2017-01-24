@@ -1,0 +1,22 @@
+let
+
+	type Vec3 = array of int
+
+	type Mat3 = array of Vec3
+
+	var mat:Mat3 := Vec3[3] of nil
+
+in
+
+	(
+
+		mat[0] := int[3] of 10;
+		mat[1] := int[3] of 11;
+		mat[2] := int[3] of 12;
+
+		mat[2][2] := 800;
+
+		PrintInt(mat[2][2])
+	)
+
+end

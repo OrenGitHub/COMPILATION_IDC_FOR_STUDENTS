@@ -1,0 +1,43 @@
+let
+
+	function PrintPrimesInRange(start:int,finish:int) =
+
+	let
+
+		function IsPrime(p:int) : int =
+
+		let
+
+			var returnedValue := 1
+
+		in
+		(
+			for i := 2 to p-1 do
+
+				for j := 2 to p-1 do
+
+					if (i*j = p) then
+					
+						returnedValue := 0;
+
+			returnedValue
+		)
+
+		end
+
+	in
+
+		for i := start to finish do
+
+			if IsPrime(i) then
+
+				PrintInt(i)
+
+	end
+
+
+in
+
+	PrintPrimesInRange(2,100)
+
+end
