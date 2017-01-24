@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\01 StarKist LEXER">
       <UniqueIdentifier>{2835d0f3-9d39-4187-9a47-5204f5c5234c}</UniqueIdentifier>
     </Filter>
@@ -96,6 +92,19 @@
     </Filter>
     <Filter Include="Header Files\13 ASM output">
       <UniqueIdentifier>{8598b46a-7aa8-4fa0-8a34-84bd1d5cd644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input Programs">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Intermediate Files">
+      <UniqueIdentifier>{2b9b8b29-7dc2-475e-b64d-03fb9c600aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz Files">
+      <UniqueIdentifier>{281e414f-ea54-45f8-8bbe-7467cf2b0a73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output Asm File">
+      <UniqueIdentifier>{4f15ba81-2e7b-4279-b755-787e738c2c3d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -272,37 +281,37 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\Input.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_01_Print_Primes_In_Range_2_to_100.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_02_Record_With_An_Array_Inside.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_03_GoodMerge_Lists.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_04_GoodBubbleSort.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_05_Mat3.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_06_Access_Checks.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_07_Array_Boundaries_Checks.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_08_Another_Array_Boundaries_Checks.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_09_BadMerge_Lists.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_10_BubbleSort.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Input Programs</Filter>
     </Text>
   </ItemGroup>
 </Project>

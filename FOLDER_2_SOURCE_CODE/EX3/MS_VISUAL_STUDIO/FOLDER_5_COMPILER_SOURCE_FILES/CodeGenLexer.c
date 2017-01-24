@@ -475,16 +475,23 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 1 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 #define INITIAL 0
-#line 2 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 2 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
 #include "util.h"
 #include "PSEUDO_MIPS_ASM_AST_errormsg.h"
 #include "PSEUDO_MIPS_ASM_AST.h"
-#include "CodeGen_Parser.h"
+#include "FILE_18_PseudoAsm_To_Simulation_Parser.h"
 
 int PSEUDO_MIPS_ASM_AST_charPos=1;
 
@@ -500,7 +507,7 @@ void PSEUDO_MIPS_ASM_AST_adjust(void)
 	PSEUDO_MIPS_ASM_AST_charPos+=zzleng;
 }
 
-#line 504 "../../FOLDER_5_COMPILER_SOURCE_FILES/CodeGenLexer.c"
+#line 511 "../../FOLDER_5_COMPILER_SOURCE_FILES/CodeGenLexer.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -651,9 +658,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 28 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 35 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 
-#line 657 "../../FOLDER_5_COMPILER_SOURCE_FILES/CodeGenLexer.c"
+#line 664 "../../FOLDER_5_COMPILER_SOURCE_FILES/CodeGenLexer.c"
 
 	if ( yy_init )
 		{
@@ -738,157 +745,157 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 29 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 36 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); continue;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 30 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 37 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); continue;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 31 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 38 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); continue;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 32 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 39 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); PSEUDO_MIPS_ASM_AST_EM_newline(); printf("\n"); continue;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 33 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 40 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("PRINT INT");return PRINT_INT;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 34 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 41 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("ALLOCATE");return ALLOCATE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 35 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 42 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("PRINT_CHAR");return PRINT_CHAR;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 36 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 43 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("EXIT");   return EXIT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 37 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 44 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf(", ");     return COMMA;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 38 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 45 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf(":");      return COLON;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 39 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 46 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("LOAD ");  return LOAD;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 40 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 47 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("STORE "); return STORE;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 41 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 48 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("LOADI "); return LOAD_IMMEDIATE;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 42 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 49 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("JUMP ");  return JUMP;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 43 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 50 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("JUMP ");  return JUMP;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 44 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 51 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("JAL ");   return JUMP_AND_LINK;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 45 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 52 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("ADD ");   return ADD;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 46 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 53 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("ADDI ");  return ADD_IMMEDIATE;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 47 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 54 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("SUB ");   return SUB;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 48 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 55 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("MUL ");   return MUL;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 49 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 56 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("MOVE ");  return MOVE;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 50 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 57 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("BEQ ");   return BEQ;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 51 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 58 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("BNE ");   return BNE;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 52 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 59 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("BGT ");   return BGT;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 53 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 60 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("BGE ");   return BGE;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 54 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 61 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("BLT ");   return BLT;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 55 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 62 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf("BLE ");   return BLE;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 56 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 63 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); zzlval.gval.sval=String(zztext+1); printf("REGISTER( %s ) ",zzlval.gval.sval); return REGISTER;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 57 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 64 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf(" ( "); return LPAREN;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 58 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 65 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); printf(" ) "); return RPAREN;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 59 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 66 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {
 											PSEUDO_MIPS_ASM_AST_adjust();
 											zzlval.gval.temp_serial_number=atoi(zztext+strlen("Temp_"));
@@ -900,7 +907,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 67 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 74 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {
 											PSEUDO_MIPS_ASM_AST_adjust();
 											zzlval.gval.ival=atoi(zztext);
@@ -909,7 +916,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 72 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 79 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {
 											char *s;
 											PSEUDO_MIPS_ASM_AST_adjust();
@@ -928,30 +935,30 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 87 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 94 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); zzlval.gval.sval=String(zztext); return STRING;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 88 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 95 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); zzlval.gval.fval=(float) atof(zztext); return FLOAT;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 89 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 96 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); zzlval.gval.fval=(float) atof(zztext); return FLOAT;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 90 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 97 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 {PSEUDO_MIPS_ASM_AST_adjust(); PSEUDO_MIPS_ASM_AST_EM_error(PSEUDO_MIPS_ASM_AST_EM_tokPos,"illegal token");}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 91 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 98 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
 ECHO;
 	YY_BREAK
-#line 955 "../../FOLDER_5_COMPILER_SOURCE_FILES/CodeGenLexer.c"
+#line 962 "../../FOLDER_5_COMPILER_SOURCE_FILES/CodeGenLexer.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1827,4 +1834,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 91 "../../../LINUX_GCC_MAKE/FOLDER_3_LEXER_PARSER_CodeGen/CodeGen.lex"
+#line 98 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex"
