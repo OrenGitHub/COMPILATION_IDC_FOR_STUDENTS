@@ -214,6 +214,14 @@
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_08_Another_Array_Boundaries_Checks.txt" />
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_09_BadMerge_Lists.txt" />
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_10_BubbleSort.txt" />
+    <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\AST_Graph.txt" />
+    <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\Interference_Graph.txt" />
+    <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\IR_Graph.txt" />
+    <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\Liveness_Analysis.txt" />
+    <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\PseudoAsm.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\FOLDER_10_OUTPUT_ASM\Output.s" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

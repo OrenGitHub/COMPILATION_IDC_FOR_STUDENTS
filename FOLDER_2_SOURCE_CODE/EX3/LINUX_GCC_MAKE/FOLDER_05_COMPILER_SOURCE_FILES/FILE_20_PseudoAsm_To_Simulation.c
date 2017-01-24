@@ -42,9 +42,7 @@ string Temporary_Or_Register(PSEUDO_MIPS_ASM_AST_Var var)
 
 	if (var->type == TEMPORARY_VAR)
 	{
-		//strcpy(temp_or_register,"Temp_");
-		sprintf(temp_or_register,"Temp_%s",var->u.temp,temp_buffer);
-		//strcpy(temp_or_register+strlen("Temp_"),itoa(var->u.temp,temp_buffer,10));
+		sprintf(temp_or_register,"Temp_%d",var->u.temp);
 	}
 	if (var->type == REGISTER_VAR)
 	{
