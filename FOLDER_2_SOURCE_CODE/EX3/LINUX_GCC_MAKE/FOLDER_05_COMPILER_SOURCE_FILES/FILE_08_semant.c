@@ -13,12 +13,12 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "types.h"
-#include "env.h"
-#include "semant.h"
-#include "symbol.h"
-#include "absyn.h"
-#include "errormsg.h"
+#include "FILE_02_symbol.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_06_StarKist_AST.h"
+#include "FILE_08_semant.h"
+#include "FILE_10_SymbolTableEntry.h"
+#include "FILE_11_types.h"
 
 /**************************/
 /* FUNCTIONS DECLARATIONS */
@@ -253,7 +253,6 @@ Ty_fieldList PrepareFieldsTypeList(S_table tenv,A_fieldList fields)
 
 void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 {
-	Ty_ty type;
 	S_table temp_env;
 	S_symbol field_name=NULL;
 	A_fieldList fields = NULL;

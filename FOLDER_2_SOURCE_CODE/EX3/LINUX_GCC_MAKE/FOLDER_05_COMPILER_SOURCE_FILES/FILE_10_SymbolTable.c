@@ -11,8 +11,8 @@
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "symbol.h"
-#include "SymbolTable.h"
+#include "FILE_02_symbol.h"
+#include "FILE_10_SymbolTable.h"
 
 /********************/
 /* New Symbol Table */

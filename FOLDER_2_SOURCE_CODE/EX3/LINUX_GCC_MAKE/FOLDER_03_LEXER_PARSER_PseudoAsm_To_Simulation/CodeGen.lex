@@ -9,9 +9,9 @@
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "util.h"
-#include "PSEUDO_MIPS_ASM_AST_errormsg.h"
-#include "PSEUDO_MIPS_ASM_AST.h"
+#include "FILE_01_util.h"
+#include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 #include "FILE_18_PseudoAsm_To_Simulation_Parser.h"
 
 int PSEUDO_MIPS_ASM_AST_charPos=1;
@@ -37,10 +37,10 @@ void PSEUDO_MIPS_ASM_AST_adjust(void)
 \t										{PSEUDO_MIPS_ASM_AST_adjust(); continue;}
 "main:"									{PSEUDO_MIPS_ASM_AST_adjust(); continue;}
 \n										{PSEUDO_MIPS_ASM_AST_adjust(); PSEUDO_MIPS_ASM_AST_EM_newline(); printf("\n"); continue;}
-li" "$v0,1"\n\n\t"syscall		{PSEUDO_MIPS_ASM_AST_adjust(); printf("PRINT INT");return PRINT_INT;}
-li" "$v0,9"\n\n\t"syscall		{PSEUDO_MIPS_ASM_AST_adjust(); printf("ALLOCATE");return ALLOCATE;}
-li" "$v0,11"\n\n\t"syscall		{PSEUDO_MIPS_ASM_AST_adjust(); printf("PRINT_CHAR");return PRINT_CHAR;}
-li" "$v0,10"\n\n\t"syscall		{PSEUDO_MIPS_ASM_AST_adjust(); printf("EXIT");   return EXIT;}
+li" "$v0,1"\n\n\t"syscall				{PSEUDO_MIPS_ASM_AST_adjust(); printf("PRINT INT");return PRINT_INT;}
+li" "$v0,9"\n\n\t"syscall				{PSEUDO_MIPS_ASM_AST_adjust(); printf("ALLOCATE");return ALLOCATE;}
+li" "$v0,11"\n\n\t"syscall				{PSEUDO_MIPS_ASM_AST_adjust(); printf("PRINT_CHAR");return PRINT_CHAR;}
+li" "$v0,10"\n\n\t"syscall				{PSEUDO_MIPS_ASM_AST_adjust(); printf("EXIT");   return EXIT;}
 ","										{PSEUDO_MIPS_ASM_AST_adjust(); printf(", ");     return COMMA;}
 ":"										{PSEUDO_MIPS_ASM_AST_adjust(); printf(":");      return COLON;}
 lw										{PSEUDO_MIPS_ASM_AST_adjust(); printf("LOAD ");  return LOAD;}

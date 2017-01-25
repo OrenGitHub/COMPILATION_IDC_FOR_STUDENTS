@@ -11,18 +11,19 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h"
+#include "FILE_06_StarKist_AST.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_08_semant.h"
+#include "FILE_12_IR.h"
+#include "FILE_13_IR_tree.h"
+#include "FILE_15_Temporaries_and_Labels.h"
 #include "asm.h"
-#include "IR.h"
-#include "util.h"
-#include "tree.h"
-#include "symbol.h"
-#include "semant.h"
-#include "absyn.h"
-#include "errormsg.h"
 #include "parse.h"
-#include "Liveness_Analysis.h"
-#include "Register_Allocation.h"
-#include "Pseudo_Assembley_To_Simulation.h"
+#include "FILE_20_PseudoAsm_To_Simulation.h"
+#include "FILE_21_Liveness_Analysis.h"
+#include "FILE_25_RegAlloc.h"
 #include "Write_Assembley_Output_Filename.h"
 
 /***************/

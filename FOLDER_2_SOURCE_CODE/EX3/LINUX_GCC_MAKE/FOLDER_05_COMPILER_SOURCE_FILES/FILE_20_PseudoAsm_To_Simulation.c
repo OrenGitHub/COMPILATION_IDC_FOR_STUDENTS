@@ -12,12 +12,12 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "temp.h"
-#include "absyn.h"
+#include "FILE_01_util.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_06_StarKist_AST.h"
+#include "FILE_15_Temporaries_and_Labels.h"
 #include "parse.h"
 #include "frame.h"
-#include "errormsg.h"
 
 #define MAX_NAME_LENGTH_OF_TEMPORARY_OR_REGISTER 16
 /********************/
@@ -38,7 +38,6 @@ int indexGlobal=0;
 string Temporary_Or_Register(PSEUDO_MIPS_ASM_AST_Var var)
 {
 	string temp_or_register = (string) malloc(MAX_NAME_LENGTH_OF_TEMPORARY_OR_REGISTER);
-	char temp_buffer[MAX_NAME_LENGTH_OF_TEMPORARY_OR_REGISTER];
 
 	if (var->type == TEMPORARY_VAR)
 	{

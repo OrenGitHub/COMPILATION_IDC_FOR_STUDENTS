@@ -10,9 +10,9 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
+#include "FILE_01_util.h"
+#include "FILE_22_RegAlloc_ErrorMsg.h"
 #include "FILE_24_RegAlloc_Parser.h"
-#include "TEMPS_TO_REGS_errormsg.h"
 
 /************************/
 /* EXTERNAL DEFINITIONS */

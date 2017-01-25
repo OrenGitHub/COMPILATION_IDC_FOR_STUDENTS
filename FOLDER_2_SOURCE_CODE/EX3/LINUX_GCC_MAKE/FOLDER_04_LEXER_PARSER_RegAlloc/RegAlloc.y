@@ -1,9 +1,16 @@
 %{
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
 #include <stdio.h>
 #include <stdlib.h>
-#include "util.h"
-#include "TEMPS_TO_REGS_errormsg.h"
-/* #include "RegAllocParser.h" */
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
+#include "FILE_01_util.h"
+#include "FILE_22_RegAlloc_ErrorMsg.h"
+/* #include "FILE_24_RegAlloc_Parser.h" */
 
 #define alloca malloc
 

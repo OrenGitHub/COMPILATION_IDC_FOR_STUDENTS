@@ -17,10 +17,10 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "symbol.h"
-#include "temp.h"
-#include "table.h"
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h"
+#include "FILE_09_GenericTable.h"
+#include "FILE_15_Temporaries_and_Labels.h"
 
 /***************/
 /* DEFINITIONS */

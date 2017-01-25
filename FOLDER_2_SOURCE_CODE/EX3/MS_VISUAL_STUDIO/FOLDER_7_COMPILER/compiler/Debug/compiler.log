@@ -1,1 +1,69 @@
-﻿  compiler.vcxproj -> C:\Users\Oren Ish Shalom\GIT\COMPILATION_IDC_FOR_STUDENTS\FOLDER_2_SOURCE_CODE\EX3\MS_VISUAL_STUDIO\FOLDER_7_COMPILER\compiler\Debug\compiler.exe
+﻿  FILE_24_RegAlloc_Parser.c
+  FILE_23_RegAlloc_Lexer.c
+../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex(53): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'char *'
+../../../LINUX_GCC_MAKE/FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.lex(64): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'char *'
+../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_23_RegAlloc_Lexer.c(1321): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: see declaration of 'fileno'
+  FILE_18_PseudoAsm_To_Simulation_Parser.c
+  FILE_17_PseudoAsm_To_Simulation_Lexer.c
+../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex(83): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_17_PseudoAsm_To_Simulation_Lexer.c(1545): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: see declaration of 'fileno'
+  FILE_05_StarKist_Parser.c
+  FILE_04_StarKist_Lexer.c
+../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_04_StarKist_Lexer.c(1517): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: see declaration of 'fileno'
+  Write_Assembley_Output_File.c
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\write_assembley_output_file.c(37): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  parse.c
+  MIPS_frame.c
+  main.c
+  FILE_25_RegAlloc.c
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_25_regalloc.c(60): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_25_regalloc.c(81): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+  FILE_22_RegAlloc_ErrorMsg.c
+  FILE_21_Liveness_Analysis.c
+  FILE_20_PseudoAsm_To_Simulation.c
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_20_pseudoasm_to_simulation.c(44): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_20_pseudoasm_to_simulation.c(48): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_20_pseudoasm_to_simulation.c(276): warning C4129: '%': unrecognized character escape sequence
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_20_pseudoasm_to_simulation.c(280): warning C4129: '%': unrecognized character escape sequence
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_20_pseudoasm_to_simulation.c(329): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  FILE_19_PseudoAsm_To_Simulation_AST.c
+  FILE_16_PseudoAsm_To_Simulation_ErrorMsg.c
+  FILE_16_CodeGen.c
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_16_codegen.c(280): warning C4101: 'arg': unreferenced local variable
+  FILE_15_Temporaries_and_Labels.c
+  FILE_14_IR_print.c
+  FILE_13_IR_tree.c
+  Generating Code...
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_16_codegen.c(549): warning C4715: 'MIPS_ASM_CodeGeneration_Function': not all control paths return a value
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_16_codegen.c(570): warning C4715: 'MIPS_ASM_codeGeneration': not all control paths return a value
+  Compiling...
+  FILE_12_IR.c
+  FILE_11_Types.c
+  FILE_10_SymbolTableEntry.c
+  FILE_10_SymbolTable.c
+  FILE_09_GenericTable.c
+  FILE_08_semant.c
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_08_semant.c(684): warning C4101: 'type': unreferenced local variable
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_08_semant.c(685): warning C4101: 'fieldList': unreferenced local variable
+  FILE_07_StarKist_AST_print.c
+  FILE_06_StarKist_AST.c
+  FILE_03_StarKist_ErrorMsg.c
+  FILE_02_symbol.c
+  FILE_01_util.c
+  Generating Code...
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_08_semant.c(714): warning C4715: 'SEM_transVarExp': not all control paths return a value
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_08_semant.c(1075): warning C4715: 'SEM_transExp': not all control paths return a value
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(445): warning C4715: 'IR_transOpExp': not all control paths return a value
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(626): warning C4715: 'IR_transVarExp': not all control paths return a value
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(867): warning C4715: 'IR_transExp': not all control paths return a value
+  compiler.vcxproj -> C:\Users\Oren Ish Shalom\GIT\COMPILATION_IDC_FOR_STUDENTS\FOLDER_2_SOURCE_CODE\EX3\MS_VISUAL_STUDIO\FOLDER_7_COMPILER\compiler\Debug\compiler.exe

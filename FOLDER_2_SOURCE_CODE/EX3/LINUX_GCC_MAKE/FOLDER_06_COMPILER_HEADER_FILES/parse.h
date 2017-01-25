@@ -4,8 +4,8 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "absyn.h"
-#include "PSEUDO_MIPS_ASM_AST.h"
+#include "FILE_06_Starkist_AST.h"
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
 A_exp Tiger_Program_To_AST(string Tiger_Program_Filename);
 PSEUDO_MIPS_ASM_AST_expList Pseudo_Assembley_To_AST(string Pseudo_Assembley_Filename);
