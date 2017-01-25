@@ -64,6 +64,6 @@ c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\e
 c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_08_semant.c(714): warning C4715: 'SEM_transVarExp': not all control paths return a value
 c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_08_semant.c(1075): warning C4715: 'SEM_transExp': not all control paths return a value
 c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(445): warning C4715: 'IR_transOpExp': not all control paths return a value
-c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(626): warning C4715: 'IR_transVarExp': not all control paths return a value
 c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(867): warning C4715: 'IR_transExp': not all control paths return a value
+c:\users\oren ish shalom\git\compilation_idc_for_students\folder_2_source_code\ex3\linux_gcc_make\folder_05_compiler_source_files\file_12_ir.c(626): warning C4715: 'IR_transVarExp': not all control paths return a value
   compiler.vcxproj -> C:\Users\Oren Ish Shalom\GIT\COMPILATION_IDC_FOR_STUDENTS\FOLDER_2_SOURCE_CODE\EX3\MS_VISUAL_STUDIO\FOLDER_7_COMPILER\compiler\Debug\compiler.exe
