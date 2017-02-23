@@ -18,13 +18,13 @@
 /* INCLUDE FILES */
 /*****************/
 #include "frame.h"
-#include "tree.h"
-#include "types.h"
-#include "env.h"
-#include "semant.h"
-#include "symbol.h"
-#include "absyn.h"
-#include "errormsg.h"
+#include "FILE_02_symbol.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_06_StarKist_AST.h"
+#include "FILE_08_semant.h"
+#include "FILE_10_SymbolTableEntry.h"
+#include "FILE_11_Types.h"
+#include "FILE_13_IR_tree.h"
 
 /********************/
 /* GLOBAL VARIABLES */

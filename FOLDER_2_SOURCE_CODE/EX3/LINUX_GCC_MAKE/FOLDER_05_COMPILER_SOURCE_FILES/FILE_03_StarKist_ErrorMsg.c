@@ -17,8 +17,8 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "errormsg.h"
+#include "FILE_01_util.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
 
 bool anyErrors= FALSE;
 

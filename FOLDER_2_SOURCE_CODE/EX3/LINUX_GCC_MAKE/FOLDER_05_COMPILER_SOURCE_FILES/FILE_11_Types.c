@@ -10,10 +10,10 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "tree.h"
-#include "symbol.h"
-#include "types.h"
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h"
+#include "FILE_11_types.h"
+#include "FILE_13_IR_tree.h"
 
 static struct Ty_ty_ tynil = {Ty_nil};
 Ty_ty Ty_Nil(void) {return &tynil;}

@@ -18,11 +18,11 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "PSEUDO_MIPS_ASM_AST.h"
-#include "errormsg.h"
 #include "parse.h"
-#include "temp.h"
+#include "FILE_01_util.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_15_Temporaries_and_Labels.h"
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
 /***************/
 /* DEFINITIONS */

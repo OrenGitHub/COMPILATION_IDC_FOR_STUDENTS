@@ -1,0 +1,52 @@
+#line 1 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
+#include "FILE_01_util.h"
+#include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+/* #include "FILE_18_PseudoAsm_To_Simulation_Parser.h" */
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
+
+#define alloca malloc
+
+#define yyparse zzparse
+#define yylex zzlex
+#define yyerror zzerror
+#define yylval zzlval
+#define yychar zzchar
+#define yydebug zzdebug
+#define yynerrs zznerrs
+
+int zzlex(void); /* function prototype */
+
+PSEUDO_MIPS_ASM_AST_expList PSEUDO_MIPS_ASM_AST_root;
+
+void zzerror(char *s)
+{
+	PSEUDO_MIPS_ASM_AST_EM_error(PSEUDO_MIPS_ASM_AST_EM_tokPos, "%s", s);
+}
+
+#line 36 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+typedef union
+{
+	union
+	{
+		int								ival;
+		int								temp_serial_number;
+		float							fval;
+		string							sval;
+		string							register_name;
+		PSEUDO_MIPS_ASM_AST_Var			var;
+		PSEUDO_MIPS_ASM_AST_Label_Type_	label;
+		PSEUDO_MIPS_ASM_AST_exp			exp;
+		PSEUDO_MIPS_ASM_AST_expList		expList;
+	}
+	gval;
+} YYSTYPE;

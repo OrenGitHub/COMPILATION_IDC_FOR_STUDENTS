@@ -17,8 +17,8 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "TEMPS_TO_REGS_errormsg.h"
+#include "FILE_01_util.h"
+#include "FILE_22_RegAlloc_ErrorMsg.h"
 
 bool TEMPS_TO_REGS_anyErrors= FALSE;
 

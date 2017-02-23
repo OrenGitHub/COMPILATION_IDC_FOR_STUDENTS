@@ -11,11 +11,11 @@
 /* INCLUDE FILES */
 /*****************/
 #include "parse.h"
-#include "symbol.h"
-#include "util.h"
-#include "absyn.h"
-#include "errormsg.h"
-#include "PSEUDO_MIPS_ASM_AST_errormsg.h"
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h"
+#include "FILE_06_StarKist_AST.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
 
 /************************/
 /* Tiger_Program_To_AST */

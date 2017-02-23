@@ -1,9 +1,16 @@
 %{
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
 #include <stdio.h>
 #include <stdlib.h>
-#include "util.h"
-#include "PSEUDO_MIPS_ASM_AST_errormsg.h"
-#include "PSEUDO_MIPS_ASM_AST.h"
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
+#include "FILE_01_util.h"
+#include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
 #define alloca malloc
 

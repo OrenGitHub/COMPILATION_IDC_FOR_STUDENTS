@@ -10,8 +10,8 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "env.h"
-#include "SymbolTable.h"
+#include "FILE_10_SymbolTableEntry.h"
+#include "FILE_10_SymbolTable.h"
 
 /***************/
 /* E_base_tenv */

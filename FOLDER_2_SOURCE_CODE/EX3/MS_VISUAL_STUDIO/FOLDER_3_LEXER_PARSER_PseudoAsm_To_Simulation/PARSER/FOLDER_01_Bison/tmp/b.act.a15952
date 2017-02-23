@@ -1,0 +1,144 @@
+
+  switch (yyn) {
+
+case 1:
+#line 98 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{PSEUDO_MIPS_ASM_AST_root = yyvsp[0].gval.expList;;
+    break;}
+case 2:
+#line 100 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.expList = PSEUDO_MIPS_ASM_AST_ExpList(yyvsp[-1].gval.exp,yyvsp[0].gval.expList);;
+    break;}
+case 3:
+#line 101 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.expList = PSEUDO_MIPS_ASM_AST_ExpList(yyvsp[0].gval.exp,NULL);;
+    break;}
+case 4:
+#line 103 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 5:
+#line 104 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 6:
+#line 105 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 7:
+#line 106 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 8:
+#line 107 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 9:
+#line 108 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 10:
+#line 109 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 11:
+#line 110 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_PRINT_INT();;
+    break;}
+case 12:
+#line 111 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_PRINT_CHAR();;
+    break;}
+case 13:
+#line 112 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_ALLOCATE();;
+    break;}
+case 14:
+#line 113 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_EXIT();;
+    break;}
+case 15:
+#line 115 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_LABEL(yyvsp[-1].gval.label);;
+    break;}
+case 16:
+#line 117 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_JUMP_LABEL(yyvsp[0].gval.label);;
+    break;}
+case 17:
+#line 118 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_JUMP_REGISTER(yyvsp[0].gval.sval);;
+    break;}
+case 18:
+#line 119 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK(yyvsp[0].gval.label.name);;
+    break;}
+case 19:
+#line 121 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BEQ( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
+    break;}
+case 20:
+#line 122 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BNE( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
+    break;}
+case 21:
+#line 123 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BGT( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
+    break;}
+case 22:
+#line 124 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BLT( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
+    break;}
+case 23:
+#line 125 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BGE( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
+    break;}
+case 24:
+#line 126 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BLE( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
+    break;}
+case 25:
+#line 128 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_LOAD(yyvsp[-5].gval.var,yyvsp[-1].gval.var,yyvsp[-3].gval.ival);;
+    break;}
+case 26:
+#line 129 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_LOAD_IMMEDIATE(yyvsp[-2].gval.var,yyvsp[0].gval.ival);;
+    break;}
+case 27:
+#line 131 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_STORE(yyvsp[-5].gval.var,yyvsp[-1].gval.var,yyvsp[-3].gval.ival);;
+    break;}
+case 28:
+#line 133 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_ADD(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
+    break;}
+case 29:
+#line 134 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_SUB(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
+    break;}
+case 30:
+#line 135 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_MUL(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
+    break;}
+case 31:
+#line 136 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_DIV(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
+    break;}
+case 32:
+#line 137 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_ADD_IMMEDIATE(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.ival);;
+    break;}
+case 33:
+#line 139 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.exp = PSEUDO_MIPS_ASM_AST_MOVE(yyvsp[-2].gval.var,yyvsp[0].gval.var);;
+    break;}
+case 34:
+#line 141 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.var = PSEUDO_MIPS_ASM_AST_TEMP_VAR(yyvsp[0].gval.temp_serial_number);;
+    break;}
+case 35:
+#line 142 "../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+{yyval.gval.var = PSEUDO_MIPS_ASM_AST_REGISTER_VAR(yyvsp[0].gval.register_name);;
+    break;}
+}

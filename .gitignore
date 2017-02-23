@@ -1,2 +1,9 @@
 *.exe
+**/Debug/*
+*.tlog
+*.log
+*.ilk
+*.idb
+*.sdf
+*.suo
 

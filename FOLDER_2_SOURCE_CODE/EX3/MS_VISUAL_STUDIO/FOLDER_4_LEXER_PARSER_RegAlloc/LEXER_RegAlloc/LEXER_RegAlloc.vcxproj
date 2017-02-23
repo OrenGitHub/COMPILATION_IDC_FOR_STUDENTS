@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_0_Flex/HEADER_FILES</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_00_Flex/HEADER_FILES</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -143,31 +143,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\ccl.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\dfa.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\ecs.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\gen.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\initscan.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\main.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\misc.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\nfa.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\parse.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\skel.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\sym.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\tblcmp.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\SOURCE_FILES\yylex.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\ccl.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\dfa.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\ecs.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\gen.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\initscan.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\main.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\misc.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\nfa.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\parse.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\skel.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\sym.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\tblcmp.c" />
+    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\SOURCE_FILES\yylex.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\config.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\errormsg.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\flexdef.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\FlexLexer.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\parse.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\tokens.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_0_Flex\HEADER_FILES\version.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\config.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\errormsg.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\flexdef.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\FlexLexer.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\parse.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\tokens.h" />
+    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_00_Flex\HEADER_FILES\version.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\LINUX_GCC_MAKE\FOLDER_4_LEXER_PARSER_RegisterAllocation\RegAlloc.lex" />
+    <None Include="..\..\..\LINUX_GCC_MAKE\FOLDER_04_LEXER_PARSER_RegAlloc\RegAlloc.lex" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

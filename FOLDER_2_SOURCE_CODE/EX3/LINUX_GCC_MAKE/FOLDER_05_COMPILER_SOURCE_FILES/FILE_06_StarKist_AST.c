@@ -17,9 +17,9 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "util.h"
-#include "absyn.h"
-#include "symbol.h"
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h"
+#include "FILE_06_StarKist_AST.h"
 
 /********************/
 /* GLOBAL VARIABLES */

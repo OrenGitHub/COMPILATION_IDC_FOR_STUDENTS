@@ -1,72 +1,43 @@
 let
 
-	type IntList = {head:int, tail:IntList}
-
-	var a:IntList := IntList{1,nil}
-	var b:IntList := IntList{3,nil}
-	var c:IntList := IntList{5,nil}
-	var d:IntList := IntList{7,nil}
-
-	var A:IntList := IntList{2,nil}
-	var B:IntList := IntList{4,nil}
-	var C:IntList := IntList{6,nil}
-	var D:IntList := IntList{8,nil}
-
-
-	function Merge(a:IntList, A:IntList):IntList =
+	function PrintPrimesInRange(start:int,finish:int) =
 
 	let
 
-		var L:IntList := nil
-		var element:int := 0
+		function IsPrime(p:int) : int =
+
+		let
+
+			var returnedValue := 1
+
+		in
+		(
+			for i := 2 to p-1 do
+
+				for j := 2 to p-1 do
+
+					if (i*j = p) then
+					
+						returnedValue := 0;
+
+			returnedValue
+		)
+
+		end
 
 	in
 
-	(
-		if a=nil then L := A;
-		if A=nil then L := a;
+		for i := start to finish do
 
-		if a != nil then
-		(
-			if A != nil then 
-			(
-				if (a->head <= A->head) then
-				(
-					element := a->head;
-					L := IntList{element,Merge(a->tail,A)}
-				);
-				
-				if (a->head >  A->head) then
-				(
-					element := A->head;
-					L := IntList{element,Merge(a,A->tail)}
-				)
-			)
-		);
+			if IsPrime(i) then
 
-		L
-	)
+				PrintInt(i)
 
 	end
 
-	function PrintIntList(L:IntList):void =
-
-	if L != nil then
-	(	
-		PrintInt(L->head);
-		PrintIntList(L->tail)
-	)
 
 in
 
-	(
-		c->tail := d;
-		b->tail := c;
-		a->tail := b;
-		C->tail := D;
-		B->tail := C;
-		A->tail := B;
-		PrintIntList(Merge(a,A))
-	)
+	PrintPrimesInRange(2,100)
 
 end
