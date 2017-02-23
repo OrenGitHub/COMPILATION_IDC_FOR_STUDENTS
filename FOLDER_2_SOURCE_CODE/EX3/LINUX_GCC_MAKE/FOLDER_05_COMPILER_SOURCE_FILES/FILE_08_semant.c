@@ -18,7 +18,7 @@
 #include "FILE_06_StarKist_AST.h"
 #include "FILE_08_semant.h"
 #include "FILE_10_SymbolTableEntry.h"
-#include "FILE_11_types.h"
+#include "FILE_11_Types.h"
 
 /**************************/
 /* FUNCTIONS DECLARATIONS */

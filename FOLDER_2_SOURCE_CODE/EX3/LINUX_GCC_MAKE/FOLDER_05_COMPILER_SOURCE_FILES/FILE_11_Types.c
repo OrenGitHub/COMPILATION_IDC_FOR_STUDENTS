@@ -12,7 +12,7 @@
 /*****************/
 #include "FILE_01_util.h"
 #include "FILE_02_symbol.h"
-#include "FILE_11_types.h"
+#include "FILE_11_Types.h"
 #include "FILE_13_IR_tree.h"
 
 static struct Ty_ty_ tynil = {Ty_nil};

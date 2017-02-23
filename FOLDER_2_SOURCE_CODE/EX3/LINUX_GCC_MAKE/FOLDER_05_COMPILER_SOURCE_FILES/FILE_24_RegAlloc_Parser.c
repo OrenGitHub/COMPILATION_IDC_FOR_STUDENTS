@@ -23,11 +23,18 @@
 
 #line 1 "./FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.y"
 
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
 #include <stdio.h>
 #include <stdlib.h>
-#include "util.h"
-#include "TEMPS_TO_REGS_errormsg.h"
-/* #include "RegAllocParser.h" */
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
+#include "FILE_01_util.h"
+#include "FILE_22_RegAlloc_ErrorMsg.h"
+/* #include "FILE_24_RegAlloc_Parser.h" */
 
 #define alloca malloc
 
@@ -46,7 +53,7 @@ void ggerror(char *s)
 	TEMPS_TO_REGS_EM_error(TEMPS_TO_REGS_EM_tokPos, "%s", s);
 }
 
-#line 26 "./FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.y"
+#line 33 "./FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.y"
 typedef union
 {
 	union
@@ -115,7 +122,7 @@ static const short yyrhs[] = {     3,
 
 #if YYDEBUG != 0
 static const short yyrline[] = { 0,
-    51
+    58
 };
 #endif
 
@@ -856,7 +863,7 @@ yyerrhandle:
   yystate = yyn;
   goto yynewstate;
 }
-#line 53 "./FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.y"
+#line 60 "./FOLDER_04_LEXER_PARSER_RegAlloc/RegAlloc.y"
 
 
 	

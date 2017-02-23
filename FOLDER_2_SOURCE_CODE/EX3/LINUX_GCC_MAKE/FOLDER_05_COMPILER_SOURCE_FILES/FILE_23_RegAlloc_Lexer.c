@@ -400,12 +400,12 @@ char *yytext;
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
-#include "util.h"
 
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "TEMPS_TO_REGS_errormsg.h"
+#include "FILE_01_util.h"
+#include "FILE_22_RegAlloc_ErrorMsg.h"
 #include "FILE_24_RegAlloc_Parser.h"
 
 int TEMPS_TO_REGS_charPos=1;

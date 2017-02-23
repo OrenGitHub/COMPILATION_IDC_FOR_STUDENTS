@@ -61,10 +61,10 @@
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "util.h"
-#include "errormsg.h"
-#include "symbol.h" 
-#include "absyn.h"
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h" 
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_06_StarKist_AST.h"
 
 #define alloca malloc
 

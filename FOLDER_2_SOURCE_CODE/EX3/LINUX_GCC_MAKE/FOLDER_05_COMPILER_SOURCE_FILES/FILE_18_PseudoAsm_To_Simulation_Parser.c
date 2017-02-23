@@ -51,11 +51,18 @@
 
 #line 1 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
 #include <stdio.h>
 #include <stdlib.h>
-#include "util.h"
-#include "PSEUDO_MIPS_ASM_AST_errormsg.h"
-#include "PSEUDO_MIPS_ASM_AST.h"
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
+#include "FILE_01_util.h"
+#include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
 #define alloca malloc
 
@@ -76,7 +83,7 @@ void zzerror(char *s)
 	PSEUDO_MIPS_ASM_AST_EM_error(PSEUDO_MIPS_ASM_AST_EM_tokPos, "%s", s);
 }
 
-#line 28 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 35 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 typedef union
 {
 	union
@@ -172,10 +179,10 @@ static const short yyrhs[] = {    40,
 
 #if YYDEBUG != 0
 static const short yyrline[] = { 0,
-    98,   100,   101,   103,   104,   105,   106,   107,   108,   109,
-   110,   111,   112,   113,   115,   117,   118,   119,   121,   122,
-   123,   124,   125,   126,   128,   129,   131,   133,   134,   135,
-   136,   137,   139,   141,   142
+   105,   107,   108,   110,   111,   112,   113,   114,   115,   116,
+   117,   118,   119,   120,   122,   124,   125,   126,   128,   129,
+   130,   131,   132,   133,   135,   136,   138,   140,   141,   142,
+   143,   144,   146,   148,   149
 };
 #endif
 
@@ -775,143 +782,143 @@ yyreduce:
   switch (yyn) {
 
 case 1:
-#line 98 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 105 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {PSEUDO_MIPS_ASM_AST_root = yyvsp[0].gval.expList;;
     break;}
 case 2:
-#line 100 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 107 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.expList = PSEUDO_MIPS_ASM_AST_ExpList(yyvsp[-1].gval.exp,yyvsp[0].gval.expList);;
     break;}
 case 3:
-#line 101 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 108 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.expList = PSEUDO_MIPS_ASM_AST_ExpList(yyvsp[0].gval.exp,NULL);;
     break;}
 case 4:
-#line 103 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 110 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 5:
-#line 104 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 111 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 6:
-#line 105 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 112 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 7:
-#line 106 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 113 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 8:
-#line 107 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 114 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 9:
-#line 108 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 115 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 10:
-#line 109 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 116 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = yyvsp[0].gval.exp;;
     break;}
 case 11:
-#line 110 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 117 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_PRINT_INT();;
     break;}
 case 12:
-#line 111 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 118 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_PRINT_CHAR();;
     break;}
 case 13:
-#line 112 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 119 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_ALLOCATE();;
     break;}
 case 14:
-#line 113 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 120 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_EXIT();;
     break;}
 case 15:
-#line 115 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 122 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_LABEL(yyvsp[-1].gval.label);;
     break;}
 case 16:
-#line 117 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 124 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_JUMP_LABEL(yyvsp[0].gval.label);;
     break;}
 case 17:
-#line 118 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 125 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_JUMP_REGISTER(yyvsp[0].gval.sval);;
     break;}
 case 18:
-#line 119 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 126 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK(yyvsp[0].gval.label.name);;
     break;}
 case 19:
-#line 121 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 128 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BEQ( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
     break;}
 case 20:
-#line 122 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 129 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BNE( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
     break;}
 case 21:
-#line 123 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 130 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BGT( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
     break;}
 case 22:
-#line 124 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 131 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BLT( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
     break;}
 case 23:
-#line 125 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 132 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BGE( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
     break;}
 case 24:
-#line 126 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 133 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_BLE( yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.label );;
     break;}
 case 25:
-#line 128 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 135 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_LOAD(yyvsp[-5].gval.var,yyvsp[-1].gval.var,yyvsp[-3].gval.ival);;
     break;}
 case 26:
-#line 129 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 136 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_LOAD_IMMEDIATE(yyvsp[-2].gval.var,yyvsp[0].gval.ival);;
     break;}
 case 27:
-#line 131 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 138 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_STORE(yyvsp[-5].gval.var,yyvsp[-1].gval.var,yyvsp[-3].gval.ival);;
     break;}
 case 28:
-#line 133 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 140 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_ADD(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
     break;}
 case 29:
-#line 134 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 141 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_SUB(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
     break;}
 case 30:
-#line 135 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 142 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_MUL(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
     break;}
 case 31:
-#line 136 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 143 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_DIV(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.var);;
     break;}
 case 32:
-#line 137 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 144 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_ADD_IMMEDIATE(yyvsp[-4].gval.var,yyvsp[-2].gval.var,yyvsp[0].gval.ival);;
     break;}
 case 33:
-#line 139 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 146 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.exp = PSEUDO_MIPS_ASM_AST_MOVE(yyvsp[-2].gval.var,yyvsp[0].gval.var);;
     break;}
 case 34:
-#line 141 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 148 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.var = PSEUDO_MIPS_ASM_AST_TEMP_VAR(yyvsp[0].gval.temp_serial_number);;
     break;}
 case 35:
-#line 142 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 149 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 {yyval.gval.var = PSEUDO_MIPS_ASM_AST_REGISTER_VAR(yyvsp[0].gval.register_name);;
     break;}
 }
@@ -1112,7 +1119,7 @@ yyerrhandle:
   yystate = yyn;
   goto yynewstate;
 }
-#line 144 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
+#line 151 "./FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y"
 
 
 	

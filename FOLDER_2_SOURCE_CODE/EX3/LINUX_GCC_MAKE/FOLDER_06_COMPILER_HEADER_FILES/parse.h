@@ -4,7 +4,7 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
-#include "FILE_06_Starkist_AST.h"
+#include "FILE_06_StarKist_AST.h"
 #include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
 A_exp Tiger_Program_To_AST(string Tiger_Program_Filename);

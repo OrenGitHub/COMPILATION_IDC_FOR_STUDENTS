@@ -445,9 +445,9 @@ char *yytext;
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "util.h"
-#include "absyn.h"
-#include "errormsg.h"
+#include "FILE_01_util.h"
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_06_StarKist_AST.h"
 #include "FILE_05_StarKist_Parser.h"
 
 int charPos=1;

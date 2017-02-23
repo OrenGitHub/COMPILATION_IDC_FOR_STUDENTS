@@ -488,9 +488,9 @@ char *yytext;
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "util.h"
-#include "PSEUDO_MIPS_ASM_AST_errormsg.h"
-#include "PSEUDO_MIPS_ASM_AST.h"
+#include "FILE_01_util.h"
+#include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+#include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 #include "FILE_18_PseudoAsm_To_Simulation_Parser.h"
 
 int PSEUDO_MIPS_ASM_AST_charPos=1;
