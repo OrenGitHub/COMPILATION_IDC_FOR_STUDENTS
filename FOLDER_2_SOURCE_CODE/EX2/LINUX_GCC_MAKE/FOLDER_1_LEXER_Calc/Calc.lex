@@ -53,6 +53,12 @@ void adjust(void)
 WHITE_SPACE		" "|\t
 LINE_TERMINATOR	\n
 
+/***************/
+/* PARENTHESES */
+/***************/
+LPAREN	"("
+RPAREN	")"
+
 /**********/
 /* BINOPS */
 /**********/
@@ -75,6 +81,8 @@ INT				"0"|({NON_ZERO_DIGIT}({DIGIT}*))|"-"{DIGIT}
 %%
 {WHITE_SPACE}		{adjust(); continue;}
 {LINE_TERMINATOR}	{adjust(); Calc_ErrorMsg_Newline(); continue;}
+{LPAREN}			{adjust(); Calc_ErrorMsg_Log("("); return LPAREN;}
+{RPAREN}			{adjust(); Calc_ErrorMsg_Log(")"); return RPAREN;}
 {PLUS}				{adjust(); Calc_ErrorMsg_Log("+"); return PLUS;}
 {MINUS}				{adjust(); Calc_ErrorMsg_Log("-"); return MINUS;}
 {TIMES}				{adjust(); Calc_ErrorMsg_Log("*"); return TIMES;}

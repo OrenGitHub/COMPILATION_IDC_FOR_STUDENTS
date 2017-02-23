@@ -301,12 +301,12 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 8
-#define YY_END_OF_BUFFER 9
-static yyconst short int yy_accept[16] =
+#define YY_NUM_RULES 10
+#define YY_END_OF_BUFFER 11
+static yyconst short int yy_accept[18] =
     {   0,
-        0,    0,    9,    8,    1,    2,    5,    3,    4,    6,
-        7,    7,    7,    7,    0
+        0,    0,   11,   10,    1,    2,    3,    4,    7,    5,
+        6,    8,    9,    9,    9,    9,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -314,9 +314,9 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    4,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    5,    6,    1,    7,    1,    8,    9,   10,   10,
-       10,   10,   10,   10,   10,   10,   10,    1,    1,    1,
+        1,    4,    1,    1,    1,    1,    1,    1,    1,    5,
+        6,    7,    8,    1,    9,    1,   10,   11,   12,   12,
+       12,   12,   12,   12,   12,   12,   12,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -341,35 +341,36 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[11] =
-    {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    2
-    } ;
-
-static yyconst short int yy_base[18] =
-    {   0,
-        0,    0,   13,   14,   14,   14,   14,   14,    0,   14,
-       14,    0,   14,    0,   14,   10,    9
-    } ;
-
-static yyconst short int yy_def[18] =
-    {   0,
-       15,    1,   15,   15,   15,   15,   15,   15,   16,   15,
-       15,   17,   15,   17,    0,   15,   15
-    } ;
-
-static yyconst short int yy_nxt[25] =
-    {   0,
-        4,    5,    6,    5,    7,    8,    9,   10,   11,   12,
-       14,   13,   15,    3,   15,   15,   15,   15,   15,   15,
-       15,   15,   15,   15
-    } ;
-
-static yyconst short int yy_chk[25] =
+static yyconst int yy_meta[13] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-       17,   16,    3,   15,   15,   15,   15,   15,   15,   15,
-       15,   15,   15,   15
+        2,    2
+    } ;
+
+static yyconst short int yy_base[20] =
+    {   0,
+        0,    0,   15,   16,   16,   16,   16,   16,   16,   16,
+        0,   16,   16,    0,   16,    0,   16,   12,   11
+    } ;
+
+static yyconst short int yy_def[20] =
+    {   0,
+       17,    1,   17,   17,   17,   17,   17,   17,   17,   17,
+       18,   17,   17,   19,   17,   19,    0,   17,   17
+    } ;
+
+static yyconst short int yy_nxt[29] =
+    {   0,
+        4,    5,    6,    5,    7,    8,    9,   10,   11,   12,
+       13,   14,   16,   15,   17,    3,   17,   17,   17,   17,
+       17,   17,   17,   17,   17,   17,   17,   17
+    } ;
+
+static yyconst short int yy_chk[29] =
+    {   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,   19,   18,    3,   17,   17,   17,   17,   17,
+       17,   17,   17,   17,   17,   17,   17,   17
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -432,6 +433,9 @@ void adjust(void)
 /**********/
 /* SPACES */
 /**********/
+/***************/
+/* PARENTHESES */
+/***************/
 /**********/
 /* BINOPS */
 /**********/
@@ -441,7 +445,7 @@ void adjust(void)
 /*********/
 /* RULES */
 /*********/
-#line 445 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc_Lexer.c"
+#line 449 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc_Lexer.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -592,9 +596,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 75 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+#line 81 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
 
-#line 598 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc_Lexer.c"
+#line 602 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc_Lexer.c"
 
 	if ( yy_init )
 		{
@@ -645,13 +649,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 16 )
+				if ( yy_current_state >= 18 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 14 );
+		while ( yy_base[yy_current_state] != 16 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -679,37 +683,47 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 76 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+#line 82 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
 {adjust(); continue;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 77 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+#line 83 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
 {adjust(); Calc_ErrorMsg_Newline(); continue;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 78 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
-{adjust(); Calc_ErrorMsg_Log("+"); return PLUS;}
+#line 84 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+{adjust(); Calc_ErrorMsg_Log("("); return LPAREN;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 79 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
-{adjust(); Calc_ErrorMsg_Log("-"); return MINUS;}
+#line 85 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+{adjust(); Calc_ErrorMsg_Log(")"); return RPAREN;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 80 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
-{adjust(); Calc_ErrorMsg_Log("*"); return TIMES;}
+#line 86 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+{adjust(); Calc_ErrorMsg_Log("+"); return PLUS;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 81 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
-{adjust(); Calc_ErrorMsg_Log("/"); return DIVIDE;}
+#line 87 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+{adjust(); Calc_ErrorMsg_Log("-"); return MINUS;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 82 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+#line 88 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+{adjust(); Calc_ErrorMsg_Log("*"); return TIMES;}
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 89 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+{adjust(); Calc_ErrorMsg_Log("/"); return DIVIDE;}
+	YY_BREAK
+case 9:
+YY_RULE_SETUP
+#line 90 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
 {
 						adjust();
 						zzlval.gval.ival=atoi(zztext);
@@ -717,12 +731,12 @@ YY_RULE_SETUP
 						return INT;
 					}
 	YY_BREAK
-case 8:
+case 10:
 YY_RULE_SETUP
-#line 89 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+#line 97 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
 ECHO;
 	YY_BREAK
-#line 726 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc_Lexer.c"
+#line 740 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc_Lexer.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1012,7 +1026,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 16 )
+			if ( yy_current_state >= 18 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1047,11 +1061,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 16 )
+		if ( yy_current_state >= 18 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 15);
+	yy_is_jam = (yy_current_state == 17);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1598,4 +1612,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 89 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
+#line 97 "/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE/FOLDER_1_LEXER_Calc/Calc.lex"
