@@ -126,15 +126,12 @@ solution set, it should be written as a sum of two vector sets:
 $\{(2,-6,100)\} ~ +$ SP$(\{(1,0,1), (6,6,0)\})$.
 
 \section{Programming Assignment}
-Write a lexer and parser for the solution set.
-The exact context free grammar is missing intentionally.
-You should support row vectors with sizes = $2,3,4$.
+Write three lexers for the linear system, row operations and solution set.
+The exact context free grammar for the linear system and the solution set are missing intentionally.
+You should support linear systems with up to four rows and five columns
+(including the solution vector $b$).
+In the solution set, you should support row vectors with sizes = $2,3,4$.
 The span set size is not limited, as vectors inside it can be dependant.
-
-\subsection*{Bonus}
-Compare the given solution set to one deduced by the row operations
-and see if they agree. Whenever the sets are different,
-add a concrete vector that belongs to one set and not the other.
 
 \section{Submission Guidelines}
 Open an account on \href{https://github.com/}{GitHub}.
@@ -146,22 +143,21 @@ and then invite other team members and me as collaborators.
 My username is OrenGitHub.
 Please make sure the uppermost folder (COMPILATION) contains a text file ``IDS.text" with the IDs of all team members (one ID per line).
 Throughout the semester, you will create sub-folders EX1, EX2, etc. inside COMPILATION.
-EX1 Should include a makefile building your source to a runnable
-program called LINI.
-Please support a clean target in makefile that removes LINI.
-Also, to avoid the pollution of EX1,
-please remove all *.o files once the target is built.
-The next paragraph describes the execution of LINI.
+EX1 Should include a makefile building your source to a runnable program called Lini.
+To avoid the pollution of EX1, please remove all *.o files once the target is built.
+The next paragraph describes the execution of Lini.
 
 \paragraph{Execution parameters}
-LINI recevies $4$ input file names:
+Lini recevies $6$ input file names:
 \begin{table}[h]
 \centering
 \begin{tabular}{ l }
-  InputMatrix.txt   \\
-  RowOperations.txt \\
-  SolutionSet.txt   \\
-  CheckSummary.pdf  \\
+  Matrix.txt              \\
+  RowOperations.txt       \\
+  SolutionSet.txt         \\
+  MatrixTokens.txt        \\
+  RowOperationsTokens.txt \\
+  SolutionSetTokens.txt   \\
 \end{tabular}
 \end{table}
 
