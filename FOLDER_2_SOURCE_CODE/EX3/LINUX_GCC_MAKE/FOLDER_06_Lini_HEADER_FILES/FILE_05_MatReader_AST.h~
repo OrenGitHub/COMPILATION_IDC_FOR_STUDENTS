@@ -1,0 +1,44 @@
+#ifndef __MAT_READER_AST_H__
+#define __MAT_READER_AST_H__
+
+/*********/
+/* TYPES */
+/*********/
+typedef struct AST_Mat_		*AST_Mat;
+typedef struct AST_RowVec_	*AST_RowVec;
+typedef struct AST_Number_	*AST_Number;
+
+/*********/
+/* CTORS */
+/*********/
+AST_Mat AST_Alloc_Mat1x2(AST_RowVec R1);
+AST_Mat AST_Alloc_Mat1x3(AST_RowVec R1);
+AST_Mat AST_Alloc_Mat1x4(AST_RowVec R1);
+
+/*********/
+/* CTORS */
+/*********/
+AST_Mat AST_Alloc_Mat2x2(AST_RowVec R1,AST_RowVec R2);
+AST_Mat AST_Alloc_Mat2x3(AST_RowVec R1,AST_RowVec R2);
+AST_Mat AST_Alloc_Mat2x4(AST_RowVec R1,AST_RowVec R2);
+
+/*********/
+/* CTORS */
+/*********/
+AST_Mat AST_Alloc_Mat3x2(AST_RowVec R1,AST_RowVec R2,AST_RowVec R3);
+AST_Mat AST_Alloc_Mat3x3(AST_RowVec R1,AST_RowVec R2,AST_RowVec R3);
+AST_Mat AST_Alloc_Mat3x4(AST_RowVec R1,AST_RowVec R2,AST_RowVec R3);
+
+/*********/
+/* CTORS */
+/*********/
+AST_Mat AST_Alloc_Mat4x2(AST_RowVec R1,AST_RowVec R2,AST_RowVec R3,AST_RowVec R4);
+AST_Mat AST_Alloc_Mat4x3(AST_RowVec R1,AST_RowVec R2,AST_RowVec R3,AST_RowVec R4);
+AST_Mat AST_Alloc_Mat4x4(AST_RowVec R1,AST_RowVec R2,AST_RowVec R3,AST_RowVec R4);
+
+/*********/
+/* CTORS */
+/*********/
+AST_Number	AST_Alloc_Number(int nominator,int denominator);
+
+#endif

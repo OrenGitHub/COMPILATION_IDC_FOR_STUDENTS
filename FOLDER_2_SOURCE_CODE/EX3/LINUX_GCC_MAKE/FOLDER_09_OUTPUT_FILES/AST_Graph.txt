@@ -1,0 +1,491 @@
+digraph
+{
+graph [ordering = "out"]
+v244 [label = "LET"];
+v244 -> v196;
+v196 [label = "Dec
+List"];
+v196 -> v4;
+v4 [label = "Record Type
+Declaration
+
+IntList = "];
+v4 -> v3;
+v3 [label = "Type
+Fields"];
+v3 -> v2;
+v2 [label = "head:int"];
+v3 -> v1;
+v1 [label = "Type
+Fields"];
+v1 -> v0;
+v0 [label = "tail:IntList"];
+v196 -> v195;
+v195 [label = "Dec
+List"];
+v195 -> v10;
+v10 v10 [label = "Variable
+Declaration
+
+(a : IntList)"];
+v10 -> v9;
+v9 [label = "Allocate
+Record"];
+v195 -> v194;
+v194 [label = "Dec
+List"];
+v194 -> v16;
+v16 v16 [label = "Variable
+Declaration
+
+(b : IntList)"];
+v16 -> v15;
+v15 [label = "Allocate
+Record"];
+v194 -> v193;
+v193 [label = "Dec
+List"];
+v193 -> v22;
+v22 v22 [label = "Variable
+Declaration
+
+(c : IntList)"];
+v22 -> v21;
+v21 [label = "Allocate
+Record"];
+v193 -> v192;
+v192 [label = "Dec
+List"];
+v192 -> v28;
+v28 v28 [label = "Variable
+Declaration
+
+(d : IntList)"];
+v28 -> v27;
+v27 [label = "Allocate
+Record"];
+v192 -> v191;
+v191 [label = "Dec
+List"];
+v191 -> v34;
+v34 v34 [label = "Variable
+Declaration
+
+(A : IntList)"];
+v34 -> v33;
+v33 [label = "Allocate
+Record"];
+v191 -> v190;
+v190 [label = "Dec
+List"];
+v190 -> v40;
+v40 v40 [label = "Variable
+Declaration
+
+(B : IntList)"];
+v40 -> v39;
+v39 [label = "Allocate
+Record"];
+v190 -> v189;
+v189 [label = "Dec
+List"];
+v189 -> v46;
+v46 v46 [label = "Variable
+Declaration
+
+(C : IntList)"];
+v46 -> v45;
+v45 [label = "Allocate
+Record"];
+v189 -> v188;
+v188 [label = "Dec
+List"];
+v188 -> v52;
+v52 v52 [label = "Variable
+Declaration
+
+(D : IntList)"];
+v52 -> v51;
+v51 [label = "Allocate
+Record"];
+v188 -> v187;
+v187 [label = "Dec
+List"];
+v187 -> v164;
+v164 [label = "Function
+Declaration
+(Merge)"];
+v164 -> v56;
+v56 [label = "Type
+Fields"];
+v56 -> v55;
+v55 [label = "a:IntList"];
+v56 -> v54;
+v54 [label = "Type
+Fields"];
+v54 -> v53;
+v53 [label = "A:IntList"];
+v164 -> v163;
+v163 [label = "LET"];
+v163 -> v62;
+v62 [label = "Dec
+List"];
+v62 -> v58;
+v58 v58 [label = "Variable
+Declaration
+
+(L : IntList)"];
+v58 -> v57;
+v57 [label = "NIL"];
+v62 -> v61;
+v61 [label = "Dec
+List"];
+v61 -> v60;
+v60 v60 [label = "Variable
+Declaration
+
+(element : int)"];
+v60 -> v59;
+v59 [label = "INT(0)"];
+v163 -> v162;
+v162 [label = "SEQ"];
+v162 -> v161;
+v161 [label = "Exp
+List"];
+v161 -> v71;
+v71 [label = "IF"];
+v71 -> v66;
+v71 -> v70;
+v66 [label = "OP"];
+v66 -> v64;
+v66 -> v65;
+v64 [label = "SIMPLE
+VAR(a)"];
+v65 [label = "NIL"];
+v70 [label = "ASSIGN"];
+v70 -> v67;
+v67 [label = "Simple
+Var(L)"];
+v70 -> v69;
+v69 [label = "SIMPLE
+VAR(A)"];
+v161 -> v160;
+v160 [label = "Exp
+List"];
+v160 -> v80;
+v80 [label = "IF"];
+v80 -> v75;
+v80 -> v79;
+v75 [label = "OP"];
+v75 -> v73;
+v75 -> v74;
+v73 [label = "SIMPLE
+VAR(A)"];
+v74 [label = "NIL"];
+v79 [label = "ASSIGN"];
+v79 -> v76;
+v76 [label = "Simple
+Var(L)"];
+v79 -> v78;
+v78 [label = "SIMPLE
+VAR(a)"];
+v160 -> v159;
+v159 [label = "Exp
+List"];
+v159 -> v155;
+v155 [label = "IF"];
+v155 -> v84;
+v155 -> v154;
+v84 [label = "OP"];
+v84 -> v82;
+v84 -> v83;
+v82 [label = "SIMPLE
+VAR(a)"];
+v83 [label = "NIL"];
+v154 [label = "IF"];
+v154 -> v88;
+v154 -> v153;
+v88 [label = "OP"];
+v88 -> v86;
+v88 -> v87;
+v86 [label = "SIMPLE
+VAR(A)"];
+v87 [label = "NIL"];
+v153 [label = "SEQ"];
+v153 -> v152;
+v152 [label = "Exp
+List"];
+v152 -> v119;
+v119 [label = "IF"];
+v119 -> v95;
+v119 -> v118;
+v95 [label = "OP"];
+v95 -> v91;
+v95 -> v94;
+v91 [label = "FIELD
+VAR
+... --> head"];
+v91 -> v89;
+v89 [label = "Simple
+Var(a)"];
+v94 [label = "FIELD
+VAR
+... --> head"];
+v94 -> v92;
+v92 [label = "Simple
+Var(A)"];
+v118 [label = "SEQ"];
+v118 -> v117;
+v117 [label = "Exp
+List"];
+v117 -> v100;
+v100 [label = "ASSIGN"];
+v100 -> v96;
+v96 [label = "Simple
+Var(element)"];
+v100 -> v99;
+v99 [label = "FIELD
+VAR
+... --> head"];
+v99 -> v97;
+v97 [label = "Simple
+Var(a)"];
+v117 -> v116;
+v116 [label = "Exp
+List"];
+v116 -> v115;
+v115 [label = "ASSIGN"];
+v115 -> v101;
+v101 [label = "Simple
+Var(L)"];
+v115 -> v114;
+v114 [label = "Allocate
+Record"];
+v152 -> v151;
+v151 [label = "Exp
+List"];
+v151 -> v150;
+v150 [label = "IF"];
+v150 -> v126;
+v150 -> v149;
+v126 [label = "OP"];
+v126 -> v122;
+v126 -> v125;
+v122 [label = "FIELD
+VAR
+... --> head"];
+v122 -> v120;
+v120 [label = "Simple
+Var(a)"];
+v125 [label = "FIELD
+VAR
+... --> head"];
+v125 -> v123;
+v123 [label = "Simple
+Var(A)"];
+v149 [label = "SEQ"];
+v149 -> v148;
+v148 [label = "Exp
+List"];
+v148 -> v131;
+v131 [label = "ASSIGN"];
+v131 -> v127;
+v127 [label = "Simple
+Var(element)"];
+v131 -> v130;
+v130 [label = "FIELD
+VAR
+... --> head"];
+v130 -> v128;
+v128 [label = "Simple
+Var(A)"];
+v148 -> v147;
+v147 [label = "Exp
+List"];
+v147 -> v146;
+v146 [label = "ASSIGN"];
+v146 -> v132;
+v132 [label = "Simple
+Var(L)"];
+v146 -> v145;
+v145 [label = "Allocate
+Record"];
+v159 -> v158;
+v158 [label = "Exp
+List"];
+v158 -> v157;
+v157 [label = "SIMPLE
+VAR(L)"];
+v187 -> v186;
+v186 [label = "Dec
+List"];
+v186 -> v185;
+v185 [label = "Function
+Declaration
+(PrintIntList)"];
+v185 -> v166;
+v166 [label = "Type
+Fields"];
+v166 -> v165;
+v165 [label = "L:IntList"];
+v185 -> v184;
+v184 [label = "IF"];
+v184 -> v170;
+v184 -> v183;
+v170 [label = "OP"];
+v170 -> v168;
+v170 -> v169;
+v168 [label = "SIMPLE
+VAR(L)"];
+v169 [label = "NIL"];
+v183 [label = "SEQ"];
+v183 -> v182;
+v182 [label = "Exp
+List"];
+v182 -> v175;
+v175 [label = "CALL
+(PrintInt)"];
+v175 -> v174;
+v174 [label = "Exp
+List"];
+v174 -> v173;
+v173 [label = "FIELD
+VAR
+... --> head"];
+v173 -> v171;
+v171 [label = "Simple
+Var(L)"];
+v182 -> v181;
+v181 [label = "Exp
+List"];
+v181 -> v180;
+v180 [label = "CALL
+(PrintIntList)"];
+v180 -> v179;
+v179 [label = "Exp
+List"];
+v179 -> v178;
+v178 [label = "FIELD
+VAR
+... --> tail"];
+v178 -> v176;
+v176 [label = "Simple
+Var(L)"];
+v244 -> v243;
+v243 [label = "SEQ"];
+v243 -> v242;
+v242 [label = "Exp
+List"];
+v242 -> v201;
+v201 [label = "ASSIGN"];
+v201 -> v198;
+v198 [label = "Field
+Var
+...->tail"];
+v198 -> v197;
+v197 [label = "Simple
+Var(c)"];
+v201 -> v200;
+v200 [label = "SIMPLE
+VAR(d)"];
+v242 -> v241;
+v241 [label = "Exp
+List"];
+v241 -> v206;
+v206 [label = "ASSIGN"];
+v206 -> v203;
+v203 [label = "Field
+Var
+...->tail"];
+v203 -> v202;
+v202 [label = "Simple
+Var(b)"];
+v206 -> v205;
+v205 [label = "SIMPLE
+VAR(c)"];
+v241 -> v240;
+v240 [label = "Exp
+List"];
+v240 -> v211;
+v211 [label = "ASSIGN"];
+v211 -> v208;
+v208 [label = "Field
+Var
+...->tail"];
+v208 -> v207;
+v207 [label = "Simple
+Var(a)"];
+v211 -> v210;
+v210 [label = "SIMPLE
+VAR(b)"];
+v240 -> v239;
+v239 [label = "Exp
+List"];
+v239 -> v216;
+v216 [label = "ASSIGN"];
+v216 -> v213;
+v213 [label = "Field
+Var
+...->tail"];
+v213 -> v212;
+v212 [label = "Simple
+Var(C)"];
+v216 -> v215;
+v215 [label = "SIMPLE
+VAR(D)"];
+v239 -> v238;
+v238 [label = "Exp
+List"];
+v238 -> v221;
+v221 [label = "ASSIGN"];
+v221 -> v218;
+v218 [label = "Field
+Var
+...->tail"];
+v218 -> v217;
+v217 [label = "Simple
+Var(B)"];
+v221 -> v220;
+v220 [label = "SIMPLE
+VAR(C)"];
+v238 -> v237;
+v237 [label = "Exp
+List"];
+v237 -> v226;
+v226 [label = "ASSIGN"];
+v226 -> v223;
+v223 [label = "Field
+Var
+...->tail"];
+v223 -> v222;
+v222 [label = "Simple
+Var(A)"];
+v226 -> v225;
+v225 [label = "SIMPLE
+VAR(B)"];
+v237 -> v236;
+v236 [label = "Exp
+List"];
+v236 -> v235;
+v235 [label = "CALL
+(PrintIntList)"];
+v235 -> v234;
+v234 [label = "Exp
+List"];
+v234 -> v233;
+v233 [label = "CALL
+(Merge)"];
+v233 -> v232;
+v232 [label = "Exp
+List"];
+v232 -> v228;
+v228 [label = "SIMPLE
+VAR(a)"];
+v232 -> v231;
+v231 [label = "Exp
+List"];
+v231 -> v230;
+v230 [label = "SIMPLE
+VAR(A)"];
+
+}

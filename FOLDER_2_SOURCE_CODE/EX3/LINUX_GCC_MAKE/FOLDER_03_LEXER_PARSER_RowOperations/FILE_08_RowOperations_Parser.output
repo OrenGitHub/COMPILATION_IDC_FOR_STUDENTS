@@ -1,0 +1,263 @@
+
+
+Terminals which are not used:
+
+   FLOAT
+   STRING
+   LPAREN
+   RPAREN
+   LBRACK
+   RBRACK
+   TIMES
+
+
+
+Grammar
+rule 1    program -> RowOpList
+rule 2    RowOpList -> RowOp RowOpList
+rule 3    RowOpList -> RowOp
+rule 4    Number -> INT DIVIDE INT
+rule 5    Number -> INT
+rule 6    op -> PLUS
+rule 7    op -> MINUS
+rule 8    RowOp -> ROW LR_ARROW ROW
+rule 9    RowOp -> ROW L_ARROW ROW op Number ROW
+rule 10   RowOp -> ROW L_ARROW ROW op ROW
+rule 11   RowOp -> ROW L_ARROW Number ROW
+
+Terminals, with rules where they appear
+
+$ (-1)
+error (256)
+INT (258) 4 5
+FLOAT (259)
+STRING (260)
+LPAREN (261)
+RPAREN (262)
+LBRACK (263)
+RBRACK (264)
+L_ARROW (265) 9 10 11
+PLUS (266) 6
+MINUS (267) 7
+TIMES (268)
+DIVIDE (269) 4
+LR_ARROW (270) 8
+ROW (271) 8 9 10 11
+
+Nonterminals, with rules where they appear
+
+program (17)
+    on left: 1
+RowOpList (18)
+    on left: 2 3, on right: 1 2
+Number (19)
+    on left: 4 5, on right: 9 11
+op (20)
+    on left: 6 7, on right: 9 10
+RowOp (21)
+    on left: 8 9 10 11, on right: 2 3
+
+
+state 0
+
+    ROW 	shift, and go to state 1
+
+    program	go to state 20
+    RowOpList	go to state 2
+    RowOp	go to state 3
+
+
+
+state 1
+
+    RowOp  ->  ROW . LR_ARROW ROW   (rule 8)
+    RowOp  ->  ROW . L_ARROW ROW op Number ROW   (rule 9)
+    RowOp  ->  ROW . L_ARROW ROW op ROW   (rule 10)
+    RowOp  ->  ROW . L_ARROW Number ROW   (rule 11)
+
+    L_ARROW	shift, and go to state 4
+    LR_ARROW	shift, and go to state 5
+
+
+
+state 2
+
+    program  ->  RowOpList .   (rule 1)
+
+    $default	reduce using rule 1 (program)
+
+
+
+state 3
+
+    RowOpList  ->  RowOp . RowOpList   (rule 2)
+    RowOpList  ->  RowOp .   (rule 3)
+
+    ROW 	shift, and go to state 1
+
+    $default	reduce using rule 3 (RowOpList)
+
+    RowOpList	go to state 6
+    RowOp	go to state 3
+
+
+
+state 4
+
+    RowOp  ->  ROW L_ARROW . ROW op Number ROW   (rule 9)
+    RowOp  ->  ROW L_ARROW . ROW op ROW   (rule 10)
+    RowOp  ->  ROW L_ARROW . Number ROW   (rule 11)
+
+    INT 	shift, and go to state 7
+    ROW 	shift, and go to state 8
+
+    Number	go to state 9
+
+
+
+state 5
+
+    RowOp  ->  ROW LR_ARROW . ROW   (rule 8)
+
+    ROW 	shift, and go to state 10
+
+
+
+state 6
+
+    RowOpList  ->  RowOp RowOpList .   (rule 2)
+
+    $default	reduce using rule 2 (RowOpList)
+
+
+
+state 7
+
+    Number  ->  INT . DIVIDE INT   (rule 4)
+    Number  ->  INT .   (rule 5)
+
+    DIVIDE	shift, and go to state 11
+
+    $default	reduce using rule 5 (Number)
+
+
+
+state 8
+
+    RowOp  ->  ROW L_ARROW ROW . op Number ROW   (rule 9)
+    RowOp  ->  ROW L_ARROW ROW . op ROW   (rule 10)
+
+    PLUS	shift, and go to state 12
+    MINUS	shift, and go to state 13
+
+    op  	go to state 14
+
+
+
+state 9
+
+    RowOp  ->  ROW L_ARROW Number . ROW   (rule 11)
+
+    ROW 	shift, and go to state 15
+
+
+
+state 10
+
+    RowOp  ->  ROW LR_ARROW ROW .   (rule 8)
+
+    $default	reduce using rule 8 (RowOp)
+
+
+
+state 11
+
+    Number  ->  INT DIVIDE . INT   (rule 4)
+
+    INT 	shift, and go to state 16
+
+
+
+state 12
+
+    op  ->  PLUS .   (rule 6)
+
+    $default	reduce using rule 6 (op)
+
+
+
+state 13
+
+    op  ->  MINUS .   (rule 7)
+
+    $default	reduce using rule 7 (op)
+
+
+
+state 14
+
+    RowOp  ->  ROW L_ARROW ROW op . Number ROW   (rule 9)
+    RowOp  ->  ROW L_ARROW ROW op . ROW   (rule 10)
+
+    INT 	shift, and go to state 7
+    ROW 	shift, and go to state 17
+
+    Number	go to state 18
+
+
+
+state 15
+
+    RowOp  ->  ROW L_ARROW Number ROW .   (rule 11)
+
+    $default	reduce using rule 11 (RowOp)
+
+
+
+state 16
+
+    Number  ->  INT DIVIDE INT .   (rule 4)
+
+    $default	reduce using rule 4 (Number)
+
+
+
+state 17
+
+    RowOp  ->  ROW L_ARROW ROW op ROW .   (rule 10)
+
+    $default	reduce using rule 10 (RowOp)
+
+
+
+state 18
+
+    RowOp  ->  ROW L_ARROW ROW op Number . ROW   (rule 9)
+
+    ROW 	shift, and go to state 19
+
+
+
+state 19
+
+    RowOp  ->  ROW L_ARROW ROW op Number ROW .   (rule 9)
+
+    $default	reduce using rule 9 (RowOp)
+
+
+
+state 20
+
+    $   	go to state 21
+
+
+
+state 21
+
+    $   	go to state 22
+
+
+
+state 22
+
+    $default	accept

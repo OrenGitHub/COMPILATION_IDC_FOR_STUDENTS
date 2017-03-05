@@ -1,0 +1,459 @@
+
+
+Terminals which are not used:
+
+   MINUS
+
+
+
+Grammar
+rule 1    program -> LBRACK MatWith1Rows RBRACK
+rule 2    program -> LBRACK MatWith2Rows RBRACK
+rule 3    program -> LBRACK MatWith3Rows RBRACK
+rule 4    Number -> INT DIVIDE INT
+rule 5    Number -> INT
+rule 6    RowVec2 -> Number Number
+rule 7    RowVec3 -> Number Number Number
+rule 8    RowVec4 -> Number Number Number Number
+rule 9    MatWith1Rows -> RowVec2
+rule 10   MatWith1Rows -> RowVec3
+rule 11   MatWith1Rows -> RowVec4
+rule 12   MatWith2Rows -> RowVec2 SEMICOLON RowVec2
+rule 13   MatWith2Rows -> RowVec3 SEMICOLON RowVec3
+rule 14   MatWith2Rows -> RowVec4 SEMICOLON RowVec4
+rule 15   MatWith3Rows -> RowVec2 SEMICOLON RowVec2 SEMICOLON RowVec2
+rule 16   MatWith3Rows -> RowVec3 SEMICOLON RowVec3 SEMICOLON RowVec3
+rule 17   MatWith3Rows -> RowVec4 SEMICOLON RowVec4 SEMICOLON RowVec4
+
+Terminals, with rules where they appear
+
+$ (-1)
+error (256)
+INT (258) 4 5
+SEMICOLON (259) 12 13 14 15 16 17
+LBRACK (260) 1 2 3
+RBRACK (261) 1 2 3
+MINUS (262)
+DIVIDE (263) 4
+
+Nonterminals, with rules where they appear
+
+program (9)
+    on left: 1 2 3
+Number (10)
+    on left: 4 5, on right: 6 7 8
+RowVec2 (11)
+    on left: 6, on right: 9 12 15
+RowVec3 (12)
+    on left: 7, on right: 10 13 16
+RowVec4 (13)
+    on left: 8, on right: 11 14 17
+MatWith1Rows (14)
+    on left: 9 10 11, on right: 1
+MatWith2Rows (15)
+    on left: 12 13 14, on right: 2
+MatWith3Rows (16)
+    on left: 15 16 17, on right: 3
+
+
+state 0
+
+    LBRACK	shift, and go to state 1
+
+    program	go to state 38
+
+
+
+state 1
+
+    program  ->  LBRACK . MatWith1Rows RBRACK   (rule 1)
+    program  ->  LBRACK . MatWith2Rows RBRACK   (rule 2)
+    program  ->  LBRACK . MatWith3Rows RBRACK   (rule 3)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 3
+    RowVec2	go to state 4
+    RowVec3	go to state 5
+    RowVec4	go to state 6
+    MatWith1Rows	go to state 7
+    MatWith2Rows	go to state 8
+    MatWith3Rows	go to state 9
+
+
+
+state 2
+
+    Number  ->  INT . DIVIDE INT   (rule 4)
+    Number  ->  INT .   (rule 5)
+
+    DIVIDE	shift, and go to state 10
+
+    $default	reduce using rule 5 (Number)
+
+
+
+state 3
+
+    RowVec2  ->  Number . Number   (rule 6)
+    RowVec3  ->  Number . Number Number   (rule 7)
+    RowVec4  ->  Number . Number Number Number   (rule 8)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 11
+
+
+
+state 4
+
+    MatWith1Rows  ->  RowVec2 .   (rule 9)
+    MatWith2Rows  ->  RowVec2 . SEMICOLON RowVec2   (rule 12)
+    MatWith3Rows  ->  RowVec2 . SEMICOLON RowVec2 SEMICOLON RowVec2   (rule 15)
+
+    SEMICOLON	shift, and go to state 12
+
+    $default	reduce using rule 9 (MatWith1Rows)
+
+
+
+state 5
+
+    MatWith1Rows  ->  RowVec3 .   (rule 10)
+    MatWith2Rows  ->  RowVec3 . SEMICOLON RowVec3   (rule 13)
+    MatWith3Rows  ->  RowVec3 . SEMICOLON RowVec3 SEMICOLON RowVec3   (rule 16)
+
+    SEMICOLON	shift, and go to state 13
+
+    $default	reduce using rule 10 (MatWith1Rows)
+
+
+
+state 6
+
+    MatWith1Rows  ->  RowVec4 .   (rule 11)
+    MatWith2Rows  ->  RowVec4 . SEMICOLON RowVec4   (rule 14)
+    MatWith3Rows  ->  RowVec4 . SEMICOLON RowVec4 SEMICOLON RowVec4   (rule 17)
+
+    SEMICOLON	shift, and go to state 14
+
+    $default	reduce using rule 11 (MatWith1Rows)
+
+
+
+state 7
+
+    program  ->  LBRACK MatWith1Rows . RBRACK   (rule 1)
+
+    RBRACK	shift, and go to state 15
+
+
+
+state 8
+
+    program  ->  LBRACK MatWith2Rows . RBRACK   (rule 2)
+
+    RBRACK	shift, and go to state 16
+
+
+
+state 9
+
+    program  ->  LBRACK MatWith3Rows . RBRACK   (rule 3)
+
+    RBRACK	shift, and go to state 17
+
+
+
+state 10
+
+    Number  ->  INT DIVIDE . INT   (rule 4)
+
+    INT 	shift, and go to state 18
+
+
+
+state 11
+
+    RowVec2  ->  Number Number .   (rule 6)
+    RowVec3  ->  Number Number . Number   (rule 7)
+    RowVec4  ->  Number Number . Number Number   (rule 8)
+
+    INT 	shift, and go to state 2
+
+    $default	reduce using rule 6 (RowVec2)
+
+    Number	go to state 19
+
+
+
+state 12
+
+    MatWith2Rows  ->  RowVec2 SEMICOLON . RowVec2   (rule 12)
+    MatWith3Rows  ->  RowVec2 SEMICOLON . RowVec2 SEMICOLON RowVec2   (rule 15)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 20
+    RowVec2	go to state 21
+
+
+
+state 13
+
+    MatWith2Rows  ->  RowVec3 SEMICOLON . RowVec3   (rule 13)
+    MatWith3Rows  ->  RowVec3 SEMICOLON . RowVec3 SEMICOLON RowVec3   (rule 16)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 22
+    RowVec3	go to state 23
+
+
+
+state 14
+
+    MatWith2Rows  ->  RowVec4 SEMICOLON . RowVec4   (rule 14)
+    MatWith3Rows  ->  RowVec4 SEMICOLON . RowVec4 SEMICOLON RowVec4   (rule 17)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 24
+    RowVec4	go to state 25
+
+
+
+state 15
+
+    program  ->  LBRACK MatWith1Rows RBRACK .   (rule 1)
+
+    $default	reduce using rule 1 (program)
+
+
+
+state 16
+
+    program  ->  LBRACK MatWith2Rows RBRACK .   (rule 2)
+
+    $default	reduce using rule 2 (program)
+
+
+
+state 17
+
+    program  ->  LBRACK MatWith3Rows RBRACK .   (rule 3)
+
+    $default	reduce using rule 3 (program)
+
+
+
+state 18
+
+    Number  ->  INT DIVIDE INT .   (rule 4)
+
+    $default	reduce using rule 4 (Number)
+
+
+
+state 19
+
+    RowVec3  ->  Number Number Number .   (rule 7)
+    RowVec4  ->  Number Number Number . Number   (rule 8)
+
+    INT 	shift, and go to state 2
+
+    $default	reduce using rule 7 (RowVec3)
+
+    Number	go to state 26
+
+
+
+state 20
+
+    RowVec2  ->  Number . Number   (rule 6)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 27
+
+
+
+state 21
+
+    MatWith2Rows  ->  RowVec2 SEMICOLON RowVec2 .   (rule 12)
+    MatWith3Rows  ->  RowVec2 SEMICOLON RowVec2 . SEMICOLON RowVec2   (rule 15)
+
+    SEMICOLON	shift, and go to state 28
+
+    $default	reduce using rule 12 (MatWith2Rows)
+
+
+
+state 22
+
+    RowVec3  ->  Number . Number Number   (rule 7)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 29
+
+
+
+state 23
+
+    MatWith2Rows  ->  RowVec3 SEMICOLON RowVec3 .   (rule 13)
+    MatWith3Rows  ->  RowVec3 SEMICOLON RowVec3 . SEMICOLON RowVec3   (rule 16)
+
+    SEMICOLON	shift, and go to state 30
+
+    $default	reduce using rule 13 (MatWith2Rows)
+
+
+
+state 24
+
+    RowVec4  ->  Number . Number Number Number   (rule 8)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 31
+
+
+
+state 25
+
+    MatWith2Rows  ->  RowVec4 SEMICOLON RowVec4 .   (rule 14)
+    MatWith3Rows  ->  RowVec4 SEMICOLON RowVec4 . SEMICOLON RowVec4   (rule 17)
+
+    SEMICOLON	shift, and go to state 32
+
+    $default	reduce using rule 14 (MatWith2Rows)
+
+
+
+state 26
+
+    RowVec4  ->  Number Number Number Number .   (rule 8)
+
+    $default	reduce using rule 8 (RowVec4)
+
+
+
+state 27
+
+    RowVec2  ->  Number Number .   (rule 6)
+
+    $default	reduce using rule 6 (RowVec2)
+
+
+
+state 28
+
+    MatWith3Rows  ->  RowVec2 SEMICOLON RowVec2 SEMICOLON . RowVec2   (rule 15)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 20
+    RowVec2	go to state 33
+
+
+
+state 29
+
+    RowVec3  ->  Number Number . Number   (rule 7)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 34
+
+
+
+state 30
+
+    MatWith3Rows  ->  RowVec3 SEMICOLON RowVec3 SEMICOLON . RowVec3   (rule 16)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 22
+    RowVec3	go to state 35
+
+
+
+state 31
+
+    RowVec4  ->  Number Number . Number Number   (rule 8)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 36
+
+
+
+state 32
+
+    MatWith3Rows  ->  RowVec4 SEMICOLON RowVec4 SEMICOLON . RowVec4   (rule 17)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 24
+    RowVec4	go to state 37
+
+
+
+state 33
+
+    MatWith3Rows  ->  RowVec2 SEMICOLON RowVec2 SEMICOLON RowVec2 .   (rule 15)
+
+    $default	reduce using rule 15 (MatWith3Rows)
+
+
+
+state 34
+
+    RowVec3  ->  Number Number Number .   (rule 7)
+
+    $default	reduce using rule 7 (RowVec3)
+
+
+
+state 35
+
+    MatWith3Rows  ->  RowVec3 SEMICOLON RowVec3 SEMICOLON RowVec3 .   (rule 16)
+
+    $default	reduce using rule 16 (MatWith3Rows)
+
+
+
+state 36
+
+    RowVec4  ->  Number Number Number . Number   (rule 8)
+
+    INT 	shift, and go to state 2
+
+    Number	go to state 26
+
+
+
+state 37
+
+    MatWith3Rows  ->  RowVec4 SEMICOLON RowVec4 SEMICOLON RowVec4 .   (rule 17)
+
+    $default	reduce using rule 17 (MatWith3Rows)
+
+
+
+state 38
+
+    $   	go to state 39
+
+
+
+state 39
+
+    $   	go to state 40
+
+
+
+state 40
+
+    $default	accept
