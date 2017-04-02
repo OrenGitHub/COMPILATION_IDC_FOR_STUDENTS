@@ -93,7 +93,7 @@ describes the context free grammar of row operations.
                    & $::=$ & mulRow                                      \\
                    & $::=$ & mulAndAddRow                                \\
   swapRows         & $::=$ & R index leftRightArrow R index              \\
-  mulRow           & $::=$ & R index leftArrow [$-$] [num] R index       \\
+  mulRow           & $::=$ & R index leftArrow [$-$] num R index         \\
   mulAndAddRow     & $::=$ & R index leftArrow R index op [num] R index  \\
   index            & $::=$ & 1 ~ $|$ ~ 2 ~ $|$ ~ 3 ~ $|$ ~ 4             \\
   leftArrow        & $::=$ & $<-$                                        \\
@@ -133,6 +133,19 @@ You should support linear systems with up to four rows and five columns
 In the solution set, you should support row vectors with sizes = $2,3,4$.
 The span set size is not limited, as vectors inside it can be dependant.
 
+\section{Setting Up the Working Environment}
+The formal environment of the course is Linux Ubuntu 14.04 LTS.
+Please install it natively on your machine, or use a VM of your choice.
+Once installed, open the terminal and git clone this repository:
+\[
+\verb"https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS.git"
+\]
+Navigate to the Linux directory inside exercise 1 with
+\[
+\verb"cd" ~
+\verb"FOLDER_2_SOURCE_CODE/EX1/LINUX_GCC_MAKE/"
+\]
+and run make
 \section{Submission Guidelines}
 Open an account on \href{https://github.com/}{GitHub}.
 Then, visit the
