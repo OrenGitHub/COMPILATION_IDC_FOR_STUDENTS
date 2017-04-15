@@ -9,12 +9,12 @@ CC=gcc
 BASEDIR              = .
 LEXER_DIR            = $(BASEDIR)/FOLDER_00_Flex
 PARSER_DIR           = $(BASEDIR)/FOLDER_01_Bison
-STARKIST_DIR         = $(BASEDIR)/FOLDER_02_LEXER_PARSER_StarKist
-CODEGEN__DIR         = $(BASEDIR)/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation
-REGALLOC_DIR         = $(BASEDIR)/FOLDER_04_LEXER_PARSER_RegAlloc
-COMPILER_SOURCE_DIR  = $(BASEDIR)/FOLDER_05_COMPILER_SOURCE_FILES
-COMPILER_HEADER_DIR  = $(BASEDIR)/FOLDER_06_COMPILER_HEADER_FILES
-COMPILER_DIR         = $(BASEDIR)/FOLDER_07_COMPILER
+MAT_READER_DIR       = $(BASEDIR)/FOLDER_02_LEXER_PARSER_MatReader
+ROW_OPERATIONS_DIR   = $(BASEDIR)/FOLDER_03_LEXER_PARSER_RowOperations
+SOLUTION_SET_DIR     = $(BASEDIR)/FOLDER_04_LEXER_PARSER_SolutionSet
+LINI_SOURCE_DIR      = $(BASEDIR)/FOLDER_05_Lini_SOURCE_FILES
+LINI_HEADER_DIR      = $(BASEDIR)/FOLDER_06_Lini_HEADER_FILES
+LINI_DIR             = $(BASEDIR)/FOLDER_07_Lini
 LEXER_SOURCE_DIR     = $(LEXER_DIR)/SOURCE_FILES
 LEXER_HEADER_DIR     = $(LEXER_DIR)/HEADER_FILES
 LEXER_OBJECT_DIR     = $(LEXER_DIR)/OBJECT_FILES
@@ -25,30 +25,30 @@ PARSER_OBJECT_DIR    = $(PARSER_DIR)/OBJECT_FILES
 ###############
 # LEXER FLAGS #
 ###############
-LEXER_PROGRAM_FLAGS_StarKist   = -o$(STARKIST_DIR)/FILE_04_StarKist_Lexer.c
-LEXER_PROGRAM_FLAGS__CodeGen   = -o$(CODEGEN__DIR)/FILE_17_PseudoAsm_To_Simulation_Lexer.c
-LEXER_PROGRAM_FLAGS_RegAlloc   = -o$(REGALLOC_DIR)/FILE_23_RegAlloc_Lexer.c
+LEXER_PROGRAM_FLAGS_MatReader     = -o$(MAT_READER_DIR)/FILE_05_MatReader_Lexer.c
+LEXER_PROGRAM_FLAGS_RowOperations = -o$(ROW_OPERATIONS_DIR)/FILE_10_RowOperations_Lexer.c
+LEXER_PROGRAM_FLAGS_SolutionSet   = -o$(SOLUTION_SET_DIR)/FILE_15_SolutionSet_Lexer.c
 
 ################
 # PARSER FLAGS #
 ################
-PARSER_PROGRAM_FLAGS_StarKist  = -d -v -o $(STARKIST_DIR)/FILE_05_StarKist_Parser.c
-PARSER_PROGRAM_FLAGS__CodeGen  = -d -v -p zz -o $(CODEGEN__DIR)/FILE_18_PseudoAsm_To_Simulation_Parser.c
-PARSER_PROGRAM_FLAGS_RegAlloc  = -d -v -p gg -o $(REGALLOC_DIR)/FILE_24_RegAlloc_Parser.c
+PARSER_PROGRAM_FLAGS_MatReader     = -d -v -p aa -o $(MAT_READER_DIR)/FILE_06_MatReader_Parser.c
+PARSER_PROGRAM_FLAGS_RowOperations = -d -v -p bb -o $(ROW_OPERATIONS_DIR)/FILE_11_RowOperations_Parser.c
+PARSER_PROGRAM_FLAGS_SolutionSet   = -d -v -p cc -o $(SOLUTION_SET_DIR)/FILE_16_SolutionSet_Parser.c
 
 #####################
 # LEXER INPUT FILES #
 #####################
-LEXER_INPUT_StarKist  = $(STARKIST_DIR)/StarKist.lex
-LEXER_INPUT__CodeGen  = $(CODEGEN__DIR)/CodeGen.lex
-LEXER_INPUT_RegAlloc  = $(REGALLOC_DIR)/RegAlloc.lex
+LEXER_INPUT_MatReader     = $(MAT_READER_DIR)/MatReader.lex
+LEXER_INPUT_RowOperations = $(ROW_OPERATIONS_DIR)/RowOperations.lex
+LEXER_INPUT_SolutionSet   = $(SOLUTION_SET_DIR)/SolutionSet.lex
 
 ######################
 # PARSER INPUT FILES #
 ######################
-PARSER_INPUT_StarKist = $(STARKIST_DIR)/StarKist.y
-PARSER_INPUT__CodeGen = $(CODEGEN__DIR)/CodeGen.y
-PARSER_INPUT_RegAlloc = $(REGALLOC_DIR)/RegAlloc.y
+PARSER_INPUT_MatReader     = $(MAT_READER_DIR)/MatReader.y
+PARSER_INPUT_RowOperations = $(ROW_OPERATIONS_DIR)/RowOperations.y
+PARSER_INPUT_SolutionSet   = $(SOLUTION_SET_DIR)/SolutionSet.y
 
 #########
 # LEXER #
@@ -68,14 +68,14 @@ PARSER_SOURCE_FILES  := $(wildcard  $(PARSER_SOURCE_DIR)/*.c)
 PARSER_HEADER_FILES  := $(wildcard  $(PARSER_HEADER_DIR)/*.h)
 PARSER_OBJECT_FILES  := $(addprefix $(PARSER_OBJECT_DIR)/,$(PARSER_SOURCE_FILES,.c=.o))
 
-############
-# COMPILER #
-############
-COMPILER_FLAGS         = -I$(COMPILER_HEADER_DIR) -w
-COMPILER_PROGRAM       = $(COMPILER_DIR)/compiler
-COMPILER_SOURCE_FILES := $(wildcard  $(COMPILER_SOURCE_DIR)/*.c)
-COMPILER_HEADER_FILES := $(wildcard  $(COMPILER_HEADER_DIR)/*.h)
-COMPILER_OBJECT_FILES := $(addprefix $(LEXER_OBJECT_DIR)/,$(LEXER_SOURCE_FILES,.c=.o))
+########
+# LINI #
+########
+LINI_FLAGS         = -I$(LINI_HEADER_DIR) -w
+LINI_PROGRAM       = $(LINI_DIR)/Lini
+LINI_SOURCE_FILES := $(wildcard  $(LINI_SOURCE_DIR)/*.c)
+LINI_HEADER_FILES := $(wildcard  $(LINI_HEADER_DIR)/*.h)
+LINI_OBJECT_FILES := $(addprefix $(LEXER_OBJECT_DIR)/,$(LEXER_SOURCE_FILES,.c=.o))
 
 ##########################
 # ALL LEXER(S) PARSER(S) #
@@ -88,52 +88,57 @@ all:
 	@echo "\n"
 	rm -rf $(LEXER_PROGRAM)
 	rm -rf $(PARSER_PROGRAM)
-	rm -rf $(COMPILER_PROGRAM)
-	rm -rf $(COMPILER_SOURCE_DIR)/FILE_04_StarKist_Lexer.c
-	rm -rf $(COMPILER_HEADER_DIR)/FILE_05_StarKist_Parser.h
-	rm -rf $(COMPILER_SOURCE_DIR)/FILE_05_StarKist_Parser.c
-	rm -rf $(COMPILER_SOURCE_DIR)/FILE_23_RegAlloc_Lexer.c
-	rm -rf $(COMPILER_SOURCE_DIR)/FILE_24_RegAlloc_Parser.c
-	rm -rf $(COMPILER_HEADER_DIR)/FILE_24_RegAlloc_Parser.h
-	rm -rf $(COMPILER_SOURCE_DIR)/FILE_17_PseudoAsm_To_Simulation_Lexer.c
-	rm -rf $(COMPILER_SOURCE_DIR)/FILE_18_PseudoAsm_To_Simulation_Parser.c
-	rm -rf $(COMPILER_HEADER_DIR)/FILE_18_PseudoAsm_To_Simulation_Parser.h
+	rm -rf $(LINI_PROGRAM)
+	rm -rf $(LINI_SOURCE_DIR)/FILE_05_MatReader_Lexer.c
+	rm -rf $(LINI_SOURCE_DIR)/FILE_06_MatReader_Parser.c
+	rm -rf $(LINI_HEADER_DIR)/FILE_06_MatReader_Parser.h
+	rm -rf $(LINI_SOURCE_DIR)/FILE_10_RowOperations_Lexer.c
+	rm -rf $(LINI_SOURCE_DIR)/FILE_11_RowOperations_Parser.c
+	rm -rf $(LINI_HEADER_DIR)/FILE_11_RowOperations_Parser.h
+	rm -rf $(LINI_SOURCE_DIR)/FILE_15_SolutionSet_Lexer.c
+	rm -rf $(LINI_SOURCE_DIR)/FILE_16_SolutionSet_Parser.c
+	rm -rf $(LINI_HEADER_DIR)/FILE_16_SolutionSet_Parser.h
 	@echo "\n"
-	@echo "**************************"
-	@echo "* Build Flex & Bison ... *"
-	@echo "**************************"
+	@echo "******************"
+	@echo "* Build Flex ... *"
+	@echo "******************"
 	@echo "\n"
 	$(CC) $(LEXER_FLAGS)  $(LEXER_SOURCE_FILES)  -o $(LEXER_PROGRAM)
+	@echo "\n"
+	@echo "*******************"
+	@echo "* Build Bison ... *"
+	@echo "*******************"
+	@echo "\n"
 	$(CC) $(PARSER_FLAGS) $(PARSER_SOURCE_FILES) -o $(PARSER_PROGRAM)
 	@echo "\n"
 	@echo "**********************************"
 	@echo "* Run All Lexer(s) Parser(s) ... *"
 	@echo "**********************************"
 	@echo "\n"
-	$(LEXER_PROGRAM)  $(LEXER_PROGRAM_FLAGS_StarKist)  $(LEXER_INPUT_StarKist)
-	$(LEXER_PROGRAM)  $(LEXER_PROGRAM_FLAGS__CodeGen)  $(LEXER_INPUT__CodeGen)
-	$(LEXER_PROGRAM)  $(LEXER_PROGRAM_FLAGS_RegAlloc)  $(LEXER_INPUT_RegAlloc)
-	$(PARSER_PROGRAM) $(PARSER_PROGRAM_FLAGS_StarKist) $(PARSER_INPUT_StarKist)
-	$(PARSER_PROGRAM) $(PARSER_PROGRAM_FLAGS__CodeGen) $(PARSER_INPUT__CodeGen)
-	$(PARSER_PROGRAM) $(PARSER_PROGRAM_FLAGS_RegAlloc) $(PARSER_INPUT_RegAlloc)
+	$(LEXER_PROGRAM)  $(LEXER_PROGRAM_FLAGS_MatReader)      $(LEXER_INPUT_MatReader)
+	$(LEXER_PROGRAM)  $(LEXER_PROGRAM_FLAGS_RowOperations)  $(LEXER_INPUT_RowOperations)
+	$(LEXER_PROGRAM)  $(LEXER_PROGRAM_FLAGS_SolutionSet)    $(LEXER_INPUT_SolutionSet)
+	$(PARSER_PROGRAM) $(PARSER_PROGRAM_FLAGS_MatReader)     $(PARSER_INPUT_MatReader)
+	$(PARSER_PROGRAM) $(PARSER_PROGRAM_FLAGS_RowOperations) $(PARSER_INPUT_RowOperations)
+	$(PARSER_PROGRAM) $(PARSER_PROGRAM_FLAGS_SolutionSet)   $(PARSER_INPUT_SolutionSet)
 	@echo "\n"
 	@echo "***************************************************************"
 	@echo "* Move Generated Lexer(s) Parser(s) to destined folder(s) ... *"
 	@echo "***************************************************************"
 	@echo "\n"
-	mv $(STARKIST_DIR)/FILE_04_StarKist_Lexer.c  $(COMPILER_SOURCE_DIR)
-	mv $(STARKIST_DIR)/FILE_05_StarKist_Parser.c $(COMPILER_SOURCE_DIR)
-	mv $(STARKIST_DIR)/FILE_05_StarKist_Parser.h $(COMPILER_HEADER_DIR)
-	mv $(REGALLOC_DIR)/FILE_23_RegAlloc_Lexer.c  $(COMPILER_SOURCE_DIR)
-	mv $(REGALLOC_DIR)/FILE_24_RegAlloc_Parser.c $(COMPILER_SOURCE_DIR)
-	mv $(REGALLOC_DIR)/FILE_24_RegAlloc_Parser.h $(COMPILER_HEADER_DIR)
-	mv $(CODEGEN__DIR)/FILE_17_PseudoAsm_To_Simulation_Lexer.c  $(COMPILER_SOURCE_DIR)
-	mv $(CODEGEN__DIR)/FILE_18_PseudoAsm_To_Simulation_Parser.c $(COMPILER_SOURCE_DIR)
-	mv $(CODEGEN__DIR)/FILE_18_PseudoAsm_To_Simulation_Parser.h $(COMPILER_HEADER_DIR)
+	mv $(MAT_READER_DIR)/FILE_05_MatReader_Lexer.c  $(LINI_SOURCE_DIR)
+	mv $(MAT_READER_DIR)/FILE_06_MatReader_Parser.c $(LINI_SOURCE_DIR)
+	mv $(MAT_READER_DIR)/FILE_06_MatReader_Parser.h $(LINI_HEADER_DIR)
+	mv $(ROW_OPERATIONS_DIR)/FILE_10_RowOperations_Lexer.c  $(LINI_SOURCE_DIR)
+	mv $(ROW_OPERATIONS_DIR)/FILE_11_RowOperations_Parser.c $(LINI_SOURCE_DIR)
+	mv $(ROW_OPERATIONS_DIR)/FILE_11_RowOperations_Parser.h $(LINI_HEADER_DIR)
+	mv $(SOLUTION_SET_DIR)/FILE_15_SolutionSet_Lexer.c  $(LINI_SOURCE_DIR)
+	mv $(SOLUTION_SET_DIR)/FILE_16_SolutionSet_Parser.c $(LINI_SOURCE_DIR)
+	mv $(SOLUTION_SET_DIR)/FILE_16_SolutionSet_Parser.h $(LINI_HEADER_DIR)
 	@echo "\n"
-	@echo "**********************"
-	@echo "* Build Compiler ... *"
-	@echo "**********************"
+	@echo "******************"
+	@echo "* Build Lini ... *"
+	@echo "******************"
 	@echo "\n"
-	$(CC) $(COMPILER_FLAGS) $(COMPILER_SOURCE_FILES) -o $(COMPILER_PROGRAM)
+	$(CC) $(LINI_FLAGS) $(LINI_SOURCE_FILES) -o $(LINI_PROGRAM)
 
