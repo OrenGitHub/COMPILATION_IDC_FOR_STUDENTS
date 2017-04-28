@@ -1,4 +1,0 @@
-ROW(1) <- ROW(1) + INT(2) ROW(2) 
-ROW(2) <- - INT(3) / INT(5) ROW(2) + INT(6) / INT(5) ROW(3) 
-ROW(2) <- - INT(3) ROW(2) 
-ROW(1) <-> ROW(2) 
