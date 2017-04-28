@@ -104,9 +104,10 @@ The next paragraphs describe the expected output format and invocation of Lini.
 If the input row operations file has correct syntax,
 the corresponding row operations status file should contain a single word: OK.
 If the input row operations file has \textit{incorrect} syntax,
-the corresponding row operations status file should contain the word ERROR(\textit{line})
-with \textit{line} being the line number of the \textit{first} error encountered.
-The exact same instructions apply for the solution set too.
+the corresponding row operations status file should contain the word ERROR(\textit{location}) with \textit{location} being the line number of the \textit{first} error encountered.
+The exact same instructions apply for the solution set too,
+but since the solution set is written as one line,
+\textit{location} should be the offset of the first error inside that line. 
 
 
 \paragraph{Execution parameters}
