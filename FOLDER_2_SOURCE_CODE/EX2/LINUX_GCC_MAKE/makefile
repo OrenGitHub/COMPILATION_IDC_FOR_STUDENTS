@@ -55,13 +55,11 @@ Lini_HEADER_FILES := $(wildcard  $(HEADER_FILES_DIR)/*.h)
 ################
 # INPUT/OUTPUT #
 ################
-INPUT	=	$(INPUT_DIR)/Mat.txt \
-			$(INPUT_DIR)/RowOperations.txt \
-			$(INPUT_DIR)/SolutionSet.txt
+INPUT	=	$(INPUT_DIR)/RowOperations_1_Good.txt \
+			$(INPUT_DIR)/SolutionSet_1_Good.txt
 
-OUTPUT	=	$(OUTPUT_DIR)/MatTokens.txt \
-			$(OUTPUT_DIR)/RowOperationsTokens.txt \
-			$(OUTPUT_DIR)/SolutionSetTokens.txt
+OUTPUT	=	$(OUTPUT_DIR)/RowOperations_1_GoodOutput.txt \
+			$(OUTPUT_DIR)/SolutionSet_1_GoodOutput.txt
 
 ##########################
 # ALL LEXER(S) PARSER(S) #
