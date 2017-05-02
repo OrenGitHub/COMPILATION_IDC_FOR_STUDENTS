@@ -6,7 +6,7 @@ CC=gcc
 ###############
 # DIRECTORIES #
 ###############
-BASEDIR                = /home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX2/LINUX_GCC_MAKE
+BASEDIR                = .
 LEXER_DIR              = $(BASEDIR)/FOLDER_0_Flex
 LEXER_Calc_DIR         = $(BASEDIR)/FOLDER_1_LEXER_Calc
 SOURCE_FILES_DIR       = $(BASEDIR)/FOLDER_2_SOURCE_FILES

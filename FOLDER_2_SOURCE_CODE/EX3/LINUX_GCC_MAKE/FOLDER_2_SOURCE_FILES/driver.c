@@ -20,6 +20,7 @@
 int main(int argc, char **argv)
 {
 	string fname;
+	FILE *fl;
 
 	if (argc != 3)
 	{
@@ -30,18 +31,23 @@ int main(int argc, char **argv)
 	fname=argv[1];
 	
 	Calc_ErrorMsg_Reset(fname);
+	fl=fopen(argv[2],"w+t");
+	if (fl == NULL) return 0;
 
 	printf("\n\n");
 
 	if (Parse())
 	{
 		printf("\n\nLegal Expression\n\n");
+		fprintf(fl,"OK");
 	}
 	else
 	{
 		printf("\n\nIllegal Expression\n\n");
+		fprintf(fl,"FAIL");
 	}
 	
+	fclose(fl);
 	return 0;
 }
 
