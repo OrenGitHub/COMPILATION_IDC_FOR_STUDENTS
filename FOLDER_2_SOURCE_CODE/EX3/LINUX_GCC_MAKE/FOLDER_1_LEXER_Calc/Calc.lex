@@ -73,7 +73,7 @@ DIVIDE	"/"
 DIGIT			[0-9]
 NON_ZERO_DIGIT	[1-9]
 LETTER			[a-zA-Z_]
-INT				"0"|({NON_ZERO_DIGIT}({DIGIT}*))|"-"{DIGIT}
+INT				"0"|({NON_ZERO_DIGIT}({DIGIT}*))
 		
 /*********/
 /* RULES */
