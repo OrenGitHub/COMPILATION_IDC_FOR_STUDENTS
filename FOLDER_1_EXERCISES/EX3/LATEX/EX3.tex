@@ -6,20 +6,30 @@
 \maketitle
 
 \section{Introduction}
-This exercise implements a simple desktop calculator.
-It uses the LR$(1)$ parsing scheme on top of FLEX.
+This exercise checks whether a simple arithmetic expression is valid or not.
+We will use the grammar in Table \ref{Table_Grammar},
+and apply the SLR$(1)$ parsing scheme on top of FLEX.
+\begin{table}[h]
+\centering
+\begin{tabular}{ l l l l l l l}
+  $S \rightarrow E\$$ & & $E \rightarrow E+T$ & & $T \rightarrow T*F$ & & $F \rightarrow int$ \\
+                      & & $E \rightarrow E-T$ & & $T \rightarrow T/F$ & & $F \rightarrow (E)$ \\
+                      & & $E \rightarrow   T$ & & $T \rightarrow   F$ & &                     \\
+\end{tabular}
+\caption{The grammar for a simple calculator with operator precedence. \label{Table_Grammar}}
+\end{table}
 You need not perform the actual computation, but rather say
 whether it is a valid arithmetic computation.
-For instance, $4+5*6$ is valid, and $6-4*(8$
-is \textit{not} valid.
+For instance, $4+5*6$ is valid,
+but $4+5*))99$ is \textit{not} valid.
 
 \section{Algorithm Outline}
-The applied shift reduce LR$(1)$ algorithm was discussed thoroughly in class.
+The shift reduce SLR$(1)$ algorithm was discussed thoroughly in class.
 It can be roughly described as having two modules:
 the state transition diagram which you have to write as a two dimensional table,
 and the stack which accommodates the relevant history of encountered tokens, reduced variables and states. At each step the state at the top of the stack, and the next token
 ahead imply an action which can be one of the following: shift, reduce, accept or error.
-Suppose, for sake of explanation, that state $7$ is currently at the top of the stack, and the next token ahead is $+$. \\ \\
+Suppose, for the sake of explanation, that state $7$ is currently at the top of the stack, and the next token ahead is $+$. \\ \\
 If \verb"TABLE"$[7][+]$ = ``s3" then it means the algorithm should
 perform a shift action, push the element $(+,3)$ on top of the stack, and read the next token from the input.\\ \\
 If \verb"TABLE"$[7][+]$ = ``r6" then it means the algorithm should
