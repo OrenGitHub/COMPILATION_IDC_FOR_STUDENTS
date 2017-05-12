@@ -82,8 +82,8 @@ LINI_OBJECT_FILES := $(addprefix $(LEXER_OBJECT_DIR)/,$(LEXER_SOURCE_FILES,.c=.o
 ################
 # INPUT/OUTPUT #
 ################
-INPUT  = $(INPUT_DIR)/Input_RowOperations.txt
-OUTPUT = $(OUTPUT_DIR)/Status_RowOperations.txt
+INPUT  = $(INPUT_DIR)/Input_SolutionSet.txt
+OUTPUT = $(OUTPUT_DIR)/Status_SolutionSet.txt
 
 ##########################
 # ALL LEXER(S) PARSER(S) #
