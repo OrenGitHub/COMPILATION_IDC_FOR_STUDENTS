@@ -15,10 +15,10 @@
 #include "FILE_12_RowOperations_AST.h"
 #include "FILE_13_RowOperations_API.h"
 
-/**********************/
-/* Parse Input Matrix */
-/**********************/
-AST_RowOpList Parse_Row_Operations(string RowOperations_Filename)
+/************************/
+/* Parse Row Operations */
+/************************/
+AST_RowOpList Parse_RowOperations(string RowOperations_Filename)
 {
 	/*************************/
 	/* Open file for parsing */

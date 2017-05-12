@@ -15,6 +15,8 @@ SOLUTION_SET_DIR     = $(BASEDIR)/FOLDER_04_LEXER_PARSER_SolutionSet
 LINI_SOURCE_DIR      = $(BASEDIR)/FOLDER_05_Lini_SOURCE_FILES
 LINI_HEADER_DIR      = $(BASEDIR)/FOLDER_06_Lini_HEADER_FILES
 LINI_DIR             = $(BASEDIR)/FOLDER_07_Lini
+INPUT_DIR            = $(BASEDIR)/FOLDER_08_INPUT_FILES
+OUTPUT_DIR           = $(BASEDIR)/FOLDER_09_OUTPUT_FILES
 LEXER_SOURCE_DIR     = $(LEXER_DIR)/SOURCE_FILES
 LEXER_HEADER_DIR     = $(LEXER_DIR)/HEADER_FILES
 LEXER_OBJECT_DIR     = $(LEXER_DIR)/OBJECT_FILES
@@ -76,6 +78,12 @@ LINI_PROGRAM       = $(LINI_DIR)/Lini
 LINI_SOURCE_FILES := $(wildcard  $(LINI_SOURCE_DIR)/*.c)
 LINI_HEADER_FILES := $(wildcard  $(LINI_HEADER_DIR)/*.h)
 LINI_OBJECT_FILES := $(addprefix $(LEXER_OBJECT_DIR)/,$(LEXER_SOURCE_FILES,.c=.o))
+
+################
+# INPUT/OUTPUT #
+################
+INPUT  = $(INPUT_DIR)/Input_RowOperations.txt
+OUTPUT = $(OUTPUT_DIR)/Status_RowOperations.txt
 
 ##########################
 # ALL LEXER(S) PARSER(S) #
@@ -141,4 +149,10 @@ all:
 	@echo "******************"
 	@echo "\n"
 	$(CC) $(LINI_FLAGS) $(LINI_SOURCE_FILES) -o $(LINI_PROGRAM)
+	@echo "\n"
+	@echo "********************"
+	@echo "* Execute Lini ... *"
+	@echo "********************"
+	@echo "\n"
+	$(LINI_PROGRAM) $(INPUT) $(OUTPUT)
 
