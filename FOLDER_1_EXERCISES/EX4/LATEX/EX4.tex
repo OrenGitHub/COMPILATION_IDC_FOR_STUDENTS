@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{hyperref}
+\begin{document}
+\title{Exercise 3}
+\date{Due 12/5/2017}
+\maketitle
+
+\section{Introduction}
+This exercise checks whether a simple arithmetic expression is valid or not.
+We will use the grammar in Table \ref{Table_Grammar},
+and apply the SLR$(1)$ parsing scheme on top of FLEX.
+\begin{table}[h]
+\centering
+\begin{tabular}{ l l l l l l l}
+  $S \rightarrow E\$$ & & $E \rightarrow E+T$ & & $T \rightarrow T*F$ & & $F \rightarrow int$ \\
+                      & & $E \rightarrow E-T$ & & $T \rightarrow T/F$ & & $F \rightarrow (E)$ \\
+                      & & $E \rightarrow   T$ & & $T \rightarrow   F$ & &                     \\
+\end{tabular}
+\caption{The grammar for a simple calculator with operator precedence. \label{Table_Grammar}}
+\end{table}
+You need not perform the actual computation, but rather say
+whether it is a valid arithmetic computation.
+For instance, $4+5*6$ is valid,
+but $4+5*))99$ is \textit{not} valid.
+
+\section{Algorithm Outline}
+The shift reduce SLR$(1)$ algorithm was discussed thoroughly in class.
+It can be roughly described as having two modules:
+the state transition diagram which you have to write as a two dimensional table,
+and the stack which accommodates the relevant history of encountered tokens, reduced variables and states. At each step the state at the top of the stack, and the next token
+ahead imply an action which can be one of the following: shift, reduce, accept or error.
+Suppose, for the sake of explanation, that state $7$ is currently at the top of the stack, and the next token ahead is $+$. \\ \\
+If \verb"TABLE"$[7][+]$ = ``s3" then it means the algorithm should
+perform a shift action, push the element $(+,3)$ on top of the stack, and read the next token from the input.\\ \\
+If \verb"TABLE"$[7][+]$ = ``r6" then it means the algorithm should
+perform a reduce action for rule $6$, pop from the stack as many elements as
+the length of the right hand side of rule $6$, and push the left hand side variable of rule $6$ (together with the next state) to the top of the stack.\\ \\
+If \verb"TABLE"$[7][+]$ = ``" (the empty string) then it means the algorithm should
+print some kind of error message and terminate.\\ \\
+If \verb"TABLE"$[7][+]$ = ``a" (accept) then it means the input is correct.\\ \\
+
+\section{Input}
+The input for this exercise is a single text file that contains the arithmetic expression.
+
+\section{Output}
+The output is a single text file that should contain a single word:
+either OK when the expression is valid, or FAIL otherwise. 
+
+\section{Submission Guidelines}
+The code for this exercise resides as usual in subdirectory EX3.
+The file Table.c should be the only file you change.
+Please submit your exercise in your GitHub repository under COMPILATION/EX3,
+and have a makefile there to build a runnable program called calc.
+To avoid the pollution of EX3, please remove all *.o files once the target is built.
+The next paragraph describes the execution of calc.
+
+\paragraph{Execution parameters}
+calc recevies $2$ input file names:
+\begin{table}[h]
+\centering
+\begin{tabular}{ l }
+  Input.txt  \\
+  Output.txt \\
+\end{tabular}
+\end{table}
+
+
+\end{document}
