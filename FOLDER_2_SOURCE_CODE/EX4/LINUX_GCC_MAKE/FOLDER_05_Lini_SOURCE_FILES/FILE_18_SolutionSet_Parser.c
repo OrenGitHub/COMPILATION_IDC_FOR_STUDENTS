@@ -54,7 +54,13 @@ void ccerror(char *s)
 	SolutionSet_ErrorMsg_Error(SolutionSet_ErrorMsg_tokPos,"%s",s);
 }
 
-#line 38 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
+/************/
+/* AST ROOT */
+/************/
+int SolutionSet_AST_ROOT;
+
+
+#line 44 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
 typedef union
 {
 	union
@@ -75,11 +81,11 @@ typedef union
 
 
 
-#define	YYFINAL		5
+#define	YYFINAL		6
 #define	YYFLAG		-32768
 #define	YYNTBASE	10
 
-#define YYTRANSLATE(x) ((unsigned)(x) <= 264 ? yytranslate[x] : 11)
+#define YYTRANSLATE(x) ((unsigned)(x) <= 264 ? yytranslate[x] : 12)
 
 static const char yytranslate[] = {     0,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -113,18 +119,18 @@ static const char yytranslate[] = {     0,
 
 #if YYDEBUG != 0
 static const short yyprhs[] = {     0,
-     0
+     0,     2
 };
 
-static const short yyrhs[] = {     3,
-     3,     0
+static const short yyrhs[] = {    11,
+     0,     3,     3,     0
 };
 
 #endif
 
 #if YYDEBUG != 0
 static const short yyrline[] = { 0,
-    72
+    79,    81
 };
 #endif
 
@@ -132,30 +138,32 @@ static const short yyrline[] = { 0,
 #if YYDEBUG != 0 || defined (YYERROR_VERBOSE)
 
 static const char * const yytname[] = {   "$","error","$undefined.","INT","LPAREN",
-"RPAREN","LBRACE","RBRACE","COMMA","DIVIDE","program", NULL
+"RPAREN","LBRACE","RBRACE","COMMA","DIVIDE","program","solutionSet", NULL
 };
 #endif
 
 static const short yyr1[] = {     0,
-    10
+    10,    11
 };
 
 static const short yyr2[] = {     0,
-     2
+     1,     2
 };
 
 static const short yydefact[] = {     0,
-     0,     1,     0,     0,     0
+     0,     1,     2,     0,     0,     0
 };
 
-static const short yydefgoto[] = {     3
+static const short yydefgoto[] = {     4,
+     2
 };
 
 static const short yypact[] = {    -3,
-    -2,-32768,     2,     3,-32768
+    -2,-32768,-32768,     2,     3,-32768
 };
 
-static const short yypgoto[] = {-32768
+static const short yypgoto[] = {-32768,
+-32768
 };
 
 
@@ -163,7 +171,7 @@ static const short yypgoto[] = {-32768
 
 
 static const short yytable[] = {     1,
-     2,     4,     5
+     3,     5,     6
 };
 
 static const short yycheck[] = {     3,
@@ -668,8 +676,12 @@ yyreduce:
   switch (yyn) {
 
 case 1:
-#line 72 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
-{yyval.gval.ival = 100;;
+#line 79 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
+{SolutionSet_AST_ROOT = 100;;
+    break;}
+case 2:
+#line 81 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
+{printf("solutionSet --> singleVecSet");;
     break;}
 }
    /* the action file gets copied in in place of this dollarsign */
@@ -869,5 +881,5 @@ yyerrhandle:
   yystate = yyn;
   goto yynewstate;
 }
-#line 74 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
+#line 83 "./FOLDER_04_LEXER_PARSER_SolutionSet/SolutionSet.y"
 

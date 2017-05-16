@@ -17,6 +17,7 @@
 /*****************/
 /* INCLUDE FILES */
 /*****************/
+#include "FILE_12_RowOperations_AST.h"
 
 /********************/
 /* GLOBAL VARIABLES */
@@ -26,7 +27,9 @@ static FILE *fl;
 /***********************/
 /* FUNCTION PROTOTYPES */
 /***********************/
-void RowOperations_AST_Print_Recursive(A_exp ABSYN_Tree);
+void RowOperations_AST_Print_Recursive(AST_RowOpList AST)
+{
+}
 
 void RowOperations_AST_Print_Init(const char *filename)
 {
@@ -54,7 +57,7 @@ void RowOperations_AST_Print(AST_RowOpList AST,const char *filename)
 	/******************************/
 	/* [2] Print Tree Recursively */
 	/******************************/
-	RowOperations_AST_Print_Recursive(ABSYN_tree);
+	RowOperations_AST_Print_Recursive(AST);
 
 	/***********/
 	/* [3] End */

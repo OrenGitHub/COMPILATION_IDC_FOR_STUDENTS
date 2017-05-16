@@ -21,22 +21,27 @@
 /********/
 int main(int argc,char **argv)
 {
-	AST_RowOpList AST_RowOperations;
-	
 	/***********************/
 	/* [0] Initializations */
 	/***********************/
-	string RowOperations_Filename=argv[1];
+	string SolutionSet_Filename=argv[1];
 	string CheckSummary_Filename =argv[2];
 
-	/****************************/
-	/* [1] Parse Row Operations */
-	/****************************/
-	AST_RowOperations = Parse_RowOperations(RowOperations_Filename);
+	/**************************/
+	/* [1] Dummy LEX LOG file */
+	/**************************/
+	SolutionSet_ErrorMsg_Set_Log_Filename("DUMMY_SOLUTION_SET_LOG_FILE.txt");
 
-	/************************************************/
-	/* [2] Scan the AST Row Operations semantically */
-	/************************************************/
-	Semantic_Analysis_RowOperations(AST_RowOperations);
+	/**************************/
+	/* [2] Parse Solution Set */
+	/**************************/
+	Parse_SolutionSet(SolutionSet_Filename);
+
+	/**********************************************/
+	/* [2] Scan the AST Solution Set semantically */
+	/**********************************************/
+	// Semantic_Analysis_SolutionSet(AST_SolutionSet);
+	
+	return 0;
 }
 

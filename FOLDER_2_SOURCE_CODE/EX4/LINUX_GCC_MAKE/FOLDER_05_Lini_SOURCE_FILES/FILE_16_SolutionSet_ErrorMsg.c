@@ -1,6 +1,6 @@
-/***********************************************/
-/* FILE NAME: FILE_14_SolutionSet_ErrorMsg.c */
-/***********************************************/
+/*********************************************/
+/* FILE NAME: FILE_16_SolutionSet_ErrorMsg.c */
+/*********************************************/
 
 /****************************************/
 /* WARNING DISABLE: sprintf - I love it */
@@ -24,7 +24,7 @@
 /***************/
 /* DEFINITIONS */
 /***************/
-#define MAX_FILENAME_LENGTH 100
+#define MAX_FILENAME_LENGTH 1024
 
 /****************/
 /* LOG FILENAME */
@@ -46,7 +46,7 @@ int SolutionSet_ErrorMsg_tokPos=0;
 /**********************/
 /* EXTERNAL VARIABLES */
 /**********************/
-extern FILE *bbin;
+extern FILE *ccin;
 
 /*********/
 /* TYPES */
@@ -184,8 +184,8 @@ void SolutionSet_ErrorMsg_Reset(string fname)
 	fileName=fname;
 	lineNum=1;
 	linePos=intList(0,NULL);
-	bbin = fopen(fname,"r");
-	if (!bbin)
+	ccin = fopen(fname,"r");
+	if (!ccin)
 	{
 		SolutionSet_ErrorMsg_Error(0,"cannot open");
 		exit(1);

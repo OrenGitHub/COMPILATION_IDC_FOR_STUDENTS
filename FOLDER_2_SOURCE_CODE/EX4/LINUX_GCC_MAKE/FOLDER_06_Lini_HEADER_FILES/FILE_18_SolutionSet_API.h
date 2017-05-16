@@ -1,24 +1,23 @@
-#ifndef __MAT_READER_API_H__
-#define __MAT_READER_API_H__
+#ifndef __SOLUTION_SET_API_H__
+#define __SOLUTION_SET_API_H__
 
-/**************************************/
-/* FILE NAME: FILE_08_MatReader_API.h */
-/**************************************/
+/****************************************/
+/* FILE NAME: FILE_18_SolutionSet_API.h */
+/****************************************/
 
 /*************************/
 /* PROJECT INCLUDE FILES */
 /*************************/
-#include "FILE_03_Matrix.h"
+#include "FILE_01_util.h"
+
+/*******************/
+/* EXTERN AST ROOT */
+/*******************/
+extern int SolutionSet_AST_ROOT;
 
 /*************/
 /* FUNCTIONS */
 /*************/
-Matrix Parse_Input_Matrix(string Matrix_Filename);
-
-//extern int yyparse(void);
-//extern A_exp absyn_root;
-
-//extern int zzparse(void);
-//extern PSEUDO_MIPS_ASM_AST_expList PSEUDO_MIPS_ASM_AST_root;
+int Parse_SolutionSet(string SolutionSet_Filename);
 
 #endif

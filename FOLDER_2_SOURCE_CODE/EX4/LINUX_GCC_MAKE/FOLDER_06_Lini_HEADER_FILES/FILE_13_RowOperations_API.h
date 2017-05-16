@@ -19,6 +19,6 @@ extern AST_RowOpList RowOperations_AST_ROOT;
 /*************/
 /* FUNCTIONS */
 /*************/
-AST_RowOpList Parse_RowOperations(string Row_Operations_Filename);
+AST_RowOpList Parse_RowOperations(string RowOperations_Filename);
 
 #endif

@@ -24,7 +24,7 @@
 /***************/
 /* DEFINITIONS */
 /***************/
-#define MAX_FILENAME_LENGTH 100
+#define MAX_FILENAME_LENGTH 1024
 
 /****************/
 /* LOG FILENAME */

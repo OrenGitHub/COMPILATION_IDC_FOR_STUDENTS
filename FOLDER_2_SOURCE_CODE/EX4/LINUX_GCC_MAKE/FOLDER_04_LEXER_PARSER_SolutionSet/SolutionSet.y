@@ -30,6 +30,12 @@ void ccerror(char *s)
 {
 	SolutionSet_ErrorMsg_Error(SolutionSet_ErrorMsg_tokPos,"%s",s);
 }
+
+/************/
+/* AST ROOT */
+/************/
+int SolutionSet_AST_ROOT;
+
 %}
 
 /********************************************************************************/
@@ -61,6 +67,7 @@ void ccerror(char *s)
 /* NON TERMINALS */
 /*****************/
 %type <gval> program
+%type <gval> solutionSet
 
 /**************/
 /* START HERE */
@@ -69,6 +76,8 @@ void ccerror(char *s)
 
 %%
 
-program:		INT INT		{$$.ival = 100;}
+program:		solutionSet					{SolutionSet_AST_ROOT = 100;}
+
+solutionSet:	INT INT						{printf("solutionSet --> singleVecSet");}
 
 %%

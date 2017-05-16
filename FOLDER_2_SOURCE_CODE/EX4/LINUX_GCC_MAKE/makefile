@@ -29,14 +29,14 @@ PARSER_OBJECT_DIR    = $(PARSER_DIR)/OBJECT_FILES
 ###############
 LEXER_PROGRAM_FLAGS_MatReader     = -o$(MAT_READER_DIR)/FILE_05_MatReader_Lexer.c
 LEXER_PROGRAM_FLAGS_RowOperations = -o$(ROW_OPERATIONS_DIR)/FILE_10_RowOperations_Lexer.c
-LEXER_PROGRAM_FLAGS_SolutionSet   = -o$(SOLUTION_SET_DIR)/FILE_15_SolutionSet_Lexer.c
+LEXER_PROGRAM_FLAGS_SolutionSet   = -o$(SOLUTION_SET_DIR)/FILE_17_SolutionSet_Lexer.c
 
 ################
 # PARSER FLAGS #
 ################
 PARSER_PROGRAM_FLAGS_MatReader     = -d -v -p aa -o $(MAT_READER_DIR)/FILE_06_MatReader_Parser.c
 PARSER_PROGRAM_FLAGS_RowOperations = -d -v -p bb -o $(ROW_OPERATIONS_DIR)/FILE_11_RowOperations_Parser.c
-PARSER_PROGRAM_FLAGS_SolutionSet   = -d -v -p cc -o $(SOLUTION_SET_DIR)/FILE_16_SolutionSet_Parser.c
+PARSER_PROGRAM_FLAGS_SolutionSet   = -d -v -p cc -o $(SOLUTION_SET_DIR)/FILE_18_SolutionSet_Parser.c
 
 #####################
 # LEXER INPUT FILES #
@@ -103,9 +103,9 @@ all:
 	rm -rf $(LINI_SOURCE_DIR)/FILE_10_RowOperations_Lexer.c
 	rm -rf $(LINI_SOURCE_DIR)/FILE_11_RowOperations_Parser.c
 	rm -rf $(LINI_HEADER_DIR)/FILE_11_RowOperations_Parser.h
-	rm -rf $(LINI_SOURCE_DIR)/FILE_15_SolutionSet_Lexer.c
-	rm -rf $(LINI_SOURCE_DIR)/FILE_16_SolutionSet_Parser.c
-	rm -rf $(LINI_HEADER_DIR)/FILE_16_SolutionSet_Parser.h
+	rm -rf $(LINI_SOURCE_DIR)/FILE_17_SolutionSet_Lexer.c
+	rm -rf $(LINI_SOURCE_DIR)/FILE_18_SolutionSet_Parser.c
+	rm -rf $(LINI_HEADER_DIR)/FILE_18_SolutionSet_Parser.h
 	@echo "\n"
 	@echo "******************"
 	@echo "* Build Flex ... *"
@@ -140,9 +140,9 @@ all:
 	mv $(ROW_OPERATIONS_DIR)/FILE_10_RowOperations_Lexer.c  $(LINI_SOURCE_DIR)
 	mv $(ROW_OPERATIONS_DIR)/FILE_11_RowOperations_Parser.c $(LINI_SOURCE_DIR)
 	mv $(ROW_OPERATIONS_DIR)/FILE_11_RowOperations_Parser.h $(LINI_HEADER_DIR)
-	mv $(SOLUTION_SET_DIR)/FILE_15_SolutionSet_Lexer.c  $(LINI_SOURCE_DIR)
-	mv $(SOLUTION_SET_DIR)/FILE_16_SolutionSet_Parser.c $(LINI_SOURCE_DIR)
-	mv $(SOLUTION_SET_DIR)/FILE_16_SolutionSet_Parser.h $(LINI_HEADER_DIR)
+	mv $(SOLUTION_SET_DIR)/FILE_17_SolutionSet_Lexer.c  $(LINI_SOURCE_DIR)
+	mv $(SOLUTION_SET_DIR)/FILE_18_SolutionSet_Parser.c $(LINI_SOURCE_DIR)
+	mv $(SOLUTION_SET_DIR)/FILE_18_SolutionSet_Parser.h $(LINI_HEADER_DIR)
 	@echo "\n"
 	@echo "******************"
 	@echo "* Build Lini ... *"

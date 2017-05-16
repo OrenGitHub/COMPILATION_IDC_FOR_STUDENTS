@@ -12,7 +12,7 @@
 #include "FILE_01_util.h"
 #include "FILE_14_SolutionSet_ErrorMsg.h"
 #include "FILE_17_SolutionSet_AST.h"
-#include "FILE_16_SolutionSet_Parser.h"
+#include "FILE_18_SolutionSet_Parser.h"
 
 /**************************/
 /* CONTROL ERROR MESSAGES */
@@ -88,7 +88,7 @@ COMMA			","
 {INT}				{
 						adjust();
 						cclval.gval.ival=atoi(cctext);
-						SolutionSet_ErrorMsg_Log("INT(%d)",cclval.gval.ival);
+						SolutionSet_ErrorMsg_Log("INT(%d) ",cclval.gval.ival);
 						return INT;
 					}
 %%
