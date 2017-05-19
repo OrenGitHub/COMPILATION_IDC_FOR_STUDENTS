@@ -1,0 +1,144 @@
+digraph
+{
+graph [ordering = "out"]
+v63 [label = "LET"];
+v63 -> v57;
+v57 [label = "Dec
+List"];
+v57 -> v56;
+v56 [label = "Function
+Declaration
+(PrintPrimesInRange)"];
+v56 -> v3;
+v3 [label = "Type
+Fields"];
+v3 -> v2;
+v2 [label = "start:int"];
+v3 -> v1;
+v1 [label = "Type
+Fields"];
+v1 -> v0;
+v0 [label = "finish:int"];
+v56 -> v55;
+v55 [label = "LET"];
+v55 -> v40;
+v40 [label = "Dec
+List"];
+v40 -> v39;
+v39 [label = "Function
+Declaration
+(IsPrime)"];
+v39 -> v5;
+v5 [label = "Type
+Fields"];
+v5 -> v4;
+v4 [label = "p:int"];
+v39 -> v38;
+v38 [label = "LET"];
+v38 -> v8;
+v8 [label = "Dec
+List"];
+v8 -> v7;
+v7 v7 [label = "Variable
+Declaration
+(returnedValue)"];
+v7 -> v6;
+v6 [label = "INT(1)"];
+v38 -> v37;
+v37 [label = "SEQ"];
+v37 -> v36;
+v36 [label = "Exp
+List"];
+v36 -> v32;
+v32 [label = "FOR"];
+v32 -> v9;
+v32 -> v13;
+v32 -> v31;
+v9 [label = "INT(2)"];
+v13 [label = "OP"];
+v13 -> v11;
+v13 -> v12;
+v11 [label = "SIMPLE
+VAR(p)"];
+v12 [label = "INT(1)"];
+v31 [label = "FOR"];
+v31 -> v14;
+v31 -> v18;
+v31 -> v30;
+v14 [label = "INT(2)"];
+v18 [label = "OP"];
+v18 -> v16;
+v18 -> v17;
+v16 [label = "SIMPLE
+VAR(p)"];
+v17 [label = "INT(1)"];
+v30 [label = "IF"];
+v30 -> v26;
+v30 -> v29;
+v26 [label = "OP"];
+v26 -> v23;
+v26 -> v25;
+v23 [label = "OP"];
+v23 -> v20;
+v23 -> v22;
+v20 [label = "SIMPLE
+VAR(i)"];
+v22 [label = "SIMPLE
+VAR(j)"];
+v25 [label = "SIMPLE
+VAR(p)"];
+v29 [label = "ASSIGN"];
+v29 -> v27;
+v27 [label = "Simple
+Var(returnedValue)"];
+v29 -> v28;
+v28 [label = "INT(0)"];
+v36 -> v35;
+v35 [label = "Exp
+List"];
+v35 -> v34;
+v34 [label = "SIMPLE
+VAR(returnedValue)"];
+v55 -> v54;
+v54 [label = "FOR"];
+v54 -> v42;
+v54 -> v44;
+v54 -> v53;
+v42 [label = "SIMPLE
+VAR(start)"];
+v44 [label = "SIMPLE
+VAR(finish)"];
+v53 [label = "IF"];
+v53 -> v48;
+v53 -> v52;
+v48 [label = "CALL
+(IsPrime)"];
+v48 -> v47;
+v47 [label = "Exp
+List"];
+v47 -> v46;
+v46 [label = "SIMPLE
+VAR(i)"];
+v52 [label = "CALL
+(PrintInt)"];
+v52 -> v51;
+v51 [label = "Exp
+List"];
+v51 -> v50;
+v50 [label = "SIMPLE
+VAR(i)"];
+v63 -> v62;
+v62 [label = "CALL
+(PrintPrimesInRange)"];
+v62 -> v61;
+v61 [label = "Exp
+List"];
+v61 -> v58;
+v58 [label = "INT(2)"];
+v61 -> v60;
+v60 [label = "Exp
+List"];
+v60 -> v59;
+v59 [label = "INT(100)"];
+
+}
