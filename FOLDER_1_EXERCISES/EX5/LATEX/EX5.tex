@@ -14,36 +14,116 @@ The semantic analyzer traverses the AST built by Bison,
 and checks for semantic errors.
 For example, it makes sure the type of the condition inside an \verb"if"
 statement is \verb"int".
+Or, it verifies that a variable is never used
+before it was declared.
+Note, that the check list for the semantic analyzer is not explicit.
+It follows from the various properties that make the Starist language,
+and it is up to you to assemble and implement this check list.
 \section{The StarKist Programming Language}
 The StarKist programming language is a simple invented object oriented language,
 that supports arrays, objects and inheritance.
 It is strongly typed, and uses a runtime mechanism to ensure
 the safety of array and object accesses.
-\subsection{Objects and Arrays Allocation} 
-Objects and arrays are allocated on the heap.
+\subsection{Lexical Considerations}
+\paragraph{Identifiers} contain letters and digits, and must start with a letter.
+\paragraph{The keywords} in Table \ref{Table_Reserved_Keywords_of_StarKist} can not
+be used as identifiers.
+\begin{table}[h]
+\centering
+\begin{tabular}{ l l l l l}
+  int   & float & void & string & let \\
+  class & nil   & new  & of     & new \\
+  if    & then  & do   & in     & end \\
+\end{tabular}
+\caption{
+Reserved keyword of StarKist.
+\label{Table_Reserved_Keywords_of_StarKist}}
+\end{table}
+\paragraph{White spaces} consist of spaces, tabs and newlines
+characters. They may appear between any tokens.
+Keywords and identifiers must be separated by a white space,
+or a token that is neither a keyword nor an identifier.
+\paragraph{Comments} in StarKist are similar to those used in the C programming language:
+a comment beginning with the characters // indicates that the remainder of the line is a comment.
+In addition, a comment can be a sequence of characters that begins with /*,
+followed by any characters, including newlines, up to the first occurrence of the end sequence */. Unclosed comments are lexical errors.
+\paragraph{Integer} literals may start with an optional negation sign $-$,
+followed by a sequence of digits.
+Non-zero numbers should \textit{not} have leading zeroes.
+Though integers are stored as 32 bits in memory,
+they are artificially limited in StarKist to have
+16-bits signed values between $-2^{15}$ and $2^{15}-1$.
+Integers out of this range are lexical errors.
+\subsection{StarKist syntax}
+The grammar of the StarKist programming language is shown in Table 
+\begin{table}[h]
+\centering
+\begin{tabular}{ l c l }
+  S                & $::=$ & exp                                                 \\ \\
+  exp              & $::=$ & letExp                                              \\
+                   & $::=$ & forExp                                              \\
+                   & $::=$ & callExp                                             \\
+                   & $::=$ & assignExp                                           \\
+                   & $::=$ & exp BINOP exp                                       \\
+                   & $::=$ & LPAREN exp $[$ ';' exp$]^{*}$ RPAREN                \\
+                   & $::=$ & INT $|$ NIL $|$ STRING $|$ NEW ID                   \\ \\
+  letExp           & $::=$ & LET dec $[$ dec $]^{*}$ IN exp END                  \\
+  forExp           & $::=$ & FOR ID ASSIGN exp TO exp DO exp                     \\
+  callExp          & $::=$ & $[$ var \verb"'->'" $]$ ID LP $[$ exp $[$ ',' exp $]^{*}$ $]$ RP \\ \\
+  assignExp        & $::=$ & var ASSIGN exp                                      \\
+                   & $::=$ & var ASSIGN ID LBRACE exp $[$ ',' exp $]^{*}$ RBRACE \\
+                   & $::=$ & var ASSIGN ID LBRACK INT RBRACK OF INT              \\
+                   & $::=$ & var ASSIGN ID LBRACK INT RBRACK OF NIL              \\ \\
+  var              & $::=$ & ID                                                  \\
+                   & $::=$ & var \verb"'->'" ID                                  \\
+                   & $::=$ & var LBRACK exp RBRACK                               \\ \\
+  tField           & $::=$ & VAR   ID ':' ID                                     \\
+  cField           & $::=$ & tField $|$ funcDec                                  \\ \\
+  varDec           & $::=$ & VAR   ID $[$':' ID$]$ $[$ ASSIGN exp $]$            \\
+  typeDec          & $::=$ & TYPE  ID EQ LB tField $[$ ';' tField $]^{*}$ RB     \\
+  funcDec          & $::=$ & FUNC ID LP $[$ params $]$ RP $[$ ':' ID $]$ EQ exp  \\
+  classDec         & $::=$ & CLASS ID EQ LB cField $[$ ';' cField $]^{*}$ RB     \\ \\
+  dec              & $::=$ & funcDec $|$ varDec $|$ typeDec $|$ classDec         \\ \\
+\end{tabular}
+\caption{
+Context free grammar for the StarKist programming language.
+\label{Table_CFG_Of_StarKist}}
+\end{table}
+
+\subsection{Arrays, Objects and Records Allocation} 
+Arrays, objects and records are allocated on the heap.
 There is no need to free unused memory, as StarKist acts as if it were a
 part of a running environment that contains a garbage collection.
 \paragraph{Arrays}
-StarKist supports arrays of arbitrary types.
-That is, if \verb"T" has already been defined, then
+must be initialized upon allocation using the following syntax:
 \[
-\verb"var array := T[80]"
+\verb"var salaries:int := int[12] of 7800"
 \]
-allocates an array of $80$ consecutive \verb"T"'s on the heap.
-Two dimensional arrays are also possible,
+StarKist supports arrays of arbitrary types,
+and if \verb"T" is a non primitive type, then
+\[
+\verb"var array := T[165] of nil"
+\]
+allocates an array of $165$ consecutive \verb"T"'s on the heap.
+Two dimensional arrays (or higher) are also possible,
 though their definition is somewhat less straight forward:
 \[
 \verb"type TARRAY = array of T"
 \]
 followed by
 \[
-\verb"var matrix = TARRAY[3]"
+\verb"var matrix = TARRAY[3] of nil"
 \]
- \paragraph{Objects}
-Objects are allocated without the ability to call a constructor.
-This makes the interface for objects creation rather simple:
+\paragraph{Objects}
+are allocated without the ability to call a constructor.
+This makes the interface for objects creation rather straight forward:
 \[
-\verb"var dan := new Citizen"
+\verb"var dan := new citizen"
+\]
+\paragraph{Records}
+must be initialized upon allocation using the following syntax:
+\[
+\verb"var oren:citizen := student{100,100,nil,1976}"
 \]
 \subsection{Records and Classes}
 \paragraph{Records} are the equivalent of structures in C.
@@ -52,8 +132,7 @@ and may be recursive:
 \[
 \verb"type IntList = {head:int, tail:IntList}"
 \]
-\paragraph{Classes} are collections of fields and methods,
-and can \textit{not} be recursive.
+\paragraph{Classes} are collections of fields and methods.
 As StarKist does not support forward declarations, a method $m$
 may refer to a data field $d$ only if $d$ is defined before $m$.
 Similarly, method $m_{2}$ may refer to method $m_{1}$ only if $m_{1}$
@@ -92,56 +171,35 @@ and run
 \]
 from \verb"EX5/LINUX_GCC_MAKE"
 
-The grammar is given in Table \ref{Table_CFG_Of_Solution_Set}.
-\begin{table}[h]
-\centering
-\begin{tabular}{ l c l }
-  $S$              & $::=$ & solutionSet                               \\ \\
-  solutionSet      & $::=$ & $\{$rowVec$\}$ $+$ SP$(\{$rowVecList$\})$ \\
-                   & $::=$ &                    SP$(\{$rowVecList$\})$ \\
-                   & $::=$ & $\{$rowVec$\}$                            \\ \\
-  rowVecList       & $::=$ & rowVec, rowVecList                        \\
-                   & $::=$ & rowVec                                    \\ \\
-  rowVec           & $::=$ & (num, num)                                \\
-                   & $::=$ & (num, num, num)                           \\
-                   & $::=$ & (num, num, num, num)                      \\ \\
-  num              & $::=$ & $[$op$]$ int                              \\
-                   & $::=$ & $[$op$]$ int div int                      \\ \\
-  int              & $::=$ & 0                                         \\
-                   & $::=$ & $[1-9][0-9]^{*}$                          \\ \\
-  div              & $::=$ & $/$                                       \\
-                   & $::=$ & \textbackslash                            \\ \\
-  op               & $::=$ & $+$                                       \\
-                   & $::=$ & $-$                                       \\ \\
-\end{tabular}
-\caption{
-Context free grammar for the language of the solution set.
-\label{Table_CFG_Of_Solution_Set}}
-\end{table}
-In addition, \textit{all} row vectors have to be of the same size
-($2$, $3$ or $4$), denominators can not be zero, and denominators can not be negative.
 \section{Bison}
 Bison is an LALR(1) parser generator, which receives as input a context free grammar,
 and implements a parser for that grammar in a single C file.
 An overall example for using Bison is inside the row operations parser.
 
 \section{Input}
-The input for this exercise is a single text file that contains the solution set.
+The input for this exercise is a single text file, the input StarKist program.
 
 \section{Output}
 The output is a single text file that should contain a single word:
-either OK when the solution set has correct syntax, or FAIL otherwise.
+either OK when the StarKist program is correct, or FAIL$($\textit{location}$)$ otherwise.
+\textit{location} is the line number of the \textit{first} error that was found.
 
 \section{Submission Guidelines}
-The code for this exercise resides as usual in subdirectory EX4.
-The file SolutionSet.y, and possibly SolutionSet.lex should be the only file(s) you change.
-Please submit your exercise in your GitHub repository under COMPILATION/EX4,
-and have a makefile there to build a runnable program called Lini.
-To avoid the pollution of EX4, please remove all *.o files once the target is built.
-The next paragraph describes the execution of Lini.
+The code for this exercise resides as usual in subdirectory EX5 of the course GitHub.
+Currently, the grammar in Starkist.y contains a shift/reduce conflict,
+so you should start by fixing this.
+Next, you need to add the relevant derivation rules and AST constructors
+for classes. Last, you should implement the missing parts of the Starkist semantic analyzer.
+The semantic analyzer resides in the file semant.c, and this is where
+most of your changes will occur.
+Please submit your exercise in your GitHub repository under COMPILATION/EX5,
+and have a makefile there to build a runnable program called compiler.
+Make sure that compiler is created in the same level as the makefile: inside EX5.
+To avoid the pollution of EX5, please remove all *.o files once the target is built.
+The next paragraph describes the execution of compiler.
 
 \paragraph{Execution parameters}
-Lini recevies $2$ input file names:
+compiler receives $2$ input file names:
 \begin{table}[h]
 \centering
 \begin{tabular}{ l }
@@ -149,6 +207,5 @@ Lini recevies $2$ input file names:
   Output.txt \\
 \end{tabular}
 \end{table}
-
 
 \end{document}
