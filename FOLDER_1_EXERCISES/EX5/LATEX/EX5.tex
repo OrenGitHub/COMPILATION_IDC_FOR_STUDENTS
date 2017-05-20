@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{hyperref}
+\begin{document}
+\title{Exercise 5}
+\date{Due 9/6/2017}
+\maketitle
+
+\section{Introduction}
+This exercise implements a semantic analyzer for the StarKist
+programming language.
+The syntax of StarKist is given in StarKist.lex
+and StarKist.y (Flex and Bison) files.
+The semantic analyzer traverses the AST built by Bison,
+and checks for semantic errors.
+For example, it makes sure the type of the condition inside an \verb"if"
+statement is \verb"int".
+\section{The StarKist Programming Language}
+The StarKist programming language is a simple invented object oriented language,
+that supports arrays, objects and inheritance.
+It is strongly typed, and uses a runtime mechanism to ensure
+the safety of array and object accesses.
+\subsection{Objects and Arrays Allocation} 
+Objects and arrays are allocated on the heap.
+There is no need to free unused memory, as StarKist acts as if it were a
+part of a running environment that contains a garbage collection.
+\paragraph{Arrays}
+StarKist supports arrays of arbitrary types.
+That is, if \verb"T" has already been defined, then
+\[
+\verb"var array := T[80]"
+\]
+allocates an array of $80$ consecutive \verb"T"'s on the heap.
+Two dimensional arrays are also possible,
+though their definition is somewhat less straight forward:
+\[
+\verb"type TARRAY = array of T"
+\]
+followed by
+\[
+\verb"var matrix = TARRAY[3]"
+\]
+ \paragraph{Objects}
+Objects are allocated without the ability to call a constructor.
+This makes the interface for objects creation rather simple:
+\[
+\verb"var dan := new Citizen"
+\]
+\subsection{Records and Classes}
+\paragraph{Records} are the equivalent of structures in C.
+They may contain an arbitrary number of (comma separated) fields,
+and may be recursive:
+\[
+\verb"type IntList = {head:int, tail:IntList}"
+\]
+\paragraph{Classes} are collections of fields and methods,
+and can \textit{not} be recursive.
+As StarKist does not support forward declarations, a method $m$
+may refer to a data field $d$ only if $d$ is defined before $m$.
+Similarly, method $m_{2}$ may refer to method $m_{1}$ only if $m_{1}$
+is defined before $m_{2}$. StarKist does \textit{not} support
+method overloading, and so a class can not have two functions
+with the same name, even if their signature is different.
+The following example is illegal as it contains method overloading:\\ \\
+\verb"class G = {phoneNumber:int; function salary():int = 8;}" \\
+\verb"class F extends G = {age:int; function salary(p:int):int = 8+age;}"\\ \\
+However, overriding a method in a derived class is clearly legal:\\ \\
+\verb"class G = {phoneNumber:int; function salary(p:int):int = 8;}" \\
+\verb"class F extends G = {age:int; function salary(p:int):int = 8+age;}"\\
+\subsection{Subtyping}
+Inheritance induces a subtyping relation.
+If \verb"F" extends \verb"G", then we say that \verb"F" $\leq$ \verb"G".
+Clearly, the relation $\leq$ is transitive.
+If \verb"F" $\leq$ \verb"G", then an expression of type \verb"F" can be used
+whenever the program expects an expression of type \verb"G".
+Note that for every class, record or array type $\verb"F"$, we have \verb"nil" $\leq$ \verb"F".
+\subsection{Scope Rules}
+When resolving an identifier at a certain point in the program,
+the enclosing scopes are searched for that identifier in order.
+For example, it is possible that variable \verb"x" is contained
+here in two different scopes:\\ \\
+\verb"class F = {x:int; function f(p:int)=let var x:=80 in x+p end;}"\\ \\
+The \verb"x" in \verb"x+p" is the local variable.
+However, the next example involving a derived class and its super is illegal:\\ \\
+\verb"class G = {x:int; function salary():int = 8;}" \\
+\verb"class F extends G = {x:int; function swim(y:int):int = 600;}"\\ \\
+Note that if \verb"F" contained a function called \verb"x"
+that would be illegal too.  
+To create a graph visualization of the AST, please install graphviz
+and run
+\[
+\verb"$ dot -Tjpeg -o ./AST_Graph.jpeg ./AST_Graph.txt"
+\]
+from \verb"EX5/LINUX_GCC_MAKE"
+
+The grammar is given in Table \ref{Table_CFG_Of_Solution_Set}.
+\begin{table}[h]
+\centering
+\begin{tabular}{ l c l }
+  $S$              & $::=$ & solutionSet                               \\ \\
+  solutionSet      & $::=$ & $\{$rowVec$\}$ $+$ SP$(\{$rowVecList$\})$ \\
+                   & $::=$ &                    SP$(\{$rowVecList$\})$ \\
+                   & $::=$ & $\{$rowVec$\}$                            \\ \\
+  rowVecList       & $::=$ & rowVec, rowVecList                        \\
+                   & $::=$ & rowVec                                    \\ \\
+  rowVec           & $::=$ & (num, num)                                \\
+                   & $::=$ & (num, num, num)                           \\
+                   & $::=$ & (num, num, num, num)                      \\ \\
+  num              & $::=$ & $[$op$]$ int                              \\
+                   & $::=$ & $[$op$]$ int div int                      \\ \\
+  int              & $::=$ & 0                                         \\
+                   & $::=$ & $[1-9][0-9]^{*}$                          \\ \\
+  div              & $::=$ & $/$                                       \\
+                   & $::=$ & \textbackslash                            \\ \\
+  op               & $::=$ & $+$                                       \\
+                   & $::=$ & $-$                                       \\ \\
+\end{tabular}
+\caption{
+Context free grammar for the language of the solution set.
+\label{Table_CFG_Of_Solution_Set}}
+\end{table}
+In addition, \textit{all} row vectors have to be of the same size
+($2$, $3$ or $4$), denominators can not be zero, and denominators can not be negative.
+\section{Bison}
+Bison is an LALR(1) parser generator, which receives as input a context free grammar,
+and implements a parser for that grammar in a single C file.
+An overall example for using Bison is inside the row operations parser.
+
+\section{Input}
+The input for this exercise is a single text file that contains the solution set.
+
+\section{Output}
+The output is a single text file that should contain a single word:
+either OK when the solution set has correct syntax, or FAIL otherwise.
+
+\section{Submission Guidelines}
+The code for this exercise resides as usual in subdirectory EX4.
+The file SolutionSet.y, and possibly SolutionSet.lex should be the only file(s) you change.
+Please submit your exercise in your GitHub repository under COMPILATION/EX4,
+and have a makefile there to build a runnable program called Lini.
+To avoid the pollution of EX4, please remove all *.o files once the target is built.
+The next paragraph describes the execution of Lini.
+
+\paragraph{Execution parameters}
+Lini recevies $2$ input file names:
+\begin{table}[h]
+\centering
+\begin{tabular}{ l }
+  Input.txt  \\
+  Output.txt \\
+\end{tabular}
+\end{table}
+
+
+\end{document}
