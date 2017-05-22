@@ -8,16 +8,17 @@
 \section{Introduction}
 This exercise implements a semantic analyzer for the StarKist
 programming language.
-The syntax of StarKist is given in StarKist.lex
-and StarKist.y (Flex and Bison) files.
+The syntax of StarKist is given in Table \ref{Table_CFG_Of_StarKist},
+and is almost entirely implemented in StarKist.lex
+and StarKist.y (Flex and Bison files).
 The semantic analyzer traverses the AST built by Bison,
 and checks for semantic errors.
 For example, it makes sure the type of the condition inside an \verb"if"
 statement is \verb"int".
 Or, it verifies that a variable is never used
-before it was declared.
+before it is declared.
 Note, that the check list for the semantic analyzer is not explicit.
-It follows from the various properties that make the Starist language,
+It follows from the various properties that make the StarKist language,
 and it is up to you to assemble and implement this check list.
 \section{The StarKist Programming Language}
 The StarKist programming language is a simple invented object oriented language,
@@ -25,7 +26,7 @@ that supports arrays, objects and inheritance.
 It is strongly typed, and uses a runtime mechanism to ensure
 the safety of array and object accesses.
 \subsection{Lexical Considerations}
-\paragraph{Identifiers} contain letters and digits, and must start with a letter.
+\paragraph{Identifiers} may contain letters and digits, and must start with a letter.
 \paragraph{The keywords} in Table \ref{Table_Reserved_Keywords_of_StarKist} can not
 be used as identifiers.
 \begin{table}[h]
@@ -55,7 +56,7 @@ they are artificially limited in StarKist to have
 16-bits signed values between $-2^{15}$ and $2^{15}-1$.
 Integers out of this range are lexical errors.
 \subsection{StarKist syntax}
-The grammar of the StarKist programming language is shown in Table 
+The grammar of the StarKist programming language is shown in Table \ref{Table_CFG_Of_StarKist}
 \begin{table}[h]
 \centering
 \begin{tabular}{ l c l }
@@ -89,6 +90,31 @@ The grammar of the StarKist programming language is shown in Table
 Context free grammar for the StarKist programming language.
 \label{Table_CFG_Of_StarKist}}
 \end{table}
+
+\subsection{Records and Classes}
+\paragraph{Records} are the equivalent of structures in C.
+They may contain an arbitrary number of (comma separated) fields,
+and may be recursive:
+\[
+\verb"type IntList = {head:int, tail:IntList}"
+\]
+\paragraph{Classes} are collections of fields and methods.
+As StarKist does not support forward declarations, a method $m$
+may refer to a data field $d$ only if $d$ is defined before $m$.
+Similarly, method $m_{2}$ may refer to method $m_{1}$ only if $m_{1}$
+is defined before $m_{2}$. StarKist does \textit{not} support
+method overloading, and so a class can not have two functions
+with the same name, even if their signature is different.
+The following example is \textit{illegal} as it contains method overloading:\\ \\
+\verb"class G = {phoneNumber:int; function salary():int = 8;}" \\
+\verb"class F extends G = {age:int; function salary(p:int):int = 8+age;}"\\ \\
+The next example is \textit{illegal} too, as a variable can not have the same name of function
+in the same scope:\\ \\
+\verb"class G = {phoneNumber:int; function salary():int = 8;}" \\
+\verb"class F extends G = {salary:int; function Pay():int = salary;}"\\ \\
+However, overriding a method in a derived class is (clearly) legal:\\ \\
+\verb"class G = {phoneNumber:int; function salary(p:int):int = 8;}" \\
+\verb"class F extends G = {age:int; function salary(p:int):int = 8+age;}"\\
 
 \subsection{Arrays, Objects and Records Allocation} 
 Arrays, objects and records are allocated on the heap.
@@ -125,26 +151,6 @@ must be initialized upon allocation using the following syntax:
 \[
 \verb"var oren:citizen := student{100,100,nil,1976}"
 \]
-\subsection{Records and Classes}
-\paragraph{Records} are the equivalent of structures in C.
-They may contain an arbitrary number of (comma separated) fields,
-and may be recursive:
-\[
-\verb"type IntList = {head:int, tail:IntList}"
-\]
-\paragraph{Classes} are collections of fields and methods.
-As StarKist does not support forward declarations, a method $m$
-may refer to a data field $d$ only if $d$ is defined before $m$.
-Similarly, method $m_{2}$ may refer to method $m_{1}$ only if $m_{1}$
-is defined before $m_{2}$. StarKist does \textit{not} support
-method overloading, and so a class can not have two functions
-with the same name, even if their signature is different.
-The following example is illegal as it contains method overloading:\\ \\
-\verb"class G = {phoneNumber:int; function salary():int = 8;}" \\
-\verb"class F extends G = {age:int; function salary(p:int):int = 8+age;}"\\ \\
-However, overriding a method in a derived class is clearly legal:\\ \\
-\verb"class G = {phoneNumber:int; function salary(p:int):int = 8;}" \\
-\verb"class F extends G = {age:int; function salary(p:int):int = 8+age;}"\\
 \subsection{Subtyping}
 Inheritance induces a subtyping relation.
 If \verb"F" extends \verb"G", then we say that \verb"F" $\leq$ \verb"G".
@@ -158,12 +164,47 @@ the enclosing scopes are searched for that identifier in order.
 For example, it is possible that variable \verb"x" is contained
 here in two different scopes:\\ \\
 \verb"class F = {x:int; function f(p:int)=let var x:=80 in x+p end;}"\\ \\
-The \verb"x" in \verb"x+p" is the local variable.
+The \verb"x" in \verb"x+p" is the local variable.\\ \\
 However, the next example involving a derived class and its super is illegal:\\ \\
 \verb"class G = {x:int; function salary():int = 8;}" \\
-\verb"class F extends G = {x:int; function swim(y:int):int = 600;}"\\ \\
-Note that if \verb"F" contained a function called \verb"x"
-that would be illegal too.  
+\verb"class F extends G = {x:int; function swim(y:int):int = 600;}"\\ \\  
+\subsection{Binary Operators}
+Table 777 contains the list of supported binary operators,
+along with their associativity and precedence.
+Note, that binary operators are valid only between integers,
+and the resulting type of the operation is an integer too.
+The next (legal) example emphasizes the fact
+that (relational) operators like $<$ are treated in exactly
+the same way as ``standard" operators like $+$:
+\[
+\verb"var oren:int := 18<30"
+\]
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|l| }
+  \hline
+  Precedence       & Operator & Associativity \\
+  \hline
+  \hline
+  1                & $::=$ & letExp                                              \\
+  \hline
+  2                & $::=$ & letExp                                              \\
+  \hline
+  3                & $::=$ & letExp                                              \\
+  \hline
+  4                & $::=$ & letExp                                              \\
+  \hline
+  5                & $::=$ & letExp                                              \\
+  \hline
+  6                & $::=$ & letExp                                              \\
+  \hline
+\end{tabular}
+\caption{
+Binary operators of StarKist along with their associativity and precedence.
+$1$ stands for the lowest precedence, and $9$ for the highest.
+\label{Table_Binary_Operators_Of_StarKist}}
+\end{table}
+
 To create a graph visualization of the AST, please install graphviz
 and run
 \[
