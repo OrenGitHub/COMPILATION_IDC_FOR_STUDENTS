@@ -169,7 +169,7 @@ However, the next example involving a derived class and its super is illegal:\\ 
 \verb"class G = {x:int; function salary():int = 8;}" \\
 \verb"class F extends G = {x:int; function swim(y:int):int = 600;}"\\ \\  
 \subsection{Binary Operators}
-Table 777 contains the list of supported binary operators,
+Table \ref{Table_Binary_Operators_Of_StarKist} contains the list of supported binary operators,
 along with their associativity and precedence.
 Note, that binary operators are valid only between integers,
 and the resulting type of the operation is an integer too.
@@ -181,22 +181,26 @@ the same way as ``standard" operators like $+$:
 \]
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|l| }
+\begin{tabular}{|c|c|l|l| }
   \hline
-  Precedence       & Operator & Associativity \\
+  Precedence       & Operator & Description & Associativity \\
   \hline
   \hline
-  1                & $::=$ & letExp                                              \\
+  1                & $:=$            & assign         & right \\
   \hline
-  2                & $::=$ & letExp                                              \\
+  2                & $=$             & equals         & left  \\
   \hline
-  3                & $::=$ & letExp                                              \\
+  3                & $<,\leq,>,\geq$ &                & left  \\
   \hline
-  4                & $::=$ & letExp                                              \\
+  4                & $+,-$           &                & left  \\
   \hline
-  5                & $::=$ & letExp                                              \\
+  5                & $*,/$           &                & left  \\
   \hline
-  6                & $::=$ & letExp                                              \\
+  6                & $[$             & array indexing &       \\
+  \hline
+  7                & $($             & function call  &       \\
+  \hline
+  8                & $\verb"->"$     & field access   & left  \\
   \hline
 \end{tabular}
 \caption{
@@ -240,13 +244,8 @@ To avoid the pollution of EX5, please remove all *.o files once the target is bu
 The next paragraph describes the execution of compiler.
 
 \paragraph{Execution parameters}
-compiler receives $2$ input file names:
-\begin{table}[h]
-\centering
-\begin{tabular}{ l }
-  Input.txt  \\
-  Output.txt \\
-\end{tabular}
-\end{table}
+compiler receives $2$ input file names:\\ \\
+InputStarkistProgram.txt\\
+OutputStatus.txt
 
 \end{document}
