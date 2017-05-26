@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="compiler" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/compiler" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/Input.txt" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/compiler" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_01_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_02_symbol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_03_StarKist_ErrorMsg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_04_StarKist_Lexer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_05_StarKist_Parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_06_StarKist_AST.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_07_StarKist_AST_print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_08_semant.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_09_GenericTable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_10_SymbolTable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_10_SymbolTableEntry.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_11_Types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_12_IR.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_13_IR_tree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_14_IR_print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_15_Temporaries_and_Labels.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_16_CodeGen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_16_PseudoAsm_To_Simulation_ErrorMsg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_17_PseudoAsm_To_Simulation_Lexer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_18_PseudoAsm_To_Simulation_Parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_19_PseudoAsm_To_Simulation_AST.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_20_PseudoAsm_To_Simulation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_21_Liveness_Analysis.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_22_RegAlloc_ErrorMsg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_23_RegAlloc_Lexer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_24_RegAlloc_Parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_25_RegAlloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/MIPS_frame.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/Write_Assembley_Output_File.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/Input.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_01_Print_Primes_In_Range_2_to_100.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_02_Record_With_An_Array_Inside.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_03_GoodMerge_Lists.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_04_GoodBubbleSort.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_05_Mat3.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_06_Access_Checks.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_07_Array_Boundaries_Checks.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_08_Another_Array_Boundaries_Checks.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_09_BadMerge_Lists.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_10_BubbleSort.txt" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

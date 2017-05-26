@@ -12,13 +12,14 @@ Terminals which are not used:
 
 
 Grammar
-rule 1    program -> INT INT
+rule 1    program -> solutionSet
+rule 2    solutionSet -> INT INT
 
 Terminals, with rules where they appear
 
 $ (-1)
 error (256)
-INT (258) 1
+INT (258) 2
 LPAREN (259)
 RPAREN (260)
 LBRACE (261)
@@ -30,27 +31,30 @@ Nonterminals, with rules where they appear
 
 program (10)
     on left: 1
+solutionSet (11)
+    on left: 2, on right: 1
 
 
 state 0
 
     INT 	shift, and go to state 1
 
-    program	go to state 3
+    program	go to state 4
+    solutionSet	go to state 2
 
 
 
 state 1
 
-    program  ->  INT . INT   (rule 1)
+    solutionSet  ->  INT . INT   (rule 2)
 
-    INT 	shift, and go to state 2
+    INT 	shift, and go to state 3
 
 
 
 state 2
 
-    program  ->  INT INT .   (rule 1)
+    program  ->  solutionSet .   (rule 1)
 
     $default	reduce using rule 1 (program)
 
@@ -58,7 +62,9 @@ state 2
 
 state 3
 
-    $   	go to state 4
+    solutionSet  ->  INT INT .   (rule 2)
+
+    $default	reduce using rule 2 (solutionSet)
 
 
 
@@ -69,5 +75,11 @@ state 4
 
 
 state 5
+
+    $   	go to state 6
+
+
+
+state 6
 
     $default	accept
