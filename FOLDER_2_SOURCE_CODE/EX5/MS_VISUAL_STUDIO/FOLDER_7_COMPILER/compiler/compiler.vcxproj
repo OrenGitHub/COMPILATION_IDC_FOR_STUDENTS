@@ -187,6 +187,13 @@
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_08_Another_Array_Boundaries_Checks.txt" />
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_09_BadMerge_Lists.txt" />
     <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_10_BubbleSort.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_11_Classes.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_12_Classes.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_13_Classes.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_14_Classes.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_15_Classes.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_16_Record_With_An_Array_Inside.txt" />
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_17_Record_With_An_Array_Inside.txt" />
     <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\AST_Graph.txt" />
     <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\Interference_Graph.txt" />
     <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\IR_Graph.txt" />

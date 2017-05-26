@@ -224,7 +224,7 @@ A_exp A_AllocateRecordExp(A_pos pos, S_symbol typ, A_expList fields)
 
 	p->PrintMyNodeSerialNumber = serial_node_number++;
 
-	sprintf(p->PrintTheKindOfTreeIAm,"Allocate\nRecord");
+	sprintf(p->PrintTheKindOfTreeIAm,"Allocate\nRecord( %s )",S_name(typ));
 
 	p->pos=pos;
 	p->u.recordInit.reocrdType=typ;

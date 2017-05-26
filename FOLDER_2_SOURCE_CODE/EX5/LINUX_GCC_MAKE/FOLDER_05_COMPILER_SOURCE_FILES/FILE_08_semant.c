@@ -253,6 +253,7 @@ Ty_fieldList PrepareFieldsTypeList(S_table tenv,A_fieldList fields)
 
 void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 {
+	Ty_ty type;
 	S_table temp_env;
 	S_symbol field_name=NULL;
 	A_fieldList fields = NULL;
@@ -300,18 +301,20 @@ void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 		/***************************************************************/
 	}
 	
-	/******************************/
-	/* [3] SOMETHING HAPPENS HERE */
-	/******************************/
+	/*********************************************/
+	/* [3] see explanation above for begin scope */
+	/*********************************************/
+	S_endScope(temp_env);
 
 	/*******************************/
 	/* [4] Prepare field type list */
 	/*******************************/
 	fieldsTypesList = PrepareFieldsTypeList(tenv,beginning_of_record);
 
-	/******************************/
-	/* [5] SOMETHING HAPPENS HERE */
-	/******************************/
+	/***********************/
+	/* [5] type is ready.. */
+	/***********************/
+	type = Ty_Record(fieldsTypesList);
 
 	/********************************************/
 	/* [6] check for recursive type definitions */
@@ -320,13 +323,15 @@ void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 	{
 	}
 
-	/******************************/
-	/* [7] SOMETHING HAPPENS HERE */
-	/******************************/
+	/*****************/
+	/* [7] End scope */
+	/*****************/
+	S_endScope(tenv);
 
-	/******************************/
-	/* [8] SOMETHING HAPPENS HERE */
-	/******************************/
+	/*************************/
+	/* [8] enter record type */
+	/*************************/
+	S_enter(tenv,type_name,type);
 }
 
 void SEM_transTypeDec(S_table venv,S_table tenv, A_dec dec)
@@ -703,13 +708,20 @@ Ty_ty SEM_transVarExp(S_table venv,S_table tenv,A_var var)
 	
 		return (Ty_ty) S_look(venv,var->u.simple);
 
-	case (A_fieldVar):;
+	case (A_fieldVar) : ;
 
-	case (A_subscriptVar):
-		
-		var->u.subscript.var
-		;
+		/*******************************************/
+		/* TODO:                                   */
+		/* [1]   check that this sub tree is legal */
+		/* [2]   return the type of this sub tree  */
+		/*******************************************/
 
+	case (A_subscriptVar) : ;
+		/*******************************************/
+		/* TODO:                                   */
+		/* [1]   check that this sub tree is legal */
+		/* [2]   return the type of this sub tree  */
+		/*******************************************/
 	}
 }
 
