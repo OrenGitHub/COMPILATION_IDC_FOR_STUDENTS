@@ -4,9 +4,9 @@ let
 
 	type address = {ZIPcode:int, Appartment:int}
 
-	type citizen = {BirthYear:int, lastYearSalaries:IntArray, MyAddress:address, ID:int}
+	type citizen = {ID:IntArray, lastYearSalaries:IntArray, MyAddress:address, ID:int}
 	
-	var oren:citizen := citizen{nil,nil,nil,33546}
+	var oren:citizen := citizen{1976,nil,nil,33546}
 
 in
 

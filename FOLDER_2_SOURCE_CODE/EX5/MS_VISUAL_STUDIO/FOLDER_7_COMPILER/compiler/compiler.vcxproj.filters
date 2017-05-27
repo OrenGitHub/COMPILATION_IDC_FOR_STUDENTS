@@ -251,6 +251,27 @@
     <Text Include="..\..\FOLDER_09_INTERMEDIATE_FILES\PseudoAsm.txt">
       <Filter>Intermediate Files</Filter>
     </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_11_Classes.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_12_Classes.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_13_Classes.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_14_Classes.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_15_Classes.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_16_Record_With_An_Array_Inside.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
+    <Text Include="..\..\..\LINUX_GCC_MAKE\FOLDER_08_INPUT_PROGRAMS\TEST_17_Record_With_An_Array_Inside.txt">
+      <Filter>Input Programs</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FOLDER_10_OUTPUT_ASM\Output.s">

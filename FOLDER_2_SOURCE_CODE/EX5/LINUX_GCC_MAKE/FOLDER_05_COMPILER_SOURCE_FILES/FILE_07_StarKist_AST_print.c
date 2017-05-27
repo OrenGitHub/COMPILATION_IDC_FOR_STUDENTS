@@ -344,6 +344,15 @@ void ABSYN_PrintTreeRecursively(A_exp ABSYN_Tree)
 		ABSYN_PrintTreeRecursively(ABSYN_Tree->u.assign.exp);
 		break;
 
+	case (A_allocateRecordExp):
+
+		fprintf(
+			fl,
+			"v%d -> v%d;\n",
+			ABSYN_Tree->PrintMyNodeSerialNumber,
+			ABSYN_Tree->u.recordInit.initExpList->PrintMyNodeSerialNumber);
+		ABSYN_PrintExpList(ABSYN_Tree->u.recordInit.initExpList);
+
 	case (A_varExp):
 
 		switch (ABSYN_Tree->u.var->kind) {
