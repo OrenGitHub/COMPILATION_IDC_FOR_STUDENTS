@@ -1,14 +1,14 @@
 let
 	class Grandfather = {
-		var age:int
-		var salary:int
+		var age:int;
+		var salary:int;
 		function getAge(x:int) = x
 	}
 	class Father extends Grandfather = {
 		function getSalary(y:int) = 1000
 	}
 	class Son extends Father = {
-		var birthYear:int
+		var birthYear:int;
 		function getAge(x:int) = age
 	}
 
@@ -22,6 +22,6 @@ in
 		JACOB->age   := 555;
 		PrintInt(AVRAHAM->getAge());
 		PrintInt(ISAAC->getAge(666));
-		PrintInt(JACOB->getAge(666));
+		PrintInt(JACOB->getAge(666))
 	)
 end

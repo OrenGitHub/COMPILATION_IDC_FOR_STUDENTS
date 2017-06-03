@@ -6,7 +6,7 @@ CC=gcc
 ###############
 # DIRECTORIES #
 ###############
-BASEDIR              = .
+BASEDIR              = $(shell pwd)
 LEXER_DIR            = $(BASEDIR)/FOLDER_00_Flex
 PARSER_DIR           = $(BASEDIR)/FOLDER_01_Bison
 STARKIST_DIR         = $(BASEDIR)/FOLDER_02_LEXER_PARSER_StarKist
@@ -15,6 +15,9 @@ REGALLOC_DIR         = $(BASEDIR)/FOLDER_04_LEXER_PARSER_RegAlloc
 COMPILER_SOURCE_DIR  = $(BASEDIR)/FOLDER_05_COMPILER_SOURCE_FILES
 COMPILER_HEADER_DIR  = $(BASEDIR)/FOLDER_06_COMPILER_HEADER_FILES
 COMPILER_DIR         = $(BASEDIR)/FOLDER_07_COMPILER
+INPUT_DIR            = $(BASEDIR)/FOLDER_08_INPUT_PROGRAMS
+OUTPUT_DIR           = $(BASEDIR)/FOLDER_10_OUTPUT_ASM
+GDB_COMMANDS_DIR     = $(BASEDIR)/FOLDER_11_GDB_SCRIPTS
 LEXER_SOURCE_DIR     = $(LEXER_DIR)/SOURCE_FILES
 LEXER_HEADER_DIR     = $(LEXER_DIR)/HEADER_FILES
 LEXER_OBJECT_DIR     = $(LEXER_DIR)/OBJECT_FILES
@@ -71,11 +74,22 @@ PARSER_OBJECT_FILES  := $(addprefix $(PARSER_OBJECT_DIR)/,$(PARSER_SOURCE_FILES,
 ############
 # COMPILER #
 ############
-COMPILER_FLAGS         = -I$(COMPILER_HEADER_DIR) -w
+COMPILER_FLAGS         = -ggdb -I$(COMPILER_HEADER_DIR) -w
 COMPILER_PROGRAM       = $(COMPILER_DIR)/compiler
 COMPILER_SOURCE_FILES := $(wildcard  $(COMPILER_SOURCE_DIR)/*.c)
 COMPILER_HEADER_FILES := $(wildcard  $(COMPILER_HEADER_DIR)/*.h)
 COMPILER_OBJECT_FILES := $(addprefix $(LEXER_OBJECT_DIR)/,$(LEXER_SOURCE_FILES,.c=.o))
+
+################
+# INPUT/OUTPUT #
+################
+INPUT  = $(INPUT_DIR)/Input.txt
+OUTPUT = $(OUTPUT_DIR)/output.s
+
+#######
+# GDB #
+#######
+GDB_COMMANDS = ${GDB_COMMANDS_DIR}/gdbCommands.txt
 
 ##########################
 # ALL LEXER(S) PARSER(S) #
@@ -132,8 +146,14 @@ all:
 	mv $(CODEGEN__DIR)/FILE_18_PseudoAsm_To_Simulation_Parser.h $(COMPILER_HEADER_DIR)
 	@echo "\n"
 	@echo "**********************"
-	@echo "* Build Compiler ... *"
+	@echo "* Build compiler ... *"
 	@echo "**********************"
 	@echo "\n"
 	$(CC) $(COMPILER_FLAGS) $(COMPILER_SOURCE_FILES) -o $(COMPILER_PROGRAM)
-
+	@echo "\n"
+	@echo "***************************************"
+	@echo "* Optionally, debug compiler with dbg *"
+	@echo "***************************************"
+	@echo "\n"
+	gdb -x ${GDB_COMMANDS} --args ${COMPILER_PROGRAM} ${INPUT} ${OUTPUT}
+	

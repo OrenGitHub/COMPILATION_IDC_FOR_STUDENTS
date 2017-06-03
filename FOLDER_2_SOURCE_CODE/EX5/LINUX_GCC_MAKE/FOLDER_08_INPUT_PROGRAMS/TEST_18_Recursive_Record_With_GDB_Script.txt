@@ -1,0 +1,21 @@
+let
+
+	type IntArray = array of int
+
+	type address = {ZIPcode:int, Appartment:int}
+
+	type OrenInt  = int	
+	type DanInt   = int	
+	type MoishInt = int	
+
+	type citizen = {BirthYear:int, mother:citizen, father:citizen, lastYearSalaries:IntArray, MyAddress:address, ID:int}
+
+	var oren:citizen := citizen{1976,nil,nil,nil,nil,33546}
+
+in
+
+	(
+		PrintInt(356)
+	)
+
+end

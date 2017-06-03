@@ -1,0 +1,195 @@
+##############################
+# Loop over the entire table #
+##############################
+define PrintSymbolTable
+  set $index = 0
+  while ($index < 7)
+    call (void) printf("+---+\n")
+    call (void) printf("+ %d +",$index)
+    if t->table[$index]
+      set $binder = t->table[$index]
+      while ($binder != 0)
+        call (void) printf(" ---> ")
+        call (void) printf("%s", ((S_symbol)(($binder)->key))->name)
+        if (((Ty_ty) ($binder)->value) != 0)
+          if ((((Ty_ty) ($binder)->value)->kind) == Ty_dummyType)
+            call (void) printf("(dummy)")
+          end
+        end
+        set $binder = ($binder)->next
+      end
+    end
+    call (void) printf("\n")
+    set $index = $index + 1
+  end
+  call (void) printf("+---+\n")
+end
+set width unlimited
+break TAB_enter
+run
+shell clear
+#######
+# int #
+#######
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+cont
+shell clear
+########
+# void #
+########
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+cont
+shell clear
+###########
+# PrinInt #
+###########
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+cont
+cont
+shell clear
+##############
+# SCOPE SIGN #
+##############
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+cont
+cont
+cont
+shell clear
+##################
+# address(dummy) #
+##################
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+clear FILE_09_GenericTable.c:83
+cont
+cont
+cont
+shell clear
+###########
+# OrenInt #
+###########
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+cont
+cont
+cont
+shell clear
+############
+# MoishInt #
+############
+call (void) printf("+++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+cont
+shell clear
+##################
+# citizen(dummy) #
+##################
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+clear FILE_09_GenericTable.c:83
+cont
+cont
+shell clear
+######################
+# citizen(dummy) bug #
+######################
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+clear FILE_09_GenericTable.c:83
+print ((Ty_ty) value)->u.record->head->name->name
+print ((Ty_ty) value)->u.record->head->ty->kind
+print ((Ty_ty) value)->u.record->tail->head->name->name
+print ((Ty_ty) value)->u.record->tail->head->ty->kind
+print ((Ty_ty) value)->u.record->tail->tail->head->name->name
+print ((Ty_ty) value)->u.record->tail->tail->head->ty->kind
+print ((Ty_ty) value)->u.record->tail->tail->tail->head->name->name
+print ((Ty_ty) value)->u.record->tail->tail->tail->head->ty->kind
+print ((Ty_ty) value)->u.record->tail->tail->tail->tail->head->name->name
+print ((Ty_ty) value)->u.record->tail->tail->tail->tail->head->ty->kind
+print ((Ty_ty) value)->u.record->tail->tail->tail->tail->tail->head->name->name
+print ((Ty_ty) value)->u.record->tail->tail->tail->tail->tail->head->ty->kind
+cont
+shell clear
+##################
+# var orenAdress #
+##################
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+clear FILE_09_GenericTable.c:83
+cont
+shell clear
+##############
+# function f #
+##############
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+clear FILE_09_GenericTable.c:83
+cont
+shell clear
+##############
+# SCOPE SIGN #
+##############
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+clear FILE_09_GenericTable.c:83
+cont
+shell clear
+##############################
+# inner scope var orenAdress #
+##############################
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+call (void) printf("Now Entering: %s\n",((S_symbol) key)->name)
+call (void) printf("+++++++++++++++++++++++++++++++++\n")
+PrintSymbolTable
+break FILE_09_GenericTable.c:83
+cont
+PrintSymbolTable
+#print ((Ty_ty) (t->table[1]->value))->kind
+#print ((Ty_ty) (t->table[1]->next->value))->kind
+clear FILE_09_GenericTable.c:83
