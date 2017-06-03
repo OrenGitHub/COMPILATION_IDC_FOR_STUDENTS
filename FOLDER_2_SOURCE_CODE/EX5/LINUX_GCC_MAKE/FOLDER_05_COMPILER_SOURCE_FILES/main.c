@@ -60,7 +60,7 @@ int main(int argc,char **argv)
 	/* [1] Build Abstract Syntax Tree Of Tiger Program */
 	/***************************************************/
 	AST = Tiger_Program_To_AST(Tiger_Program_Filename);
-	ABSYN_PrintTree(AST,GRAPHVIZ_AST_FILENAME);
+	// ABSYN_PrintTree(AST,GRAPHVIZ_AST_FILENAME);
 
 	/*************************/
 	/* [2] Semantic Analysis */
