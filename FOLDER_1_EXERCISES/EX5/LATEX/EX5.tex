@@ -79,10 +79,10 @@ The grammar of the StarKist programming language is shown in Table \ref{Table_CF
   var              & $::=$ & ID                                                  \\
                    & $::=$ & var \verb"'->'" ID                                  \\
                    & $::=$ & var LBRACK exp RBRACK                               \\ \\
-  tField           & $::=$ & VAR   ID ':' ID                                     \\
-  cField           & $::=$ & tField $|$ funcDec                                  \\ \\
+  tField           & $::=$ & ID ':' ID                                           \\
+  cField           & $::=$ & VAR tField $|$ funcDec                              \\ \\
   varDec           & $::=$ & VAR   ID $[$':' ID$]$ $[$ ASSIGN exp $]$            \\
-  typeDec          & $::=$ & TYPE  ID EQ LB tField $[$ ';' tField $]^{*}$ RB     \\
+  typeDec          & $::=$ & TYPE  ID EQ LB tField $[$ ',' tField $]^{*}$ RB     \\
   funcDec          & $::=$ & FUNC ID LP $[$ params $]$ RP $[$ ':' ID $]$ EQ exp  \\
   classDec         & $::=$ & CLASS ID EQ LB cField $[$ ';' cField $]^{*}$ RB     \\ \\
   dec              & $::=$ & funcDec $|$ varDec $|$ typeDec $|$ classDec         \\ \\
@@ -107,15 +107,15 @@ is defined before $m_{2}$. StarKist does \textit{not} support
 method overloading, and so a class can not have two functions
 with the same name, even if their signature is different.
 The following example is \textit{illegal} as it contains method overloading:\\ \\
-\verb"class G = {phoneNumber:int; function salary():int = 8}" \\
-\verb"class F extends G = {age:int; function salary(p:int):int = 8+age}"\\ \\
+\verb"class G = {var phoneNumber:int; function salary():int = 8}" \\
+\verb"class F extends G = {var age:int; function salary(p:int):int = 8}"\\ \\
 The next example is \textit{illegal} too, as a variable can not have the same name of function
 in the same scope:\\ \\
-\verb"class G = {phoneNumber:int; function salary():int = 8}" \\
-\verb"class F extends G = {salary:int; function Pay():int = salary}"\\ \\
+\verb"class G = {var phoneNumber:int; function salary():int = 8}" \\
+\verb"class F extends G = {var salary:int; function Pay():int = salary}"\\ \\
 However, overriding a method in a derived class is (clearly) legal:\\ \\
-\verb"class G = {phoneNumber:int; function salary(p:int):int = 8}" \\
-\verb"class F extends G = {age:int; function salary(p:int):int = 8+age}"\\
+\verb"class G = {var phoneNumber:int; function salary(p:int):int = 8}" \\
+\verb"class F extends G = {var a:int; function salary(p:int):int = 8+a}"\\
 
 \subsection{Arrays, Objects and Records Allocation} 
 Arrays, objects and records are allocated on the heap.
@@ -164,11 +164,11 @@ When resolving an identifier at a certain point in the program,
 the enclosing scopes are searched for that identifier in order.
 For example, it is possible that variable \verb"x" is contained
 here in two different scopes:\\ \\
-\verb"class F = {x:int; function f(p:int)=let var x:=80 in x+p end}"\\ \\
+\verb"class F = {var x:int; function f(p:int)=let var x:=80 in x+p end}"\\ \\
 The \verb"x" in \verb"x+p" is the local variable.\\ \\
 However, the next example involving a derived class and its super is illegal:\\ \\
-\verb"class G = {x:int; function salary():int = 8}" \\
-\verb"class F extends G = {x:int; function swim(y:int):int = 600}"\\ \\  
+\verb"class G = {var x:int; function salary():int = 8}" \\
+\verb"class F extends G = {var x:int; function swim(y:int):int = 600}"\\ \\  
 \subsection{Binary Operators}
 Table \ref{Table_Binary_Operators_Of_StarKist} contains the list of supported binary operators,
 along with their associativity and precedence.
