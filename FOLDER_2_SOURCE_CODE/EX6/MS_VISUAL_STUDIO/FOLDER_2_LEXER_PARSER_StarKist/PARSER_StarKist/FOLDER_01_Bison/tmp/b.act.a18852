@@ -1,0 +1,272 @@
+
+  switch (yyn) {
+
+case 1:
+#line 124 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{absyn_root = yyvsp[0].gval.exp;;
+    break;}
+case 2:
+#line 126 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_IntExp(EM_tokPos,yyvsp[0].gval.ival);;
+    break;}
+case 3:
+#line 127 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_FloatExp(EM_tokPos,yyvsp[0].gval.fval);;
+    break;}
+case 4:
+#line 128 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_StringExp(EM_tokPos,yyvsp[0].gval.sval);;
+    break;}
+case 5:
+#line 129 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_VarExp(EM_tokPos,yyvsp[0].gval.var);;
+    break;}
+case 6:
+#line 130 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 7:
+#line 131 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[-1].gval.exp;;
+    break;}
+case 8:
+#line 132 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 9:
+#line 133 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 10:
+#line 134 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 11:
+#line 135 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 12:
+#line 136 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 13:
+#line 137 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = yyvsp[0].gval.exp;;
+    break;}
+case 14:
+#line 138 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_NilExp(EM_tokPos);;
+    break;}
+case 15:
+#line 140 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_plusOp,   yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 16:
+#line 141 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_minusOp,  yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 17:
+#line 142 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_timesOp,  yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 18:
+#line 143 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_divideOp, yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 19:
+#line 144 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_eqOp,     yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 20:
+#line 145 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_neqOp,    yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 21:
+#line 146 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_ltOp,     yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 22:
+#line 147 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_leOp,     yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 23:
+#line 148 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_gtOp,     yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 24:
+#line 149 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_geOp,     yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 25:
+#line 150 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_andOp,    yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 26:
+#line 151 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_OpExp(EM_tokPos, A_orOp,     yyvsp[-2].gval.exp, yyvsp[0].gval.exp);;
+    break;}
+case 27:
+#line 153 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_IfExp(EM_tokPos,yyvsp[-2].gval.exp,yyvsp[0].gval.exp,NULL);;
+    break;}
+case 28:
+#line 155 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_ForExp(EM_tokPos,S_Symbol(yyvsp[-6].gval.sval),yyvsp[-4].gval.exp,yyvsp[-2].gval.exp,yyvsp[0].gval.exp);;
+    break;}
+case 29:
+#line 157 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.expList = A_ExpList(yyvsp[-2].gval.exp,yyvsp[0].gval.expList);;
+    break;}
+case 30:
+#line 158 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.expList = A_ExpList(yyvsp[-2].gval.exp,A_ExpList(yyvsp[0].gval.exp,NULL));;
+    break;}
+case 31:
+#line 160 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.expList = A_ExpList(yyvsp[-2].gval.exp,yyvsp[0].gval.expList);;
+    break;}
+case 32:
+#line 161 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.expList = A_ExpList(yyvsp[0].gval.exp,NULL);;
+    break;}
+case 33:
+#line 163 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_SeqExp(EM_tokPos,yyvsp[-1].gval.expList);;
+    break;}
+case 34:
+#line 165 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.fieldList = A_FieldList(A_Field(EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),S_Symbol(yyvsp[-2].gval.sval)),yyvsp[0].gval.fieldList);;
+    break;}
+case 35:
+#line 166 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.fieldList = A_FieldList(A_Field(EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),S_Symbol(yyvsp[0].gval.sval)),NULL);;
+    break;}
+case 36:
+#line 168 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_NameTypeDec(  EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),S_Symbol(yyvsp[0].gval.sval));;
+    break;}
+case 37:
+#line 169 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_ArrayTypeDec( EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),S_Symbol(yyvsp[0].gval.sval));;
+    break;}
+case 38:
+#line 170 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_RecordTypeDec(EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),yyvsp[-1].gval.fieldList);;
+    break;}
+case 39:
+#line 172 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AllocateArrayExp(EM_tokPos,S_Symbol(yyvsp[-5].gval.sval),yyvsp[-3].gval.ival,0);;
+    break;}
+case 40:
+#line 173 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AllocateArrayExp(EM_tokPos,S_Symbol(yyvsp[-5].gval.sval),yyvsp[-3].gval.ival,yyvsp[0].gval.ival);;
+    break;}
+case 41:
+#line 174 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AllocateArrayExp(EM_tokPos,S_Symbol(yyvsp[-5].gval.sval),yyvsp[-3].gval.ival,2);;
+    break;}
+case 42:
+#line 176 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AllocateRecordExp(EM_tokPos,S_Symbol(yyvsp[-3].gval.sval),yyvsp[-1].gval.expList);;
+    break;}
+case 43:
+#line 178 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),S_Symbol(yyvsp[0].gval.sval),NULL);;
+    break;}
+case 44:
+#line 179 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),NULL,             yyvsp[0].gval.exp);;
+    break;}
+case 45:
+#line 180 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),NULL,             yyvsp[0].gval.exp);;
+    break;}
+case 46:
+#line 181 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),NULL,             yyvsp[0].gval.exp);;
+    break;}
+case 47:
+#line 182 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),S_Symbol(yyvsp[-2].gval.sval),yyvsp[0].gval.exp);;
+    break;}
+case 48:
+#line 183 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),S_Symbol(yyvsp[-2].gval.sval),yyvsp[0].gval.exp);;
+    break;}
+case 49:
+#line 184 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_VarDec(EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),S_Symbol(yyvsp[-2].gval.sval),yyvsp[0].gval.exp);;
+    break;}
+case 50:
+#line 186 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_FunDec(EM_tokPos,S_Symbol(yyvsp[-4].gval.sval),NULL,NULL,yyvsp[0].gval.exp);;
+    break;}
+case 51:
+#line 187 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_FunDec(EM_tokPos,S_Symbol(yyvsp[-6].gval.sval),NULL,S_Symbol(yyvsp[-2].gval.sval),yyvsp[0].gval.exp);;
+    break;}
+case 52:
+#line 188 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_FunDec(EM_tokPos,S_Symbol(yyvsp[-5].gval.sval),yyvsp[-3].gval.fieldList,NULL,yyvsp[0].gval.exp);;
+    break;}
+case 53:
+#line 189 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = A_FunDec(EM_tokPos,S_Symbol(yyvsp[-7].gval.sval),yyvsp[-5].gval.fieldList,S_Symbol(yyvsp[-2].gval.sval),yyvsp[0].gval.exp);;
+    break;}
+case 54:
+#line 191 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = yyvsp[0].gval.dec;;
+    break;}
+case 55:
+#line 192 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = yyvsp[0].gval.dec;;
+    break;}
+case 56:
+#line 193 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.dec = yyvsp[0].gval.dec;;
+    break;}
+case 57:
+#line 195 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.decList = A_DecList(yyvsp[-1].gval.dec,yyvsp[0].gval.decList);;
+    break;}
+case 58:
+#line 196 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.decList = A_DecList(yyvsp[0].gval.dec,NULL);;
+    break;}
+case 59:
+#line 198 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_LetExp(EM_tokPos,yyvsp[-3].gval.decList,yyvsp[-1].gval.exp);;
+    break;}
+case 60:
+#line 200 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.var = A_SimpleVar(EM_tokPos,S_Symbol(yyvsp[0].gval.sval));;
+    break;}
+case 61:
+#line 201 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.var = A_FieldVar(EM_tokPos,yyvsp[-2].gval.var,S_Symbol(yyvsp[0].gval.sval));;
+    break;}
+case 62:
+#line 202 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.var = A_SubscriptVar(EM_tokPos,yyvsp[-3].gval.var,yyvsp[-1].gval.exp);;
+    break;}
+case 63:
+#line 204 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AssignExp(EM_tokPos,yyvsp[-2].gval.var,yyvsp[0].gval.exp);;
+    break;}
+case 64:
+#line 205 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AssignExp(EM_tokPos,yyvsp[-2].gval.var,yyvsp[0].gval.exp);;
+    break;}
+case 65:
+#line 206 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_AssignExp(EM_tokPos,yyvsp[-2].gval.var,yyvsp[0].gval.exp);;
+    break;}
+case 66:
+#line 208 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_CallExp(EM_tokPos,S_Symbol(yyvsp[-2].gval.sval),NULL);;
+    break;}
+case 67:
+#line 209 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+{yyval.gval.exp = A_CallExp(EM_tokPos,S_Symbol(yyvsp[-3].gval.sval),yyvsp[-1].gval.expList);;
+    break;}
+}

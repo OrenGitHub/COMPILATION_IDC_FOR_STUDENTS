@@ -1,0 +1,27 @@
+let
+
+	type IntArray = array of int
+
+	type address = {ZIPcode:int, Appartment:int}
+
+	type citizen = {ID:IntArray, lastYearSalaries:IntArray, MyAddress:address, ID:int}
+	
+	var oren:citizen := citizen{1976,nil,nil,33546}
+
+in
+
+	(
+		oren->lastYearSalaries := int[12] of 7800;
+
+		oren->lastYearSalaries[7] := 3;
+
+		PrintInt(oren->lastYearSalaries[7] + oren->lastYearSalaries[6]);
+
+		oren->MyAddress := address{69207,19};
+
+		PrintInt(oren->MyAddress->ZIPcode + oren->MyAddress->Appartment);
+
+		PrintInt(oren->ID)
+	)
+
+end

@@ -1,0 +1,44 @@
+#line 1 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+
+/*************************/
+/* GENERAL INCLUDE FILES */
+/*************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+/*************************/
+/* PROJECT INCLUDE FILES */
+/*************************/
+#include "FILE_01_util.h"
+#include "FILE_02_symbol.h" 
+#include "FILE_03_StarKist_ErrorMsg.h"
+#include "FILE_06_StarKist_AST.h"
+
+#define alloca malloc
+
+int yylex(void); /* function prototype */
+
+A_exp absyn_root;
+
+void yyerror(char *s)
+{
+ EM_error(EM_tokPos, "%s", s);
+}
+
+#line 29 "../../../LINUX_GCC_MAKE/FOLDER_02_LEXER_PARSER_StarKist/StarKist.y"
+typedef union
+{
+	union
+	{
+		int			ival;
+		float		fval;
+		string		sval;
+		A_var		var;
+		A_exp		exp;
+		A_dec		dec;
+		A_decList	decList;
+		A_expList	expList;
+		A_fieldList	fieldList;
+	}
+	gval;
+} YYSTYPE;

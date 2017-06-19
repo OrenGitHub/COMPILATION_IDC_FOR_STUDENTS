@@ -1,0 +1,27 @@
+let
+	class Grandfather = {
+		var age:int;
+		var salary:int;
+		function getAge(x:int) = x
+	}
+	class Father extends Grandfather = {
+		function getSalary(y:int) = 1000
+	}
+	class Son extends Father = {
+		var age:int;
+		function getAge(x:int) = age
+	}
+
+	var AVRAHAM := new Grandfather
+	var ISAAC   := new Father
+	var JACOB   := new Son
+in
+	(
+		AVRAHAM->age := 333;
+		ISAAC->age   := 444;
+		JACOB->age   := 555;
+		PrintInt(AVRAHAM->getAge(666));
+		PrintInt(ISAAC->getAge(666));
+		PrintInt(JACOB->getAge(666))
+	)
+end
