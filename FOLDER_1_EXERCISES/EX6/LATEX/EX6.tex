@@ -7,41 +7,55 @@
 
 \section{Introduction}
 This exercise implements the code generation part of compiling StarKist
-programs to MIPS assembly. The details of the StarKist programming language
+programs into MIPS assembly. The details of the StarKist programming language
 (including its syntax and semantics) were described previously in exercise $5$.
 The code generation module traverses the AST built by Bison,
 and builds an intermediate representation (IR) tree.
 The IR tree is then scanned in a post order fashion
 to further translate it into MIPS assembly.
+These two phases are summarized in Table \ref{Table_The_Two_Phases_Of_Code_Gen}.
 \begin{table}[h]
 \centering
 \begin{tabular}{ l l}
-  Phase$(1)$   & AST     $\rightarrow$ IR tree  \\
-  Phase$(2)$   & IR tree $\rightarrow$ ASM file \\
+  Phase$(1)$   & AST $\rightarrow$ IR       \\
+  Phase$(2)$   & IR  $\rightarrow$ ASM file \\
 \end{tabular}
 \caption{
-The LIR tree nodes.
-\label{Table_LIR_API_StarKist}}
+The code generation module can be roughly divided into two phases:
+from AST to IR, and then from IR to the actual assembley file.
+\label{Table_The_Two_Phases_Of_Code_Gen}}
 \end{table}
-So roughly, the code generation can divided into two parts:
-AST to IR tree, and IR tree into MIPS assembly.
-Choosing an IR language specification inevitably affects
-which of the two phases becomes more tedious.
-By that we mean that there are very few IR commands.
-Specifically, Table \ref{Table_LIR_API_StarKist} describes
-the entire set of IR commands.
-
+Note, that different flavours of IR exist, and for example,
+gcc alone uses \href{https://gcc.gnu.org/onlinedocs/gccint/Tree-SSA.html#Tree-SSA}
+{three kinds of intermediate representations}:\\
+\href{https://gcc.gnu.org/onlinedocs/gccint/GENERIC.html#GENERIC}{generic},
+\href{https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html#GIMPLE}{gimple} and
+\href{https://gcc.gnu.org/onlinedocs/gccint/RTL.html#RTL}{rtl}.
+In our project, we will use a (single) low level IR (LIR),
+which is somewhat reminiscent of gcc's
+\href{https://gcc.gnu.org/onlinedocs/gccint/RTL.html#RTL}{rtl}.
+The term ``low level" here indicates that our IR will contain only a limited set
+of commands, specified in Table \ref{Table_LIR_API_StarKist}.
+Evidently, choosing a low level IR affects the workload between the two phases
+mentioned above, and makes for an easier second phase on the expense of
+a harder first phase.
 
 \section{IR Specification}
+The entire set of IR commands is given in Table \ref{Table_LIR_API_StarKist}.
+We will briefly describe each of there commands now;
+\paragraph{BINOP} performs the binary operation between its two sub trees,
+the left sub tree is evaluated first.
+\paragraph{SEQ} indicates a sequence of two sub trees, where the left sub tree is evaluated first.
 we will use a low level IR (LIR) tree contains a very limited set of commands.
 Table 
 
 \begin{table}[h]
 \centering
 \begin{tabular}{ l l l}
-  BINOP   & MOVE  & MEM    \\
-  CJUMP   & JUMP  & CONST  \\
-  LABEL   & TEMP  &        \\
+  BINOP  & MOVE  & MEM    \\
+  CJUMP  & JUMP  & CONST  \\
+  LABEL  & TEMP  & CALL   \\
+  FUNC   & SEQ
 \end{tabular}
 \caption{
 The LIR tree nodes.
@@ -78,10 +92,10 @@ Next, you need to add the relevant derivation rules and AST constructors
 for classes. Last, you should implement the missing parts of the Starkist semantic analyzer.
 The semantic analyzer resides in the file semant.c, and this is where
 most of your changes will occur.
-Please submit your exercise in your GitHub repository under COMPILATION/EX5,
+Please submit your exercise in your GitHub repository under COMPILATION/EX6,
 and have a makefile there to build a runnable program called compiler.
-Make sure that compiler is created in the same level as the makefile: inside EX5.
-To avoid the pollution of EX5, please remove all *.o files once the target is built.
+Make sure that compiler is created in the same level as the makefile: inside EX6.
+To avoid the pollution of EX6, please remove all *.o files once the target is built.
 The next paragraph describes the execution of compiler.
 
 \paragraph{Execution parameters}
