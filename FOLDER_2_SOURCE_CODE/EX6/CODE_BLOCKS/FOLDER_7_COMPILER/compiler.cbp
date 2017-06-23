@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/Input.txt" />
+				<Option parameters="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/Input.txt ../FOLDER_10_OUTPUT_ASM/Output.s" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -125,6 +125,31 @@
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/parse.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_01_util.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_02_symbol.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_03_StarKist_ErrorMsg.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_05_StarKist_Parser.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_06_StarKist_AST.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_08_semant.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_09_GenericTable.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_10_SymbolTable.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_10_SymbolTableEntry.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_11_Types.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_12_IR.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_13_IR_tree.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_15_Temporaries_and_Labels.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_18_PseudoAsm_To_Simulation_Parser.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_19_PseudoAsm_To_Simulation_AST.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_20_PseudoAsm_To_Simulation.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_21_Liveness_Analysis.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_22_RegAlloc_ErrorMsg.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_24_RegAlloc_Parser.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/FILE_25_RegAlloc.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/Write_Assembley_Output_Filename.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/asm.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/frame.h" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_06_COMPILER_HEADER_FILES/parse.h" />
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/Input.txt" />
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_01_Print_Primes_In_Range_2_to_100.txt" />
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_02_Record_With_An_Array_Inside.txt" />
@@ -136,6 +161,15 @@
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_08_Another_Array_Boundaries_Checks.txt" />
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_09_BadMerge_Lists.txt" />
 		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_10_BubbleSort.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_11_Classes.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_12_Classes.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_13_Classes.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_14_Classes.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_15_Classes.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_16_Record_With_An_Array_Inside.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_17_Record_With_An_Array_Inside.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_18_Recursive_Record_With_GDB_Script.txt" />
+		<Unit filename="../../LINUX_GCC_MAKE/FOLDER_08_INPUT_PROGRAMS/TEST_19_Scopes.txt" />
 		<Extensions>
 			<code_completion />
 			<debugger />

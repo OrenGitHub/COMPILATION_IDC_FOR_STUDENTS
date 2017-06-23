@@ -285,3 +285,289 @@
 	"FILE_22_RegAlloc_ErrorMsg.h"
 	"FILE_24_RegAlloc_Parser.h"
 
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_01_util.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FILE_01_util.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_02_symbol.c
+	<stdio.h>
+	<string.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_03_StarKist_ErrorMsg.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	"FILE_01_util.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+
+1498190981 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_04_StarKist_Lexer.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<io.h>
+	<stdlib.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	"FILE_01_util.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_05_StarKist_Parser.h"
+	<stdlib.h>
+
+1498190981 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_05_StarKist_Parser.c
+	<stdio.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	<stdio.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_06_StarKist_AST.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_06_StarKist_AST.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_07_StarKist_AST_print.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"frame.h"
+	"FILE_02_symbol.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_08_semant.h"
+	"FILE_10_SymbolTableEntry.h"
+	"FILE_11_Types.h"
+	"FILE_13_IR_tree.h"
+
+1498193375 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_08_semant.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"FILE_02_symbol.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_08_semant.h"
+	"FILE_10_SymbolTableEntry.h"
+	"FILE_11_Types.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_09_GenericTable.c
+	<stdio.h>
+	"FILE_01_util.h"
+	"FILE_09_GenericTable.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_10_SymbolTable.c
+	<stdio.h>
+	<string.h>
+	"FILE_02_symbol.h"
+	"FILE_10_SymbolTable.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_10_SymbolTableEntry.c
+	<stdio.h>
+	"FILE_10_SymbolTableEntry.h"
+	"FILE_10_SymbolTable.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_11_Types.c
+	<stdio.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_11_Types.h"
+	"FILE_13_IR_tree.h"
+
+1498201908 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_12_IR.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"frame.h"
+	"FILE_02_symbol.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_08_semant.h"
+	"FILE_10_SymbolTableEntry.h"
+	"FILE_11_Types.h"
+	"FILE_13_IR_tree.h"
+
+1498204401 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_13_IR_tree.c
+	<stdio.h>
+	<string.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_13_IR_tree.h"
+	"FILE_15_Temporaries_and_Labels.h"
+
+1498207027 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_14_IR_print.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"frame.h"
+	"FILE_02_symbol.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_08_semant.h"
+	"FILE_10_SymbolTableEntry.h"
+	"FILE_11_Types.h"
+	"FILE_13_IR_tree.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_15_Temporaries_and_Labels.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_09_GenericTable.h"
+	"FILE_15_Temporaries_and_Labels.h"
+
+1497851422 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_16_CodeGen.c
+	<stdio.h>
+	"FILE_13_IR_tree.h"
+	"frame.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_16_PseudoAsm_To_Simulation_ErrorMsg.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	"FILE_01_util.h"
+	"FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+
+1498190981 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_17_PseudoAsm_To_Simulation_Lexer.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<io.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+	"FILE_19_PseudoAsm_To_Simulation_AST.h"
+	"FILE_18_PseudoAsm_To_Simulation_Parser.h"
+	<stdlib.h>
+
+1498190981 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_18_PseudoAsm_To_Simulation_Parser.c
+	<stdio.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+	"FILE_19_PseudoAsm_To_Simulation_AST.h"
+	<stdio.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_19_PseudoAsm_To_Simulation_AST.c
+	<stdio.h>
+	<string.h>
+	"FILE_01_util.h"
+	"FILE_19_PseudoAsm_To_Simulation_AST.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_20_PseudoAsm_To_Simulation.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_15_Temporaries_and_Labels.h"
+	"parse.h"
+	"frame.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_21_Liveness_Analysis.c
+	<stdio.h>
+	<memory.h>
+	<stdlib.h>
+	<string.h>
+	"parse.h"
+	"FILE_01_util.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_15_Temporaries_and_Labels.h"
+	"FILE_19_PseudoAsm_To_Simulation_AST.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_22_RegAlloc_ErrorMsg.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	"FILE_01_util.h"
+	"FILE_22_RegAlloc_ErrorMsg.h"
+
+1498190981 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_23_RegAlloc_Lexer.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<io.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_22_RegAlloc_ErrorMsg.h"
+	"FILE_24_RegAlloc_Parser.h"
+	<stdlib.h>
+
+1498190981 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_24_RegAlloc_Parser.c
+	<stdio.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_22_RegAlloc_ErrorMsg.h"
+	<stdio.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/FILE_25_RegAlloc.c
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	"FILE_15_Temporaries_and_Labels.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/main.c
+	<stdio.h>
+	<stdlib.h>
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_08_semant.h"
+	"FILE_12_IR.h"
+	"FILE_13_IR_tree.h"
+	"FILE_15_Temporaries_and_Labels.h"
+	"asm.h"
+	"parse.h"
+	"FILE_20_PseudoAsm_To_Simulation.h"
+	"FILE_21_Liveness_Analysis.h"
+	"FILE_25_RegAlloc.h"
+	"Write_Assembley_Output_Filename.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/MIPS_frame.c
+	"frame.h"
+	"FILE_01_util.h"
+	"FILE_15_Temporaries_and_Labels.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/parse.c
+	<stdio.h>
+	"parse.h"
+	"FILE_01_util.h"
+	"FILE_02_symbol.h"
+	"FILE_06_StarKist_AST.h"
+	"FILE_03_StarKist_ErrorMsg.h"
+	"FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
+
+1497673425 source:/home/oren/GIT/COMPILATION_IDC_FOR_STUDENTS/FOLDER_2_SOURCE_CODE/EX6/LINUX_GCC_MAKE/FOLDER_05_COMPILER_SOURCE_FILES/Write_Assembley_Output_File.c
+	<stdio.h>
+	"FILE_01_util.h"
+	"FILE_22_RegAlloc_ErrorMsg.h"
+	"FILE_24_RegAlloc_Parser.h"
+
