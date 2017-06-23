@@ -31,8 +31,62 @@
 /********************/
 static FILE *fl;
 
+void IR_PrintExpList(T_expList expList)
+{
+    if (expList == NULL) return;
+
+    /***********************************/
+    /* [1] Print my serial node number */
+    /***********************************/
+    fprintf(fl,"v%d ",expList->PrintMyNodeSerialNumber);
+
+    /***************************/
+    /* [2] Print my node label */
+    /***************************/
+    fprintf(fl,"[label = \"%s\"];\n",expList->PrintTheKindOfTreeIAm);
+
+    if (expList->tail == NULL)
+    {
+        /*******************************************/
+        /* [4] expList->tail != NULL from here ... */
+        /*******************************************/
+        fprintf(
+            fl,
+            "v%d -> v%d;\n",
+            expList->PrintMyNodeSerialNumber,
+            expList->head->PrintMyNodeSerialNumber);
+
+        IR_PrintTreeRecursively(expList->head);
+
+        /******************/
+        /* [3] return ... */
+        /******************/
+        return;
+    }
+
+    /*******************************************/
+    /* [4] expList->tail != NULL from here ... */
+    /*******************************************/
+    fprintf(
+        fl,
+        "v%d -> v%d;\n",
+        expList->PrintMyNodeSerialNumber,
+        expList->head->PrintMyNodeSerialNumber);
+
+    IR_PrintTreeRecursively(expList->head);
+
+    fprintf(
+        fl,
+        "v%d -> v%d;\n",
+        expList->PrintMyNodeSerialNumber,
+        expList->tail->PrintMyNodeSerialNumber);
+
+    IR_PrintExpList(expList->tail);
+}
 void IR_PrintTreeRecursively(T_exp IR_Tree)
 {
+    T_expList expList=NULL;
+
 	/*****************/
 	/* [0] Oh well.. */
 	/*****************/
@@ -54,10 +108,10 @@ void IR_PrintTreeRecursively(T_exp IR_Tree)
 	switch (IR_Tree->kind) {
 
 	case (T_SEQ):
-		
+
 		if (IR_Tree->u.SEQ.left)  fprintf(fl,"v%d -> v%d;\n",IR_Tree->PrintMyNodeSerialNumber,IR_Tree->u.SEQ.left->PrintMyNodeSerialNumber);
 		if (IR_Tree->u.SEQ.right) fprintf(fl,"v%d -> v%d;\n",IR_Tree->PrintMyNodeSerialNumber,IR_Tree->u.SEQ.right->PrintMyNodeSerialNumber);
-		
+
 		IR_PrintTreeRecursively(IR_Tree->u.SEQ.left);
 		IR_PrintTreeRecursively(IR_Tree->u.SEQ.right);
 
@@ -120,7 +174,18 @@ void IR_PrintTreeRecursively(T_exp IR_Tree)
 		IR_PrintTreeRecursively(IR_Tree->u.CJUMP.right);
 
 		break;
-	};
+
+	case (T_CALL):
+
+		fprintf(
+            fl,
+            "v%d -> v%d;\n",
+            IR_Tree->PrintMyNodeSerialNumber,
+            IR_Tree->u.CALL.args->PrintMyNodeSerialNumber);
+
+        IR_PrintExpList(IR_Tree->u.CALL.args);
+        break;
+    }
 }
 
 void IR_PrintTreeInit(const char *filename)

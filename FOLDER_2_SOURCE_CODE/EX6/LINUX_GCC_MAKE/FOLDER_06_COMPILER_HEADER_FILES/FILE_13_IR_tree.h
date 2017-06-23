@@ -19,8 +19,16 @@
 /* TYPES */
 /*********/
 typedef struct T_exp_ *T_exp;
+typedef struct T_expList_
+{
+	int PrintMyNodeSerialNumber;
+	char PrintTheKindOfTreeIAm[MAX_NAME_LENGTH_OF_IR_TREE_KIND];
+
+    T_exp head;
+    struct T_expList_ *tail;
+} T_expList_;
+
 typedef struct T_expList_ *T_expList;
-struct T_expList_ {T_exp head; T_expList tail;};
 
 typedef enum {
 	T_plus,
@@ -71,14 +79,14 @@ struct T_exp_
 	int PrintMyNodeSerialNumber;
 
 	char PrintTheKindOfTreeIAm[MAX_NAME_LENGTH_OF_IR_TREE_KIND];
-	
+
 	union
 	{
 		T_exp MEM;
 		Temp_temp TEMP;
 		Temp_label NAME;
 		Temp_label LABEL;
-		
+
 		struct
 		{
 			union
@@ -106,7 +114,7 @@ struct T_exp_
 			T_exp right;
 		}
 		SEQ;
-		
+
 		struct
 		{
 			Temp_label name;
@@ -123,7 +131,7 @@ struct T_exp_
 			T_expList args;
 		}
 		CALL;
-		
+
 		struct
 		{
 			T_binOp op;
@@ -131,7 +139,7 @@ struct T_exp_
 			T_exp right;
 		}
 		BINOP;
-		
+
 		struct
 		{
 			T_binOp op;
@@ -146,6 +154,7 @@ struct T_exp_
 	} u;
 };
 
+void SetSerialNumber(T_expList expList,int serialNumber);
 T_exp T_Mem(T_exp);
 T_exp T_Const(int i);
 T_exp T_Temp(Temp_temp);

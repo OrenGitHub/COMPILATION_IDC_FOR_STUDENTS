@@ -168,7 +168,7 @@ T_exp IR_transFuncDec(S_table venv,S_table tenv, A_dec dec)
 	/*********************************************/
 	/* [1] compute number of incoming parameters */
 	/*********************************************/
-	for (functionParameters=dec->u.func_dec.params;functionParameters;functionParameters=functionParameters->tail) 
+	for (functionParameters=dec->u.func_dec.params;functionParameters;functionParameters=functionParameters->tail)
 	{
 		numParameters++;
 	}
@@ -194,7 +194,7 @@ T_exp IR_transFuncDec(S_table venv,S_table tenv, A_dec dec)
 	for (
 		formals = frame->formals,functionParameters=dec->u.func_dec.params;
 		functionParameters;
-		formals = formals->tail,functionParameters=functionParameters->tail) 
+		formals = formals->tail,functionParameters=functionParameters->tail)
 	{
 		S_symbol parameter_name = functionParameters->head->field_name;
 		S_symbol parameter_type_name = functionParameters->head->field_type_name;
@@ -236,7 +236,7 @@ T_exp IR_transFuncDec(S_table venv,S_table tenv, A_dec dec)
 	/* [11] sp = sp - frame size */
 	/*****************************/
 	update_new_stack_pointer = T_Move(sp__,T_Binop(T_minus,sp___,T_Const(frame->size)));
-	
+
 	/****************************/
 	/* [12-15] *** EPILOGUE *** */
 	/****************************/
@@ -339,7 +339,7 @@ T_exp IR_transSeqExp(S_table venv,S_table tenv,A_exp exp,F_frame frame)
 		/**********************/
 		expList = expList->tail;
 	}
-	
+
 	return t;
 }
 
@@ -404,12 +404,12 @@ T_exp IR_transOpExp(S_table venv,S_table tenv,A_exp exp,F_frame frame)
 	case (A_minusOp):
 	case (A_timesOp):
 	case (A_divideOp):
-		
+
 		/********************/
 		/* binary operation */
 		/********************/
 		return T_Binop(op,left,right);
-	
+
 	case (A_eqOp):
 	case (A_ltOp):
 	case (A_leOp):
@@ -466,7 +466,7 @@ T_exp IR_transNilExp(S_table venv,S_table tenv,A_exp exp)
 }
 
 T_exp IR_transFloatExp(S_table venv,S_table tenv,A_exp exp)
-{	
+{
 	return T_Const(exp->u.intt);
 }
 
@@ -590,13 +590,13 @@ struct expty IR_transVarExp(S_table venv,S_table tenv,A_var var,F_frame frame)
 		/*                                                                            */
 		/*     [b] check that subscript is >= 0                                       */
 		/*                                                                            */
-		/*     [c] check that subscript is <= allocated size of the array on the heap */ 
+		/*     [c] check that subscript is <= allocated size of the array on the heap */
 		/*                                                                            */
 		/******************************************************************************/
 		check_initialization = T_Const(0);
 
 		check_subscript_ge_than_zero = T_Const(0);
-			
+
 		check_subscript_le_than_actual_memory_size_allocated_on_heap = T_Const(0);
 
 		boundaries_checks =
@@ -619,12 +619,20 @@ struct expty IR_transVarExp(S_table venv,S_table tenv,A_var var,F_frame frame)
 		/*****************************/
 		/* [2] compute actual offset */
 		/*****************************/
-		e.exp = T_Const(0);
+		e.exp =
+			T_Mem(
+				T_Binop(
+					T_plus,
+					e.exp,
+					T_Binop(
+						T_mul,
+						T_Const(F_wordSize),
+                        IR_transExp(venv,tenv,var->u.subscript.exp,frame))));
 
 		/************/
 		/* [3] type */
 		/************/
-		e.ty = e.ty->u.array;
+		// e.ty = e.ty->u.array;
 
 		/**************/
 		/* [4] return */
@@ -648,7 +656,7 @@ T_exp IR_transAssignExp(S_table venv,S_table tenv,A_exp exp,F_frame frame)
 	/* [2] trans variable */
 	/**********************/
 	e = IR_transVarExp(venv,tenv,exp->u.var,frame);
-	
+
 	/*********************/
 	/* [3] move t1 to t2 */
 	/*********************/
@@ -768,7 +776,7 @@ T_exp IR_transIfExp(S_table venv,S_table tenv,A_exp exp,F_frame frame)
 					T_Label(jumpToHereIfTrue),
 					thenExpression)),
 			T_Label(jumpToHereIfFalse));
-			
+
 }
 
 T_exp IR_transCallExp(S_table venv,S_table tenv,A_exp exp,F_frame frame)
@@ -813,7 +821,7 @@ T_exp IR_transAllocteRecordExp(S_table venv,S_table tenv,A_exp exp,F_frame frame
 	for (initExpList=exp->u.recordInit.initExpList;initExpList;initExpList=initExpList->tail)
 	{
 		expList = T_ExpList(IR_transExp(venv,tenv,initExpList->head,frame),expList);
-		
+
 		/****************************************************/
 		/* [2] and count the number of fields in the record */
 		/****************************************************/
