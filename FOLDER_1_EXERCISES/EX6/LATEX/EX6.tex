@@ -22,7 +22,7 @@ These two phases are summarized in Table \ref{Table_The_Two_Phases_Of_Code_Gen}.
 \end{tabular}
 \caption{
 The code generation module can be roughly divided into two phases:
-from AST to IR, and then from IR to the actual assembley file.
+from AST to IR, and then from IR to the actual assembly file.
 \label{Table_The_Two_Phases_Of_Code_Gen}}
 \end{table}
 Note, that different flavours of IR exist, and for example,
@@ -35,19 +35,35 @@ In our project, we will use a (single) low level IR (LIR),
 which is somewhat reminiscent of gcc's
 \href{https://gcc.gnu.org/onlinedocs/gccint/RTL.html#RTL}{rtl}.
 The term ``low level" here indicates that our IR will contain only a limited set
-of commands, specified in Table \ref{Table_LIR_API_StarKist}.
+of commands, specified in Table \ref{Table_IR_API_StarKist}.
 Evidently, choosing a low level IR affects the workload between the two phases
 mentioned above, and makes for an easier second phase on the expense of
 a harder first phase.
 
 \section{IR Specification}
-The entire set of IR commands is given in Table \ref{Table_LIR_API_StarKist}.
-We will briefly describe each of there commands now;
-\paragraph{BINOP} performs the binary operation between its two sub trees,
+The entire set of IR commands is given in Table \ref{Table_IR_API_StarKist}.
+We will briefly describe each of the commands now.
+\textbf{BINOP} performs the binary operation between its two sub trees,
 the left sub tree is evaluated first.
-\paragraph{SEQ} indicates a sequence of two sub trees, where the left sub tree is evaluated first.
-we will use a low level IR (LIR) tree contains a very limited set of commands.
-Table 
+\textbf{MOVE} stores a source value (sub tree) to a destination which is either a memory address
+(\textbf{MEM} sub tree) or a temporary (\textbf{TEMP} sub tree, which is actually a leaf).
+The destination is evaluated first.
+\textbf{SEQ} indicates a sequence of its two sub trees,
+and as before, the left sub tree is evaluated first.
+\textbf{CONST} is a leaf containing a single integer as its value.
+\textbf{JUMP} and \textbf{LABEL} are (self explanatory) leaves too.
+\textbf{CJUMP} evaluates its left and right sub trees in order, 
+and conditionally jumps to one of two possible labels
+according to the result of the comparison.
+\textbf{FUNC} should ideally abstract away both prologue/epilogue
+and calling convention, and contain only the signature
+of the function and its body.
+However, this property is somewhat violated in our project,
+and for code readability reasons, the current implementation
+contains both prologue/epilogue and the (standard) calling convention.
+Note in addition, that unlike most programming languages,
+a function in StarKist can \textit{not} return from multiple places,
+so there is no need for a \textbf{RET} IR command.
 
 \begin{table}[h]
 \centering
@@ -55,23 +71,37 @@ Table
   BINOP  & MOVE  & MEM    \\
   CJUMP  & JUMP  & CONST  \\
   LABEL  & TEMP  & CALL   \\
-  FUNC   & SEQ
+  FUNC   & SEQ   &
 \end{tabular}
 \caption{
-The LIR tree nodes.
-\label{Table_LIR_API_StarKist}}
+The IR tree nodes.
+\label{Table_IR_API_StarKist}}
 \end{table}
 
-\section{Translation from LIR tree to ASM file}
-As mentioned earlier, the advantage of choosing a lower level IR tree
-is an easier translation from IR tree to assembly, and a harder translation
-from AST to IR tree.
-To create a graph visualization of the AST, please install graphviz
-and run
+\section{Inspecting the IR Tree}
+To create a graph visualization of the IR tree,
+please install graphviz on your machine and run
 \[
-\verb"$ dot -Tjpeg -o ./AST_Graph.jpeg ./AST_Graph.txt"
+\verb"$ dot -Tjpeg -o ./IR_Graph.jpeg ./IR_Graph.txt"
 \]
-from \verb"EX5/LINUX_GCC_MAKE"
+from the relevant directory containing the intermediate files.
+
+\section{Translation from IR to ASM}
+Translation from IR to ASM involves two parts too.
+Initially, the IR tree is scanned in a post order fashion,
+to produce a pseudo ASM text file with an unbounded number of temporaries.
+Then, the register allocation phase replaces those temporaries with
+the actual registers of the chosen ASM language. 
+These phases are explained thoroughly in class.
+
+\section{Programming Assignment}
+Your entire assignment is within the creation of the IR tree.
+The translation from IR to MIPS assembly already exists in the code repository.
+You will need to implement the runtime mechanism that
+checks out of bounds array accesses and null dereferences.
+In addition, you will need to implement all the details
+to support classes and inheritance
+(namely, accessing data members of classes, and virtual function calls) 
 
 \section{Input}
 The input for this exercise is a single text file, the input StarKist program.
@@ -86,6 +116,7 @@ to run your compiled program and save results in the output directory:
 Please make sure that \textit{every} StarKist program given to you does what is expected to do
 (printing primes between $2$ and $100$, merging sorted lists, checking out of bound
 array accesses etc.)
+
 \section{Submission Guidelines}
 The code for this exercise resides as usual in subdirectory EX6 of the course GitHub.
 Next, you need to add the relevant derivation rules and AST constructors
