@@ -1,8 +1,32 @@
+%%%%%%%%%%%%%%%%%%
+% DOCUMENT CLASS %
+%%%%%%%%%%%%%%%%%%
 \documentclass{article}
+
+%%%%%%%%%%%%
+% PACKAGES %
+%%%%%%%%%%%%
 \usepackage{hyperref}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT %
+%%%%%%%%%%%%%%%%%%
 \begin{document}
+
+%%%%%%%%%
+% TITLE %
+%%%%%%%%%
 \title{Exercise 6}
+
+%%%%%%%%
+% DATE %
+%%%%%%%%
 \date{Due 7/7/2017}
+
+%%%%%%%%%%%%%%
+% MAKE TITLE %
+%%%%%%%%%%%%%%
 \maketitle
 
 \section{Introduction}
@@ -85,6 +109,49 @@ please install graphviz on your machine and run
 \verb"$ dot -Tjpeg -o ./IR_Graph.jpeg ./IR_Graph.txt"
 \]
 from the relevant directory containing the intermediate files.
+
+\section{Running Example}
+Consider the simple program in Table \ref{Table_StarKist_Program_Running_Example}.
+\begin{table}[h]
+\centering
+\begin{tabular}{l l}
+  let    &                                                   \\
+         & type address = $\{$Apt:int, rent:int, ZIP:int$\}$ \\
+         & var home:address := address$\{$19, 7500, 6701$\}$ \\
+  in     &                                                   \\
+         & PrintInt(home\verb"->"ZIP)                    \\
+  end    &                                                   \\
+\end{tabular}
+\caption{
+A simple StarKist program that contains one local variable,
+one allocation, one field access and one function call.
+\label{Table_StarKist_Program_Running_Example}}
+\end{table}
+It contains a single local variable, a single allocation,
+one field access, and one function call.
+Note that allocations are done by calling the corresponding
+library functions: AllocateRecord and AllocateArray.
+The IR tree for this program is shown in Figure \ref{IR_Tree_Running_Example},
+and for example, it is immediate to find the variable ``home" there:
+\[
+\verb"MEM[BINOP(PLUS)(TEMP(fp),-4)]"
+\]
+An observant reader might also notice that the initializing
+fields sent to allocate array are in reverse order.
+This is done in order to enable an easier translation
+that uses the standard calling convention.
+Another point worth mentioning is that allocate array is a
+\href{https://en.wikipedia.org/wiki/Variadic_function}{variadic function},
+and so the actual number of parameters sent must be passed too.
+This is the last CONST$(3)$ in the call to allocate record.
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width = 10cm]{IRTreeRunningExample.png}\\
+  \caption{IR tree for the StarKist program in Table \ref{Table_StarKist_Program_Running_Example}.
+  \label{IR_Tree_Running_Example}}
+\end{center}
+\end{figure}
 
 \section{Translation from IR to ASM}
 Translation from IR to ASM involves two parts too.
