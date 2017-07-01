@@ -19,15 +19,8 @@ class Son : public Father { public:
 	virtual void RUN(void) { printf("RUN(%d) Son\n", t); }
 };
 void SimpleInheritance(void)
-{
-	int x = 0x11111111;
-	int y = 0x22222222;
-	int z = 0x33333333;
-		
+{		
 	Grandfather *a = new Son;
-	Grandfather *b = new Father;
-
-	a->WALK();
 }
 
 
