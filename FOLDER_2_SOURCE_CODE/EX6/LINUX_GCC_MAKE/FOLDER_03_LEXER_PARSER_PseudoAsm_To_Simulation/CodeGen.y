@@ -12,8 +12,14 @@
 #include "FILE_16_PseudoAsm_To_Simulation_ErrorMsg.h"
 #include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
+/**********/
+/* MALLOC */
+/**********/
 #define alloca malloc
 
+/****************/
+/* PREFIX STUFF */
+/****************/
 #define yyparse zzparse
 #define yylex zzlex
 #define yyerror zzerror
@@ -41,6 +47,7 @@ void zzerror(char *s)
 		float							fval;
 		string							sval;
 		string							register_name;
+		PSEUDO_MIPS_ASM_AST_LabelList	labelList;
 		PSEUDO_MIPS_ASM_AST_Var			var;
 		PSEUDO_MIPS_ASM_AST_Label_Type_	label;
 		PSEUDO_MIPS_ASM_AST_exp			exp;
@@ -52,9 +59,12 @@ void zzerror(char *s)
 %token <gval> INT
 %token <gval> FLOAT
 %token <gval> STRING
+%token <gval> VFTABLE
 %token <gval> PRINT_INT
 %token <gval> PRINT_CHAR
+%token <gval> STRING_VAR
 %token <gval> ALLOCATE
+%token <gval> START_OF_CODE
 %token <gval> EXIT
 %token <gval> ID
 %token <gval> LABEL
@@ -63,9 +73,13 @@ void zzerror(char *s)
 %token <gval> LOAD
 %token <gval> STORE
 %token <gval> LOAD_IMMEDIATE
+%token <gval> LOAD_ADDRESS
+%token <gval> LOAD_BYTE
+%token <gval> STORE_BYTE
 %token <gval> ADD_IMMEDIATE
 %token <gval> JUMP
 %token <gval> JUMP_AND_LINK
+%token <gval> JUMP_AND_LINK_REG
 %token <gval> LPAREN
 %token <gval> RPAREN
 %token <gval> PLUS
@@ -95,6 +109,9 @@ void zzerror(char *s)
 %type <gval> storeExp	
 %type <gval> binopExp	
 %type <gval> movExp	
+%type <gval> strExp	
+%type <gval> labelList	
+%type <gval> vfTableExp	
 %type <gval> var
 %type <gval> program
 
@@ -114,16 +131,26 @@ exp:					labelExp									{$$.exp = $1.exp;}
 						| storeExp									{$$.exp = $1.exp;}
 						| binopExp									{$$.exp = $1.exp;}
 						| movExp									{$$.exp = $1.exp;}
+						| vfTableExp								{$$.exp = $1.exp;}
+						| strExp									{$$.exp = $1.exp;}
+						| START_OF_CODE								{$$.exp = PSEUDO_MIPS_ASM_AST_START_OF_CODE();}
 						| PRINT_INT									{$$.exp = PSEUDO_MIPS_ASM_AST_PRINT_INT();}
 						| PRINT_CHAR								{$$.exp = PSEUDO_MIPS_ASM_AST_PRINT_CHAR();}
 						| ALLOCATE									{$$.exp = PSEUDO_MIPS_ASM_AST_ALLOCATE();}
 						| EXIT										{$$.exp = PSEUDO_MIPS_ASM_AST_EXIT();}
 
+labelList:				LABEL COMMA labelList						{$$.labelList = PSEUDO_MIPS_ASM_AST_LABEL_LIST($1.label,$3.labelList);}
+						| LABEL										{$$.labelList = PSEUDO_MIPS_ASM_AST_LABEL_LIST($1.label,NULL);}
+						
+vfTableExp:				VFTABLE COLON labelList						{$$.exp = PSEUDO_MIPS_ASM_AST_VFTABLE($1.sval,$3.labelList);}
+
+strExp:					STRING_VAR COLON STRING						{$$.exp = PSEUDO_MIPS_ASM_AST_STRING_VAR($1.sval,$3.sval);}
 labelExp:				LABEL COLON									{$$.exp = PSEUDO_MIPS_ASM_AST_LABEL($1.label);}
 
 jumpExp:				JUMP LABEL									{$$.exp = PSEUDO_MIPS_ASM_AST_JUMP_LABEL($2.label);}
 						| JUMP REGISTER								{$$.exp = PSEUDO_MIPS_ASM_AST_JUMP_REGISTER($2.sval);}
 						| JUMP_AND_LINK LABEL						{$$.exp = PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK($2.label.name);}
+						| JUMP_AND_LINK_REG REGISTER				{$$.exp = PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK_REG($2.sval);}
 
 cjumpExp:				BEQ var COMMA var COMMA LABEL				{$$.exp = PSEUDO_MIPS_ASM_AST_BEQ( $2.var,$4.var,$6.label );}
 						| BNE var COMMA var COMMA LABEL				{$$.exp = PSEUDO_MIPS_ASM_AST_BNE( $2.var,$4.var,$6.label );}
@@ -133,9 +160,13 @@ cjumpExp:				BEQ var COMMA var COMMA LABEL				{$$.exp = PSEUDO_MIPS_ASM_AST_BEQ(
 						| BLE var COMMA var COMMA LABEL				{$$.exp = PSEUDO_MIPS_ASM_AST_BLE( $2.var,$4.var,$6.label );}
 
 loadExp:				LOAD var COMMA INT LPAREN var RPAREN		{$$.exp = PSEUDO_MIPS_ASM_AST_LOAD($2.var,$6.var,$4.ival);}
+						| LOAD_BYTE var COMMA LPAREN var RPAREN		{$$.exp = PSEUDO_MIPS_ASM_AST_LOAD_BYTE($2.var,$5.var);}
+						| LOAD_ADDRESS var COMMA STRING_VAR			{$$.exp = PSEUDO_MIPS_ASM_AST_LOAD_ADDRESS($2.var,$4.sval);}
+						| LOAD_ADDRESS var COMMA VFTABLE			{$$.exp = PSEUDO_MIPS_ASM_AST_LOAD_ADDRESS($2.var,$4.sval);}
 						| LOAD_IMMEDIATE var COMMA INT				{$$.exp = PSEUDO_MIPS_ASM_AST_LOAD_IMMEDIATE($2.var,$4.ival);}
 
 storeExp:				STORE var COMMA INT LPAREN var RPAREN		{$$.exp = PSEUDO_MIPS_ASM_AST_STORE($2.var,$6.var,$4.ival);}
+						| STORE_BYTE var COMMA LPAREN var RPAREN	{$$.exp = PSEUDO_MIPS_ASM_AST_STORE_BYTE($2.var,$5.var);}
 
 binopExp:				ADD var COMMA var COMMA var					{$$.exp = PSEUDO_MIPS_ASM_AST_ADD($2.var,$4.var,$6.var);}
 						| SUB var COMMA var COMMA var				{$$.exp = PSEUDO_MIPS_ASM_AST_SUB($2.var,$4.var,$6.var);}

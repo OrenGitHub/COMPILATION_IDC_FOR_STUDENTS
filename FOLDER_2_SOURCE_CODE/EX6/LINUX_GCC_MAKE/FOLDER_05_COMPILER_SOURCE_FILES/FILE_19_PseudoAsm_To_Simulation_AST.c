@@ -19,6 +19,55 @@
 #include "FILE_01_util.h"
 #include "FILE_19_PseudoAsm_To_Simulation_AST.h"
 
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_STRING_VAR(char *var, char *value)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+	p->type = PSEUDO_MIPS_ASM_AST_STRING_VAR_EXP_TYPE;
+
+	strcpy(p->u.string_var.var,var);
+	strcpy(p->u.string_var.value,value);
+
+	return p;	
+}
+PSEUDO_MIPS_ASM_AST_LabelList PSEUDO_MIPS_ASM_AST_LABEL_LIST(PSEUDO_MIPS_ASM_AST_Label_Type_ head,PSEUDO_MIPS_ASM_AST_LabelList tail)
+{
+	PSEUDO_MIPS_ASM_AST_LabelList p = (PSEUDO_MIPS_ASM_AST_LabelList) checked_malloc(sizeof(*p));
+	
+	strcpy(p->head,head.name);
+	p->tail = tail;
+	
+	return p;
+}
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_VFTABLE(char *table_name,PSEUDO_MIPS_ASM_AST_LabelList labels)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+	p->type = PSEUDO_MIPS_ASM_AST_VFTABLE_EXP_TYPE;
+	
+	strcpy(p->u.vftable.name,table_name);
+	p->u.vftable.list = labels;
+	
+	return p;
+}
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_LOAD_ADDRESS(PSEUDO_MIPS_ASM_AST_Var var1, char *var2)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+	p->type = PSEUDO_MIPS_ASM_AST_LOAD_ADDRESS_EXP_TYPE;
+	
+	p->u.load_address.var1 = var1;
+	strcpy(p->u.load_address.var2,var2);
+
+	return p;
+}
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_LOAD_BYTE(PSEUDO_MIPS_ASM_AST_Var var1,PSEUDO_MIPS_ASM_AST_Var var2)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+	p->type = PSEUDO_MIPS_ASM_AST_LOAD_BYTE_EXP_TYPE;
+
+	p->u.load_byte.var1 = var1;
+	p->u.load_byte.var2 = var2;
+
+	return p;	
+}
 PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_LOAD(PSEUDO_MIPS_ASM_AST_Var var1,PSEUDO_MIPS_ASM_AST_Var var2,int offset)
 {
 	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
@@ -43,6 +92,18 @@ PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_ADD_IMMEDIATE(PSEUDO_MIPS_ASM_AST_Va
 	p->u.add_immediate.var2 = var2;
 
 	p->u.add_immediate.value = value;
+
+	return p;
+}
+
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_STORE_BYTE(PSEUDO_MIPS_ASM_AST_Var var1,PSEUDO_MIPS_ASM_AST_Var var2)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+
+	p->type = PSEUDO_MIPS_ASM_AST_STORE_BYTE_EXP_TYPE;
+
+	p->u.store_byte.var1 = var1;
+	p->u.store_byte.var2 = var2;
 
 	return p;
 }
@@ -169,6 +230,17 @@ PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK(char *label)
 	p->type = PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK_EXP_TYPE;
 
 	strcpy(p->u.jump_and_link,label);
+
+	return p;
+}
+
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK_REG(char *register_name)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+
+	p->type = PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK_REG_EXP_TYPE;
+
+	strcpy(p->u.jump_and_link_reg,register_name);
 
 	return p;
 }
@@ -322,6 +394,15 @@ PSEUDO_MIPS_ASM_AST_expList PSEUDO_MIPS_ASM_AST_ExpList(PSEUDO_MIPS_ASM_AST_exp 
 
 	p->head = head;
 	p->tail = tail;
+
+	return p;
+}
+
+PSEUDO_MIPS_ASM_AST_exp PSEUDO_MIPS_ASM_AST_START_OF_CODE(void)
+{
+	PSEUDO_MIPS_ASM_AST_exp p = (PSEUDO_MIPS_ASM_AST_exp) checked_malloc(sizeof(*p));
+
+	p->type = PSEUDO_MIPS_ASM_AST_START_OF_CODE_EXP_TYPE;
 
 	return p;
 }

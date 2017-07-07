@@ -31,6 +31,8 @@
 /********************/
 static FILE *fl;
 
+void IR_PrintTreeRecursively(T_exp IR_Tree);
+
 void IR_PrintExpList(T_expList expList)
 {
     if (expList == NULL) return;

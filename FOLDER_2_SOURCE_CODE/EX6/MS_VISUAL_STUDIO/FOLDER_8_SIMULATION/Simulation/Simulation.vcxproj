@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9A033BF1-EA6F-43C7-9BC1-6A54D4883B0A}</ProjectGuid>
+    <ProjectGuid>{01152AB4-224F-4363-822C-BCB59C8E8374}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>PARSER</RootNamespace>
+    <RootNamespace>Simulation</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,11 +71,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_01_Bison/HEADER_FILES</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);../../../LINUX_GCC_MAKE/FOLDER_01_Bison/HEADER_FILES</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,7 +87,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;STDC_HEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,7 +100,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);STDC_HEADERS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,43 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\alloca.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\allocate.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\closure.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\conflicts.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\derives.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\files.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\getargs.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\getopt.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\getopt1.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\gram.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\lalr.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\lex.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\LR0.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\main.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\nullable.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\output.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\print.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\reader.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\reduce.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\symtab.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\version.c" />
-    <ClCompile Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\SOURCE_FILES\warshall.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\files.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\getopt.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\gram.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\lex.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\machine.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\MyNew.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\state.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\symtab.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\system.h" />
-    <ClInclude Include="..\..\..\LINUX_GCC_MAKE\FOLDER_01_Bison\HEADER_FILES\types.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\LINUX_GCC_MAKE\FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation\CodeGen.y" />
+    <ClCompile Include="..\..\FOLDER_09_INTERMEDIATE_FILES\simulation.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
