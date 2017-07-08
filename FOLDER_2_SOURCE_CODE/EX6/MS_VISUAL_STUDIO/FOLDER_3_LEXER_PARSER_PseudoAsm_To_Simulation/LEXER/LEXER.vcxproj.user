@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments>-o../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_17_PseudoAsm_To_Simulation_Lexer.c ../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>-o../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_17_PseudoAsm_To_Simulation_Lexer.c ../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.lex</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

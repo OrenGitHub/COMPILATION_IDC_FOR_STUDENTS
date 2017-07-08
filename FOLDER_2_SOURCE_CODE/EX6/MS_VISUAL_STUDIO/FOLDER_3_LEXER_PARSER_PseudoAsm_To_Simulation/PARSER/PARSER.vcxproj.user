@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments>-d -v -p zz -o ../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_18_PseudoAsm_To_Simulation_Parser.c ../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>-d -v -p zz -o ../../FOLDER_5_COMPILER_SOURCE_FILES/FILE_18_PseudoAsm_To_Simulation_Parser.c ../../../LINUX_GCC_MAKE/FOLDER_03_LEXER_PARSER_PseudoAsm_To_Simulation/CodeGen.y</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

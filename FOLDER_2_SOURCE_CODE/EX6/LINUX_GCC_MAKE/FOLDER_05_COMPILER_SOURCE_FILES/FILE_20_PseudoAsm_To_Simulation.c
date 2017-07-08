@@ -38,6 +38,7 @@ int indexGlobal=0;
 string Temporary_Or_Register(PSEUDO_MIPS_ASM_AST_Var var)
 {
 	string temp_or_register = (string) malloc(MAX_NAME_LENGTH_OF_TEMPORARY_OR_REGISTER);
+	char temp_buffer[MAX_NAME_LENGTH_OF_TEMPORARY_OR_REGISTER];
 
 	if (var->type == TEMPORARY_VAR)
 	{
@@ -51,6 +52,87 @@ string Temporary_Or_Register(PSEUDO_MIPS_ASM_AST_Var var)
 	return temp_or_register;
 }
 
+void CodeGenerationExp_VfTable(PSEUDO_MIPS_ASM_AST_exp exp)
+{
+	int offset=0;
+	PSEUDO_MIPS_ASM_AST_LabelList list = NULL;
+
+	fprintf(fl,"\tint %s[] = {",exp->u.vftable.name);
+	for (list = exp->u.vftable.list;list;list = list->tail)
+	{
+		fprintf(fl,"0,");
+	}
+	fprintf(fl,"};\n");
+
+	fprintf(fl,"\t__asm\n\t{\n");
+	
+	for (list = exp->u.vftable.list;list;list = list->tail,offset+=4)
+	{
+		fprintf(fl,"\t\tmov eax, %s\n",list->head);
+		fprintf(fl,"\t\tmov %s+%d, eax\n",exp->u.vftable.name,offset);
+	}
+			
+	fprintf(fl,"\t}\n\n");
+}
+
+void CodeGenerationExp_StartOfCode(CodeGenerationExp_StartOfCode)
+{
+	/**************************************************/
+	/* [1] Declare dummy variables for easy debugging */
+	/**************************************************/
+	fprintf(fl,"\tint b1=1;\n");
+	fprintf(fl,"\tint b2=2;\n");
+	fprintf(fl,"\tint b3=3;\n");
+	fprintf(fl,"\tint b4=4;\n");
+	fprintf(fl,"\tint b5=5;\n");
+	fprintf(fl,"\tint b6=6;\n");
+
+	/**************************/
+	/* [2] Initialize sp & fp */
+	/**************************/
+	fprintf(fl,"\tint *AlonzoMorales = (sp = &b3);\n");
+	fprintf(fl,"\tint *KamrashAlura  = (fp = &b2);\n\n");	
+}
+void CodeGenerationExp_StringVar(PSEUDO_MIPS_ASM_AST_exp exp)
+{
+	fprintf(
+		fl,
+		"\tconst char *%s = %s;\n\n",
+		exp->u.string_var.var,
+		exp->u.string_var.value);
+}
+void CodeGenerationExp_Load_Byte(PSEUDO_MIPS_ASM_AST_exp exp)
+{
+	string temporary_or_register_1 = Temporary_Or_Register(exp->u.load_byte.var1);
+	string temporary_or_register_2 = Temporary_Or_Register(exp->u.load_byte.var2);
+
+	fprintf(
+		fl,
+		"\t%s = (int *) (*((char *) %s));\n\n",
+		temporary_or_register_1,
+		temporary_or_register_2);	
+}
+void CodeGenerationExp_Store_Byte(PSEUDO_MIPS_ASM_AST_exp exp)
+{
+	string temporary_or_register_1 = Temporary_Or_Register(exp->u.store_byte.var1);
+	string temporary_or_register_2 = Temporary_Or_Register(exp->u.store_byte.var2);
+
+	fprintf(
+		fl,
+		"\t*(((char *) %s)+0) = ((char) %s);\n\n",
+		temporary_or_register_2,
+		temporary_or_register_1);	
+}
+void CodeGenerationExp_Load_Address(PSEUDO_MIPS_ASM_AST_exp exp)
+{
+	string temporary_or_register_1 = Temporary_Or_Register(exp->u.load_address.var1);
+
+	fprintf(
+		fl,
+		"\t%s = (int *) %s;\n\n",
+		temporary_or_register_1,
+		exp->u.load_address.var2);	
+}
 void CodeGenerationExp_Add(PSEUDO_MIPS_ASM_AST_exp exp)
 {
 	string temporary_or_register_1 = Temporary_Or_Register(exp->u.add.var1);
@@ -225,6 +307,22 @@ void CodeGenerationExp_Jump_Label(PSEUDO_MIPS_ASM_AST_exp exp)
 		"\tgoto %s;\n\n",
 		exp->u.jump_label.name);
 }
+
+void CodeGenerationExp_Jump_And_link_Reg(PSEUDO_MIPS_ASM_AST_exp exp)
+{
+	fprintf(
+		fl,
+		"\t__asm\n\t{\n\t\tcall _here%d\n\t\t_here%d: pop eax\n\t\tadd eax,15\n\t\tmov ra,eax\n\t}\n\n",
+		indexGlobal,
+		indexGlobal);
+
+	fprintf(
+		fl,
+		"\t__asm\n\t{\n\t\tjmp %s\n\t}\n\n",
+		exp->u.jump_and_link_reg);
+
+	indexGlobal++;
+}
 void CodeGenerationExp_Jump_And_link(PSEUDO_MIPS_ASM_AST_exp exp)
 {
 	fprintf(
@@ -237,6 +335,10 @@ void CodeGenerationExp_Jump_And_link(PSEUDO_MIPS_ASM_AST_exp exp)
 		fl,
 		"\tgoto %s;\n\n",
 		exp->u.jump_and_link);
+
+	fprintf(
+		fl,
+		"\t__asm\n\t{\n\t\tnop\n\t\tnop\n\t\tnop\n\t}\n\n");
 
 	indexGlobal++;
 }
@@ -307,13 +409,20 @@ void CodeGenerationExp(PSEUDO_MIPS_ASM_AST_exp exp)
 	case (PSEUDO_MIPS_ASM_AST_STORE_EXP_TYPE):			CodeGenerationExp_Store(exp);          break;
 	case (PSEUDO_MIPS_ASM_AST_JUMP_LABEL_EXP_TYPE):		CodeGenerationExp_Jump_Label(exp);     break;
 	case (PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK_EXP_TYPE):	CodeGenerationExp_Jump_And_link(exp);  break;
+	case (PSEUDO_MIPS_ASM_AST_JUMP_AND_LINK_REG_EXP_TYPE):	CodeGenerationExp_Jump_And_link_Reg(exp);  break;
 	case (PSEUDO_MIPS_ASM_AST_JUMP_REGISTER_EXP_TYPE):	CodeGenerationExp_Jump_Register(exp);  break;
 	case (PSEUDO_MIPS_ASM_AST_ADD_IMMEDIATE_EXP_TYPE):	CodeGenerationExp_Add_Immediate(exp);  break;
 	case (PSEUDO_MIPS_ASM_AST_LOAD_IMMEDIATE_EXP_TYPE):	CodeGenerationExp_Load_Immediate(exp); break;
+	case (PSEUDO_MIPS_ASM_AST_LOAD_BYTE_EXP_TYPE):		CodeGenerationExp_Load_Byte(exp);      break;
+	case (PSEUDO_MIPS_ASM_AST_STORE_BYTE_EXP_TYPE):		CodeGenerationExp_Store_Byte(exp);     break;
 	case (PSEUDO_MIPS_ASM_AST_PRINT_INT_EXP_TYPE):		CodeGenerationExp_Print_Int(exp);      break;
 	case (PSEUDO_MIPS_ASM_AST_PRINT_CHAR_EXP_TYPE):		CodeGenerationExp_Print_Char(exp);     break;
 	case (PSEUDO_MIPS_ASM_AST_ALLOCATE_EXP_TYPE):		CodeGenerationExp_Allocate(exp);       break;
 	case (PSEUDO_MIPS_ASM_AST_EXIT_EXP_TYPE):			CodeGenerationExp_Exit(exp);           break;
+	case (PSEUDO_MIPS_ASM_AST_STRING_VAR_EXP_TYPE):		CodeGenerationExp_StringVar(exp);      break;
+	case (PSEUDO_MIPS_ASM_AST_VFTABLE_EXP_TYPE):		CodeGenerationExp_VfTable(exp);        break;
+	case (PSEUDO_MIPS_ASM_AST_LOAD_ADDRESS_EXP_TYPE):	CodeGenerationExp_Load_Address(exp);   break;
+	case (PSEUDO_MIPS_ASM_AST_START_OF_CODE_EXP_TYPE):	CodeGenerationExp_StartOfCode(exp);    break;
 	}
 }
 
@@ -379,18 +488,18 @@ void AST_To_Simulation(PSEUDO_MIPS_ASM_AST_expList AST,string simulation_filenam
 	/**************************************************/
 	/* [7] Declare dummy variables for easy debugging */
 	/**************************************************/
-	fprintf(fl,"\tint b1=1;\n");
-	fprintf(fl,"\tint b2=2;\n");
-	fprintf(fl,"\tint b3=3;\n");
-	fprintf(fl,"\tint b4=4;\n");
-	fprintf(fl,"\tint b5=5;\n");
-	fprintf(fl,"\tint b6=6;\n");
+	//fprintf(fl,"\tint b1=1;\n");
+	//fprintf(fl,"\tint b2=2;\n");
+	//fprintf(fl,"\tint b3=3;\n");
+	//fprintf(fl,"\tint b4=4;\n");
+	//fprintf(fl,"\tint b5=5;\n");
+	//fprintf(fl,"\tint b6=6;\n");
 
 	/**************************/
 	/* [8] Initialize sp & fp */
 	/**************************/
-	fprintf(fl,"\tsp = &b3;\n");
-	fprintf(fl,"\tfp = &b2;\n");
+	//fprintf(fl,"\tsp = &b3;\n");
+	//fprintf(fl,"\tfp = &b2;\n");
 
 	/*****************************/
 	/* [9] Generate C Simulation */
