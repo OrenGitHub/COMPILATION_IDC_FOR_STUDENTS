@@ -403,6 +403,7 @@ void MIPS_ASM_Init()
 	/***************/
 	/* Entry Point */
 	/***************/
+	fprintf(fl,".text\n");
 	fprintf(fl,"main:\n\n");
 	fprintf(fl,"jal Label_0_main\n\n");
 	fprintf(fl,"Label_0_main:\n\n");
