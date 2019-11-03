@@ -1,0 +1,112 @@
+% !TEX root = ../slides.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame Open :: Overview %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Overview (cont)}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Backend :: From IR to machine code %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textit{Backend} handles the steps from IR to \textit{destination} language
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intermediate Representation %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textit{Intermediate Representation} (IR)
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intermediate Representation %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Instead of direct \fbox{src $\rightarrow$ dst} translation, do \fbox{src $\rightarrow$ IR $\rightarrow$ dst}
+\item IR contains everything needed for translation to machine code
+\item IR is effective for handling \textit{multiple src and dst languages}
+\item Different compilers have different IRs
+\item IR features ideally \textit{independent of src language}
+\item IR features ideally \textit{independent of dst language}
+\item Designing a good IR is more art than science
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%
+% Example %
+%%%%%%%%%%%
+\item Example: \fbox{int i=1+2+3} $\rightarrow$ \fbox{int temp=1+2; int i=temp+3}
+
+%%%%%%%%%%%%%%%%%
+% Optimizations %
+%%%%%%%%%%%%%%%%%
+\item \textit{Optimizations}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%
+% Optimizations %
+%%%%%%%%%%%%%%%%%
+\item Example: \fbox{int i = 4+3} $\rightarrow$ \fbox{int i = 7}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%
+% Static checks %
+%%%%%%%%%%%%%%%%%
+\item \textit{Static checks}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%
+% Static Checks %
+%%%%%%%%%%%%%%%%%
+\item Example: \fbox{int i = 8/0} $\rightarrow$ \fbox{compilation error}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intermediate representation %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textit{Machine code generation}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Frame Close %
+%%%%%%%%%%%%%%%
+}

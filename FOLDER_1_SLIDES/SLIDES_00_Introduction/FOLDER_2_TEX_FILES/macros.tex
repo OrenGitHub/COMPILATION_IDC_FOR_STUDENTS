@@ -1,0 +1,80 @@
+% !TEX root = ../slides.tex
+
+%%%%%%%%%%%%%%%%%%
+% AUTOR COMMENTS %
+%%%%%%%%%%%%%%%%%%
+\newcommand{\OISH}[1]{{\textcolor{blue}{OISH: {\em #1}}}}
+
+%%%%%%%%%%%%%%%%%%%%
+% AUTOR UN-COMMENT %
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\OISHX}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABS/REL PATH INPUT MACROS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\texinput}[1]{\input{FOLDER_2_TEX_FILES/#1}}
+
+%%%%%%%%%%%%%%%%%%%%%
+% GENERAL NOTATIONS %
+%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Naturals}{\mathbb{N}}
+
+%%%%%%%%%%%%%%%%%%%%%
+% PROJECT NOTATIONS %
+%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+% LISTINGS %
+%%%%%%%%%%%%
+\usepackage{listings}
+\lstset{
+language=C++,              % choose the language of the code
+basicstyle=\color{black},  %
+keywordstyle=\color{blue}, % style for keywords
+numbers=none,              % where to put the line-numbers
+numberstyle=\tiny,         % the size of the fonts that are used for the line-numbers
+%backgroundcolor=\color{darkgray},
+%showspaces=false, % show spaces adding particular underscores
+%showstringspaces=false, % underline spaces within strings
+%showtabs=false, % show tabs within strings adding particular underscores
+frame=single, % adds a frame around the code
+%tabsize=2, % sets default tabsize to 2 spaces
+%rulesepcolor=\color{gray},
+rulecolor=\color{black},
+%captionpos=b, % sets the caption-position to bottom
+%breaklines=true, % sets automatic line breaking
+%breakatwhitespace=false,
+}
+
+% Styles for TikZ figures
+\tikzset{
+    table cell/.style={
+        draw,
+        inner xsep=0pt,
+        outer sep=0pt
+    },
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        inner sep=0pt,
+        nodes={table cell}
+    },
+    math table cell/.style={
+    	table cell,
+        anchor=south
+    },
+    math table/.style={
+        matrix of math nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={math table cell}
+    },
+    minitable/.style={
+    	math table, every node/.append style={
+        	scale=0.6,
+            minimum width=12mm, minimum height=5mm}
+    }
+}

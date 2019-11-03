@@ -1,0 +1,127 @@
+% !TEX root = ../slides.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame Open :: Overview %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Summary}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simplified example: int i=1+2+3 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Simplified example \fbox{int i=1+2+3}
+
+%%%%%%%%%%%%%%%%%%%%
+% Lexical Analysis %
+%%%%%%%%%%%%%%%%%%%%
+\item Lexical analyis \textcolor{green}{passed}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+% Lexical Analysis %
+%%%%%%%%%%%%%%%%%%%%
+\item Sentence contains the words: int,i,=,1,+,2,3
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%
+% Syntax Analysis %
+%%%%%%%%%%%%%%%%%%%
+\item Syntax analyis \textcolor{green}{passed}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%
+% Syntax Analysis %
+%%%%%%%%%%%%%%%%%%%
+\item Sentence contains the sturcture: type var = initvalue
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Semantic Analysis %
+%%%%%%%%%%%%%%%%%%%%%
+\item Semantic analyis \textcolor{green}{passed}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%
+% Syntax Analysis %
+%%%%%%%%%%%%%%%%%%%
+\item 1+2+3 is assigned to an integer-typed variable
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%
+% IR %
+%%%%%%
+\item IR (should I write \textcolor{green}{passed} here too?)
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%
+% IR %
+%%%%%%
+\item \fbox{int i=1+2+3} $\rightarrow$ \fbox{int temp=1+2; int i=temp+3}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%
+% IR %
+%%%%%%
+\item Machine Code (MIPS shown here)
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%
+% IR %
+%%%%%%
+\item
+\fbox{li \$t5,1},\fbox{li \$t3,2},\fbox{add \$t4,\$t5,\$t3},\fbox{li \$t5,3},\fbox{add \$t6,\$t5,\$t4}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Frame Close %
+%%%%%%%%%%%%%%%
+}

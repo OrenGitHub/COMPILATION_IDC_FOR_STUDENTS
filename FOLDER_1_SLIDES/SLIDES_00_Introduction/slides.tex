@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% document class: beamer %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+
+%%%%%%%%%%%%
+% PACKAGES %
+%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{arrows,positioning,matrix,scopes,calc,decorations.pathmorphing}
+\hypersetup{colorlinks=true,urlcolor=blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% no navigation barsplease %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}[frame number]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% no navigation symbols please %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% no footers at all please %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% center the title please %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{frametitle}[default][center]
+
+%%%%%%%%%%%%%%%%%
+% import macros %
+%%%%%%%%%%%%%%%%%
+\input{FOLDER_2_TEX_FILES/macros}
+
+%%%%%%%%%%%%%%%%%%
+% begin document %
+%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%
+% title %
+%%%%%%%%%
+\title{Compilation}
+
+%%%%%%%%%%
+% author %
+%%%%%%%%%%
+\author{Translating high level languages to machine code}
+
+%%%%%%%%%%%%
+% date ... %
+%%%%%%%%%%%%
+\date{\today} 
+
+%%%%%%%%%%%%%
+% frame ... %
+%%%%%%%%%%%%%
+\frame{\titlepage} 
+
+%%%%%%%%%%%%%
+% slide  01 %
+%%%%%%%%%%%%%
+\texinput{slide_01_hi}
+
+%%%%%%%%%%%%%
+% slide  02 %
+%%%%%%%%%%%%%
+\texinput{slide_02_what_to_expect}
+
+%%%%%%%%%%%%%
+% slide  03 %
+%%%%%%%%%%%%%
+\texinput{slide_03_resources}
+
+%%%%%%%%%%%%%
+% slide  04 %
+%%%%%%%%%%%%%
+\texinput{slide_04_overview}
+
+%%%%%%%%%%%%%
+% slide  05 %
+%%%%%%%%%%%%%
+\texinput{slide_05_overview_cont}
+
+%%%%%%%%%%%%%
+% slide  06 %
+%%%%%%%%%%%%%
+\texinput{slide_06_summary}
+
+%%%%%%%%%%%%%%%%
+% end document %
+%%%%%%%%%%%%%%%%
+\end{document}
