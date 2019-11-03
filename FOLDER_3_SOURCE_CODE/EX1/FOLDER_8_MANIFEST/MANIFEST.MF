@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_65 (Oracle Corporation)
+Class-Path: ./FOLDER_7_EXTERNAL_JARS/java-cup-11b-runtime.jar
+  ./FOLDER_2_BIN/Main.class
+  ./FOLDER_2_BIN/Lexer.class
+  ./FOLDER_2_BIN/sym.class
+Main-Class: Main
+
