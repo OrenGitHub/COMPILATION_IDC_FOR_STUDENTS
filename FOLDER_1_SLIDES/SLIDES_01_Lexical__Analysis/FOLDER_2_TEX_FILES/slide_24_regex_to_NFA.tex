@@ -1,0 +1,84 @@
+% !TEX root = ../slides.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame Open :: Regex to NFA %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Regex $\rightarrow$ NFA}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%
+% DFA %
+%%%%%%%
+\item Here is a reminder about DFA:
+\href{https://en.wikipedia.org/wiki/Deterministic_finite_automaton}{wikipedia}
+
+%%%%%%%
+% NFA %
+%%%%%%%
+\item Here is a reminder about NFA:
+\href{https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton}{wikipedia}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item Actually, we only need a DFA + $\epsilon$ transitions
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%%
+% Regex to NFA %
+%%%%%%%%%%%%%%%%
+\item Regex to NFA is a simple recursive algorithm
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item Suppose $M_{i}$ is an NFA representing regex $r_{i}$
+\item Which NFA represents $r_{1}   r_{2}$?
+\item Which NFA represents $r_{1} | r_{2}$?
+\item Which NFA represents $r_{1}^{*}$?
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%%
+% Regex to NFA %
+%%%%%%%%%%%%%%%%
+\item Regex to NFA base cases
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item If $r_{1} = $ a, what is $M_{1}$?
+\item If $r_{1}$ is the empty set, what is $M_{1}$?
+\item If $r_{1}$ is the empty string, what is $M_{1}$?
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Frame Close %
+%%%%%%%%%%%%%%%
+}

@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% document class: beamer %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+
+%%%%%%%%%%%%
+% PACKAGES %
+%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{arrows,positioning,matrix,scopes,calc,decorations.pathmorphing}
+\hypersetup{colorlinks=true,urlcolor=blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% no navigation barsplease %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}[frame number]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% no navigation symbols please %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% no footers at all please %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% center the title please %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{frametitle}[default][center]
+
+%%%%%%%%%%%%%%%%%
+% import macros %
+%%%%%%%%%%%%%%%%%
+\input{FOLDER_2_TEX_FILES/macros}
+
+%%%%%%%%%%%%%%%%%%
+% begin document %
+%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%
+% title %
+%%%%%%%%%
+\title{Lexical Analysis}
+
+%%%%%%%%%%
+% author %
+%%%%%%%%%%
+\author{Verifying that every word is legal}
+
+%%%%%%%%%%%%
+% date ... %
+%%%%%%%%%%%%
+\date{\today} 
+
+%%%%%%%%%%%%%
+% frame ... %
+%%%%%%%%%%%%%
+\frame{\titlepage} 
+
+%%%%%%%%%%%%%
+% slide  01 %
+%%%%%%%%%%%%%
+\texinput{slide_01_before}
+\texinput{slide_01_after}
+
+%%%%%%%%%%%%%
+% slide  02 %
+%%%%%%%%%%%%%
+\texinput{slide_02_before}
+\texinput{slide_02_after}
+
+%%%%%%%%%%%%%
+% slide  03 %
+%%%%%%%%%%%%%
+\texinput{slide_03_before}
+\texinput{slide_03_after}
+
+%%%%%%%%%%%%%
+% slide  04 %
+%%%%%%%%%%%%%
+\texinput{slide_04_before}
+\texinput{slide_04_after}
+
+%%%%%%%%%%%%%
+% slide  05 %
+%%%%%%%%%%%%%
+\texinput{slide_05_before}
+\texinput{slide_05_after}
+
+%%%%%%%%%%%%%
+% slide  06 %
+%%%%%%%%%%%%%
+\texinput{slide_06_before}
+\texinput{slide_06_after}
+
+%%%%%%%%%%%%%
+% slide  06 %
+%%%%%%%%%%%%%
+%\texinput{slide_07_before}
+%\texinput{slide_07_after}
+
+%%%%%%%%%%%%%
+% slide  06 %
+%%%%%%%%%%%%%
+%\texinput{slide_08_before}
+%\texinput{slide_08_after}
+
+%%%%%%%%%%%%%
+% slide  09 %
+%%%%%%%%%%%%%
+%\texinput{slide_09_before}
+%\texinput{slide_09_after}
+
+%%%%%%%%%%%%%
+% slide  10 %
+%%%%%%%%%%%%%
+%\texinput{slide_10_before}
+%\texinput{slide_10_after}
+
+%%%%%%%%%%%%%
+% slide  21 %
+%%%%%%%%%%%%%
+\texinput{slide_21_lexical_analyzer}
+
+%%%%%%%%%%%%%
+% slide  22 %
+%%%%%%%%%%%%%
+\texinput{slide_22_lexical_analyzer}
+
+%%%%%%%%%%%%%
+% slide  23 %
+%%%%%%%%%%%%%
+\texinput{slide_23_regular_expressions}
+
+%%%%%%%%%%%%%
+% slide  24 %
+%%%%%%%%%%%%%
+\texinput{slide_24_regex_to_NFA}
+
+%%%%%%%%%%%%%
+% slide  25 %
+%%%%%%%%%%%%%
+\texinput{slide_25_NFA_to_DFA}
+
+%%%%%%%%%%%%%%%%
+% end document %
+%%%%%%%%%%%%%%%%
+\end{document}

@@ -1,0 +1,78 @@
+% !TEX root = ../slides.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame Open :: Lexical Analyzer %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Lexical Analyzer}
+
+%%%%%%%%%%%%%%%%%
+% Itemize begin %
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+% Lexical Analyzer %
+%%%%%%%%%%%%%%%%%%%%
+\item The input program is actually a long sentence
+
+%%%%%%%%%%%%%%%%%%%%
+% Lexical Analyzer %
+%%%%%%%%%%%%%%%%%%%%
+\item The lexical analyzer verifies each word is legal
+
+%%%%%%%%%%%%%%%%%%%%
+% Lexical Analyzer %
+%%%%%%%%%%%%%%%%%%%%
+\item What are the words of programming languages?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Words in C programming language %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[here]
+\begin{tabular}{|l|l|}
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Constants & 123, 19.7, -700, 13e+8, 0x80, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Identifiers & numPoints, doSomething, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Reserved Keywords & while, for, int, virtual, class, auto, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Parentheses & (, ), [, ], $\{$, $\}$, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Binary Operators & +, -, *, /, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unary Operators & !, ., *, $\rightarrow$, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Comments & /* \textcolor{pink}{bla} */, \# \textcolor{pink}{bla}, ; \textcolor{pink}{bla}, ... \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%
+% Lexical Analyzer %
+%%%%%%%%%%%%%%%%%%%%
+\item Once an illegal word is encountered, compilation stops
+
+%%%%%%%%%%%%%%%
+% Itemize end %
+%%%%%%%%%%%%%%%
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+% Frame Close %
+%%%%%%%%%%%%%%%
+}
