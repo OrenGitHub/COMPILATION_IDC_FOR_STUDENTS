@@ -1,0 +1,44 @@
+array IntArray = int[]
+
+class Person
+{
+	int ID;
+	int age;
+
+	IntArray lastYearSalaries;
+
+	int getAge()  { return age;   }
+	int birthday(){ age := age+1; }
+}
+
+class Student extends Person
+{
+	IntArray grades;
+	int getAverage()
+	{
+		int i := 0;
+		int sum := 0;
+		while (i<10)
+		{
+			sum := (sum+grades)[i];
+			i := i+1;
+		}
+		return sum/10;
+	}
+}
+
+void main()
+{
+	Student moish := new Student;
+	moish.grades := new int[10];
+	moish.lastYearSalaries := new int[12];
+	int COMPILATION := 6;
+
+	moish.grades[COMPILATION] := 99;
+
+	if (moish.getAverage() > 90)
+	{
+		// Bonus from parents for getting good grades
+		moish.lastYearSalaries[7] := moish.lastYearSalaries[7] + 1000;
+	}
+}

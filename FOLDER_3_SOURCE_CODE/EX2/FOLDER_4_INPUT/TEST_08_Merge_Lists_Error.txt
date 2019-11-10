@@ -1,0 +1,76 @@
+class IntList
+{
+    int head;
+    IntList tail;
+}
+
+IntList MergeLists(IntList l1, int l2[])
+{
+    if (l1 = nil)
+    {
+        return l2;
+    }
+    if (l2 = nil)
+    {
+        return l1;
+    }
+    
+    if (l1.head < l2.head)
+    {
+        IntList l3 := l1;
+        l3.tail := MergeLists(l1.tail,l2);
+        return l3;
+    }
+    
+    if (l2.head < l1.head)
+    {
+        IntList l3 := l2;
+        l3.tail := MergeLists(l1,l2.tail);
+        return l3;
+    }
+    
+    /**************************************************/
+    /* Execution falls off here ... what should we do */
+    /**************************************************/
+}
+
+void main()
+{
+    IntList a := new IntList;
+    IntList b := new IntList;
+    IntList c := new IntList;
+    IntList d := new IntList;
+
+    IntList A := new IntList;
+    IntList B := new IntList;
+    IntList C := new IntList;
+    IntList D := new IntList;
+       
+    a.head := 34;
+    b.head := 70;
+    c.head := 92;
+    d.head := 96;
+
+    A.head := 12;
+    B.head := 50;
+    C.head := 97;
+    D.head := 99;
+
+    a.tail := b;
+    b.tail := c;
+    c.tail := d;
+    d.tail := nil;
+
+    A.tail := B;
+    B.tail := C;
+    C.tail := D;
+    D.tail := nil;
+    
+    IntList l := MergeLists(a,A);
+    
+    while (l)
+    {
+        PrintInt(l.head);
+        l := l.tail;
+    }
+}
