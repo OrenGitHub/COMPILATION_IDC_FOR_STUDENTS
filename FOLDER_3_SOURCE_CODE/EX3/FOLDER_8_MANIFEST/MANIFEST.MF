@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_65 (Oracle Corporation)
+Class-Path: ./FOLDER_7_EXTERNAL_JARS/java-cup-11b-runtime.jar
+  ./FOLDER_3_BIN/*.class
+  ./FOLDER_3_BIN/AST/*.class
+  ./FOLDER_3_BIN/TYPES/*.class
+  ./FOLDER_3_BIN/SYMBOL_TABLE/*.class
+Main-Class: Main
+

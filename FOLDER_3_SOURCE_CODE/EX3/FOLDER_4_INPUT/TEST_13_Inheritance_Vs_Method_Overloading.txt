@@ -1,0 +1,32 @@
+class Grandfather
+{
+	void WALK(){ PrintInt(8); }
+	void RUN() { PrintInt(7); }
+	void SWIM(){ PrintInt(2); }
+}
+
+class Father extends Grandfather
+{
+	void SWIM(){ PrintInt(3); }
+	void WALK(){ PrintInt(6); }
+}
+
+class Son extends Father
+{
+	void RUN(){ PrintInt(2); }
+}
+
+void main()
+{
+	Grandfather g1 := new Grandfather;
+	Grandfather g2 := new Father;
+	Grandfather g3 := new Son;
+
+	Father f1 := new Father;
+	Father f2 := new Son;
+
+	Son s := new Son;
+	
+	s.WALK();
+	g2.RUN();
+}

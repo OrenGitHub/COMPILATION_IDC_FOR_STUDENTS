@@ -1,0 +1,45 @@
+array IntArray = int[]
+
+IntArray d := nil;
+
+class Person
+{
+	int ID;
+	int age := 18;
+	Person bestFriend := nil;
+
+	IntArray lastYearSalaries;
+
+	int getAge()  { return age;   }
+	int birthday(){ age := age+1; }
+}
+
+string bestFriend := "Jesse";
+
+class Student extends Person
+{
+	string d := "someString";
+	
+	int getAverage()
+	{
+		Student d := nil;
+		if (8 = 9)
+		{
+			int d := 888;
+			d := 5<6;
+			d := 5<6;
+			d := 5<6;
+			d := 5<6;
+			d := bestFriend.birthday();
+			d := 5<6;
+			d := 5<6;
+			d := 5<6;
+			d := 5<6;
+		}
+	}
+}
+
+void main()
+{
+	bestFriend := "AlonzoMorales";
+}

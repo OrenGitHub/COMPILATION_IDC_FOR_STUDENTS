@@ -1,0 +1,31 @@
+class Grandfather
+{
+	int WALK := 8;
+	string RUN := "RUN";
+}
+
+class Father extends Grandfather
+{
+	Father g := nil;
+}
+
+class Son extends Father
+{
+	Son swim;
+	int iii;
+}
+
+void main()
+{
+	Grandfather g1 := new Grandfather;
+	Grandfather g2 := new Father;
+	Grandfather g3 := new Son;
+
+	Father f1 := new Father;
+	Father f2 := new Son;
+
+	Son s := new Son;
+	
+	g1.iii := 800;
+	s.WALK := 700;
+}
