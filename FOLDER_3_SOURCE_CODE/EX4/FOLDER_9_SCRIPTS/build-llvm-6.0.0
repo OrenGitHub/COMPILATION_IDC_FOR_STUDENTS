@@ -1,0 +1,48 @@
+#!/bin/bash
+###############
+# DEFINITIONS #
+###############
+LLVM_SVN=https://llvm.org/svn/llvm-project
+TAG=tags/RELEASE_600/final
+
+###############
+# DIRECTORIES #
+###############
+BASEDIR=~/
+
+###############
+# DIRECTORIES #
+###############
+LLVM_DIR=${BASEDIR}/llvm-6.0.0
+LLVM_SRC_DIR=${LLVM_DIR}/llvm
+LLVM_BUILD_DIR=${LLVM_DIR}/build
+CLANG_SRC_DIR=${LLVM_SRC_DIR}/tools/clang
+
+#########################################################
+# Prepare llvm, llvm/src and llvm/build directories ... #
+#########################################################
+mkdir -p ${LLVM_DIR}
+mkdir -p ${LLVM_SRC_DIR}
+mkdir -p ${LLVM_BUILD_DIR}
+
+##################
+# Get llvm 6.0.0 #
+##################
+svn co ${LLVM_SVN}/llvm/${TAG} ${LLVM_SRC_DIR}
+svn co ${LLVM_SVN}/cfe/${TAG}  ${CLANG_SRC_DIR}
+
+###########################################
+# Get inside the llvm directory and cmake #
+###########################################
+cd ${LLVM_BUILD_DIR} && cmake CMAKE_BUILD_TYPE:Debug -G "Unix Makefiles" ${LLVM_SRC_DIR}
+
+###############
+# make it !!! #
+###############
+make -j 4
+
+##################
+# install it !!! #
+##################
+sudo make install
+
