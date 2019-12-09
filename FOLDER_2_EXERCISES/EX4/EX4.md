@@ -3,7 +3,7 @@
 
 ## Introduction
 For the first time ever we are going to compile Poseidon programs to LLVM bitcode.
-[LLVM][llvm-link] is an open source compiler infraructure and toolchain
+[LLVM][Llvm-link] is an open source compiler infraructure and toolchain
 that supports multiple source languages (C, CPP, C#, Go, etc.)
 and multiple destination targets (x86, ARM, MIPS, x86_64, sparc, etc.).
 Its [bitcode][bitcode-link] (or intermediate representation)
@@ -15,7 +15,7 @@ and linked with [clang][clang-link] to a native executable.
 The input for this exercise is a semantically valid Poseidon program,
 and the output is a human readable (\*.ll) file.
 
-[llvm-link]:https://llvm.org/
+[Llvm-link]:https://llvm.org/
 [bitcode-link]:https://llvm.org/docs/LangRef.html
 [clang-link]:https://clang.llvm.org/
 
