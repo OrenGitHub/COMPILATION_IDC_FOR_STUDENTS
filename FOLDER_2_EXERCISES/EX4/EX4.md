@@ -31,6 +31,18 @@ int Check(Father f)
 	}
 }
 ```
+## If and While Statements
+**While statements** behave similar to (practically) all programming languages:
+before executing their body, their condition is evaluated. If it equals 0, the body
+is ignored, and control is transferred to the statement immediately after the
+body. Otherwise, the body is executed, then the condition is evaluated again,
+and so forth.
+**If statements** behave similar to (practically) all programming languages: be-
+fore executing their body, their condition is evaluated. If it equals 0, the body is
+ignored, and control is transferred to the statement immediately after the body.
+Otherwise, the body is executed exactly once, then control is transferred to the
+statement immediately after the body.
+
 ```java
 class Father extends Grandfather { int i; int j; }
 int Check(Father f)
