@@ -3,11 +3,16 @@
 
 ## Introduction
 For the first time ever we are going to compile Poseidon programs to LLVM bitcode.
-[LLVM](https://llvm.org/) is an open source compiler infraructure that supports
-multiple source languages (C, CPP, C#, Go, etc.) and multiple destination targets
-(x86, ARM, MIPS, x86_64, sparc, etc.).
-In order to make this document self contained,
-all the information needed to complete the fourth exercise is in this document.
+[LLVM](https://llvm.org/) is an open source compiler infraructure and toolchain
+that supports multiple source languages (C, CPP, C#, Go, etc.)
+and multiple destination targets (x86, ARM, MIPS, x86_64, sparc, etc.).
+Its [bitcode](https://llvm.org/docs/LangRef.html) (or intermediate representation)
+was designed as a language-independent high-level portable assembley language.
+We are going to translate Poseidon programs into a human readable (\*.ll) file.
+Then, in order to check you work, the (\*.ll) file will be translated to a proper
+bitcode (\*.bc) file, and linked with clang to a native executable.
+The input for this exercise is a semantically valid Poseidon program,
+and the output is a human readable (\*.ll) file.
 
 ## Install LLVM
 Download and install LLVM/clang [with this script](https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0) 
