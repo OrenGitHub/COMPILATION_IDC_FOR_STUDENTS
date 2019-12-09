@@ -15,7 +15,9 @@ The input for this exercise is a semantically valid Poseidon program,
 and the output is a human readable (\*.ll) file.
 
 ## Install LLVM
-Download and install LLVM/clang [with this script](https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0) 
+Download and install LLVM/clang [with this script][build-llvm-600-script]
+
+[build-llvm-600-script]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
 
 ```java
 class Father extends Grandfather { int i; int j; }
