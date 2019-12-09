@@ -9,6 +9,9 @@ multiple source languages (C, CPP, C#, Go, etc.) and multiple destination target
 In order to make this document self contained,
 all the information needed to complete the fourth exercise is in this document.
 
+## Install LLVM
+Download and install LLVM/clang [with this script](https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0) 
+
 ```java
 class Father extends Grandfather { int i; int j; }
 int Check(Father f)
