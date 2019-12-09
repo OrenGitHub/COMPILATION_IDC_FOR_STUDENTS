@@ -1,0 +1,12 @@
+int counter := 7;
+int joy := 9;
+int alex := 10;
+int happy := 6;
+
+void main()
+{
+	int alex := 1 + (2 + (3 + (4 + (5 + (6 + 7))))); // 28
+	happy := joy + counter; // 16
+	counter := alex + joy; // 37
+	PrintInt(happy+happy*joy); // 160
+}

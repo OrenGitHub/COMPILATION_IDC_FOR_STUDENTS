@@ -1,0 +1,12 @@
+class MyClass{
+    void what(){
+        PrintString("what");
+        PrintTrace();
+    }
+}
+
+void main() {
+  MyClass wow := new MyClass;
+  wow.what();
+}
+ 

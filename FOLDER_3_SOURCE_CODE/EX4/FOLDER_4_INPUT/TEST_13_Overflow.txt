@@ -1,0 +1,16 @@
+int foo()
+{
+	int i := 174;
+
+	while (i < 32764)
+	{
+		i := i + 55;
+	}
+	return i + 666;
+}
+
+void main()
+{
+	PrintInt(foo() + foo() + foo());
+}
+

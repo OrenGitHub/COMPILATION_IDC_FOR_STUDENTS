@@ -1,0 +1,80 @@
+array IntArray = int[]
+
+int monthJuly()
+{
+	int july := 7;
+	return july;
+}
+class Person
+{
+	int ID;
+	int age := 10;
+
+	IntArray lastYearSalaries;
+
+	int getAge()  { return age;               }
+	int birthday(){ age := age+1; return age; }
+}
+
+class Student extends Person
+{
+	IntArray grades;
+	int getAverage()
+	{
+		int i := 0;
+		int sum := 0;
+		while (i<10)
+		{
+			sum := sum+grades[i];
+			i := i+1;
+		}
+		return sum/10;
+	}
+}
+
+void main()
+{
+	int i := 0;
+	Student moish := new Student;
+	moish.grades := new int[10];
+	moish.lastYearSalaries := new int[12];
+
+	while (i < i+1)
+	{
+		moish.lastYearSalaries[i] := i;
+		i := i + 7400;
+	}
+
+	int LinearAlgebra1 := 0;
+	int LinearAlgebra2 := 1;
+	int Calculus1      := 2;
+	int Calculus2      := 3;
+	int Calculus3      := 4;
+	int COMPILATION    := 5;
+	int ODE            := 6;
+	int PDE            := 7;
+	int Scheme         := 8;
+	int CPP            := 9;
+
+	moish.grades[LinearAlgebra1] :=  96;
+	moish.grades[LinearAlgebra2] := 100;
+	moish.grades[Calculus1]      :=  95;
+	moish.grades[Calculus2]      :=  81;
+	moish.grades[Calculus3]      :=  95;
+	moish.grades[COMPILATION]    :=  95;
+	moish.grades[ODE]            := 100;
+	moish.grades[PDE]            := 100;
+	moish.grades[Scheme]         :=  74;
+	moish.grades[CPP]            :=  99;
+
+	if (moish.getAverage() > 60)
+	{
+		// mysterious raise pattern ... 
+		moish.lastYearSalaries[moish.age] :=
+		moish.lastYearSalaries[moish.birthday()] + 1000;
+		moish.lastYearSalaries[moish.age] :=
+		moish.lastYearSalaries[moish.birthday()] + 1000;
+		PrintInt(moish.lastYearSalaries[10]);
+		PrintInt(moish.lastYearSalaries[11]);
+	}
+}

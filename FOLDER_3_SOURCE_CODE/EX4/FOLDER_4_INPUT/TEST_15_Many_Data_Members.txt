@@ -1,0 +1,47 @@
+int sum() { return 4; }
+
+class foo
+{
+	int sum() { return i17 + i30; }
+
+	int i01 :=  1;
+	int i02 :=  2;
+	int i03 :=  3;
+	int i04 :=  4;
+	int i05 :=  5;
+	int i06 :=  6;
+	int i07 :=  7;
+	int i08 :=  8;
+	int i09 :=  9;
+	int i10 := 10;
+	int i11 := 11;
+	int i12 := 12;
+	int i13 := 13;
+	int i14 := 14;
+	int i15 := 15;
+	int i16 := 16;
+	int i17 := 17;
+	int i18 := 18;
+	int i19 := 19;
+	int i20 := 20;
+	int i21 := 21;
+	int i22 := 22;
+	int i23 := 23;
+	int i24 := 24;
+	int i25 := 25;
+	int i26 := 26;
+	int i27 := 27;
+	int i28 := 28;
+	int i29 := 29;
+	int i30 := 30;
+	int i31 := 31;
+	int i32 := 32;
+}
+
+void main()
+{
+	foo f := new foo;
+
+	PrintInt(f.sum());
+}
+

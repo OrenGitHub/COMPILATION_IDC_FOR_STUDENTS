@@ -1,0 +1,8 @@
+int foo() {
+    PrintTrace();
+    return 27;
+}
+
+void main() {
+    int x:= foo();
+}

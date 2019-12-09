@@ -1,0 +1,11 @@
+void g(int n){
+    if(n = 2){
+        PrintTrace();
+        return;
+    }
+    g(n-1);
+}
+
+void main() {
+  g(3-1);
+}

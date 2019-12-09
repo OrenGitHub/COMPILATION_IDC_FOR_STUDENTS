@@ -1,0 +1,12 @@
+int oof() {	
+    PrintTrace();
+    return 27;
+}
+
+int foo() {
+    return oof();
+}
+
+void main() {
+    int x:= foo();
+}

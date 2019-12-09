@@ -1,0 +1,122 @@
+digraph
+{
+graph [ordering = "out"]
+v0 [label = "VAR
+DEC(i)
+:int"];
+v1 [label = "VAR
+DEC(j)
+:int"];
+v2 [label = "VAR
+DEC(p)
+:int"];
+v3 [label = "VAR
+DEC(start)
+:int"];
+v4 [label = "VAR
+DEC(end)
+:int"];
+v5 [label = "VAR
+DEC(isPrime)
+:int"];
+v6 [label = "VAR
+DEC(copyp)
+:int"];
+v7 [label = "VAR
+DEC(copyisPrime)
+:int"];
+v8 [label = "SIMPLE
+VAR
+(p)"];
+v9 [label = "INT(2)"];
+v10 [label = "ASSIGN
+left := right
+"];
+v10 -> v8;
+v10 -> v9;
+v11 [label = "SIMPLE
+VAR
+(start)"];
+v12 [label = "INT(2)"];
+v13 [label = "ASSIGN
+left := right
+"];
+v13 -> v11;
+v13 -> v12;
+v14 [label = "SIMPLE
+VAR
+(end)"];
+v15 [label = "INT(100)"];
+v16 [label = "ASSIGN
+left := right
+"];
+v16 -> v14;
+v16 -> v15;
+v99 [label = "STMT
+LIST
+"];
+v99 -> v0;
+v100 [label = "STMT
+LIST
+"];
+v100 -> v16;
+v100 -> v99;
+v101 [label = "STMT
+LIST
+"];
+v101 -> v13;
+v101 -> v100;
+v102 [label = "STMT
+LIST
+"];
+v102 -> v10;
+v102 -> v101;
+v103 [label = "FUNC(main)
+:int
+"];
+v103 -> v102;
+v104 [label = "DEC
+LIST
+"];
+v104 -> v103;
+v105 [label = "DEC
+LIST
+"];
+v105 -> v7;
+v105 -> v104;
+v106 [label = "DEC
+LIST
+"];
+v106 -> v6;
+v106 -> v105;
+v107 [label = "DEC
+LIST
+"];
+v107 -> v5;
+v107 -> v106;
+v108 [label = "DEC
+LIST
+"];
+v108 -> v4;
+v108 -> v107;
+v109 [label = "DEC
+LIST
+"];
+v109 -> v3;
+v109 -> v108;
+v110 [label = "DEC
+LIST
+"];
+v110 -> v2;
+v110 -> v109;
+v111 [label = "DEC
+LIST
+"];
+v111 -> v1;
+v111 -> v110;
+v112 [label = "DEC
+LIST
+"];
+v112 -> v0;
+v112 -> v111;
+}

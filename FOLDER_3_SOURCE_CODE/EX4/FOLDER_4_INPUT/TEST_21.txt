@@ -1,0 +1,25 @@
+class Dog
+{
+    int WALK := 8;
+    string RUN := "RUN";
+    int go() {
+        PrintString("go");
+        PrintTrace();
+        return 2 + 666 - 2;
+    }
+}
+
+class SmallDog extends Dog
+{
+    Dog g := nil;
+    int go() {
+        PrintString("no");
+        PrintTrace();
+        return 0;
+    }
+}
+
+void main() {
+  SmallDog dog := new SmallDog;
+  dog.go();
+}

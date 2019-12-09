@@ -1,0 +1,32 @@
+class Dog {
+    int WALK := 8;
+    string RUN := "RUN";
+    int go() {
+        PrintString("go");
+        return 0 + 666;
+    }
+}
+
+class SmallDog extends Dog {
+    Dog papa := nil;
+    int go(){
+        PrintString("no");
+        return -1;
+    }
+}
+
+class BigDog extends Dog {
+    Dog papa := nil;
+    int come() {
+        PrintString("yes");
+        return 2;
+    }
+}
+
+void main() {
+  SmallDog dog := new SmallDog;
+  BigDog dogi := new BigDog;
+  dog.go();
+  dogi.come();
+  PrintInt(dogi.go());
+}

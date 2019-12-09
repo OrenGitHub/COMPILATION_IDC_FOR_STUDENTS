@@ -1,0 +1,11 @@
+class MyClass {
+    void oops(){
+        PrintString("what");
+       int a:= 3 / 0;
+    }
+}
+
+void main() {
+  MyClass wow := new MyClass;
+  wow.oops();
+}

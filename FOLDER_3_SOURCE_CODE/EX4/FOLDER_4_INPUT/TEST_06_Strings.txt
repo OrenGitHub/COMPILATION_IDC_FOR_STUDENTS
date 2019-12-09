@@ -1,0 +1,16 @@
+string s1 := "Having";
+string s2 := "said";
+string s3 := "that";
+
+array StringArray = string[]
+
+void main()
+{
+	StringArray names := new string[3];
+	
+	names[0] := s1;
+	names[1] := "Citroen"+s2;
+	names[2] := s1+"said"+s3;
+	
+	PrintString(names[2]);
+}
