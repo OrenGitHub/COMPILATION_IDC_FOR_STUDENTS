@@ -8,15 +8,28 @@ that supports multiple source languages (C, CPP, C#, Go, etc.)
 and multiple destination targets (x86, ARM, MIPS, x86_64, sparc, etc.).
 Its [bitcode][bitcode-link] (or intermediate representation)
 was designed as a language-independent, high-level portable assembley.
-You will translate the input Poseidon program into a human readable (\*.ll) bitcode file.
-Then, in order to check you work, the human readable (\*.ll) bitcode file
-will be translated to a proper machine bitcode (\*.bc) file,
+Bitcode files come in two flavours, or formats:
+machine readable and human readable.
+Machine readable (\*.bc) bitcode files can be transformed
+into human readable ones with [llvm-dis][llvm-dis-link].
+Human readable (\*.ll) bitcode files can be transformed
+into machine readable ones with [llvm-as][llvm-as-link].
+In this exercise you will translate an input Poseidon program
+into a human readable (\*.ll) bitcode file.
+Then, in order to check you work, the human readable bitcode file
+will be translated into a proper machine readable bitcode file,
 and linked with [clang][clang-link] to a native executable.
+
+
+
+
 The input for this exercise is a semantically valid Poseidon program,
 and the output is a human readable (\*.ll) bitcode file.
 
-[Llvm-link]:https://llvm.org/
+[LLVM-link]:https://llvm.org/
 [bitcode-link]:https://llvm.org/docs/LangRef.html
+[llvm-dis-link]:https://llvm.org/docs/CommandGuide/llvm-dis.html
+[llvm-as-link]:https://llvm.org/docs/CommandGuide/llvm-as.html
 [clang-link]:https://clang.llvm.org/
 
 ## Install LLVM
