@@ -85,4 +85,3 @@ void main(){ foo(6); foo(9); }
 
 | CODE | STATUS |
 | ---- | ------ |
-$$x < \infty$$
