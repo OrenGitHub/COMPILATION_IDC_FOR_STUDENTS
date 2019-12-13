@@ -86,11 +86,10 @@ void main(){ foo(6); foo(9); }
 ```
 ### Binary Operations
 **Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2<sup>15</sup> − 1.
-The semantics of integer binary operations in Poseidon is therefore somewhat differ-
-ent than that of standard programming languages. It is presented in the following table,
+The semantics of integer binary operations in Poseidon is therefore somewhat different
+than that of standard programming languages. It is presented in the following table,
 and to distinguish Poseidon operators from the usual arithmetic signs, we shall
 use a Poseidon subscript inside brackets: (`+[Poseidon]`, `-[Poseidon]` etc.)
-xcvxcv
 
 ```
 |       Binop        |   Condition            |    Value    |
@@ -113,4 +112,10 @@ xcvxcv
 +--------------------+------------------------+-------------+
 ```
 
-dfglkj
+**Strings** can be concatenated with binary operation `+`,
+and tested for (contents) equality with binary operator `=`.
+When concatenating two (null terminated) strings s1 and s2,
+the resulting string s1s2 is allocated on the heap,
+and should be null terminated.
+The result of testing contents equality is either `0`
+when they are equal, or `1` otherwise.
