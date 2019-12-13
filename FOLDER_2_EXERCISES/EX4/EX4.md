@@ -85,11 +85,11 @@ void main(){ foo(6); foo(9); }
 
 ```
 ### Binary Operations
-**Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2 15 − 1. The
-semantics of integer binary operations in Poseidon is therefore somewhat differ-
-ent than that of standard programming languages. It is presented in Table 1,
+**Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2<sup>15</sup> − 1.
+The semantics of integer binary operations in Poseidon is therefore somewhat differ-
+ent than that of standard programming languages. It is presented in the following table,
 and to distinguish Poseidon operators from the usual arithmetic signs, we shall
-use a Poseidon subscript inside brackets: (∗ [P oseidon] , + [P oseidon] etc.)
+use a Poseidon subscript inside brackets: (`+[Poseidon]`, `-[Poseidon]` etc.)
 xcvxcv
 
 ```
