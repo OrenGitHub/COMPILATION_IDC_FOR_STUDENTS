@@ -81,13 +81,36 @@ void foo(int i)
 	}
 }
 void main(){ foo(6); foo(9); }
+
+
+```
+### Binary Operations
+**Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2 15 − 1. The
+semantics of integer binary operations in Poseidon is therefore somewhat differ-
+ent than that of standard programming languages. It is presented in Table 1,
+and to distinguish Poseidon operators from the usual arithmetic signs, we shall
+use a Poseidon subscript inside brackets: (∗ [P oseidon] , + [P oseidon] etc.)
+xcvxcv
+
+```
+|       Binop        |   Condition            |    Value    |
++--------------------+------------------------+-------------+
+|                    |  32767 <= a+b          |    32767    |
+| a +[Poseidon] b    | -32768 <= a+b <  32767 |     a+b     |
+|                    |           a+b < -32768 |   -32768    |
++--------------------+------------------------+-------------+
+|                    |  32767 <= a+b          |    32767    |
+| a -[Poseidon] b    | -32768 <= a+b <  32767 |     a+b     |
+|                    |           a+b < -32768 |   -32768    |
++--------------------+------------------------+-------------+
+|                    |  32767 <= a+b          |    32767    |
+| a *[Poseidon] b    | -32768 <= a+b <  32767 |     a+b     |
+|                    |           a+b < -32768 |   -32768    |
++--------------------+------------------------+-------------+
+|                    |  32767 <= a+b          |    32767    |
+| a /[Poseidon] b    | -32768 <= a+b <  32767 |     a+b     |
+|                    |           a+b < -32768 |   -32768    |
++--------------------+------------------------+-------------+
 ```
 
-| Binary Expressions           | Value  | Case        |
-| ---------------------------- | ------ | ----------- |
-|                              | 9\*8   | a + b < 300 |
-| a  +<sub>[Poseidon]</sub> b  | 9\*8   |             |
-|                              | 9\*8   |             |
-| a  -<sub>[Poseidon]</sub> b  | 9\*8   |             |
-| a \*<sub>[Poseidon]</sub> b  | 9\*8   |             |
-| a \/<sub>[Poseidon]</sub> b  | 9\*8   |
+dfglkj
