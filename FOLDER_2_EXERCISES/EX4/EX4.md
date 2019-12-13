@@ -156,9 +156,9 @@ are evaluated according
 ### Runtime Checks
 Poseidon enforces three kinds of runtime checks:
 
- - division by zero
- - invalid pointer dereference
- - out of bounds array access.
+ - Division by zero
+ - Invalid pointer dereference
+ - Out of bounds array access.
 
 **Division by zero**
 should be handled by printing “Division By Zero”,
@@ -187,7 +187,7 @@ Father f;
 int i := f.i;
 ```
 
-And here too where the same behaviour is expected:
+And the same behaviour is expected here too:
 
 ```java
 class Father { int i; int j; }
@@ -200,6 +200,14 @@ the program should print “Invalid Pointer Dereference”,
 and then then exit gracefully by using an exit system call.
 
 **Out of bounds array access**
-should be handled by printing ”Access Violation” and then exit gracefully by using the exit system call. The following code
-demonstrates an illegal array access:
-ARRAY IntArray = int[] IntArray A := NEW int[6]; int i := A[18];
+happen when an array is accessed beyond its allocated size.
+The following code demonstrates a possible scenario:
+
+```java
+array IntArray = int[]
+IntArray A := NEW int[6];
+int i := A[18];
+```
+
+In this case ”Access Violation” should be printed,
+and then exit gracefully by using an exit system call.
