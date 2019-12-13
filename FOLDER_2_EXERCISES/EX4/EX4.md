@@ -147,3 +147,6 @@ int y=dec();
 int z=inc();
 void main(){ PrintInt(z); }
 ```
+
+##### Assignments
+When evaluating assignments, the left hand side should be evaluated first.
