@@ -28,11 +28,11 @@ and linked with [clang][clang-link] to a native executable.
 
 ## Install LLVM
 To complete this exercise you need a working LLVM + clang.
-The formal version for our course is `6.0.0` which can be downloaded installed
-with this [build-llvm-600-script][build-llvm-600-script-link].
+The formal LLVM + clang version for our course can be downloaded installed
+with this [build-llvm-script][build-llvm-script-link].
 
 
-[build-llvm-600-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
+[build-llvm-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
 
 ```java
 class Father extends Grandfather { int i; int j; }
