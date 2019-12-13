@@ -85,6 +85,4 @@ void main(){ foo(6); foo(9); }
 
 | CODE | STATUS |
 | ---- | ------ |
-```java
-class Father extends Grandfather { int i; int j; }
-``` | dsfposdfpo
+$x < \infty$
