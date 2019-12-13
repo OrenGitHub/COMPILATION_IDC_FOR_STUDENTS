@@ -205,7 +205,7 @@ The following code demonstrates a possible scenario:
 
 ```java
 array IntArray = int[]
-IntArray A := NEW int[6];
+IntArray A := new int[6];
 int i := A[18];
 ```
 
