@@ -134,3 +134,16 @@ void inc(){ x := x + 1; }
 void dec(){ x := x - 1; }
 void main(){ foo(inc(x),dec(x)); }
 ```
+
+**Global Variables**
+should be evaluated according to their
+order of appearence in the original program.
+For example, the following code should output `32767`:
+```java
+int x=32767;
+int inc(){ x := x + 1; return x; }
+int dec(){ x := x - 1; return x; }
+int y=dec();
+int z=inc();
+void main(){ PrintInt(z); }
+```
