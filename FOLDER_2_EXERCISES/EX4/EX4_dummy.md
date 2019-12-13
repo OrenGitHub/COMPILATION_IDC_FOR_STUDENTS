@@ -85,6 +85,4 @@ void main(){ foo(6); foo(9); }
 
 | CODE | STATUS |
 | ---- | ------ |
-```java
-class Father extends Grandfather { int i; int j; }
-``` | dsfposdfpo
+<img src="/FOLDER_2_EXERCISES/EX4/tex/532ec18a3ce808b90fe83d90e2f5c105.svg?invert_in_darkmode&sanitize=true" align=middle width=88.94009519999999pt height=26.76175259999998pt/>
