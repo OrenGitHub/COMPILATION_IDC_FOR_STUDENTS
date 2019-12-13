@@ -119,3 +119,18 @@ the resulting string s1s2 is allocated on the heap,
 and should be null terminated.
 The result of testing contents equality is either `1`
 when they are equal, or `0` otherwise.
+
+### Order of Evaluation
+**When calling a function (or calss method)** evaluation order matters.
+Sent parameters should be evaluated from left to right. For instance,
+the following code should output `32766`:
+```java
+int x=32767;
+int foo(int i,int j)
+{
+	PrintInt(x);
+}
+void inc(){ x := x + 1; }
+void dec(){ x := x - 1; }
+void main(){ foo(inc(x),dec(x)); }
+```
