@@ -85,4 +85,4 @@ void main(){ foo(6); foo(9); }
 
 | CODE                       | STATUS |
 | -------------------------- | ------ |
-| a *<sub>[Poseidon]<\sub> b |        |
+| a *<sub>[Poseidon] b       | 9*8    |
