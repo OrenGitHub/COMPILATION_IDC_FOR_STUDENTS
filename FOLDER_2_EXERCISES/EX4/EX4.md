@@ -117,5 +117,5 @@ and tested for (contents) equality with binary operator `=`.
 When concatenating two (null terminated) strings s1 and s2,
 the resulting string s1s2 is allocated on the heap,
 and should be null terminated.
-The result of testing contents equality is either `0`
-when they are equal, or `1` otherwise.
+The result of testing contents equality is either `1`
+when they are equal, or `0` otherwise.
