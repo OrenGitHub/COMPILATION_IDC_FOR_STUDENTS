@@ -70,22 +70,18 @@ If it equals 0, the body is ignored, and control is transferred to the statement
 immediately after the body. Otherwise, the body is executed,
 then the condition is evaluated again, and so forth.
 
-
-
 ```java
-class Father extends Grandfather { int i; int j; }
-int Check(Father f)
+// Expected Output: 6 7 8 
+void foo(int i)
 {
-	if (f = nil)
+	while (i < 9)
 	{
-	    return 800;
-	}
-	    return 774;
+		PrintInt(i);
+		i := i + 1;
 	}
 }
+void main(){ foo(6); foo(9); }
 ```
-
-
 
 | CODE | STATUS |
 | ---- | ------ |
