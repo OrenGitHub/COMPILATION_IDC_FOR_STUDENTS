@@ -37,6 +37,13 @@ You should see the prime numbers from 2 to 100 printed to stdout.
 
 [build-llvm-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
 
+## Poseidon Semantics
+Until now used the term semantics to describe legal and illegal programs.
+But a programming language semantics also describes the way a program is meant to be executed.
+What is the order of evaluation when a mathematical expression is computed?
+What is the explicit underlying mechanism that controls execution of while loops? etc.
+The following sub sections describe the Poseidon semantics with a multitude of running examples.
+
 ```java
 class Father extends Grandfather { int i; int j; }
 int Check(Father f)
