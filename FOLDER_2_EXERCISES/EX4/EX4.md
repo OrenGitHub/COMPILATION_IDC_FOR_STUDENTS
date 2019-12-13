@@ -83,6 +83,6 @@ void foo(int i)
 void main(){ foo(6); foo(9); }
 ```
 
-| CODE | STATUS |
-| ---- | ------ |
-\\[ a^2 = b^2 + c^2 \\]
+| CODE                       | STATUS |
+| -------------------------- | ------ |
+| a *<sub>[Poseidon]<\sub> b |        |
