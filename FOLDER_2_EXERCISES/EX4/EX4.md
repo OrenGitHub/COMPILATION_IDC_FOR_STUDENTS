@@ -30,7 +30,7 @@ and linked with [clang][clang-link] to a native executable.
 To complete this exercise you need a working LLVM + clang.
 The formal LLVM + clang version for our course can be downloaded installed
 with this [build-llvm-script][build-llvm-script-link].
-
+Note that this is a debug build, so it might take upto one hour to finish.
 
 [build-llvm-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
 
