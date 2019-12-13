@@ -148,5 +148,58 @@ int z=inc();
 void main(){ PrintInt(z); }
 ```
 
-##### Assignments
-When evaluating assignments, the left hand side should be evaluated first.
+**Assignments**
+are evaluated according 
+
+**Binary Expressions**
+
+### Runtime Checks
+Poseidon enforces three kinds of runtime checks:
+
+ - division by zero
+ - invalid pointer dereference
+ - out of bounds array access.
+
+**Division by zero**
+should be handled by printing “Division By Zero”,
+and then exit gracefully by using an exit system call.
+The following code will result in such behaviour:
+```java
+void main()
+{
+	int i:= 6;
+	while (i+17)
+	{
+		int j := 8/i;
+		i := i-1;
+	}
+}
+```
+
+**Invalid pointer dereference**
+can occur when trying to access data members
+of an uninitialized class variable.
+For example, here:
+
+```java
+class Father { int i; int j; }
+Father f;
+int i := f.i;
+```
+
+And here too where the same behaviour is expected:
+
+```java
+class Father { int i; int j; }
+Father f;
+int i := f.i;
+```
+
+When an invalid pointer dereference occurs,
+the program should print “Invalid Pointer Dereference”,
+and then then exit gracefully by using an exit system call.
+
+**Out of bounds array access**
+should be handled by printing ”Access Violation” and then exit gracefully by using the exit system call. The following code
+demonstrates an illegal array access:
+ARRAY IntArray = int[] IntArray A := NEW int[6]; int i := A[18];
