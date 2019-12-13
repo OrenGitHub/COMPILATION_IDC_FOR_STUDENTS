@@ -83,8 +83,11 @@ void foo(int i)
 void main(){ foo(6); foo(9); }
 ```
 
-| CODE | STATUS |
-| ---- | ------ |
-```java
-class Father extends Grandfather { int i; int j; }
-``` | dsfposdfpo
+| Binary Expressions           | Value  | Case        |
+| ---------------------------- | ------ | ----------- |
+|                              | 9\*8   | a + b < 300 |
+| a  +<sub>[Poseidon]</sub> b  | 9\*8   |             |
+|                              | 9\*8   |             |
+| a  -<sub>[Poseidon]</sub> b  | 9\*8   |             |
+| a \*<sub>[Poseidon]</sub> b  | 9\*8   |             |
+| a \/<sub>[Poseidon]</sub> b  | 9\*8   |
