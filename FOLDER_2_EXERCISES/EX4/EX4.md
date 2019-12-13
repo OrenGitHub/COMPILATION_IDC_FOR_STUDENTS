@@ -28,9 +28,12 @@ and linked with [clang][clang-link] to a native executable.
 
 ## Install LLVM
 To complete this exercise you need a working LLVM + clang.
-The formal LLVM + clang version for our course can be downloaded installed
+The formal LLVM + clang version for our course can be downloaded and installed
 with this [build-llvm-script][build-llvm-script-link].
-Note that this is a debug build, so it might take upto one hour to finish.
+Note that this is a debug build, so allow at least one hour for it to finish.
+In addition you will need to have root privliges for the final install step of the script.
+To check your installation go to the source code folder and run `make everything`.
+You should see the prime numbers from 2 to 100 printed to stdout.
 
 [build-llvm-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
 
