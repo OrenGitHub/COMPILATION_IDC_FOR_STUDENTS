@@ -14,17 +14,11 @@ Machine readable (\*.bc) bitcode files can be transformed
 into human readable ones with [llvm-dis][llvm-dis-link].
 Human readable (\*.ll) bitcode files can be transformed
 into machine readable ones with [llvm-as][llvm-as-link].
-In this exercise you will translate an input Poseidon program
+In this exercise you will translate the input Poseidon program
 into a human readable (\*.ll) bitcode file.
 Then, in order to check you work, the human readable bitcode file
 will be translated into a proper machine readable bitcode file,
 and linked with [clang][clang-link] to a native executable.
-
-
-
-
-The input for this exercise is a semantically valid Poseidon program,
-and the output is a human readable (\*.ll) bitcode file.
 
 [LLVM-link]:https://llvm.org/
 [bitcode-link]:https://llvm.org/docs/LangRef.html
@@ -33,9 +27,12 @@ and the output is a human readable (\*.ll) bitcode file.
 [clang-link]:https://clang.llvm.org/
 
 ## Install LLVM
-Download and install LLVM/clang [with this script][build-llvm-600-script]
+To complete this exercise you need a working LLVM + clang.
+The formal version for our course is `6.0.0` which can be downloaded installed
+with this [build-llvm-600-script][build-llvm-600-script-link].
 
-[build-llvm-600-script]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
+
+[build-llvm-600-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
 
 ```java
 class Father extends Grandfather { int i; int j; }
