@@ -143,8 +143,8 @@ For example, the following code should output `32767`:
 int x=32767;
 int inc(){ x := x + 1; return x; }
 int dec(){ x := x - 1; return x; }
-int y=dec();
-int z=inc();
+int y := dec();
+int z := inc();
 void main(){ PrintInt(z); }
 ```
 
