@@ -211,3 +211,54 @@ int i := A[18];
 
 In this case ”Access Violation” should be printed,
 and then exit gracefully by using an exit system call.
+
+## Poseidon Syntax For Exercise 4
+To avoid an overly complex exercise, we will exclude class methods from it.
+This means that our classes are like structures from the C programming language.
+Here is the grammar for Poseidon without class methods:
+
+```
+Program ::= dec+
+dec     ::= varDec | funcDec | classDec | arrayDec
+varDec  ::= ID ID [ ASSIGN exp ] ’;’
+            ID ID ASSIGN newExp ’;’
+            ID ID 0 ( 0 [ ID ID [ ’,’ ID ID ] ∗ ] 0 ) 0 0 { 0 stmt [ stmt ] ∗ 0 } 0
+            class ID [ extends ID ] { cField [ cField ]∗ }
+            array ID = ID 0 [ ]
+exp ::=
+::=
+::=
+::=
+::= var
+0 0
+( exp 0 ) 0
+exp BINOP exp
+[ var ’.’ ] ID 0 ( 0 [ exp [ ’,’ exp ] ∗ ] 0 ) 0
+[ 0 − 0 ] INT | NIL | STRING
+var ::=
+::=
+::= ID
+var ’.’ ID
+var 0 [ 0 exp 0 ] 0
+stmt ::=
+::=
+::=
+::=
+::=
+::=
+::= varDec
+var ASSIGN exp ’;’
+var ASSIGN newExp ’;’
+RETURN [ exp ] ’;’
+IF 0 ( 0 exp 0 ) 0 0 { 0 stmt [ stmt ] ∗ 0 } 0
+WHILE 0 ( 0 exp 0 ) 0 0 { 0 stmt [ stmt ] ∗ 0 } 0
+[ var ’.’ ] ID 0 ( 0 [ exp [ ’,’ exp ] ∗ ] 0 ) 0 ’;’
+newExp ::= NEW ID | NEW ID 0 [ 0 exp 0 ] 0
+cField
+BINOP
+INT ::=
+::=
+::= varDec | funcDec
++ |−|∗| / | < | > | =
+[1 − 9][0 − 9] ∗ | 0
+```
