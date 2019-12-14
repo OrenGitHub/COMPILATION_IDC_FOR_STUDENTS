@@ -219,22 +219,19 @@ Here is the grammar for Poseidon without class methods:
 
 ```
 Program ::= dec+
+
 dec     ::= varDec | funcDec | classDec | arrayDec
-varDec  ::= ID ID [ ASSIGN exp ] ’;’
-            ID ID ASSIGN newExp ’;’
-            ID ID 0 ( 0 [ ID ID [ ’,’ ID ID ] ∗ ] 0 ) 0 0 { 0 stmt [ stmt ] ∗ 0 } 0
+
+varDec  ::= ID ID [ ASSIGN exp ] ';'
+            ID ID ASSIGN newExp ';'
+            ID ID ( [ ID ID [ ',' ID ID ]∗ ] ) { stmt [ stmt ]∗ }
             class ID [ extends ID ] { cField [ cField ]∗ }
-            array ID = ID 0 [ ]
-exp ::=
-::=
-::=
-::=
-::= var
-0 0
-( exp 0 ) 0
-exp BINOP exp
-[ var ’.’ ] ID 0 ( 0 [ exp [ ’,’ exp ] ∗ ] 0 ) 0
-[ 0 − 0 ] INT | NIL | STRING
+            array ID = ID '[' ']'
+exp ::= var
+    ::= ( exp )
+    ::= exp BINOP exp
+    ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] )
+    ::= −INT | NIL | STRING
 
 var ::= ID
     ::= var '.' ID
@@ -254,5 +251,5 @@ cField ::= varDec
 
 BINOP ::= + | − | ∗ | / | < | > | =
 
-INT   ::= [1 − 9][0 − 9] ∗ | 0
+INT   ::= [1 − 9][0 − 9]∗ | 0
 ```
