@@ -235,30 +235,24 @@ exp ::=
 exp BINOP exp
 [ var ’.’ ] ID 0 ( 0 [ exp [ ’,’ exp ] ∗ ] 0 ) 0
 [ 0 − 0 ] INT | NIL | STRING
-var ::=
-::=
-::= ID
-var ’.’ ID
-var 0 [ 0 exp 0 ] 0
-stmt ::=
-::=
-::=
-::=
-::=
-::=
-::= varDec
-var ASSIGN exp ’;’
-var ASSIGN newExp ’;’
-RETURN [ exp ] ’;’
-IF 0 ( 0 exp 0 ) 0 0 { 0 stmt [ stmt ] ∗ 0 } 0
-WHILE 0 ( 0 exp 0 ) 0 0 { 0 stmt [ stmt ] ∗ 0 } 0
-[ var ’.’ ] ID 0 ( 0 [ exp [ ’,’ exp ] ∗ ] 0 ) 0 ’;’
-newExp ::= NEW ID | NEW ID 0 [ 0 exp 0 ] 0
-cField
-BINOP
-INT ::=
-::=
-::= varDec | funcDec
-+ |−|∗| / | < | > | =
-[1 − 9][0 − 9] ∗ | 0
+
+var ::= ID
+    ::= var '.' ID
+    ::= var '[' exp ']'
+
+stmt ::= varDec
+     ::= var ASSIGN exp ';'
+     ::= var ASSIGN newExp ';'
+     ::= return [ exp ] ';'
+     ::= if    ( exp ) { stmt [ stmt ]∗ }
+     ::= while ( exp ) { stmt [ stmt ]∗ }
+     ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] ) ';'
+
+newExp ::= new ID | new ID '[' exp ']'
+
+cField ::= varDec
+
+BINOP ::= + | − | ∗ | / | < | > | =
+
+INT   ::= [1 − 9][0 − 9] ∗ | 0
 ```
