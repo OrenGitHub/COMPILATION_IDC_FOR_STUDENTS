@@ -17,12 +17,14 @@ import MIPS.*;
 public class IRcommand_Jump_If_Eq_To_Zero extends IRcommand
 {
 	TEMP t;
-	String label_name;
+	String label1;
+	String label2;
 	
-	public IRcommand_Jump_If_Eq_To_Zero(TEMP t, String label_name)
+	public IRcommand_Jump_If_Eq_To_Zero(TEMP t, String label1, String label2)
 	{
-		this.t          = t;
-		this.label_name = label_name;
+		this.t      = t;
+		this.label1 = label1;
+		this.label2 = label2;
 	}
 
 	/*******************/
@@ -30,7 +32,7 @@ public class IRcommand_Jump_If_Eq_To_Zero extends IRcommand
 	/*******************/
 	public void LLVM_bitcode_me()
 	{
-		LLVM.getInstance().beqz(t,label_name);
+		LLVM.getInstance().beqz(t,label1,label2);
 	}
 	
 	/***************/
@@ -38,6 +40,6 @@ public class IRcommand_Jump_If_Eq_To_Zero extends IRcommand
 	/***************/
 	public void MIPSme()
 	{
-		sir_MIPS_a_lot.getInstance().beqz(t,label_name);
+		sir_MIPS_a_lot.getInstance().beqz(t,label1);
 	}
 }

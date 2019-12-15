@@ -23,6 +23,7 @@ public class AST_STMT_WHILE extends AST_STMT
 		/* [1] Allocate 2 fresh labels */
 		/*******************************/
 		String label_loop_exit   = IRcommand.getFreshLabel("while.end");
+		String label_loop_body   = IRcommand.getFreshLabel("while.body");
 		String label_loop_header = IRcommand.getFreshLabel("while.cond");
 	
 		/*********************************/
@@ -46,7 +47,8 @@ public class AST_STMT_WHILE extends AST_STMT
 		IR.getInstance().Add_IRcommand(
 			new IRcommand_Jump_If_Eq_To_Zero(
 				cond_temp,
-				label_loop_exit));		
+				label_loop_exit,
+				label_loop_body));
 
 		/*******************/
 		/* [5] body.IRme() */

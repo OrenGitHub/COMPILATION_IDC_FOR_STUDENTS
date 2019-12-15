@@ -2,6 +2,9 @@ package AST;
 
 import TYPES.*;
 import SYMBOL_TABLE.*;
+import TEMP.*;
+import IR.*;
+import MIPS.*;
 
 public class AST_STMT_IF extends AST_STMT
 {
@@ -82,4 +85,61 @@ public class AST_STMT_IF extends AST_STMT
 		/*********************************************************/
 		return null;		
 	}	
+
+	public TEMP IRme()
+	{
+		/*******************************/
+		/* [1] Allocate 2 fresh labels */
+		/*******************************/
+		String label_if_cond = IRcommand.getFreshLabel("if.cond");
+		String label_if_body = IRcommand.getFreshLabel("if.body");
+		String label_if_exit = IRcommand.getFreshLabel("if.exit");
+	
+		/*********************************/
+		/* [2] entry label for the while */
+		/*********************************/
+		IR.getInstance().Add_IRcommand(
+			new IRcommand_Jump_Label(
+				label_if_cond));
+		IR.getInstance().Add_IRcommand(
+			new IRcommand_Label(
+				label_if_cond));
+
+		/********************/
+		/* [3] cond.IRme(); */
+		/********************/
+		TEMP cond_temp = cond.IRme();
+
+		/************************************/
+		/* [4] Jump conditionally to if end */
+		/************************************/
+		IR.getInstance().Add_IRcommand(
+			new IRcommand_Jump_If_Eq_To_Zero(
+				cond_temp,
+				label_if_exit,
+				label_if_body));
+
+		/*******************/
+		/* [5] body.IRme() */
+		/*******************/
+		body.IRme();
+
+		/***************************/
+		/* [6] Jump to the if exit */
+		/***************************/
+		IR.getInstance().Add_IRcommand(
+			new IRcommand_Jump_Label(
+				label_if_exit));		
+
+		/**********************/
+		/* [7] Loop end label */
+		/**********************/
+		IR.getInstance().Add_IRcommand(
+			new IRcommand_Label(label_if_exit));
+
+		/*******************/
+		/* [8] return null */
+		/*******************/
+		return null;
+	}
 }

@@ -233,4 +233,14 @@ everything:
 	@echo "********************"
 	${BASEDIR}/program
 	@echo "\n"
+	@echo "****************************************************"
+	@echo "*                                                  *"
+	@echo "*                                                  *"
+	@echo "* [12] generate graphviz dot representation of CFG *"
+	@echo "*                                                  *"
+	@echo "*                                                  *"
+	@echo "****************************************************"
+	opt -dot-cfg ${OUTPUT_DIR}/LLVM_bitcode.bc 1>/dev/null 2>/dev/null
+	dot -Tjpeg -o${OUTPUT_DIR}/CFG.jpeg .main.dot
+	eog ${OUTPUT_DIR}/CFG.jpeg &
 

@@ -1,0 +1,15 @@
+###############
+# CLASS FILES #
+###############
+**/*.class
+
+########################
+# AUTO GENERATED JPEGS #
+########################
+**/FOLDER_5_OUTPUT/*.jpeg
+
+#######################
+# AUTO GENERATED LOGS #
+#######################
+**/FOLDER_5_OUTPUT/*.txt
+
