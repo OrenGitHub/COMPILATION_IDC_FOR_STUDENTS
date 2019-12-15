@@ -121,9 +121,10 @@ The result of testing contents equality is either `1`
 when they are equal, or `0` otherwise.
 
 ### Order of Evaluation
-**When calling a function (or calss method)** evaluation order matters.
+**When calling a function** evaluation order matters.
 Sent parameters should be evaluated from left to right. For instance,
 the following code should output `32766`:
+
 ```java
 int x=32767;
 int foo(int i,int j)
@@ -139,6 +140,7 @@ void main(){ foo(inc(x),dec(x)); }
 should be evaluated according to their
 order of appearence in the original program.
 For example, the following code should output `32767`:
+
 ```java
 int x=32767;
 int inc(){ x := x + 1; return x; }
@@ -149,7 +151,16 @@ void main(){ PrintInt(z); }
 ```
 
 **Assignments**
-are evaluated according 
+are evaluated according to a left before right paradigm.
+So the following code should output `6`:
+
+```java
+int x := 4;
+array IntArray = int[]
+IntArray A := new int[9];
+int inc(){ x := x + 1; return x; }
+void main(){ A[inc()] := inc(); PrintInt(A[5]); }
+```
 
 **Binary Expressions**
 
