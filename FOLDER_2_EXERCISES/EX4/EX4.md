@@ -235,31 +235,32 @@ varDec  ::= ID ID [ ASSIGN exp ] ';'
             ID ID ( [ ID ID [ ',' ID ID ]∗ ] ) { stmt [ stmt ]∗ }
             CLASS ID [ EXTENDS ID ] { cField [ cField ]∗ }
             ARRAY ID = ID '[' ']'
-exp ::= var
-    ::= ( exp )
-    ::= exp BINOP exp
-    ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] )
-    ::= −INT | NIL | STRING
 
-var ::= ID
-    ::= var '.' ID
-    ::= var '[' exp ']'
+exp     ::= var
+        ::= ( exp )
+        ::= exp BINOP exp
+        ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] )
+        ::= −INT | NIL | STRING
 
-stmt ::= varDec
-     ::= var ASSIGN exp ';'
-     ::= var ASSIGN newExp ';'
-     ::= return [ exp ] ';'
-     ::= IF    ( exp ) { stmt [ stmt ]∗ }
-     ::= WHILE ( exp ) { stmt [ stmt ]∗ }
-     ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] ) ';'
+var     ::= ID
+        ::= var '.' ID
+        ::= var '[' exp ']'
+	
+stmt    ::= varDec
+        ::= var ASSIGN exp ';'
+        ::= var ASSIGN newExp ';'
+        ::= RETURN [ exp ] ';'
+        ::= IF    ( exp ) { stmt [ stmt ]∗ }
+        ::= WHILE ( exp ) { stmt [ stmt ]∗ }
+        ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] ) ';'
 
-newExp ::= new ID | new ID '[' exp ']'
+newExp  ::= new ID | new ID '[' exp ']'
 
-cField ::= varDec
+cField  ::= varDec
 
-BINOP ::= + | − | ∗ | / | < | > | =
+BINOP   ::= + | − | ∗ | / | < | > | =
 
-INT   ::= [1 − 9][0 − 9]∗ | 0
+INT     ::= [1 − 9][0 − 9]∗ | 0
 ```
 
 ## Input
@@ -267,8 +268,8 @@ The input for this exercise is a single text file:
 a semantically valid Posiedon program without class methods.
 
 ## Output
-The output of this exercise should be a single human readable (\*.ll)
-bitcode file that complies with the standard of LLVM `6.0.0`.
+The output of this exercise is a single human readable (\*.ll)
+bitcode file according to the standard of LLVM `6.0.0`.
 
 ## Submission Guidelines
 The skeleton code for this exercise resides (as usual) in subdirectory EX4 of the
@@ -281,5 +282,6 @@ This is the formal running environment of the course.
 
 ### Execution parameters
 COMPILER receives 2 input file names:
-InputPoseidonProgram.txt
-OutputBitcodeFile.ll
+
+ - InputPoseidonProgram.txt
+ - OutputBitcodeFile.ll
