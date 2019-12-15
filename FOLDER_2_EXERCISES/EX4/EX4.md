@@ -261,3 +261,25 @@ BINOP ::= + | − | ∗ | / | < | > | =
 
 INT   ::= [1 − 9][0 − 9]∗ | 0
 ```
+
+## Input
+The input for this exercise is a single text file:
+a semantically valid Posiedon program without class methods.
+
+## Output
+The output of this exercise should be a single human readable (\*.ll)
+bitcode file that complies with the standard of LLVM `6.0.0`.
+
+## Submission Guidelines
+The skeleton code for this exercise resides (as usual) in subdirectory EX4 of the
+course repository. COMPILATION/EX4 should contain a makefile building
+your source files to a runnable jar file called COMPILER (note the lack of the
+.jar suffix). Feel free to use the makefile supplied in the course repository, or
+write a new one if you want to. Before you submit, make sure that your exercise
+compiles and runs on Ubuntu 18.04.1 LTS.
+This is the formal running environment of the course.
+
+### Execution parameters
+COMPILER receives 2 input file names:
+InputPoseidonProgram.txt
+OutputBitcodeFile.ll
