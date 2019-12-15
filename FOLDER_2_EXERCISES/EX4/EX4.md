@@ -164,6 +164,7 @@ Poseidon enforces three kinds of runtime checks:
 should be handled by printing “Division By Zero”,
 and then exit gracefully by using an exit system call.
 The following code will result in such behaviour:
+
 ```java
 void main()
 {
@@ -200,7 +201,7 @@ the program should print “Invalid Pointer Dereference”,
 and then then exit gracefully by using an exit system call.
 
 **Out of bounds array access**
-happen when an array is accessed beyond its allocated size.
+happens when an array is accessed beyond its allocated size.
 The following code demonstrates a possible scenario:
 
 ```java
@@ -211,8 +212,15 @@ int i := A[18];
 
 In this case ”Access Violation” should be printed,
 and then exit gracefully by using an exit system call.
+The same behaviour is expected here too:
 
-## Poseidon Syntax For Exercise 4
+```java
+array IntArray = int[]
+IntArray A := NIL;
+int i := A[13];
+```
+
+## Poseidon Syntax
 To avoid an overly complex exercise, we will exclude class methods from it.
 This means that our classes are like structures from the C programming language.
 Here is the grammar for Poseidon without class methods:
@@ -225,8 +233,8 @@ dec     ::= varDec | funcDec | classDec | arrayDec
 varDec  ::= ID ID [ ASSIGN exp ] ';'
             ID ID ASSIGN newExp ';'
             ID ID ( [ ID ID [ ',' ID ID ]∗ ] ) { stmt [ stmt ]∗ }
-            class ID [ extends ID ] { cField [ cField ]∗ }
-            array ID = ID '[' ']'
+            CLASS ID [ EXTENDS ID ] { cField [ cField ]∗ }
+            ARRAY ID = ID '[' ']'
 exp ::= var
     ::= ( exp )
     ::= exp BINOP exp
@@ -241,8 +249,8 @@ stmt ::= varDec
      ::= var ASSIGN exp ';'
      ::= var ASSIGN newExp ';'
      ::= return [ exp ] ';'
-     ::= if    ( exp ) { stmt [ stmt ]∗ }
-     ::= while ( exp ) { stmt [ stmt ]∗ }
+     ::= IF    ( exp ) { stmt [ stmt ]∗ }
+     ::= WHILE ( exp ) { stmt [ stmt ]∗ }
      ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] ) ';'
 
 newExp ::= new ID | new ID '[' exp ']'
