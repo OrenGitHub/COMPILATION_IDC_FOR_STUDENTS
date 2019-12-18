@@ -99,15 +99,15 @@ use a Poseidon subscript inside brackets: (`+[Poseidon]`, `-[Poseidon]` etc.)
 |                    |           a+b < -32768 |   -32768    |
 +--------------------+------------------------+-------------+
 |                    |  32767 <= a-b          |    32767    |
-| a -[Poseidon] b    | -32768 <= a-b <  32767 |     a+b     |
+| a -[Poseidon] b    | -32768 <= a-b <  32767 |     a-b     |
 |                    |           a=b < -32768 |   -32768    |
 +--------------------+------------------------+-------------+
 |                    |  32767 <= a*b          |    32767    |
-| a *[Poseidon] b    | -32768 <= a*b <  32767 |     a+b     |
+| a *[Poseidon] b    | -32768 <= a*b <  32767 |     a*b     |
 |                    |           a*b < -32768 |   -32768    |
 +--------------------+------------------------+-------------+
 |                    |  32767 <= a/b          |    32767    |
-| a /[Poseidon] b    | -32768 <= a/b <  32767 |     a+b     |
+| a /[Poseidon] b    | -32768 <= a/b <  32767 |     a/b     |
 |                    |           a/b < -32768 |   -32768    |
 +--------------------+------------------------+-------------+
 ```
@@ -237,41 +237,41 @@ This means that our classes are like structures from the C programming language.
 Here is the grammar for Poseidon without class methods:
 
 ```
-Program ::= dec+
+Program  ::= dec+
 
-dec     ::= varDec | funcDec | classDec | arrayDec
+dec      ::= varDec | funcDec | classDec | arrayDec
 
-varDec  ::= ID ID [ ASSIGN exp ] ';'
-            ID ID ASSIGN newExp ';'
-            ID ID ( [ ID ID [ ',' ID ID ]∗ ] ) { stmt [ stmt ]∗ }
-            CLASS ID [ EXTENDS ID ] { cField [ cField ]∗ }
-            ARRAY ID = ID '[' ']'
+varDec   ::= ID ID [ ASSIGN exp ] ';'
+         ::= ID ID ASSIGN newExp ';'
+funcDec  ::= ID ID ( [ ID ID [ ',' ID ID ]∗ ] ) { stmt [ stmt ]∗ }
+classDec ::= CLASS ID [ EXTENDS ID ] { cField [ cField ]∗ }
+arrayDec ::= ARRAY ID = ID '[' ']'
 
-exp     ::= var
-        ::= ( exp )
-        ::= exp BINOP exp
-        ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] )
-        ::= −INT | NIL | STRING
+exp      ::= var
+         ::= ( exp )
+         ::= exp BINOP exp
+         ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] )
+         ::= −INT | NIL | STRING
 
-var     ::= ID
-        ::= var '.' ID
-        ::= var '[' exp ']'
+var      ::= ID
+         ::= var '.' ID
+         ::= var '[' exp ']'
 	
-stmt    ::= varDec
-        ::= var ASSIGN exp ';'
-        ::= var ASSIGN newExp ';'
-        ::= RETURN [ exp ] ';'
-        ::= IF    ( exp ) { stmt [ stmt ]∗ }
-        ::= WHILE ( exp ) { stmt [ stmt ]∗ }
-        ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] ) ';'
+stmt     ::= varDec
+         ::= var ASSIGN exp ';'
+         ::= var ASSIGN newExp ';'
+         ::= RETURN [ exp ] ';'
+         ::= IF    ( exp ) { stmt [ stmt ]∗ }
+         ::= WHILE ( exp ) { stmt [ stmt ]∗ }
+         ::= [ var '.' ] ID ( [ exp [ ',' exp ]∗ ] ) ';'
 
-newExp  ::= new ID | new ID '[' exp ']'
+newExp   ::= new ID | new ID '[' exp ']'
 
-cField  ::= varDec
+cField   ::= varDec
 
-BINOP   ::= + | − | ∗ | / | < | > | =
+BINOP    ::= + | − | ∗ | / | < | > | =
 
-INT     ::= [1 − 9][0 − 9]∗ | 0
+INT      ::= [1 − 9][0 − 9]∗ | 0
 ```
 
 ## Input
