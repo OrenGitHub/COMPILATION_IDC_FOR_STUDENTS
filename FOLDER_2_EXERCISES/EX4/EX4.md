@@ -131,9 +131,9 @@ int foo(int i,int j)
 {
 	PrintInt(x);
 }
-void inc(){ x := x + 1; }
-void dec(){ x := x - 1; }
-void main(){ foo(inc(x),dec(x)); }
+int inc(){ x := x + 1; return x; }
+int dec(){ x := x - 1; return x; }
+void main(){ foo(inc(),dec()); }
 ```
 
 **Global Variables**
