@@ -64,8 +64,10 @@ entry:
 ;                  ;
 ;;;;;;;;;;;;;;;;;;;;
 @s = global i8* null, align 8
-@i = global i32 40, align 4
+@i = global i32 50, align 4
 @myArray = global i32* null, align 8
+@helper = global i32 0, align 4
+@zero = global i32 0, align 4
 
 define i32 @foo(i32 %input) {
   ret i32 6
@@ -128,6 +130,26 @@ entry:
   ; [4] Should we initialize the array? ;
   ;                                     ;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  %Temp_41 = load i32, i32 *@zero, align 4
+  %Temp_42 = add nsw i32 %Temp_41, 1
+  store i32 %Temp_42, i32* @helper, align 4
+  br label %Label_0_while_cond
+
+Label_0_while_cond:
+
+  %Temp_43 = load i32, i32* @helper, align 4
+  %Temp_44 = icmp sgt i32 %Temp_43, %Temp_14
+  br i1 %Temp_44, label %Label_0_while_end, label %Label_0_while_body
+
+Label_0_while_body:
+
+  %Temp_45 = getelementptr inbounds i32, i32* %Temp_30, i32 %Temp_43
+  store i32 %Temp_43, i32* %Temp_45, align 4
+  %Temp_46 = add nsw i32 %Temp_43, 1
+  store i32 %Temp_46, i32* @helper, align 4
+  br label %Label_0_while_cond
+  
+Label_0_while_end:
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;                                                            ;
