@@ -1,0 +1,11 @@
+int i := 40;
+
+array IntArray = int[]
+
+int foo(int i){ return 6; }
+
+void main()
+{
+	IntArray myArray := new int[foo(i) + 17];
+	PrintInt(myArray[i]);
+}
