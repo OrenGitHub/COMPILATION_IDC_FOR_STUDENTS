@@ -6,13 +6,29 @@
 declare i32* @malloc(i32)
 declare i32 @strcmp(i8*, i8*)
 declare i32 @printf(i8*, ...)
+declare void @exit(i32)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;                   ;
 ; printf parameters ;
 ;                   ;
 ;;;;;;;;;;;;;;;;;;;;;
-@.str = private unnamed_addr constant [4 x i8] c"%s\0A\00", align 1
+@INT_FORMAT = constant [4 x i8] c"%d\0A\00", align 1
+@STR_FORMAT = constant [4 x i8] c"%s\0A\00", align 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                              ;
+; LIBRARY FUNCTION :: PrintInt ;
+;                              ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+define void @PrintInt(i32 %i) {
+entry:
+  %i.addr = alloca i32, align 4
+  store i32 %i, i32* %i.addr, align 4
+  %0 = load i32, i32* %i.addr, align 4
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @INT_FORMAT, i32 0, i32 0), i32 %0)
+  ret void
+}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;                                 ;
@@ -24,7 +40,7 @@ entry:
   %s.addr = alloca i8*, align 4
   store i8* %s, i8** %s.addr, align 4
   %Temp_55 = load i8*, i8** %s.addr, align 4
-  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str, i32 0, i32 0), i8* %Temp_55)
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @STR_FORMAT, i32 0, i32 0), i8* %Temp_55)
   ret void
 }
 
@@ -48,8 +64,20 @@ entry:
 ;                  ;
 ;;;;;;;;;;;;;;;;;;;;
 @s = global i8* null, align 8
-@i = global i32 0, align 4
+@i = global i32 40, align 4
 @myArray = global i32* null, align 8
+
+define i32 @foo(i32 %input) {
+  ret i32 6
+}
+
+define void @access_violation () {
+entry:
+  %Temp_91 = load i8*, i8** @STR.ACCESS.VIOLATION.VAR, align 8
+  call void @PrintString(i8* %Temp_91)
+  call void @exit(i32 0)
+  ret void
+}
 
 ;;;;;;;;;;;;;;;;
 ;              ;
@@ -100,9 +128,6 @@ entry:
   ; [4] Should we initialize the array? ;
   ;                                     ;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  %Temp_50 = load i32, i32* @i, align 4
-  %Temp_51 = icmp slt i32 %Temp_50, 0
-  br i1 %Temp_51, label %Label_2_Negative_Idx, label %Label_3_Non_Negative_Idx
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;                                                            ;
@@ -128,7 +153,7 @@ Label_2_Negative_Idx:
   ;                                     ;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   call void @access_violation()
-  br label %Label_4_end
+  br label %Label_6_end
 
 Label_3_Non_Negative_Idx:
 
@@ -140,15 +165,42 @@ Label_3_Non_Negative_Idx:
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   %Temp_60 = load i32, i32* @i, align 4
   %Temp_70 = load i32*, i32** @myArray, align 8
-  %Temp_71 = getelementptr inbounds i32* %Temp_70, i32 0, i32 0
-  %Temp_72 = load i32, i32* Temp_71, align 8
+  %Temp_71 = getelementptr inbounds i32, i32* %Temp_70, i32 0
+  %Temp_72 = load i32, i32* %Temp_71, align 8
   %Temp_73 = icmp sge i32 %Temp_50, %Temp_72
   br i1 %Temp_73, label %Label_4_Out_Of_Bounds_Idx, label %Label_5_Inbounds_Idx
 
-  store i8* %call, i8** @s, align 8
-  %Temp_17 = load i8*, i8** @s, align 8
+Label_4_Out_Of_Bounds_Idx:
 
-Label_4_end:
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;                                          ;
+  ; [9] subscript *is* out of bounds -> exit ;
+  ;                                          ;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  call void @access_violation()
+  br label %Label_6_end
+
+Label_5_Inbounds_Idx:
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;                           ;
+  ;                     idx   ;
+  ;                     is    ;
+  ;                    valid  ;
+  ;                      |    ;
+  ;                      |    ;
+  ;                      V    ;
+  ; [10] Extract array[ idx ] ;
+  ;                           ;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  %Temp_80 = load i32, i32* @i, align 4
+  %Temp_81 = load i32*, i32** @myArray, align 8
+  %Temp_82 = getelementptr inbounds i32, i32* %Temp_81, i32 %Temp_80
+  %Temp_83 = load i32, i32* %Temp_82
+  call void @PrintInt(i32 %Temp_83)
+  br label %Label_6_end
+ 
+Label_6_end:
 
   ret i32 0
 }
