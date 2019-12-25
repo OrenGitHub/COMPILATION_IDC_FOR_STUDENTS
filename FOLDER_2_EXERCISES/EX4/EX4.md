@@ -81,9 +81,8 @@ void foo(int i)
 	}
 }
 void main(){ foo(6); foo(9); }
-
-
 ```
+
 ### Binary Operations
 **Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2<sup>15</sup> − 1.
 The semantics of integer binary operations in Poseidon is therefore somewhat different
@@ -91,7 +90,7 @@ than that of standard programming languages. It is presented in the following ta
 and to distinguish Poseidon operators from the usual arithmetic signs, we shall
 use a Poseidon subscript inside brackets: (`+[Poseidon]`, `-[Poseidon]` etc.)
 
-```
+```java
 |       Binop        |   Condition            |    Value    |
 +--------------------+------------------------+-------------+
 |                    |  32767 <= a+b          |    32767    |
@@ -119,6 +118,8 @@ the resulting string s1s2 is allocated on the heap,
 and should be null terminated.
 The result of testing contents equality is either `1`
 when they are equal, or `0` otherwise.
+
+\pagebreak
 
 ### Order of Evaluation
 **When calling a function** evaluation order matters.
@@ -163,6 +164,8 @@ void main(){ A[inc()] := inc(); PrintInt(A[5]); }
 ```
 
 **Binary Expressions**
+
+\pagebreak
 
 ### Runtime Checks
 Poseidon enforces three kinds of runtime checks:
@@ -230,13 +233,14 @@ array IntArray = int[]
 IntArray A := NIL;
 int i := A[13];
 ```
+\pagebreak
 
 ## Poseidon Syntax
 To avoid an overly complex exercise, we will exclude class methods from it.
 This means that our classes are like structures from the C programming language.
 Here is the grammar for Poseidon without class methods:
 
-```
+```java
 Program  ::= dec+
 
 dec      ::= varDec | funcDec | classDec | arrayDec
