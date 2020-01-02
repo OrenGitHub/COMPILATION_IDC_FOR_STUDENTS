@@ -2,7 +2,7 @@
 ###### Exercise 5, Due 2/2/2020 before 14:00
 
 ## Introduction
-Congratulations! you have made it to the final step of our compilation course.
+Congratulations, you have made it to the final step of our compilation course.
 In this last exercise we will translate the input Poseidon program to MIPS assembley.
 
 [LLVM][LLVM-link] is an open source compiler infraructure and toolchain
