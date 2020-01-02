@@ -21,8 +21,8 @@ Note that root privliges are needed for the installation of both tools.
 To check your installation go to the source code folder and run `make everything`.
 You should see the prime numbers from 2 to 100 printed to stdout.
 
-[SPIM][SPIM-link]:https://en.wikipedia.org/wiki/SPIM
-[XSPIM][XSPIM-link]:http://www.cs.kent.edu/~durand/CS35101F06/Help/spimintro.html
+[SPIM-link]:https://en.wikipedia.org/wiki/SPIM
+[XSPIM-link]:http://www.cs.kent.edu/~durand/CS35101F06/Help/spimintro.html
 
 ## Poseidon Semantics
 Until now used the term semantics to describe legal and illegal programs.
