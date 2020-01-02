@@ -3,7 +3,9 @@
 
 ## Introduction
 Congratulations, you have made it to the final step of our compilation course.
-In this last exercise we will translate the input Poseidon program to MIPS assembley.
+In this last exercise you will translate the input Poseidon program to MIPS assembley.
+[MIPS][MIPS-link] is a general purpose [RISC][RISC-link] instruction set architecture.
+It was rather popular during the 1980s, but is mostly used now for specific 32-bit microcontrollers.
 
 [LLVM][LLVM-link] is an open source compiler infraructure and toolchain
 that supports multiple source languages (C, CPP, C#, Go, etc.)
@@ -22,7 +24,8 @@ Then, in order to check you work, the human readable bitcode file
 will be translated into a proper machine readable bitcode file,
 and linked with [clang][clang-link] to a native executable.
 
-[LLVM-link]:https://llvm.org/
+[MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
+[RISC-link]:
 [bitcode-link]:https://llvm.org/docs/LangRef.html
 [llvm-dis-link]:https://llvm.org/docs/CommandGuide/llvm-dis.html
 [llvm-as-link]:https://llvm.org/docs/CommandGuide/llvm-as.html
