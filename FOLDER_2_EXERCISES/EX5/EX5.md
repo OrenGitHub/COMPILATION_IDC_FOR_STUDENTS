@@ -6,8 +6,10 @@ Congratulations, you have made it to the final step of our compilation course.
 In this last exercise you will translate the input Poseidon program to MIPS assembley.
 [MIPS][MIPS-link] is a general purpose [RISC][RISC-link] instruction set architecture.
 It was rather popular during the 1980s, but is mostly used now for specific 32-bit microcontrollers.
+This architecture was chosen as the destination laguage of our compiler for its simplicity,
+availabale documentation and complete toolchain which even contains a graphic debugger.
 
-[LLVM][LLVM-link] is an open source compiler infraructure and toolchain
+rce compiler infraructure and toolchain
 that supports multiple source languages (C, CPP, C#, Go, etc.)
 and multiple destination targets (x86, ARM, MIPS, x86_64, sparc, etc.).
 Its [bitcode][bitcode-link] (or intermediate representation)
