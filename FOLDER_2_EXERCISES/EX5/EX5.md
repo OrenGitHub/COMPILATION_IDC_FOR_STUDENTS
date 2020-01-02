@@ -25,7 +25,7 @@ will be translated into a proper machine readable bitcode file,
 and linked with [clang][clang-link] to a native executable.
 
 [MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
-[RISC-link]:
+[RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
 [bitcode-link]:https://llvm.org/docs/LangRef.html
 [llvm-dis-link]:https://llvm.org/docs/CommandGuide/llvm-dis.html
 [llvm-as-link]:https://llvm.org/docs/CommandGuide/llvm-as.html
