@@ -13,7 +13,8 @@ availabale documentation and complete toolchain (which even contains a graphic d
 [RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
 
 ## Install SPIM and XSPIM
-To complete this exercise you need a working MIPS simulator (SPIM) and debugger (XSPIM).
+To complete this exercise you need a working MIPS simulator ([SPIM][SPIM-link])
+and debugger ([XSPIM][XSPIM-link]).
 Lucky for us these tools are readily availabale from the official repository of Ubuntu.
 Simply type `$ sudo apt install spim xspim` from terminal and you should be good to go.
 Note that root privliges are needed for the installation of both tools.
