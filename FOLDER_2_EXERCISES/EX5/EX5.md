@@ -23,8 +23,6 @@ You should see the prime numbers from 2 to 100 printed to stdout.
 [SPIM][SPIM-link]:https://en.wikipedia.org/wiki/SPIM
 [XSPIM][XSPIM-link]:http://www.cs.kent.edu/~durand/CS35101F06/Help/spimintro.html
 
-[build-llvm-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
-
 ## Poseidon Semantics
 Until now used the term semantics to describe legal and illegal programs.
 But a programming language semantics also describes the way a program is meant to be executed.
