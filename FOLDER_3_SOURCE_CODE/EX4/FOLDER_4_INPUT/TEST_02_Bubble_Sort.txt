@@ -41,5 +41,12 @@ void main()
     arr[6] := -580;
     
     BubbleSort(arr,7);
+    
+    int i := 0;
+    while (i < 7)
+    {
+        PrintInt(arr[i]);
+	i := i + 1;
+    }
 }
 

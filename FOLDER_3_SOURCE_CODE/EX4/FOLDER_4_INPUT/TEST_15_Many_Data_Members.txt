@@ -1,9 +1,5 @@
-int sum() { return 4; }
-
 class foo
 {
-	int sum() { return i17 + i30; }
-
 	int i01 :=  1;
 	int i02 :=  2;
 	int i03 :=  3;
@@ -38,10 +34,11 @@ class foo
 	int i32 := 32;
 }
 
+int sum(foo f) { return f.i17 + f.i30; }
+
 void main()
 {
 	foo f := new foo;
 
-	PrintInt(f.sum());
+	PrintInt(sum(f));
 }
-
