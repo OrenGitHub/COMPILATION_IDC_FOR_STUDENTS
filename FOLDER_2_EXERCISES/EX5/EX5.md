@@ -37,7 +37,9 @@ returning from a called function and more.
 The following table lists some LLVM bitcode examples that require
 non trivial handling in the generated MIPS code.
 The equivalent MIPS code column is deliberately missing and will be shown in class.
-   
+
+\pagebreak
+
 ```
           | LLVM bitcode example                  |
 ----------+---------------------------------------+
@@ -113,8 +115,6 @@ void foo(int i)
 }
 void main(){ foo(6); foo(9); }
 ```
-
-\pagebreak
 
 ### Binary Operations
 **Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2<sup>15</sup> − 1.
