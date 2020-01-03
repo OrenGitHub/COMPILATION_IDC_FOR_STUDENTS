@@ -205,25 +205,31 @@ MIPS supports a somewhat limited set of system calls,
 but it is enough to handle everything we need.
 
 ```
-| Poseidon example code | MIPS code           | Remarks                      |
-+-----------------------+---------------------+------------------------------+
-|                       | li $t2, 5           | print a single whitespace    |
-|                       | move $a0, $t2       | after the int, instead of \n |
-| PrintInt(5);          | li $v0, 8           | that sometimes cause trouble |
-|                       | syscall             | in SPIM.                     |
-+-----------------------+---------------------+------------------------------+
-| string s := "M";      | .data               | print a single whitespace    |
-| void main()           | Mstr: .asciiz "M"   | after
-| {                     | .text               |
-|     PrintString(s);   | main:               |
-| }                     |   la $a0,Mstr       |
-|                       |   li $v0,4          |
-|                       |   syscall           |
-+-----------------------+---------------------+
-| array IA = int[]      | li $v0,8            |
-| IA a := new int[3];   | syscall             |
-|                       | syscall             |
-+-----------------------+---------------------+
+| Poseidon code       | MIPS code         | Remarks                   |
++---------------------+-------------------+---------------------------+
+|  PrintInt(5);       | li $t2, 5         | print the integer, then   |
+|                     | move $a0, $t2     | print a single whitespace |
+|                     | li $v0, 1         | 1 is the print int code   |
+|                     | syscall           |                           |
+|                     | li $a0, 32        | 32 is the ascii of ' '    |
+|                     | li $v0, 11        | 11 is the print char code |
+|                     | syscall           |                           |
++---------------------+-------------------+---------------------------+
+| string s := "M";    | .data             | print the string, then    |
+| void main()         | Mstr: .asciiz "M" | print a single whitespace |
+| {                   | .text             |                           |
+|     PrintString(s); | main:             |                           |
+| }                   |   la $a0,Mstr     |                           |
+|                     |   li $v0,4        |                           |
+|                     |   syscall         |                           |
+|                     |   li $a0, 32      |                           |
+|                     |   li $v0, 11      |                           |
+|                     |   syscall         |                           |
++---------------------+-------------------+---------------------------+
+| array IA = int[]    | li $v0,8          |
+| IA a := new int[3]; | syscall           |
+|                     | syscall           |
++---------------------+-------------------+
 ```
 
 **Division by zero**
