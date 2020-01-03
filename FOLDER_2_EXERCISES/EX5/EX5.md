@@ -13,7 +13,7 @@ LLVM bitcode from the previous exercise. The other option is to perform the tran
 from the AST of the program.
 
 ### LLVM bitcode to MIPS
-Translation of some commands is traightforward. For example, binary operations,
+Translation of *some* commands is traightforward. For example, binary operations,
 labels, jumps, conditional jumps, pointer arithmetic operations, casting and more.
 The following table lists some examples:
 
@@ -30,13 +30,13 @@ Casting | %t6 = bitcast i8* %t7 to i8** | move t7, t6      |
 --------+-------------------------------+------------------+
 ```
 
-Translation of other commands can be trickier.
+Translation of *other* commands is not immediate.
 For instance, accessing local variables,
 passing arguments to a function and calling it,
 returning from a called function and more.
 The following table lists some LLVM bitcode examples that require
-a non trivial handling in the equivalent MIPS code.
-The MIPS code column is deliberately missing and will be shown in class.
+non trivial handling in the generated MIPS code.
+The equivalent MIPS code column is deliberately missing and will be shown in class.
    
 ```
           | LLVM bitcode example                  |
@@ -71,11 +71,9 @@ You should see the prime numbers from 2 to 100 printed to stdout.
 [XSPIM-link]:http://www.cs.kent.edu/~durand/CS35101F06/Help/spimintro.html
 
 ## Poseidon Semantics
-Until now used the term semantics to describe legal and illegal programs.
-But a programming language semantics also describes the way a program is meant to be executed.
-What is the order of evaluation when a mathematical expression is computed?
-What is the explicit underlying mechanism that controls execution of while loops? etc.
-The following sections describe the Poseidon semantics with a multitude of running examples.
+The Poseidon semantics was thouroughly exaplained in the previous exercise,
+and is brought here again for completeness. The next sections describe it
+with a multitude of running examples.
 
 ### If and While Statements
 **If statements** behave similar to (practically) all programming languages:
@@ -203,23 +201,28 @@ void main(){ A[inc()] := inc(); PrintInt(A[5]); }
 \pagebreak
 
 ### System Calls
-MIPS supports a limited set of system calls
+MIPS supports a somewhat limited set of system calls,
+but it is enough to handle everything we need.
 
 ```
-| Poseidon code       | MIPS code | Remarks |
-+---------------------+-----------+---------+
-|                     | li $a0, 5 |         |
-| PrintInt(5);        | li $v0, 8 |         |
-|                     | syscall   |         |
-+---------------------+-----------+---------+
-| string s := "M";    | syscall   |         |
-| PrintString(s);     | li $v0,8  |         |
-|                     | syscall   |         |
-+---------------------+-----------+---------+
-| array IA = int[]    | li $v0,8  |         |
-| IA a := new int[3]; | syscall   |         |
-| IA a := new int[3]; | syscall   |         |
-+---------------------+-----------+---------+
+| Poseidon example code | MIPS code | Remarks |
++-----------------------+-----------+---------+
+|                       | li $a0, 5           |
+| PrintInt(5);          | li $v0, 8           |
+|                       | syscall             |
++-----------------------+---------------------+
+| string s := "M";      | .data               |
+| void main()           | Mstr: .asciiz "M"   |
+| {                     | .text               |
+|     PrintString(s);   | main:               |
+| }                     |   la $a0,Mstr       |
+|                       |   li $v0,4          |
+|                       |   syscall           |
++-----------------------+---------------------+
+| array IA = int[]      | li $v0,8           |
+| IA a := new int[3];   | syscall            |
+|                       | syscall            |
++-----------------------+-----------+---------+
 ```
 
 **Division by zero**
