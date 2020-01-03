@@ -163,20 +163,20 @@ void main(){ A[inc()] := inc(); PrintInt(A[5]); }
 MIPS supports a limited set of system calls
 
 ```
-| Poseidon code | MIPS code | Remarks |
-+---------------+-----------+---------+
-| PrintInt(8);  | li $v0,8  |         |
-|               | syscall   |         |
-+---------------+-----------+---------+
-| PrintInt(8);  | li $v0,8  |         |
-|               | syscall   |         |
-+---------------+-----------+---------+
-| PrintInt(8);  | li $v0,8  |         |
-|               | syscall   |         |
-+---------------+-----------+---------+
-| PrintInt(8);  | li $v0,8  |         |
-|               | syscall   |         |
-+---------------+-----------+---------+
+| Poseidon code       | MIPS code | Remarks |
++---------------------+-----------+---------+
+|                     | li $a0, 5 |         |
+| PrintInt(5);        | li $v0, 8 |         |
+|                     | syscall   |         |
++---------------------+-----------+---------+
+| string s := "M";    | syscall   |         |
+| PrintString(s);     | li $v0,8  |         |
+|                     | syscall   |         |
++---------------------+-----------+---------+
+| array IA = int[]    | li $v0,8  |         |
+| IA a := new int[3]; | syscall   |         |
+| IA a := new int[3]; | syscall   |         |
++---------------------+-----------+---------+
 ```
 
 **Division by zero**
