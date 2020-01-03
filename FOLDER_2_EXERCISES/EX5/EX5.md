@@ -205,31 +205,39 @@ MIPS supports a somewhat limited set of system calls,
 but it is enough to handle everything we need.
 
 ```
-| Poseidon code       | MIPS code         | Remarks                   |
-+---------------------+-------------------+---------------------------+
-|  PrintInt(5);       | li $t2, 5         | print the integer, then   |
-|                     | move $a0, $t2     | print a single whitespace |
-|                     | li $v0, 1         | 1 is the print int code   |
-|                     | syscall           |                           |
-|                     | li $a0, 32        | 32 is the ascii of ' '    |
-|                     | li $v0, 11        | 11 is the print char code |
-|                     | syscall           |                           |
-+---------------------+-------------------+---------------------------+
-| string s := "M";    | .data             | print the string, then    |
-| void main()         | Mstr: .asciiz "M" | print a single whitespace |
-| {                   | .text             |                           |
-|     PrintString(s); | main:             |                           |
-| }                   |   la $a0,Mstr     |                           |
-|                     |   li $v0,4        |                           |
-|                     |   syscall         |                           |
-|                     |   li $a0, 32      |                           |
-|                     |   li $v0, 11      |                           |
-|                     |   syscall         |                           |
-+---------------------+-------------------+---------------------------+
-| array IA = int[]    | li $v0,8          |
-| IA a := new int[3]; | syscall           |
-|                     | syscall           |
-+---------------------+-------------------+
+| Poseidon code       | MIPS code         | Remarks               |
++---------------------+-------------------+-----------------------+
+| PrintInt(5);        | li $t2, 5         |                       |
+|                     | move $a0, $t2     |                       |
+|                     | li $v0, 1         | 1 = print int code    |
+|                     | syscall           |                       |
+|                     | li $a0, 32        | 32 = ascii of ' '     |
+|                     | li $v0, 11        | 11 = print char code  |
+|                     | syscall           |                       |
++---------------------+-------------------+-----------------------+
+| string s := "M";    | .data             |                       |
+| void main()         | Mstr: .asciiz "M" |                       |
+| {                   | .text             |                       |
+|     PrintString(s); | main:             |                       |
+| }                   |   la $a0,Mstr     |                       |
+|                     |   li $v0,4        | 4 = print string code |
+|                     |   syscall         |                       |
+|                     |   li $a0, 32      | 32 = ascii of ' '     |
+|                     |   li $v0, 11      | 11 = print char code  |
+|                     |   syscall         |                       |
+|                     |   li $v0, 10      | 10 = exit code        |
+|                     |   syscall         | finish main with exit |
++---------------------+-------------------+-----------------------+
+| array IA = int[]    | .data             |                       |
+| IA a := new int[5]; | a: .word 0        | initialize to null    |
+|                     | .text             |                       |
+|                     | main:             |                       |
+|                     | li $a0,20         | 20 = 5 * 4 bytes      |
+|                     | li $v0,9          | 9 = malloc code       |
+|                     | syscall           |                       |
+|                     | sw $v0,a          | allocation address    |
+|                     |                   | returned in $v0       |
++---------------------+-------------------+-----------------------+
 ```
 
 **Division by zero**
