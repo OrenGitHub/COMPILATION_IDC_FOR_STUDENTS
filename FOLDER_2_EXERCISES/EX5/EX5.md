@@ -12,11 +12,17 @@ There are essentially two steps for this exercise.
 The first step is to translate the LLVM bitcode from the previous exercise.
 The second step is to perform liveness analysis and register allocation
 so that each temporary is assigned a physical register.
+Note that you will ony be able to check your work after completing both steps.
+Unilke LLVM bitcode, MIPS does not have the ability to execute a program
+with an unbounded number of temporaries.
 
 [MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
 [RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
 
 ### LLVM bitcode to MIPS
+The first step of this exercise is to translate the LLVM bitcode to MIPS.
+This step ends with a MIPS file that has an unbounded number of temporaries.
+Roughly speaking, translation is done one command at a time.
 Translation of *some* commands is traightforward. For example, binary operations,
 labels, jumps, conditional jumps, pointer arithmetic operations, casting and more.
 The following table lists some examples:
