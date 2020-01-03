@@ -258,6 +258,8 @@ but it is enough to handle everything we need.
 +---------------------+-------------------+-----------------------+
 ```
 
+\pagebreak
+
 ## Poseidon Syntax
 The Poseidon syntax is identical to the original syntax shown in the second exercise.
 It is brought here again for completeness.
@@ -299,6 +301,8 @@ BINOP    ::= + | − | ∗ | / | < | > | =
 
 INT      ::= [1 − 9][0 − 9]∗ | 0
 ```
+
+\pagebreak
 
 ## Input
 The input for this exercise is a single text file:
