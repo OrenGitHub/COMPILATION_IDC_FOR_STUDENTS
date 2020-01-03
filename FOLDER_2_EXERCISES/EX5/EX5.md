@@ -32,21 +32,22 @@ Casting | %t6 = bitcast i8* %t7 to i8** | move t7, t6      |
 
 Translation of other commands can be trickier.
 For instance, accessing local variables,
-accessing input parameters, calling a (global) function,
+passing arguments to a function and calling it,
 returning from a called function and more.
-The following table lists some non trivial translation of LLVM bitcode examples to MIPS:
+The following table lists some LLVM bitcode examples that require
+a non trivial handling in the equivalent MIPS code.
+The MIPS code column is deliberately missing and will be shown in class.
    
 ```
-        | LLVM bitcode example                   | MIPS equivalent            |
---------+----------------------------------------+----------------------------+
-Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
---------+----------------------------------------+----------------------------+
-Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
---------+----------------------------------------+----------------------------+
-Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
---------+----------------------------------------+----------------------------+
-Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
---------+----------------------------------------+----------------------------+
+          | LLVM bitcode example                  |
+----------+---------------------------------------+
+Call      | %t2 = call i32 @foo(i32 %t3, i32 %t4) |
+----------+---------------------------------------+
+Return    | ret i32 %t1                           | 
+----------+---------------------------------------+
+Local     | alloca i32 x, align 4                 |
+Variables | store i32 3, i32* x                   |
+----------+---------------------------------------+
 ```
 
 #### AST to MIPS
