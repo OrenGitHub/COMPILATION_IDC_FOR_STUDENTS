@@ -8,6 +8,10 @@ In this last exercise you will translate the input Poseidon program to MIPS asse
 It was rather popular during the 1980s, but is mostly used now for specific 32-bit microcontrollers.
 This architecture was chosen as the destination laguage of our compiler for its simplicity,
 availabale documentation and complete toolchain (which even contains a graphic debugger).
+There are two ways to approach this exercise:
+
+ - (recomended) translation from the LLVM bitcode of the previous exercise.
+ - (possible too) direct translation from the AST of the program.
 
 [MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
 [RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
