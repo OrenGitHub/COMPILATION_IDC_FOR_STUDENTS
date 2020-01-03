@@ -258,69 +258,8 @@ but it is enough to handle everything we need.
 +---------------------+-------------------+-----------------------+
 ```
 
-**Division by zero**
-should be handled by printing “Division By Zero”,
-and then exit gracefully by using an exit system call.
-The following code will result in such behaviour:
-
-```java
-void main()
-{
-	int i:= 6;
-	while (i+17)
-	{
-		int j := 8/i;
-		i := i-1;
-	}
-}
-```
-
-**Invalid pointer dereference**
-can occur when trying to access data members
-of an uninitialized class variable.
-For example, here:
-
-```java
-class Father { int i; int j; }
-Father f;
-int i := f.i;
-```
-
-And the same behaviour is expected here too:
-
-```java
-class Father { int i; int j; }
-Father f;
-int i := f.i;
-```
-
-When an invalid pointer dereference occurs,
-the program should print “Invalid Pointer Dereference”,
-and then then exit gracefully by using an exit system call.
-
-**Out of bounds array access**
-happens when an array is accessed beyond its allocated size.
-The following code demonstrates a possible scenario:
-
-```java
-array IntArray = int[]
-IntArray A := new int[6];
-int i := A[18];
-```
-
-In this case ”Access Violation” should be printed,
-and then exit gracefully by using an exit system call.
-The same behaviour is expected here too:
-
-```java
-array IntArray = int[]
-IntArray A := NIL;
-int i := A[13];
-```
-\pagebreak
-
 ## Poseidon Syntax
-The Poseidon syntax is similar to the original syntax shown in the second exercise.
+The Poseidon syntax is identical to the original syntax shown in the second exercise.
 It is brought here again for completeness.
 
 ```java
