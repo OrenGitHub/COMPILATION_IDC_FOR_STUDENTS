@@ -11,6 +11,8 @@ availabale documentation and complete toolchain (which even contains a graphic d
 There are two ways to approach this exercise:
 
  - (recomended) translation from the LLVM bitcode of the previous exercise.
+   - translation of some commands is traightforward:
+   - `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` becomes `add Temp_3, Temp_1, Temp_2`
  - (possible too) direct translation from the AST of the program.
 
 [MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
