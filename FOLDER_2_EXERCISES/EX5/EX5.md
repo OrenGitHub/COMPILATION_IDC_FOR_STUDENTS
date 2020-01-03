@@ -8,22 +8,26 @@ In this last exercise you will translate the input Poseidon program to MIPS asse
 It was rather popular during the 1980s, but is mostly used now for specific 32-bit microcontrollers.
 This architecture was chosen as the destination laguage of our compiler for its simplicity,
 availabale documentation and complete toolchain (which even contains a graphic debugger).
-There are two ways to approach this exercise:
- - (recomended) translation from the LLVM bitcode of the previous exercise.
-   - translation of some commands is traightforward. For example,      
+There are essentially two ways to approach this exercise. The recomended way is to translate the
+LLVM bitcode from the previous exercise. The other option is to perform the translation directly
+from the AST of the program.
+
+#### LLVM bitcode to MIPS
+
+- translation of some commands is traightforward. For example,      
    
-     ```
-             | LLVM bitcode example                   | MIPS equivalent            |
-     --------+----------------------------------------+----------------------------+
-     Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
-     --------+----------------------------------------+----------------------------+
-     Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
-     --------+----------------------------------------+----------------------------+
-     Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
-     --------+----------------------------------------+----------------------------+
-     Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
-     --------+----------------------------------------+----------------------------+
-     ```
+  ```
+          | LLVM bitcode example                   | MIPS equivalent            |
+  --------+----------------------------------------+----------------------------+
+  Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+  --------+----------------------------------------+----------------------------+
+  Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
+  --------+----------------------------------------+----------------------------+
+  Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
+  --------+----------------------------------------+----------------------------+
+  Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
+  --------+----------------------------------------+----------------------------+
+  ```
    
    - translation of other commands can be trickier. For instance,
    
@@ -39,7 +43,7 @@ There are two ways to approach this exercise:
      Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
      --------+----------------------------------------+----------------------------+
      ```
- - (possible too) direct translation from the AST of the program.
+#### AST to MIPS
 
 [MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
 [RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
