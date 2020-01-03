@@ -12,19 +12,29 @@ There are two ways to approach this exercise:
 
  - (recomended) translation from the LLVM bitcode of the previous exercise.
    - translation of some commands is traightforward:
+   
+     | Command | LLVM bitcode example                     | MIPS equivalent              |
+     |:--------|:----------------------------------------:|-----------------------------:|
+     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+   
+   
      ```
-            | LLVM bitcode                           | MIPS equivalent            |
-     -------+----------------------------------------+----------------------------+
-     Binops | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
-     -------+----------------------------------------+----------------------------+
-     Labels | Label_6_while_body:                    | Label_6_while_body:        |
-     -------+----------------------------------------+----------------------------+
-     Jumps  | br label %Label_6_while_body` becomes  | j Label_6_while_body       |
-     -------+----------------------------------------+----------------------------+
-     CJumps | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
-     -------+----------------------------------------+----------------------------+
-     Jumps  | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
-     -------+----------------------------------------+----------------------------+
+                        | LLVM bitcode                           | MIPS equivalent            |
+     -------------------+----------------------------------------+----------------------------+
+     Binops             | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+     -------------------+----------------------------------------+----------------------------+
+     Labels             | Label_6_while_body:                    | Label_6_while_body:        |
+     -------------------+----------------------------------------+----------------------------+
+     Jumps              | br label %Label_6_while_body           | j Label_6_while_body       |
+     -------------------+----------------------------------------+----------------------------+
+     Casting            | %Temp_4 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
+     -------------------+----------------------------------------+----------------------------+
+     Pointer    | %Temp_5 = getelementptr inbounds i8, i8*  | move Temp_3, Temp_1        |
+     Arithmetic | %Temp_5 = getelementptr inbounds i8, i8*  | move Temp_3, Temp_1        |
+     -------------------+----------------------------------------+----------------------------+
      Jumps  | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
      -------+----------------------------------------+----------------------------+
      ```
