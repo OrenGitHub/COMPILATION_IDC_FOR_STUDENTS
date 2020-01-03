@@ -13,7 +13,8 @@ LLVM bitcode from the previous exercise. The other option is to perform the tran
 from the AST of the program.
 
 #### LLVM bitcode to MIPS
-Translation of some commands is traightforward. For example,
+
+- Translation of some commands is traightforward. For example,
 
 ```
         | LLVM bitcode example                   | MIPS equivalent            |
@@ -28,7 +29,7 @@ Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
 --------+----------------------------------------+----------------------------+
 ```
 
-Translation of other commands can be trickier. For instance,
+- Translation of other commands can be trickier. For instance,
    
 ```
         | LLVM bitcode example                   | MIPS equivalent            |
