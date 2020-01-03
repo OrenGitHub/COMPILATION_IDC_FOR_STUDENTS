@@ -2,42 +2,51 @@
 ###### Exercise 5, Due 2/2/2020 before 14:00
 
 ## Introduction
-Congratulations! you have made it to the final step of our compilation course.
-In this last exercise we will translate the input Poseidon program to MIPS assembley.
+Congratulations, you have made it to the final step of our compilation course.
+In this last exercise you will translate the input Poseidon program to MIPS assembley.
+[MIPS][MIPS-link] is a general purpose [RISC][RISC-link] instruction set architecture.
+It was rather popular during the 1980s, but is mostly used now for specific 32-bit microcontrollers.
+This architecture was chosen as the destination laguage of our compiler for its simplicity,
+availabale documentation and complete toolchain (which even contains a graphic debugger).
+There are two ways to approach this exercise:
 
-[LLVM][LLVM-link] is an open source compiler infraructure and toolchain
-that supports multiple source languages (C, CPP, C#, Go, etc.)
-and multiple destination targets (x86, ARM, MIPS, x86_64, sparc, etc.).
-Its [bitcode][bitcode-link] (or intermediate representation)
-was designed as a language-independent, high-level portable assembley.
-Bitcode files come in two flavours, or formats:
-machine readable and human readable.
-Machine readable (\*.bc) bitcode files can be transformed
-into human readable ones with [llvm-dis][llvm-dis-link].
-Human readable (\*.ll) bitcode files can be transformed
-into machine readable ones with [llvm-as][llvm-as-link].
-In this exercise you will translate the input Poseidon program
-into a human readable (\*.ll) bitcode file.
-Then, in order to check you work, the human readable bitcode file
-will be translated into a proper machine readable bitcode file,
-and linked with [clang][clang-link] to a native executable.
+ - (recomended) translation from the LLVM bitcode of the previous exercise.
+   - translation of some commands is traightforward:
+     ```
+            | LLVM bitcode                           | MIPS equivalent            |
+     -------+----------------------------------------+----------------------------+
+     Binops | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+     -------+----------------------------------------+----------------------------+
+     Labels | Label_6_while_body:                    | Label_6_while_body:        |
+     -------+----------------------------------------+----------------------------+
+     Jumps  | br label %Label_6_while_body` becomes  | j Label_6_while_body       |
+     -------+----------------------------------------+----------------------------+
+     CJumps | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
+     -------+----------------------------------------+----------------------------+
+     Jumps  | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
+     -------+----------------------------------------+----------------------------+
+     Jumps  | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
+     -------+----------------------------------------+----------------------------+
+     ```
+ - (possible too) direct translation from the AST of the program.
 
-[LLVM-link]:https://llvm.org/
-[bitcode-link]:https://llvm.org/docs/LangRef.html
-[llvm-dis-link]:https://llvm.org/docs/CommandGuide/llvm-dis.html
-[llvm-as-link]:https://llvm.org/docs/CommandGuide/llvm-as.html
-[clang-link]:https://clang.llvm.org/
+[MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
+[RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
 
-## Install LLVM
-To complete this exercise you need a working LLVM + clang.
-The formal LLVM + clang version for our course can be downloaded and installed
-with this [build-llvm-script][build-llvm-script-link].
-Note that this is a debug build, so allow at least one hour for it to finish.
-In addition you will need to have root privliges for the final install step of the script.
+## Install SPIM and XSPIM
+To complete this exercise you need a working MIPS simulator ([SPIM][SPIM-link])
+and debugger ([XSPIM][XSPIM-link]).
+Lucky for us, these tools are readily availabale from the official repository of Ubuntu.
+Simply open the terminal and type:
+```
+$ sudo apt install spim xspim
+```
+Note that root privliges are needed for the installation of both tools.
 To check your installation go to the source code folder and run `make everything`.
 You should see the prime numbers from 2 to 100 printed to stdout.
 
-[build-llvm-script-link]: https://github.com/OrenGitHub/COMPILATION_IDC_FOR_STUDENTS/blob/master/FOLDER_3_SOURCE_CODE/EX4/FOLDER_9_SCRIPTS/build-llvm-6.0.0
+[SPIM-link]:https://en.wikipedia.org/wiki/SPIM
+[XSPIM-link]:http://www.cs.kent.edu/~durand/CS35101F06/Help/spimintro.html
 
 ## Poseidon Semantics
 Until now used the term semantics to describe legal and illegal programs.
@@ -171,12 +180,25 @@ void main(){ A[inc()] := inc(); PrintInt(A[5]); }
 
 \pagebreak
 
-### Runtime Checks
-Poseidon enforces three kinds of runtime checks:
+### System Calls
+MIPS supports a limited set of system calls
 
- - Division by zero
- - Invalid pointer dereference
- - Out of bounds array access.
+```
+| Poseidon code       | MIPS code | Remarks |
++---------------------+-----------+---------+
+|                     | li $a0, 5 |         |
+| PrintInt(5);        | li $v0, 8 |         |
+|                     | syscall   |         |
++---------------------+-----------+---------+
+| string s := "M";    | syscall   |         |
+| PrintString(s);     | li $v0,8  |         |
+|                     | syscall   |         |
++---------------------+-----------+---------+
+| array IA = int[]    | li $v0,8  |         |
+| IA a := new int[3]; | syscall   |         |
+| IA a := new int[3]; | syscall   |         |
++---------------------+-----------+---------+
+```
 
 **Division by zero**
 should be handled by printing “Division By Zero”,
@@ -284,15 +306,15 @@ INT      ::= [1 − 9][0 − 9]∗ | 0
 
 ## Input
 The input for this exercise is a single text file:
-a semantically valid Posiedon program without class methods.
+a semantically valid Posiedon program.
 
 ## Output
-The output of this exercise is a single human readable (\*.ll)
-bitcode file according to the standard of LLVM `6.0.0`.
+The output of this exercise is a single MIPS file
+that conforms to the specification of SPIM `8.0`.
 
 ## Submission Guidelines
-The skeleton code for this exercise resides (as usual) in subdirectory EX4 of the
-course repository. COMPILATION/EX4 should contain a makefile building
+The skeleton code for this exercise resides (as usual) in subdirectory EX5 of the
+course repository. COMPILATION/EX5 should contain a makefile building
 your source files to a runnable jar file called COMPILER (note the lack of the
 .jar suffix). Feel free to use the makefile supplied in the course repository, or
 write a new one if you want to. Before you submit, make sure that your exercise
@@ -303,4 +325,4 @@ This is the formal running environment of the course.
 COMPILER receives 2 input file names:
 
  - InputPoseidonProgram.txt
- - OutputBitcodeFile.ll
+ - OutputMIPSFile.s
