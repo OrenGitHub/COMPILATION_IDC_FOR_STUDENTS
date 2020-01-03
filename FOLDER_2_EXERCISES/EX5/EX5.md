@@ -205,24 +205,25 @@ MIPS supports a somewhat limited set of system calls,
 but it is enough to handle everything we need.
 
 ```
-| Poseidon example code | MIPS code | Remarks |
-+-----------------------+-----------+---------+
-|                       | li $a0, 5           |
-| PrintInt(5);          | li $v0, 8           |
-|                       | syscall             |
-+-----------------------+---------------------+
-| string s := "M";      | .data               |
-| void main()           | Mstr: .asciiz "M"   |
+| Poseidon example code | MIPS code           | Remarks                      |
++-----------------------+---------------------+------------------------------+
+|                       | li $t2, 5           | print a single whitespace    |
+|                       | move $a0, $t2       | after the int, instead of \n |
+| PrintInt(5);          | li $v0, 8           | that sometimes cause trouble |
+|                       | syscall             | in SPIM.                     |
++-----------------------+---------------------+------------------------------+
+| string s := "M";      | .data               | print a single whitespace    |
+| void main()           | Mstr: .asciiz "M"   | after
 | {                     | .text               |
 |     PrintString(s);   | main:               |
 | }                     |   la $a0,Mstr       |
 |                       |   li $v0,4          |
 |                       |   syscall           |
 +-----------------------+---------------------+
-| array IA = int[]      | li $v0,8           |
-| IA a := new int[3];   | syscall            |
-|                       | syscall            |
-+-----------------------+-----------+---------+
+| array IA = int[]      | li $v0,8            |
+| IA a := new int[3];   | syscall             |
+|                       | syscall             |
++-----------------------+---------------------+
 ```
 
 **Division by zero**
@@ -287,9 +288,8 @@ int i := A[13];
 \pagebreak
 
 ## Poseidon Syntax
-To avoid an overly complex exercise, we will exclude class methods from it.
-This means that our classes are like structures from the C programming language.
-Here is the grammar for Poseidon without class methods:
+The Poseidon syntax is similar to the original syntax shown in the second exercise.
+It is brought here again for completeness.
 
 ```java
 Program  ::= dec+
@@ -322,7 +322,7 @@ stmt     ::= varDec
 
 newExp   ::= new ID | new ID '[' exp ']'
 
-cField   ::= varDec
+cField   ::= varDec | funcDec
 
 BINOP    ::= + | − | ∗ | / | < | > | =
 
