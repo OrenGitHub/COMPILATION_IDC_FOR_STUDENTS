@@ -1,4 +1,4 @@
-Compilation
+# Compilation
 ###### Exercise 5, Due 2/2/2020 before 14:00
 
 ## Introduction
@@ -13,36 +13,36 @@ LLVM bitcode from the previous exercise. The other option is to perform the tran
 from the AST of the program.
 
 #### LLVM bitcode to MIPS
+Translation of some commands is traightforward. For example,
 
-- translation of some commands is traightforward. For example,      
+```
+        | LLVM bitcode example                   | MIPS equivalent            |
+--------+----------------------------------------+----------------------------+
+Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+--------+----------------------------------------+----------------------------+
+Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
+--------+----------------------------------------+----------------------------+
+Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
+--------+----------------------------------------+----------------------------+
+Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
+--------+----------------------------------------+----------------------------+
+```
+
+Translation of other commands can be trickier. For instance,
    
-  ```
-          | LLVM bitcode example                   | MIPS equivalent            |
-  --------+----------------------------------------+----------------------------+
-  Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
-  --------+----------------------------------------+----------------------------+
-  Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
-  --------+----------------------------------------+----------------------------+
-  Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
-  --------+----------------------------------------+----------------------------+
-  Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
-  --------+----------------------------------------+----------------------------+
-  ```
-   
-   - translation of other commands can be trickier. For instance,
-   
-     ```
-             | LLVM bitcode example                   | MIPS equivalent            |
-     --------+----------------------------------------+----------------------------+
-     Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
-     --------+----------------------------------------+----------------------------+
-     Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
-     --------+----------------------------------------+----------------------------+
-     Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
-     --------+----------------------------------------+----------------------------+
-     Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
-     --------+----------------------------------------+----------------------------+
-     ```
+```
+        | LLVM bitcode example                   | MIPS equivalent            |
+--------+----------------------------------------+----------------------------+
+Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+--------+----------------------------------------+----------------------------+
+Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
+--------+----------------------------------------+----------------------------+
+Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
+--------+----------------------------------------+----------------------------+
+Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
+--------+----------------------------------------+----------------------------+
+```
+
 #### AST to MIPS
 
 [MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
