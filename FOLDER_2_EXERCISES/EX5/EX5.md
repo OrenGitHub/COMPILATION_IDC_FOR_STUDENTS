@@ -8,9 +8,13 @@ In this last exercise you will translate the input Poseidon program to MIPS asse
 It was rather popular during the 1980s, but is mostly used now for specific 32-bit microcontrollers.
 This architecture was chosen as the destination laguage of our compiler for its simplicity,
 availabale documentation and complete toolchain (which even contains a graphic debugger).
-There are essentially two ways to approach this exercise. The recomended way is to translate the
-LLVM bitcode from the previous exercise. The other option is to perform the translation directly
-from the AST of the program.
+There are essentially two steps for this exercise.
+The first step is to translate the LLVM bitcode from the previous exercise.
+The second step is to perform liveness analysis and register allocation
+so that each temporary is assigned a physical register.
+
+[MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
+[RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
 
 ### LLVM bitcode to MIPS
 Translation of *some* commands is traightforward. For example, binary operations,
@@ -52,10 +56,14 @@ Variables | store i32 3, i32* x                   |
 ----------+---------------------------------------+
 ```
 
-#### AST to MIPS
-
-[MIPS-link]:https://en.wikipedia.org/wiki/MIPS_architecture
-[RISC-link]:https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
+### Register Allocation
+The second step of the exercise requires that you implement a
+standard "def-use" algorithm to extract the liveness range of every temporary.
+Once these ranges are computed, you should build the so-called interference graph
+whose nodes are temporaries, and (Temp_i,Temp_j) is an edge in the graph if
+the liveness ranges of these temporaries intersect. After building the interference
+graph, you will use a greedy algorithm to color its nodes with 8 colors.
+The 8 colors stand for the 8 physical registers.
 
 ## Install SPIM and XSPIM
 To complete this exercise you need a working MIPS simulator ([SPIM][SPIM-link])
@@ -71,6 +79,8 @@ You should see the prime numbers from 2 to 100 printed to stdout.
 
 [SPIM-link]:https://en.wikipedia.org/wiki/SPIM
 [XSPIM-link]:http://www.cs.kent.edu/~durand/CS35101F06/Help/spimintro.html
+
+\pagebreak
 
 ## Poseidon Semantics
 The Poseidon semantics was thouroughly exaplained in the previous exercise,
@@ -115,6 +125,8 @@ void foo(int i)
 }
 void main(){ foo(6); foo(9); }
 ```
+
+\pagebreak
 
 ### Binary Operations
 **Integers** in Poseidon are artificially bounded between −2<sup>15</sup> and 2<sup>15</sup> − 1.
