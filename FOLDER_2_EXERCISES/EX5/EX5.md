@@ -12,24 +12,29 @@ There are essentially two ways to approach this exercise. The recomended way is 
 LLVM bitcode from the previous exercise. The other option is to perform the translation directly
 from the AST of the program.
 
-#### LLVM bitcode to MIPS
-
-- Translation of some commands is traightforward. For example,
+### LLVM bitcode to MIPS
+Translation of some commands is traightforward. For example, binary operations,
+labels, jumps, conditional jumps, pointer arithmetic operations, casting and more.
+The following table lists some examples:
 
 ```
-        | LLVM bitcode example                   | MIPS equivalent            |
---------+----------------------------------------+----------------------------+
-Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
---------+----------------------------------------+----------------------------+
-Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
---------+----------------------------------------+----------------------------+
-Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
---------+----------------------------------------+----------------------------+
-Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
---------+----------------------------------------+----------------------------+
+        | LLVM bitcode example          | MIPS equivalent  |
+--------+-------------------------------+------------------+
+Binops  | %t3 = add i32 nsw %t1, %t2    | add t3, t1, t2   |
+--------+-------------------------------+------------------+
+Labels  | Label_4_if_body:              | Label_4_if_body: |
+--------+-------------------------------+------------------+
+Jumps   | br label %Label_5_if_end      | j Label_5_if_end |
+--------+-------------------------------+------------------+
+Casting | %t6 = bitcast i8* %t7 to i8** | move t7, t6      |
+--------+-------------------------------+------------------+
 ```
 
-- Translation of other commands can be trickier. For instance,
+Translation of other commands can be trickier.
+For instance, accessing local variables,
+accessing input parameters, calling a (global) function,
+returning from a called function and more.
+The following table lists some non trivial translation of LLVM bitcode examples to MIPS:
    
 ```
         | LLVM bitcode example                   | MIPS equivalent            |
