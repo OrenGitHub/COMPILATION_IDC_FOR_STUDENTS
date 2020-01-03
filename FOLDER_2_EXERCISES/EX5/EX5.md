@@ -159,12 +159,25 @@ void main(){ A[inc()] := inc(); PrintInt(A[5]); }
 
 \pagebreak
 
-### Runtime Checks
-Poseidon enforces three kinds of runtime checks:
+### System Calls
+MIPS supports a limited set of system calls
 
- - Division by zero
- - Invalid pointer dereference
- - Out of bounds array access.
+```
+| Poseidon code | MIPS code | Remarks |
++---------------+-----------+---------+
+| PrintInt(8);  | li $v0,8  |         |
+|               | syscall   |         |
++---------------+-----------+---------+
+| PrintInt(8);  | li $v0,8  |         |
+|               | syscall   |         |
++---------------+-----------+---------+
+| PrintInt(8);  | li $v0,8  |         |
+|               | syscall   |         |
++---------------+-----------+---------+
+| PrintInt(8);  | li $v0,8  |         |
+|               | syscall   |         |
++---------------+-----------+---------+
+```
 
 **Division by zero**
 should be handled by printing “Division By Zero”,
