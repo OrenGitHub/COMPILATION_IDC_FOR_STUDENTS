@@ -1,4 +1,4 @@
-# Compilation
+Compilation
 ###### Exercise 5, Due 2/2/2020 before 14:00
 
 ## Introduction
@@ -9,17 +9,17 @@ It was rather popular during the 1980s, but is mostly used now for specific 32-b
 This architecture was chosen as the destination laguage of our compiler for its simplicity,
 availabale documentation and complete toolchain (which even contains a graphic debugger).
 There are two ways to approach this exercise:
-
  - (recomended) translation from the LLVM bitcode of the previous exercise.
    - translation of some commands is traightforward:
    
-     | Command | LLVM bitcode example                     | MIPS equivalent              |
-     |:--------|:----------------------------------------:|-----------------------------:|
-     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Binops  | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-   
+     | Command     | LLVM bitcode example                     | MIPS equivalent              |
+     |:-----------:|:----------------------------------------:|:----------------------------:|
+     | Binops      | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Labels      | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Jumps       | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Casting     | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     | Ptr. Arith. | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
+     |:-----------:|:----------------------------------------:|:----------------------------:|
    
      ```
                         | LLVM bitcode                           | MIPS equivalent            |
