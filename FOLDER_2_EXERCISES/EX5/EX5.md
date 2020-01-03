@@ -10,33 +10,31 @@ This architecture was chosen as the destination laguage of our compiler for its 
 availabale documentation and complete toolchain (which even contains a graphic debugger).
 There are two ways to approach this exercise:
  - (recomended) translation from the LLVM bitcode of the previous exercise.
-   - translation of some commands is traightforward:
-   
-     | Command     | LLVM bitcode example                     | MIPS equivalent              |
-     |:-----------:|:----------------------------------------:|:----------------------------:|
-     | Binops      | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Labels      | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Jumps       | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Casting     | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     | Ptr. Arith. | `%Temp_3 = add i32 nsw %Temp_1, %Temp_2` | `add Temp_3, Temp_1, Temp_2` |
-     |:-----------:|:----------------------------------------:|:----------------------------:|
-   
+   - translation of some commands is traightforward. For example,      
      ```
-                        | LLVM bitcode                           | MIPS equivalent            |
-     -------------------+----------------------------------------+----------------------------+
-     Binops             | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
-     -------------------+----------------------------------------+----------------------------+
-     Labels             | Label_6_while_body:                    | Label_6_while_body:        |
-     -------------------+----------------------------------------+----------------------------+
-     Jumps              | br label %Label_6_while_body           | j Label_6_while_body       |
-     -------------------+----------------------------------------+----------------------------+
-     Casting            | %Temp_4 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
-     -------------------+----------------------------------------+----------------------------+
-     Pointer    | %Temp_5 = getelementptr inbounds i8, i8*  | move Temp_3, Temp_1        |
-     Arithmetic | %Temp_5 = getelementptr inbounds i8, i8*  | move Temp_3, Temp_1        |
-     -------------------+----------------------------------------+----------------------------+
-     Jumps  | %Temp_3 = bitcast i8* %Temp_1 to i8**  | move Temp_3, Temp_1        |
-     -------+----------------------------------------+----------------------------+
+             | LLVM bitcode example                   | MIPS equivalent            |
+     --------+----------------------------------------+----------------------------+
+     Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+     --------+----------------------------------------+----------------------------+
+     Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
+     --------+----------------------------------------+----------------------------+
+     Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
+     --------+----------------------------------------+----------------------------+
+     Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
+     --------+----------------------------------------+----------------------------+
+     ```
+   - translation of other commands can be trickier. For instance,
+     ```
+             | LLVM bitcode example                   | MIPS equivalent            |
+     --------+----------------------------------------+----------------------------+
+     Binops  | %Temp_3 = add i32 nsw %Temp_1, %Temp_2 | add Temp_3, Temp_1, Temp_2 |
+     --------+----------------------------------------+----------------------------+
+     Labels  | Label_4_while_cond:                    | Label_4_while_cond:        |
+     --------+----------------------------------------+----------------------------+
+     Jumps   | br label %Label_5_while_body           | j Label_5_while_body       |
+     --------+----------------------------------------+----------------------------+
+     Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
+     --------+----------------------------------------+----------------------------+
      ```
  - (possible too) direct translation from the AST of the program.
 
