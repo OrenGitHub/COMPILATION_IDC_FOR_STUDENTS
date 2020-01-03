@@ -11,6 +11,7 @@ availabale documentation and complete toolchain (which even contains a graphic d
 There are two ways to approach this exercise:
  - (recomended) translation from the LLVM bitcode of the previous exercise.
    - translation of some commands is traightforward. For example,      
+   
      ```
              | LLVM bitcode example                   | MIPS equivalent            |
      --------+----------------------------------------+----------------------------+
@@ -23,7 +24,9 @@ There are two ways to approach this exercise:
      Casting | %Temp_6 = bitcast i8* %Temp_7 to i8**  | move Temp_7, Temp_6        |
      --------+----------------------------------------+----------------------------+
      ```
+   
    - translation of other commands can be trickier. For instance,
+   
      ```
              | LLVM bitcode example                   | MIPS equivalent            |
      --------+----------------------------------------+----------------------------+
