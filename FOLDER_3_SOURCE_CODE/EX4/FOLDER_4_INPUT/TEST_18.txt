@@ -1,8 +1,23 @@
-int foo() {
-    PrintTrace();
-    return 27;
+class Grandfather
+{
+	int x := 6;
 }
 
-void main() {
-    int x:= foo();
+class Father extends Grandfather
+{
+	int y := 7;
+	int z := 8;
+}
+class Son extends Father
+{
+	int w;
+}
+
+void main()
+{
+	Grandfather g := new Grandfather;
+	Father      f := new Father;
+	Son         s := new Son;
+	s.w := 0;
+    s.w := 700 / s.w;
 }
