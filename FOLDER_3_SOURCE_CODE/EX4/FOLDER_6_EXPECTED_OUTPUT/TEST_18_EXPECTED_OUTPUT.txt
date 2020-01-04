@@ -1,1 +1,1 @@
-Illegal division by zero
+Division By Zero
