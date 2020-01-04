@@ -6,25 +6,27 @@ class Person
 	int age := 18;
 
 	IntArray lastYearSalaries;
-
-	int getAge()  { return age;   }
-	int birthday(){ age := age+1; }
 }
+
+int getAge(Person p)  { return p.age;                   }
+int birthday(Person p){ p.age := p.age+1; return p.age; }
+
 
 class Student extends Person
 {
 	IntArray grades;
-	int getAverage()
+}
+
+int getAverage(Student s)
+{
+	int i := 0;
+	int sum := 0;
+	while (i<10)
 	{
-		int i := 0;
-		int sum := 0;
-		while (i<10)
-		{
-			sum := sum+grades[i];
-			i := i+1;
-		}
-		return sum/10;
+		sum := sum+s.grades[i];
+		i := i+1;
 	}
+	return sum/10;
 }
 
 array University = Student[]
