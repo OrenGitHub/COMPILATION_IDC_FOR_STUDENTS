@@ -100,7 +100,7 @@ entry:
   store i8** %Temp_40, i8*** @array_of_strings, align 4
   %Temp_00 = load i8**, i8*** @array_of_strings, align 4
   call void @PrintPtr(i8** %Temp_00)
-  store i8* %call, i8** @s, align 8
+  store i8* %call, i8** @s, align 4
   %Temp_90 = load i32, i32* @STR.AAA.VAR, align 4
   %Temp_22 = inttoptr i32 %Temp_90 to i8*
   %Temp_91 = load i32, i32* @STR.BBB.VAR, align 4
@@ -111,7 +111,7 @@ entry:
 
 Label_4_if.body:
 
-  %Temp_60 = load i32, i32* @STR.AB.VAR, align 8
+  %Temp_60 = load i32, i32* @STR.AB.VAR, align 4
   %Temp_88 = inttoptr i32 %Temp_60 to i8*
   call void @PrintString(i8* %Temp_88)
   br label %Label_7_if.end
