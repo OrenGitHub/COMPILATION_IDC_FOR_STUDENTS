@@ -1,6 +1,6 @@
 class Grandfather
 {
-    int i;
+    int i := 888;
 }
 
 class Father extends Grandfather
