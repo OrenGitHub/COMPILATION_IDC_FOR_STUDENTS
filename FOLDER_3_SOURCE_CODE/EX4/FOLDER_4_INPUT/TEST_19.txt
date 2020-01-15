@@ -1,5 +1,5 @@
 int oof() {	
-    PrintTrace();
+    PrintString("MMM");
     return 27;
 }
 

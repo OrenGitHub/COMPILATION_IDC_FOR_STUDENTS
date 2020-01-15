@@ -1,19 +1,16 @@
-
-class Grandfather {
-void WALK(){ PrintString("GrandfatherWALK"); }
-void RUN() { PrintString("GrandfatherRUN" ); }
-void SWIM(){ PrintString("GrandfatherSWIM"); }
+class Grandfather
+{
+    int i := 888;
 }
 
-class Father extends Grandfather {
-void SWIM() { PrintString("FatherSWIM" ); }
-void PAINT(){ PrintString("FatherPAINT"); }
-void RUN()  { PrintString("FatherRUN"  ); }
+class Father extends Grandfather
+{
+    int j;
 }
 
-class Son extends Father {
-void RUN()  { PrintString("SonRUN" ); }
-void WALK() { PrintString("SonWALK"); }
+class Son extends Father
+{
+    int k;
 }
 
 array ClassArray = Grandfather[]
@@ -40,6 +37,6 @@ void main()
 	Grandfather g1 := A[ 3];
 	Grandfather g2 := A[20];
 
-	g1.WALK();
-	g2.SWIM();
+	PrintInt(g1.i);
+	PrintInt(g2.i);
 }
